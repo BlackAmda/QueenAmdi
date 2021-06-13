@@ -1,6 +1,6 @@
 {
   "name": "WhatsAsenaDuplicated",
-  "version": "1.2.3",
+  "version": "0.16.5",
   "description": "WhatsAsena project - a Whatsapp userbot helping to improve your Whatsapp experience.",
   "main": "./WhatsAsenaDuplicated/bot.js",
   "scripts": {
@@ -11,11 +11,7 @@
     "url": "git+https://github.com/phaticusthiccy/WhatsAsenaDuplicated.git"
   },
   "keywords": [
-    "whatsapp",
-    "bot",
-    "ai",
-    "asena",
-    "WhatsAsena"
+    "whatsapp"
   ],
   "author": "AsenaDev / Yusuf Usta",
   "developer": "AsenaDev / @phaticusthiccy",
@@ -25,7 +21,7 @@
   },
   "homepage": "https://github.com/phaticusthiccy/WhatsAsenaDuplicated#readme",
   "dependencies": {
-    "@adiwajshing/baileys": "3.5.0",
+    "@adiwajshing/baileys": "3.4.1",
     "@lh2020/speedtest-net": "^2.1.1",
     "browser-id3-writer": "^4.4.0",
     "chalk": "^4.1.0",
@@ -53,7 +49,6 @@
     "simple-git": "^2.22.0",
     "sozlukjs": "^1.1.0",
     "spotify-web-api-node": "^5.0.0",
-    "solenolyrics": "^5.0.0",
     "sqlite3": "5.0.0",
     "translatte": "^3.0.0",
     "wikijs": "^6.0.1",
