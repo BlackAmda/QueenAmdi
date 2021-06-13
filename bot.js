@@ -151,7 +151,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
 
                 if (conn.user.jid === '@s.whatsapp.net') {
 
-                    await conn.sendMessage(conn.user.jid, '```🛡️ Blacklist Tespit Edildi!``` \n```Kullanıcı:``` \n```Sebep:``` ', MessageType.text)
+                    await conn.sendMessage(conn.user.jid, '```🛡️ Blacklist අනාවරණය විය!``` \n```පරිශීලක:``` \n```හේතුව:``` ', MessageType.text)
 
                     await new Promise(r => setTimeout(r, 1700));
 
@@ -167,7 +167,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                     })
                 }
                 else {
-                    await conn.sendMessage(conn.user.jid, '*WhatsAsena Public Olarak Çalışıyor! 🐺*\n\n_Lütfen burada plugin denemesi yapmayın. Burası sizin LOG numaranızdır._\n_Herhangi bir sohbette komutları deneyebilirsiniz :)_\n\n*Botunuz herkese açık bir şekilde çalışmaktadır. Değiştirmek için config vars üzerinden “WORK_TYPE” anahtarını “private” yapın.*\n\n*WhatsAsena Kullandığın İçin Teşekkürler 💌*', MessageType.text);
+                    await conn.sendMessage(conn.user.jid, '*Queen ඇම්ඩි public ආකාරයට ක්‍රියාකිරිම ආරම්භ විය.👸*\n\n_කරුණාකර මෙහි command උත්සාහ නොකරන්න. මෙය ඔබගේ ලොග් අංකයයි._\n_ඔබට ඕනෑම චැට් එකක විධාන උත්සාහ කළ හැකිය :)_\n\n*ඔබේ bot public ක්‍රියාත්මක වේ. වෙනස් කිරීමට* _.setvar WORK_TYPE:private_ *විධානය භාවිතා කරන්න.*\n\n*Queen ඇම්ඩි භාවිතා කිරීම ගැන ස්තූතියි 💌*', MessageType.text);
                 }
             }
             else {
@@ -189,7 +189,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                     })
                 }
                 else {
-                    await conn.sendMessage(conn.user.jid, '*WhatsAsena Working as Public! 🐺*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Your bot working as public. To change it, make the “WORK_TYPE” switch “private” in config vars.*\n\n*Thanks for using WhatsAsena 💌*', MessageType.text);
+                    await conn.sendMessage(conn.user.jid, '*Queen Amdi Working as Public! 👸*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Your bot working as public. To change it, use* _.setvar WORK_TYPE:private_\n\n*Thanks for using Queen Amdi 💌*', MessageType.text);
                 }
 
             }
@@ -199,7 +199,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
 
                 if (conn.user.jid === '@s.whatsapp.net') {
 
-                    await conn.sendMessage(conn.user.jid, '```🛡️ Blacklist Detected!``` \n ```Kullanıcı:``` \n```Sebep:``` ', MessageType.text)
+                    await conn.sendMessage(conn.user.jid, '```🛡️ Blacklist Detected!``` \n ```පරිශීලක:``` \n```හේතුව:``` ', MessageType.text)
 
                     await new Promise(r => setTimeout(r, 1800));
 
@@ -215,7 +215,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                 }
                 else {
 
-                await conn.sendMessage(conn.user.jid, '*WhatsAsena Private Olarak Çalışıyor! 🐺*\n\n_Lütfen burada plugin denemesi yapmayın. Burası sizin LOG numaranızdır._\n_Herhangi bir sohbette komutları deneyebilirsiniz :)_\n\n*Botunuz sadece size özel olarak çalışmaktadır. Değiştirmek için config vars üzerinden “WORK_TYPE” anahtarını “public” yapın.*\n\n*WhatsAsena Kullandığın İçin Teşekkürler 💌*', MessageType.text);
+                await conn.sendMessage(conn.user.jid, '*Queen ඇම්ඩි private ආකාරයට ක්‍රියාකිරිම ආරම්භ විය.👸*\n\n_කරුණාකර මෙහි command උත්සාහ නොකරන්න. මෙය ඔබගේ ලොග් අංකයයි._\n_ඔබට ඕනෑම චැට් එකක විධාන උත්සාහ කළ හැකිය :)_\n\n*ඔබේ bot private ක්‍රියාත්මක වේ. වෙනස් කිරීමට* _.setvar WORK_TYPE:public_ *විධානය භාවිතා කරන්න.*\n\n*Queen ඇම්ඩි භාවිතා කිරීම ගැන ස්තූතියි 💌*', MessageType.text);
                 }
             }
             else {
@@ -238,7 +238,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                 }
                 else {
 
-                    await conn.sendMessage(conn.user.jid, '*WhatsAsena Working as Private! 🐺*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Your bot working as private. To change it, make the “WORK_TYPE” switch “public” in config vars.*\n\n*Thanks for using WhatsAsena 💌*', MessageType.text);
+                    await conn.sendMessage(conn.user.jid, '*Queen Amdi Working as Private! 👸*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Your bot working as private. To change it, use* _.setvar WORK_TYPE:public_\n\n*Thanks for using Queen Amdi 💌*', MessageType.text);
                 }
             }
         }
@@ -259,14 +259,14 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
             // see you message
             var gb = await getMessage(msg.key.remoteJid, 'goodbye');
             if (gb !== false) {
-                await conn.sendMessage(msg.key.remoteJid, fs.readFileSync("/root/WhatsAsenaPublic/media/gif/VID-20210518-WA0060.mp4"), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message});
+                await conn.sendMessage(msg.key.remoteJid, fs.readFileSync("/root/QueenAmdi/media/gif/VID-20210518-WA0060.mp4"), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message});
             }
             return;
         } else if (msg.messageStubType === 27 || msg.messageStubType === 31) {
             // Welcome message
             var gb = await getMessage(msg.key.remoteJid);
             if (gb !== false) {
-                await conn.sendMessage(msg.key.remoteJid, fs.readFileSync("/root/WhatsAsenaPublic/media/gif/VID-20210518-WA0059.mp4"), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message});
+                await conn.sendMessage(msg.key.remoteJid, fs.readFileSync("/root/QueenAmdi/media/gif/VID-20210518-WA0059.mp4"), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message});
             }
             return;
         }
@@ -331,17 +331,17 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             await command.function(whats, match);
                         } catch (error) {
                             if (config.LANG == 'TR' || config.LANG == 'AZ') {
-                                await conn.sendMessage(conn.user.jid, '*-- HATA RAPORU [WHATSASENA] --*' + 
-                                    '\n*WhatsAsena bir hata gerçekleşti!*'+
-                                    '\n_Bu hata logunda numaranız veya karşı bir tarafın numarası olabilir. Lütfen buna dikkat edin!_' +
-                                    '\n_Yardım için Telegram grubumuza yazabilirsiniz._' +
-                                    '\n_Bu mesaj sizin numaranıza (kaydedilen mesajlar) gitmiş olmalıdır._' +
-                                    '\n_Hatayı https://chat.whatsapp.com/JjvOISnxu4z6sv4hx3FBNQ bu gruba iletebilirsiniz._\n\n' +
-                                    '*Gerçekleşen Hata:* ```' + error + '```\n\n'
+                                await conn.sendMessage(conn.user.jid, '*-- දෝෂ වාර්තාව [QUEEN_ඇම්ඩි] --*' + 
+                                    '\n*Bot දෝෂයක් සිදුවී ඇත!*'+
+                                    '\n_මෙම දෝෂ logs ඔබගේ අංකය හෝ ප්‍රති පාර්ශ්වයේ අංකය අඩංගු විය හැකිය. කරුණාකර එය සමග සැලකිලිමත් වන්න!_' +
+                                    '\n_උදව් සඳහා ඔබට අපගේ whatsapp support කණ්ඩායමට ලිවිය හැකිය._' +
+                                    '\n_මෙම පණිවිඩය ඔබගේ අංකයට ගොස් තිබිය යුතුය (සුරකින ලද පණිවිඩ)_' +
+                                    '\n_https://chat.whatsapp.com/Hkm79J2sapyLGD0rvRTfkq ඔබට එය මෙම group යොමු කළ හැකිය._\n\n' +
+                                    '*සිදු වූ දෝෂය:* ```' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false});
                             } else {
-                                await conn.sendMessage(conn.user.jid, '*-- ERROR REPORT [WHATSASENA] --*' + 
-                                    '\n*WhatsAsena an error has occurred!*'+
+                                await conn.sendMessage(conn.user.jid, '*-- ERROR REPORT [QUEEN AMDI] --*' + 
+                                    '\n*Bot an error has occurred!*'+
                                     '\n_This error log may include your number or the number of an opponent. Please be careful with it!_' +
                                     '\n_You can write to our Telegram group for help._' +
                                     '\n_This message should have gone to your number (saved messages)._\n\n' +
@@ -359,7 +359,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
         await conn.connect();
     } catch {
         if (!nodb) {
-            console.log(chalk.red.bold('Eski sürüm stringiniz yenileniyor...'))
+            console.log(chalk.red.bold('Refreshing your old version string...'))
             conn.loadAuthInfo(Session.deCrypt(config.SESSION)); 
             try {
                 await conn.connect();
