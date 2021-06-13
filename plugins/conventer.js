@@ -37,7 +37,7 @@ if (Config.WORKTYPE == 'private') {
             .withNoVideo()
             .save('output.mp3')
             .on('end', async () => {
-                await message.client.sendMessage(message.jid, fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: false});
+                await message.client.sendMessage(message.jid, fs.readFileSync('output.mp3'), MessageType.audio, {quoted: message.data}, {mimetype: Mimetype.mp4Audio, ptt: false});
             });
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
@@ -63,7 +63,7 @@ if (Config.WORKTYPE == 'private') {
             .fromFormat('webp_pipe')
             .save('output.jpg')
             .on('end', async () => {
-                await message.client.sendMessage(message.jid, fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg});
+                await message.client.sendMessage(message.jid, fs.readFileSync('output.jpg'), MessageType.image, {quoted: message.data}, {mimetype: Mimetype.jpg});
             });
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
@@ -91,7 +91,7 @@ else if (Config.WORKTYPE == 'public') {
             .withNoVideo()
             .save('output.mp3')
             .on('end', async () => {
-                await message.client.sendMessage(message.jid, fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: false});
+                await message.client.sendMessage(message.jid, fs.readFileSync('output.mp3'), MessageType.audio, {quoted: message.data}, {mimetype: Mimetype.mp4Audio, ptt: false});
             });
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
@@ -117,7 +117,7 @@ else if (Config.WORKTYPE == 'public') {
             .fromFormat('webp_pipe')
             .save('output.jpg')
             .on('end', async () => {
-                await message.client.sendMessage(message.jid, fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg});
+                await message.client.sendMessage(message.jid, fs.readFileSync('output.jpg'), MessageType.image, {quoted: message.data}, {mimetype: Mimetype.jpg});
             });
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
