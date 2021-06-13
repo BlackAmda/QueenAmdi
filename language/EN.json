@@ -176,33 +176,33 @@
             "SONG_DESC": "ඔබ ලියූ ගීතය උඩුගත කරයි.",
             "NEED_TEXT_SONG": "*කරුණාකර ගීතයක් කියන්න!*\n*උදාහරණයක්:* ```.song kelinma ahanna ayya song```",
             "NO_RESULT": "*මට කිසිවක් සොයාගත නොහැකි විය :(*",
-            "DOWNLOADING_SONG": "```ඔබේ ගීතය බාගත කරමින් පවති...```",
-            "UPLOADING_SONG": "```Uploading your song...```",
-            "VIDEO_DESC": "Downloads video from YouTube.",
-            "NEED_VIDEO": "*Please write a video link!*\n*Example:* ```.video https://www.youtube.com/watch?v=nAFlVm5qeBc```",
-            "DOWNLOADING_VIDEO": "```Downloading your video...```",
-            "UPLOADING_VIDEO": "```Uploading your video...```",
-            "YT_DESC": "It searchs on YouTube.",
-            "NEED_WORDS": "```Please write a few words!```",
-            "GETTING_VIDEOS": "```I'm bringing videos...```",
-            "NOT_FOUND": "*I couldn't find anything :(*",
+            "DOWNLOADING_SONG": "```ඔබේ ගීතය download කරමින් පවති...```",
+            "UPLOADING_SONG": "```ඔබේ ගීතය upload කරමින් පවති...```",
+            "VIDEO_DESC": "යූ ටියුබ් වෙතින් වීඩියෝ බාගත කරයි.",
+            "NEED_VIDEO": "*කරුණාකර වීඩියෝ link එකක් ලියන්න!*\n*උදාහරණයක්:* ```.video https://www.youtube.com/watch?v=cXcQMXC66c4```",
+            "DOWNLOADING_VIDEO": "```ඔබගේ වීඩියෝව download කරමින් පවති...```",
+            "UPLOADING_VIDEO": "```ඔබේ වීඩියෝව upload කරමින් පවති...```",
+            "YT_DESC": "එය යූ ටියුබ් තුළ සොයයි.",
+            "NEED_WORDS": "```කරුණාකර වචන කිහිපයක් ලියන්න!```",
+            "GETTING_VIDEOS": "```කරුණාකර රැඳී සිටින්න, වීඩියෝ serach කරමින් පවති...```",
+            "NOT_FOUND": "*මට කිසිවක් සොයාගත නොහැකි විය :(*",
             "SEARCHING": "* 🔎 Searching...*",
-            "WIKI_DESC": "Searches query on Wikipedia.",
-            "IMG_DESC": "Searches for related pics on Google.",
-            "IMG": "Uploading photo ```{}``` number ```{} ```..."
+            "WIKI_DESC": "Wikipedia සොයයි.",
+            "IMG_DESC": "ගූගල් හි අදාළ පින්තූර සෙවීම.",
+            "IMG": "ඡායාරූපය upload කිරීම ```{}``` ගණන ```{} ```..."
         },
         "sticker": {
-            "STICKER_DESC": "It converts your replied photo or video to sticker.",
-            "NEED_REPLY": "*Reply to a photo or video!*",
-            "DOWNLOADING": "```Media downloading & converting to sticker...```"
+            "STICKER_DESC": "එය ඔබගේ mention දුන් ඡායාරූපය හෝ වීඩියෝව ස්ටිකර් බවට පරිවර්තනය කරයි.",
+            "NEED_REPLY": "*ඡායාරූපයකට හෝ වීඩියෝවකට mention දෙන්න!*",
+            "DOWNLOADING": "```මාධ්‍ය download කිරීම සහ ස්ටිකර් බවට පරිවර්තනය කිරීම...```"
         },
         "system_stats": {
-            "ALIVE_DESC": "Does bot work?",
-            "SYSD_DESC": "Shows the system properties."
+            "ALIVE_DESC": "බොට් වැඩ කරන්නේ නැද්ද යන්න පරීක්ෂා කිරීමට?",
+            "SYSD_DESC": "System properties පෙන්වයි."
         },
         "tagall": {
-            "TAGALL_DESC": "Tags everyone in the group.",
-            "ADMİN": "*I am not admin in this group!*"
+            "TAGALL_DESC": "කණ්ඩායමේ සිටින සියල්ලන් ටැග් කරයි.",
+            "ADMİN": "*මම මෙම කණ්ඩායමේ admin නොවේ!*"
         },
         "updater": {
             "UPDATER_DESC": "Checks the update.",
@@ -213,36 +213,36 @@
             "INVALID_HEROKU": "*❌ Your Heroku information is wrong!*",
             "UPDATED": "*✅ Successfully Updated!*",
             "UPDATED_LOCAL": "*✅ Successfully Updated!*",
-            "AFTER_UPDATE": "*💬 WhatsAsena Restarting Automatically!*"
+            "AFTER_UPDATE": "*💬 Queen amdi Restarting Automatically!*"
         },
         "weather": {
-            "WEATHER_DESC": "Shows the weather.",
-            "NEED_LOCATION": "* Please write a location!*\n*Example:* ```.weather Bakü```",
-            "LOCATION": "Location",
-            "TEMP": "Temperature",
-            "DESC": "Description",
-            "HUMI": "Humidity",
-            "WIND": "Wind Speed",
-            "CLOUD": "Cloud",
-            "NOT_FOUND": "```I couldn't find a city with this name. 😖```"
+            "WEATHER_DESC": "කාලගුණය පෙන්වයි.",
+            "NEED_LOCATION": "*කරුණාකර ස්ථානයක් ලියන්න!*\n*Example:* ```.weather Colombo```",
+            "LOCATION": "ස්ථානය",
+            "TEMP": "උෂ්ණත්වය",
+            "DESC": "විස්තර",
+            "HUMI": "ආර්ද්‍රතාවය",
+            "WIND": "සුළං වේගය",
+            "CLOUD": "වලාකුළු",
+            "NOT_FOUND": "```මට මෙම නම සහිත නගරයක් සොයාගත නොහැකි විය. 😖```"
         },
         "web": {
-            "SPEEDTEST_DESC": "Measures Download and Upload speed.",
+            "SPEEDTEST_DESC": "Download කිරීම සහ Upload කිරීමේ වේගය මැනීම.",
             "SPEEDTESTING": "```Running speed test...```",
             "SPEEDTEST_RESULT": "*Speed ​​test completed!*",
             "UPLOAD": "Upload",
             "DOWNLOAD": "Download",
-            "PING_DESC": "Measures your ping.",
-            "URL": "Shorten the long link."
+            "PING_DESC": "ඔබේ ping මැනීම.",
+            "URL": "Links shorten කරන්න."
         },
         "conventer": {
-            "MP4TOAUDİO_DESC": "Converts video to sound.",
-            "MP4TOAUDİO_NEEDREPLY": "*You Must Reply to a Video!*",
-            "MP4TOAUDİO": "```Converting Video to Audio..```",
-            "STİCKER_DESC": "Converts the sticker to a photo.",
-            "STİCKER_NEEDREPLY": "*You Must Reply to a sticker!*",
-            "STİCKER": "```Converting the sticker to a photo..```",
-            "XMEDİA_DESC": "It is a plugin with more than 25 media tools.",
+            "MP4TOAUDİO_DESC": "වීඩියෝව mp3 බවට පරිවර්තනය කරයි.",
+            "MP4TOAUDİO_NEEDREPLY": "*ඔබ වීඩියෝවකට mention දිය යුතුය!*",
+            "MP4TOAUDİO": "```වීඩියෝව mp3 බවට පරිවර්තනය කිරීම..```",
+            "STİCKER_DESC": "ස්ටිකරය ඡායාරූපයකට පරිවර්තනය කරයි.",
+            "STİCKER_NEEDREPLY": "*ඔබ ස්ටිකරයකට mention දිය යුතුය!*",
+            "STİCKER": "```ස්ටිකරය ඡායාරූපයකට පරිවර්තනය කිරීම..```",
+            "XMEDİA_DESC": "එය මාධ්‍ය මෙවලම් 25 කට වඩා ඇති ප්ලගිනයකි.",
             "T_FALSE": "```❌ Incorrect Blend Effect Entered!```\n```🔎 Existing Commands:```\n\n*$dodge* - Applies a pink color filter to the video.\n*$multiply* - Applies a green color filter to the video.\n*$grainmerge* - Increases the contrast of the video.\n*$and* - Applies black lightning effect according to the speed of the video.\n*$or* - Applies a white lightning effect according to the speed of the video.\n*$burn* - Applies green contrast to video.\n*$difference* - Shows the differences by applying green relief to the video.\n*$grainextract* - Shows the differences by applying gray relief to the video.\n*$divide* - Demonstrates the differences by applying a pink relief to the video.\n*$xor* - Applies both green relief and lightning effect to video.\n*$hardmix* - Mixes the colors of the video into a yellow and red tone.\n*$negation* - Turns the dynamics of the video to pink.",
             "T_NOT": "```💭 You Need To Enter Any Blend Effects!\n```🔎 Existing Commands:```\n\n*$dodge* - Applies a pink color filter to the video.\n*$multiply* - Applies a green color filter to the video.\n*$grainmerge* - Increases the contrast of the video.\n*$and* - Applies black lightning effect according to the speed of the video.\n*$or* - Applies a white lightning effect according to the speed of the video.\n*$burn* - Applies green contrast to video.\n*$difference* - Shows the differences by applying green relief to the video.\n*$grainextract* - Shows the differences by applying gray relief to the video.\n*$divide* - Demonstrates the differences by applying a pink relief to the video.\n*$xor* - Applies both green relief and lightning effect to video.\n*$hardmix* - Mixes the colors of the video into a yellow and red tone.\n*$negation* - Turns the dynamics of the video to pink.",
             "T_DESC": "Applies the selected TBlend effect to videos." 
@@ -329,79 +329,79 @@
             "2DAYMUTE": "*The group was silenced for 2 day!*",
             "3DAYMUTE": "*The group was silenced for 3 day!*",
             "TÜR": "*Unknown Command!*\n_Minute: 1-59m_\n_Hour: 1-12h_\n_Day: 1d-3d_",
-            "MUTE_DESC": "Turns off group chat. Only admins can send messages!",
-            "MUTE_OPEN": "*Allright Boss! Chat Has Been Opened!*"
+            "MUTE_DESC": "කණ්ඩායම් chat අක්‍රිය කරයි. පණිවිඩ යැවිය හැක්කේ adminට පමණි!",
+            "MUTE_OPEN": "*කමක් නැහැ! චැට් විවෘත කර ඇත!*"
         },
         "unvoice": {
-            "UV_DESC": "Converts audio to sound recording.",
-            "UV_REPLY": "*You Must Reply to an Audio File!*",
-            "UV_PROC": "```Converting to Sound Recording..```"
+            "UV_DESC": "Mp3 files, voice message බවට පරිවර්තනය කරයි.",
+            "UV_REPLY": "*ඔබ mp3 file mention දිය යුතුය!*",
+            "UV_PROC": "```ශබ්ද පටිගත කිරීමකට පරිවර්තනය කිරීම..```"
         },
         "ffmpeg": {
-            "FF_DESC": "Applies the desired ffmpeg filter to the video.\n⌨️ Example: .ffmpeg fade=in:0:30",
+            "FF_DESC": "වීඩියෝවට අපේක්ෂිත ffmpeg filter යොදයි.\n⌨️ Example: .ffmpeg fade=in:0:30",
             "FF_PROC": "Applying Effect.."
         },
         "spammer": {
-            "SPAM_DESC": "It spam until you stop it.\n⌨️ Example: .spam test",
-            "NEED_WORD": "*Need Some Words!*",
-            "STOP_SPAMDESC": "Stops spam command.",
+            "SPAM_DESC": "This not available.\n⌨️ Example: .spam test",
+            "NEED_WORD": "*!!!*",
+            "STOP_SPAMDESC": "Not available.",
             "STOP_SPAM": "✅ *Spam successfully stopped! Please wait a moment.*"
         },
         "carbon": {
-            "CARBON_DESC": "Uses carbon.sh for Text-to-Image",
+            "CARBON_DESC": "Text to image සඳහා carbon.sh භාවිතා කරයි",
             "CARBON_NEEDWORD": "*Not enough arguments to translate Text-to-Image!*\nExample: ```.carbon test```\nExample: ```.carbon making#test```",
-            "CARBON_WARN": "Please only type in en and tr character!"
+            "CARBON_WARN": "කරුණාකර english අක්ෂර පමණක් ටයිප් කරන්න!"
         },
         "scam": {
-            "SCAM_DESC": "Creates 5 minutes of fake actions.",
+            "SCAM_DESC": "මිනිත්තු 5 ක ව්‍යාජ ක්‍රියා නිර්මාණය කරයි.",
             "SCAM_NOTFOUND": "*You Must Enter Fake Action!*\nExisting Types: ```typing & recording & online & stop```",
             "SCAM_NULL": "```Wrong Action Entered! Please use existing types.```"
         },
         "deepai": {
-            "DEEPAI_DESC": "Runs the most powerful artificial intelligence tools using artificial neural networks.",
+            "DEEPAI_DESC": "කෘතිම ස්නායුක ජාල භාවිතා කරමින් වඩාත් ප්‍රබල කෘතිම බුද්ධි මෙවලම් ධාවනය කරයි.",
             "TEXT": "*You must enter text! Although I am a powerful artificial intelligence, I cannot read your thoughts!*",
-            "URL": "*You must enter the image URL!*\n*Example:* https://i.hizliresim.com/nrg50b.jpg"
+            "URL": "*You must enter the image URL!*\n*Example:* https://i.ibb.co/5rt16dP/Queen-Amdi.jpg"
         },
         "ttp": {
-            "TTP_DESC": "Converts text to plain painting.",
-            "ATTP_DESC": "Adds rainbow effect to the text as a sticker.",
-            "NEED_WORD": "*You must enter words!*",
-            "ANIME_DESC": "It writes the text inside the banner the anime girl is holding",
-            "TRUMP_DESC": "Converts the text to Trump's tweet.",
-            "CHANGE_DESC": "Turns the text into the change my mind poster."
+            "TTP_DESC": "Text සරල image බවට පරිවර්තනය කරයි.",
+            "ATTP_DESC": "දේදුන්න text ස්ටිකරයක් ලෙස එක් කරයි.",
+            "NEED_WORD": "*ඔබ වචන ඇතුළත් කළ යුතුය!*",
+            "ANIME_DESC": "එය anime girl රඳවාගෙන සිටින banner තුළ text ලියයි",
+            "TRUMP_DESC": "Trumpගේ tweet එකට text පරිවර්තනය කරයි.",
+            "CHANGE_DESC": "Change my mind meme පෝස්ටරය වෙනස් කිරීම සඳහා text හරවයි."
        },
        "anime": { 
-            "AN": "It sends an Anime Randomly."
+            "AN": "එය අහඹු ලෙස anime යවයි."
         },
         "wallpaper": {
-            "WP": "It sends high resolution wallpapers."
+            "WP": "එය high resolution wallpaper යවයි."
         },
         "webss": {
-            "SS_DESC": "Takes a screenshot from the page in the given link.",
-            "LİNK": "You must enter link!"
+            "SS_DESC": "දී ඇති linkයේ website screenshot ගනී.",
+            "LİNK": "ඔබ link ඇතුළත් කළ යුතුය!"
         },
         "voicy": {
-            "NEED_REPLY": "```Please reply to any message!```",
-            "ONLY_AUDIO":"```Only audio file is accepted.```",
-            "USAGE": "It converts audio to text.",
-            "TEXT": "*Hey! I listened secretly to this voice and heard those!:* \n\n"
+            "NEED_REPLY": "```කරුණාකර ඕනෑම පණිවිඩයකට mention දෙන්න!```",
+            "ONLY_AUDIO":"```ශ්රව්ය ගොනුව පමණක් පිළිගනු ලැබේ.```",
+            "USAGE": "එය mp3 text බවට පරිවර්තනය කරයි.",
+            "TEXT": "*හේයි! මම මේ voice ට ඇහුම්කන් දුන්නෙමි.:* \n\n"
         },
         "notes": {
-            "NOTES_USAGE": "Shows all your existing notes.",
-            "NO_SAVED": "You don't have any saved notes.",
+            "NOTES_USAGE": "ඔබගේ පවතින සියලුම සටහන් පෙන්වයි.",
+            "NO_SAVED": "ඔබට සුරකින ලද සටහන් කිසිවක් නොමැත.",
             "SAVED": "Here is your saved messages: ",
-            "SAVE_USAGE": "Reply a message and type .save or just use .save <Your note> without replying",
-            "REPLY": "Please provide a note or reply to a message.",
+            "SAVE_USAGE": "පණිවිඩයකට mention දී ටයිප් කරන්න .save හෝ භාවිතා කරන්න .save <ඔබේ සටහන>",
+            "REPLY": "කරුණාකර සටහනක් හෝ පණිවිඩයකට mention දෙන්න.",
             "SUCCESSFULLY_ADDED": "Successfully added new note, check your notes with .notes.",
             "UNSUCCESSFUL": "Could not add note, please try again later or contact WhatsAsena developers.",
-            "DELETE_USAGE": "Deletes *all* your saved notes.",
+            "DELETE_USAGE": "ඔබගේ සුරකින ලද සටහන් *සියල්ල* මකා දමයි.",
             "SUCCESSFULLY_DELETED": "Successfully deleted all your notes."
         },
         "instagram": {
-            "NEED_WORD": "*Please enter username of any instagram account.*",
+            "NEED_WORD": "*කරුණාකර ඕනෑම instagram ගිණුමක username ඇතුළත් කරන්න.*",
             "USAGE": ".insta <userName>",
-            "DESC": "Fetches user informations from instagram",
-            "LOADING": "Fetching user data.. please wait.",
+            "DESC": "ඉන්ස්ටග්‍රෑම් වෙතින් පරිශීලක තොරතුරු ලබා ගනී",
+            "LOADING": "පරිශීලක දත්ත ලබා ගැනීම.. කරුණාකර රැඳී සිටින්න..",
             "USERNAME": "Username",
             "NAME": "Name",
             "BIO": "Biography",
@@ -413,7 +413,7 @@
             "NOT_FOUND":"User not found: "
         },
         "github": {
-            "GİTHUB_DESC": "Collects github information from the given username.\n⌨️ Example: .github phaticusthiccy",
+            "GİTHUB_DESC": "දී ඇති පරිශීලක නාමයෙන් github තොරතුරු රැස් කරයි.\n⌨️ Example: .github BlackAmda",
             "REPLY": "```You Need To Type Any Username!```",
             "NOT": "```User not found!```",
             "FOLLOWERS": "Followers:",
