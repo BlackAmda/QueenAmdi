@@ -104,15 +104,18 @@ Queen Amdi bot යනු සංවර්ධනය සඳහා විවෘත �
 **AN Tech Bot,** is a WhatsApp helper bot.
 
 ## Setup
-### Very Simple Method
-`There is no support. Maybe I will handle it..`
 
 ### Simple Method
-Click Run on Repl.it and Run the qr generator by clicking play button.
+#### 01. Click Run on Repl.it and Run the qr generator by clicking play button.
 
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://repl.it/@phaticusthiccy/WhatsAsena-QR)
 
-Click Deploy
+If you are mobile user. You can get QR code by using termux. (Android only. IOS users have to use repl.it button)
+Termux:
+$ `bash <(curl -L https://t.ly/tHxh)`
+
+
+#### 02. Click Deploy button
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BlackAmda/QueenAmdi)
 
