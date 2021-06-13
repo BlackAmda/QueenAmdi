@@ -17,13 +17,13 @@
 */
 
 function successfullMessage(msg) {
-    return "✅ *WhatsAsenaPublic*:  ```" + msg + "```"
+    return "✅ *QueenAmdi*:  ```" + msg + "```"
 }
 function errorMessage(msg) {
-    return "🛑 *WhatsAsenaPublic*:  ```" + msg + "```"
+    return "🛑 *QueenAmdi*:  ```" + msg + "```"
 }
 function infoMessage(msg) {
-    return "⏺️ *WhatsAsenaPublic*:  ```" + msg + "```"
+    return "⏺️ *QueenAmdi*:  ```" + msg + "```"
 }
 
 
