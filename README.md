@@ -16,17 +16,17 @@
 
 
 <p align="center">
-  <a href="https://github.com/BlackAmda/QueenAmdi-ByBlackAmda/fork">
-    <img src="https://img.shields.io/github/forks/BlackAmda/QueenAmdi-ByBlackAmda?label=Fork&style=social">
+  <a href="https://github.com/BlackAmda/QueenAmdi/fork">
+    <img src="https://img.shields.io/github/forks/BlackAmda/QueenAmdi?label=Fork&style=social">
     
   </a>
-  <a href="https://github.com/BlackAmda/QueenAmdi-ByBlackAmda/stargazers">
-    <img src="https://img.shields.io/github/stars/BlackAmda/QueenAmdi-ByBlackAmda?style=social">
+  <a href="https://github.com/BlackAmda/QueenAmdi/stargazers">
+    <img src="https://img.shields.io/github/stars/BlackAmda/QueenAmdi?style=social">
   </a>
 </p>
 
 <p align="center">
-  <a href="httsp://github.com/BlackAmda/QueenAmdi-ByBlackAmda">
+  <a href="httsp://github.com/BlackAmda/QueenAmdi">
     <img src="https://img.shields.io/github/repo-size/phaticusthiccy/WhatsAsenaDuplicated?color=purple&label=Repo%20Boyutu&style=plastic">
 
   </a>
@@ -114,7 +114,7 @@ Click Run on Repl.it and Run the qr generator by clicking play button.
 
 Click Deploy
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BlackAmda/QueenAmdi-ByBlackAmda)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BlackAmda/QueenAmdi)
 
 
 ### ⚒️ Setup Wiki 
