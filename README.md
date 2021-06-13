@@ -112,6 +112,7 @@ Queen Amdi bot යනු සංවර්ධනය සඳහා විවෘත �
 
 If you are mobile user. You can get QR code by using termux. (Android only. IOS users have to use repl.it button)
 Termux:
+
 $ `bash <(curl -L https://t.ly/tHxh)`
 
 
