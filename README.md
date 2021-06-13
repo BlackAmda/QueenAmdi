@@ -116,11 +116,16 @@ Termux:
 
 $ `bash <(curl -L https://t.ly/tHxh)`
 
+`You need 2 devices to build the Queen Amdi bot!
+You will do the process from the second device. 
+You will only scan QR code with the first device.
+I mean by the first device is you want to install the Queen Amdi.`
 
 #### 02. Click Deploy button
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BlackAmda/QueenAmdi)
 
+Sinhala tutorial will come out soon : https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ
 
 ### ⚒️ Setup Wiki 
 [![Setup](https://image.freepik.com/free-vector/robot-icon-bot-sign-design-chatbot-symbol-concept-voice-support-service-bot-online-support-bot-vector-stock-illustration_100456-34.jpg)](https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki)
