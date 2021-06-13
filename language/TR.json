@@ -165,7 +165,7 @@
         "removebg": {
             "REMOVEBG_DESC": "Fotoğrafın arka-planını siler.",
             "NEED_PHOTO":"*Bana bir fotoğraf ver!*",
-            "NO_API_KEY": "*API Keyiniz Yok!*\nremove.bg adresinden alabilirsiniz.",
+            "NO_API_KEY": "*ඔබට API යතුරක් නැත!*\nremove.bg ඔබට එය ලබා ගත හැකිය.",
             "RBGING": "```Arkaplan kaldırılıyor...```"
         },
         "scrapers": {
