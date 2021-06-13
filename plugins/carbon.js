@@ -25,7 +25,7 @@ if (Config.WORKTYPE == 'private') {
 
         var respoimage = await axios.get(`https://carbonnowsh.herokuapp.com/?code=${match[1].replace(/#/gi, "%250A").replace(/Ö/g, "%C3%96").replace(/ö/g, "%C3%B6").replace(/ü/g, "%C3%BC").replace(/Ü/g, "%C3%9C").replace(/Ğ/g, "%C4%9E").replace(/ğ/g, "%C4%9F").replace(/ş/g, "%C5%9F").replace(/Ş/g, "%C5%9E").replace(/ç/g, "%C3%A7").replace(/Ç/g, "%C3%87").replace(/ı/g, "%C4%B1").replace(/i/g, "%69").replace(/"/g, "%22").replace(/İ/g, "%C4%B0")}&theme=blackboard&exportSize=3x&paddingVertical=200px&paddingHorizontal=200px&language=JavaScript`, { responseType: 'arraybuffer' })
 
-        await message.client.sendMessage(message.jid,Buffer.from(respoimage.data), MessageType.image, {quoted: message.data}, {mimetype: Mimetype.png, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'})
+        await message.client.sendMessage(message.jid,Buffer.from(respoimage.data), MessageType.image, {quoted: message.data}, {mimetype: Mimetype.png}, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ')
 
     }));
 }
@@ -43,7 +43,7 @@ else if (Config.WORKTYPE == 'public') {
 
         var respoimage = await axios.get(`https://carbonnowsh.herokuapp.com/?code=${match[1].replace(/#/gi, "%250A").replace(/Ö/g, "%C3%96").replace(/ö/g, "%C3%B6").replace(/ü/g, "%C3%BC").replace(/Ü/g, "%C3%9C").replace(/Ğ/g, "%C4%9E").replace(/ğ/g, "%C4%9F").replace(/ş/g, "%C5%9F").replace(/Ş/g, "%C5%9E").replace(/ç/g, "%C3%A7").replace(/Ç/g, "%C3%87").replace(/ı/g, "%C4%B1").replace(/i/g, "%69").replace(/"/g, "%22").replace(/İ/g, "%C4%B0")}&theme=blackboard&exportSize=3x&paddingVertical=200px&paddingHorizontal=200px&language=JavaScript`, { responseType: 'arraybuffer' })
 
-        await message.client.sendMessage(message.jid,Buffer.from(respoimage.data), MessageType.image, {quoted: message.data}, {mimetype: Mimetype.png, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'})
+        await message.client.sendMessage(message.jid,Buffer.from(respoimage.data), MessageType.image, {quoted: message.data}, {mimetype: Mimetype.png}, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ')
 
     }));
 }
