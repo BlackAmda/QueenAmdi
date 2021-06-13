@@ -39,9 +39,9 @@
             "ALREADY_NOT_ADMIN": "```දැනටමත් admin නොවන කෙනෙකු admin නොකරන්නේ කෙසේද?```",
             "DEMOTED": "```, admin බලතල ඉවත් කර ඇත!```",
             "MUTE_DESC": "කණ්ඩායම් chat නිශ්ශබ්ද කිරීමට. පණිවිඩයක් යැවිය හැක්කේ adminට පමණි. Example : .mute 10m",
-            "MUTED": "```කණ්ඩායම් chat නිශ්ශබ්ද විය!```",
+            "MUTED": "```කණ්ඩායම් chat mute විය!```",
             "UNMUTE_DESC": "කණ්ඩායම් chat නිශ්ශබ්ද ඉවත් කරන්න. ඕනෑම කෙනෙකුට පණිවිඩයක් යැවිය හැකිය.",
-            "UNMUTED": "```කණ්ඩායම් කතාබහ නිශ්ශබ්ද වී ඇත!```",
+            "UNMUTED": "```කණ්ඩායම් chat unmute කර ඇත!```",
             "INVITE_DESC": "කණ්ඩායමේ invite සපයයි.",
             "INVITE": "```Invitation link: ```"
         },
