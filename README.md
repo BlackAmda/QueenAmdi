@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://cdn.dribbble.com/users/812421/screenshots/3572056/peerlink_bot_dribbble_shot-01.png?compress=1&resize=400x300" width="360" height="360">
+  <img src="https://cdn.dribbble.com/users/812421/screenshots/3572056/peerlink_bot_dribbble_shot-01.png?compress=1&resize=400x300" width="400" height="300">
   <h1>👸💎 QUEEN AMDI BOT 💎👸</h1>
 </div>
 <p align="center">
