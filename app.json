@@ -17,9 +17,9 @@
             "required": false
         },
         "LANGUAGE": {
-            "description": "Bot භාෂාව.English භාෂාව සඳහ EN ලෙසද, සිංහල භාෂාව සඳහා SI ලෙසද සඳහන් කරන්න. ",
+            "description": "Bot භාෂාව.සිංහල භාෂාව සඳහා En ලෙස සඳහන් කරන්න. ",
             "required": true,
-            "value": "SI"
+            "value": "En"
         },
         "HANDLERS": {
             "description": "Bot ගේ ක්‍රියාකාරිත්වය සඳහා යෙදිය යුතු සලකුනු",
