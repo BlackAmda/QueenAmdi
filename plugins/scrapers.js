@@ -60,7 +60,7 @@ if (config.WORKTYPE == 'private') {
             + '*◀️ ' + Lang.FROM + '*: ```' + (match[2] === '' ? config.LANG : match[2]) + '```\n'
             + '*🔎 ' + Lang.RESULT + ':* ```' + ceviri.text + '```');
         } else {
-            return await message.client.sendMessage(message.jid,Lang.TRANSLATE_ERROR,MessageType.text)
+            return await message.client.sendMessage(message.jid,Lang.TRANSLATE_ERROR,MessageType.text, {quoted: message.data})
         }
     }));
 
@@ -72,7 +72,7 @@ if (config.WORKTYPE == 'private') {
         }
 
         if(match[1] === undefined || match[2] == undefined || match[3] == undefined) {
-            return await message.client.sendMessage(message.jid,Lang.CURRENCY_ERROR,MessageType.text);
+            return await message.client.sendMessage(message.jid,Lang.CURRENCY_ERROR,MessageType.text, {quoted: message.data});
         }
         let opts = {
             amount: parseFloat(match[1]).toFixed(2).replace(/\.0+$/,''),
@@ -86,7 +86,7 @@ if (config.WORKTYPE == 'private') {
         }
         catch(err) {
             if (err instanceof ExchangeRatesError) 
-                await message.client.sendMessage(message.jid,Lang.INVALID_CURRENCY,MessageType.text)
+                await message.client.sendMessage(message.jid,Lang.INVALID_CURRENCY,MessageType.text, {quoted: message.data})
             else {
                 await message.client.sendMessage(message.jid,Lang.UNKNOWN_ERROR,MessageType.text)
                 console.log(err)
@@ -122,7 +122,7 @@ if (config.WORKTYPE == 'private') {
             text: ttsMessage,
             voice: LANG
         });
-        await message.client.sendMessage(message.jid,buffer, MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: true});
+        await message.client.sendMessage(message.jid,buffer, MessageType.audio, {quoted: message.data}, {mimetype: Mimetype.mp4Audio, ptt: true});
     }));
 
     Asena.addCommand({pattern: 'song ?(.*)', fromMe: true, desc: Lang.SONG_DESC}, (async (message, match) => { 
@@ -132,7 +132,7 @@ if (config.WORKTYPE == 'private') {
             return;
         }
 
-        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_TEXT_SONG,MessageType.text);    
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_TEXT_SONG,MessageType.text, {quoted: message.data});    
         let arama = await yts(match[1]);
         arama = arama.all;
         if(arama.length < 1) return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text);
@@ -159,7 +159,7 @@ if (config.WORKTYPE == 'private') {
                 writer.addTag();
 
                 reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_SONG,MessageType.text);
-                await message.client.sendMessage(message.jid,Buffer.from(writer.arrayBuffer), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: false});
+                await message.client.sendMessage(message.jid,Buffer.from(writer.arrayBuffer), MessageType.audio, {quoted: message.data}, {mimetype: Mimetype.mp4Audio, ptt: false});
             });
     }));
 
@@ -185,7 +185,7 @@ if (config.WORKTYPE == 'private') {
 
         yt.on('end', async () => {
             reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_VIDEO,MessageType.text);
-            await message.client.sendMessage(message.jid,fs.readFileSync('./' + arama.videoId + '.mp4'), MessageType.video, {mimetype: Mimetype.mp4});
+            await message.client.sendMessage(message.jid,fs.readFileSync('./' + arama.videoId + '.mp4'), MessageType.video, {quoted: message.data}, {mimetype: Mimetype.mp4});
         });
     }));
 
@@ -210,7 +210,7 @@ if (config.WORKTYPE == 'private') {
             mesaj += '*' + video.title + '* - ' + video.url + '\n'
         });
 
-        await message.client.sendMessage(message.jid,mesaj,MessageType.text);
+        await message.client.sendMessage(message.jid,mesaj,MessageType.text, {quoted: message.data});
         await reply.delete();
     }));
 
@@ -228,7 +228,7 @@ if (config.WORKTYPE == 'private') {
             .page(match[1]);
 
         var info = await arama.rawContent();
-        await message.client.sendMessage(message.jid, info, MessageType.text);
+        await message.client.sendMessage(message.jid, info, MessageType.text, {quoted: message.data});
         await reply.delete();
     }));
 
@@ -324,7 +324,7 @@ else if (config.WORKTYPE == 'public') {
             + '*◀️ ' + Lang.FROM + '*: ```' + (match[2] === '' ? config.LANG : match[2]) + '```\n'
             + '*🔎 ' + Lang.RESULT + ':* ```' + ceviri.text + '```');
         } else {
-            return await message.client.sendMessage(message.jid,Lang.TRANSLATE_ERROR,MessageType.text)
+            return await message.client.sendMessage(message.jid,Lang.TRANSLATE_ERROR,MessageType.text, {quoted: message.data})
         }
     }));
 
@@ -350,9 +350,9 @@ else if (config.WORKTYPE == 'public') {
         }
         catch(err) {
             if (err instanceof ExchangeRatesError) 
-                await message.client.sendMessage(message.jid,Lang.INVALID_CURRENCY,MessageType.text)
+                await message.client.sendMessage(message.jid,Lang.INVALID_CURRENCY,MessageType.text, {quoted: message.data})
             else {
-                await message.client.sendMessage(message.jid,Lang.UNKNOWN_ERROR,MessageType.text)
+                await message.client.sendMessage(message.jid,Lang.UNKNOWN_ERROR,MessageType.text, {quoted: message.data})
                 console.log(err)
             }
         }
@@ -386,7 +386,7 @@ else if (config.WORKTYPE == 'public') {
             text: ttsMessage,
             voice: LANG
         });
-        await message.client.sendMessage(message.jid,buffer, MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: true});
+        await message.client.sendMessage(message.jid,buffer, MessageType.audio, {quoted: message.data}, {mimetype: Mimetype.mp4Audio, ptt: true});
     }));
 
     Asena.addCommand({pattern: 'song ?(.*)', fromMe: false, desc: Lang.SONG_DESC}, (async (message, match) => { 
@@ -396,11 +396,11 @@ else if (config.WORKTYPE == 'public') {
             return;
         }
 
-        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_TEXT_SONG,MessageType.text);    
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_TEXT_SONG,MessageType.text, {quoted: message.data});    
         let arama = await yts(match[1]);
         arama = arama.all;
         if(arama.length < 1) return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text);
-        var reply = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_SONG,MessageType.text);
+        var reply = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_SONG,MessageType.text, {quoted: message.data});
 
         let title = arama[0].title.replace(' ', '+');
         let stream = ytdl(arama[0].videoId, {
@@ -422,8 +422,8 @@ else if (config.WORKTYPE == 'public') {
                     });
                 writer.addTag();
 
-                reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_SONG,MessageType.text);
-                await message.client.sendMessage(message.jid,Buffer.from(writer.arrayBuffer), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: false});
+                reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_SONG,MessageType.text, {quoted: message.data});
+                await message.client.sendMessage(message.jid,Buffer.from(writer.arrayBuffer), MessageType.audio, {quoted: message.data}, {mimetype: Mimetype.mp4Audio, ptt: false});
             });
     }));
 
@@ -434,7 +434,7 @@ else if (config.WORKTYPE == 'public') {
             return;
         }
 
-        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);    
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text, {quoted: message.data});    
     
         try {
             var arama = await yts({videoId: ytdl.getURLVideoID(match[1])});
@@ -442,14 +442,14 @@ else if (config.WORKTYPE == 'public') {
             return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text);
         }
 
-        var reply = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_VIDEO,MessageType.text);
+        var reply = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_VIDEO,MessageType.text, {quoted: message.data});
 
         var yt = ytdl(arama.videoId, {filter: format => format.container === 'mp4' && ['720p', '480p', '360p', '240p', '144p'].map(() => true)});
         yt.pipe(fs.createWriteStream('./' + arama.videoId + '.mp4'));
 
         yt.on('end', async () => {
-            reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_VIDEO,MessageType.text);
-            await message.client.sendMessage(message.jid,fs.readFileSync('./' + arama.videoId + '.mp4'), MessageType.video, {mimetype: Mimetype.mp4});
+            reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_VIDEO,MessageType.text, {quoted: message.data});
+            await message.client.sendMessage(message.jid,fs.readFileSync('./' + arama.videoId + '.mp4'), MessageType.video, {quoted: message.data}, {mimetype: Mimetype.mp4});
         });
     }));
 
@@ -460,13 +460,13 @@ else if (config.WORKTYPE == 'public') {
             return;
         }
 
-        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text);    
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text, {quoted: message.data});    
         var reply = await message.client.sendMessage(message.jid,Lang.GETTING_VIDEOS,MessageType.text);
 
         try {
             var arama = await yts(match[1]);
         } catch {
-            return await message.client.sendMessage(message.jid,Lang.NOT_FOUND,MessageType.text);
+            return await message.client.sendMessage(message.jid,Lang.NOT_FOUND,MessageType.text, {quoted: message.data});
         }
     
         var mesaj = '';
@@ -474,7 +474,7 @@ else if (config.WORKTYPE == 'public') {
             mesaj += '*' + video.title + '* - ' + video.url + '\n'
         });
 
-        await message.client.sendMessage(message.jid,mesaj,MessageType.text);
+        await message.client.sendMessage(message.jid,mesaj,MessageType.text, {quoted: message.data});
         await reply.delete();
     }));
 
