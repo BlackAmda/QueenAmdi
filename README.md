@@ -111,6 +111,7 @@ Queen Amdi bot යනු සංවර්ධනය සඳහා විවෘත �
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://repl.it/@phaticusthiccy/WhatsAsena-QR)
 
 If you are mobile user. You can get QR code by using termux. (Android only. IOS users have to use repl.it button)
+
 Termux:
 
 $ `bash <(curl -L https://t.ly/tHxh)`
@@ -151,7 +152,7 @@ By establishing the Queen Amdi, you are deemed to have accepted these responsibi
 ## Developers
 
 [![Black Amda](https://github.com/BlackAmda.png?size=100)](https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ)
-----|----|----|----|----
+
 [Black Amda](https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ)
 
 ## License
