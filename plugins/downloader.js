@@ -4,11 +4,11 @@ const got = require('got');
 const fs = require('fs');
 const axios = require('axios');
 const { errorMessage, infoMessage } = require('../helpers');
-const IG_DESC = "Downloads Image/Video From Instagram"
+const IG_DESC = "Instagram වෙතින් රූපය / වීඩියෝ බාගන්න"
 const NEED_WORD = "Must Enter a link"
-const FBDESC = "Downloads Video From FaceBook"
-const LOADING = "Downloading the Video..."
-const NOT_FOUNDFB = "Video Not Found"
+const FBDESC = "ෆේස්බුක් වෙතින් වීඩියෝ බාගත කරයි"
+const LOADING = "වීඩියෝ බාගත කිරීම..."
+const NOT_FOUNDFB = "වීඩියෝව හමු නොවීය"
 const CAPTION = "Caption"
 
 Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: false, desc: IG_DESC}, async (message, match) => {
@@ -17,7 +17,7 @@ Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: false, desc: IG_DESC}, async (me
 
     if (!userName) return await message.sendMessage(errorMessage(NEED_WORD))
 
-    await message.sendMessage(infoMessage("Downloading the Post..."))
+    await message.sendMessage(infoMessage("Post බාගත කිරීම..."))
 
     await axios
       .get(`https://api-anoncybfakeplayer.herokuapp.com/igdown?url=${userName}`)
@@ -31,18 +31,18 @@ Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: false, desc: IG_DESC}, async (me
 
         const msg = `${type}`
 
-	 if (msg === 'image') { await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
-          caption: "Made By WhatsAsenaPublic"
+	 if (msg === 'image') { await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {quoted: message.data}, {
+          caption: "Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ"
         })}
 		 	 
-	if (msg === 'video') { await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
-          caption: "Made By WhatsAsenaPublic"
+	if (msg === 'video') { await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {quoted: message.data}, {
+          caption: "Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ"
         })}
 	
         
       })
       .catch(
-        async (err) => await message.sendMessage(errorMessage("Invaild Link, Please Enter a Vaild Instagram Link")),
+        async (err) => await message.sendMessage(errorMessage("කරුණාකර වලංගු Instagram link ඇතුළත් කරන්න")),
       )
   },
 )
@@ -70,8 +70,8 @@ Asena.addCommand({ pattern: 'fb ?(.*)', fromMe: false, desc: FBDESC }, async (me
 
         const msg = `*${CAPTION}*: ${judul}`
 
-        await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
-          caption: "Made By WhatsAsenaPublic"
+        await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {quoted: message.data}, {
+          caption: "Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ"
         })
       })
       .catch(
