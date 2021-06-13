@@ -106,11 +106,11 @@ Queen Amdi bot යනු සංවර්ධනය සඳහා විවෘත �
 ## Setup
 
 ### Simple Method
-#### 01. Click Run on Repl.it and Run the qr generator by clicking play button.
+#### 01. Click Run on Repl.it (Computer users) and Run the qr generator by clicking play button.
 
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://repl.it/@phaticusthiccy/WhatsAsena-QR)
 
-If you are mobile user. You can get QR code by using termux. (Android only. IOS users have to use repl.it button)
+#### If you are mobile user. You can get QR code by using termux. (Android only. IOS users have to use repl.it button)
 
 Termux:
 
