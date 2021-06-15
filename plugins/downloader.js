@@ -20,7 +20,7 @@ Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: false, desc: IG_DESC}, async (me
     await message.sendMessage(infoMessage("Post බාගත කිරීම..."))
 
     await axios
-      .get(`https://api-anoncybfakeplayer.herokuapp.com/igdown?url=${userName}`)
+	.get(`https://api.xteam.xyz/dl/ig?url=${userName}&APIKEY=ab9942f95c09ca89`)
       .then(async (response) => {
         const {
           url,
@@ -59,7 +59,7 @@ Asena.addCommand({ pattern: 'fb ?(.*)', fromMe: false, desc: FBDESC }, async (me
     await message.sendMessage(infoMessage(LOADING))
 
     await axios
-      .get(`https://videfikri.com/api/fbdl/?urlfb=${userName}`)
+	.get(`https://api.xteam.xyz/dl/fb?url=${userName}&APIKEY=ab9942f95c09ca89`)
       .then(async (response) => {
         const {
           url,
