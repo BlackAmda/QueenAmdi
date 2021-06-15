@@ -199,6 +199,7 @@
         "system_stats": {
             "ALIVE_DESC": "බොට් වැඩ කරන්නේ නැද්ද යන්න පරීක්ෂා කිරීමට?",
             "SYSD_DESC": "System properties පෙන්වයි."
+            "PATCH_DESC": "නව commands සහ ඒවාගෙන් ලබා ගතහැකි ප්‍රයෝජන දැන ගැනීමට."
         },
         "tagall": {
             "TAGALL_DESC": "කණ්ඩායමේ සිටින සියල්ලන් ටැග් කරයි.",
