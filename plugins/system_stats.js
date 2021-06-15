@@ -42,8 +42,7 @@ if (Config.WORKTYPE == 'private') {
 
         if (Config.PATCHNOTE == 'default') {
        
-            await message.client.sendMessage(message.jid, '', MessageType.text);
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```👸💎 Hey There! I'm Online now. 😙```\n\n*Version:* ```v1.4 - Stable```\n\n*Developer:* ```Black Amda```\n\n*WhatsApp Support Group :* https://chat.whatsapp.com/Hkm79J2sapyLGD0rvRTfkq\n\n```Thank You For Using Queen Amdi💞```"})
+            await message.client.sendMessage(message.jid, '🇱🇰 ⬆️ ```Queen Amdi Patch Note – 1.4V``` ⬆️🇱🇰\n\n🆕 *New features :*\n╠◪ .barcode : *Added* text to barcode.\n╠◪ .pemoji : *Added* emoji to picture.\n╠◪ .lionlogo : *Added* lion logo maker.\n╠◪ .jokerlogo : *Added* joker logo maker.\n˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭\n⚙️ *Fixes :*\n╠◪ .ig <url> : Instagram downloader *fixed.*\n╠◪ .fb <url> : Facebook downloader *fixed.*\n╠◪ .sandwriting : Text to sand writing image *fixed.*\n╠◪ .cloud : Text to cloud writing image *fixed.*\n˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭\nCheck github : https://github.com/BlackAmda/QueenAmdi', MessageType.text);
     }
     }));
 
@@ -77,6 +76,14 @@ else if (Config.WORKTYPE == 'public') {
        
         await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: Config.ALIVEMSG + '\n\n*Copyright © 2021 | Queen Amdi*' })
      }
+    }));
+    
+     Asena.addCommand({pattern: 'patch', fromMe: true, desc: Lang.PATCH_DESC}, (async (message, match) => {
+
+        if (Config.PATCHNOTE == 'default') {
+       
+            await message.client.sendMessage(message.jid, '🇱🇰 ⬆️ ```Queen Amdi Patch Note – 1.4V``` ⬆️🇱🇰\n\n🆕 *New features :*\n╠◪ .barcode : *Added* text to barcode.\n╠◪ .pemoji : *Added* emoji to picture.\n╠◪ .lionlogo : *Added* lion logo maker.\n╠◪ .jokerlogo : *Added* joker logo maker.\n˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭\n⚙️ *Fixes :*\n╠◪ .ig <url> : Instagram downloader *fixed.*\n╠◪ .fb <url> : Facebook downloader *fixed.*\n╠◪ .sandwriting : Text to sand writing image *fixed.*\n╠◪ .cloud : Text to cloud writing image *fixed.*\n˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭ ˭\nCheck github : https://github.com/BlackAmda/QueenAmdi', MessageType.text);
+    }
     }));
 
     Asena.addCommand({pattern: 'sysd', fromMe: false, desc: Lang.SYSD_DESC}, (async (message, match) => {
