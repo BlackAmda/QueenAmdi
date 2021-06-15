@@ -12,7 +12,7 @@ if (Config.WORKTYPE == 'private') {
 
     Asena.addCommand({pattern: 'effectimg', fromMe: true, desc: EFFECT_DESC}, (async (message, match) => {    
 
-    await message.sendMessage('💻Usage: *.glitch*\nℹ️Desc: එය සපයා ඇති text glitch style රූපයක් යවයි.\nඔබ විසින් වෙන් කරන ලද Top සහ bottom text ඇතුළත් කළ යුතුය Ex: .glitch Black/Amda*/* in order!.\n\n💻Usage: *.pornhub*\nℹ️Desc: එය සපයා ඇති text කළු පැහැති තැඹිලි පාට රූපයක් යවයි.\nYou must enter the heading and subheading seperated by */* in order!.\n\n💻Usage: *.sandwriting*\nℹ️Desc: It Sends a sand image of the text provided.\n\n💻Usage: *.blackpink*\nℹ️Desc: It Sends a blackish pink image of the text provided.\n\n💻Usage: *.blood*\nℹ️Desc: It Sends a blood image of the text provided.\n\n💻Usage: *.snow*\nℹ️Desc: It Sends a snow image of the text provided.\n\n💻Usage: *.cloud*\nℹ️Desc: It Sends a sky image of the text provided\n\n💻Usage: *.barcode*\nℹ️Desc: It give you a barcode of ur text.\n\n💻Usage: *.pemoji*\nℹ️Desc: Converts the emoji into picture.\n\n💻Usage: *.sparkling*\nℹ️Desc: Converts the text into a sparkling themed image\nYou must enter the heading and subheading seperated by */* in order!\n\n💻Usage: *.watercolour*\nℹ️Desc: Converts the text into a watercolour themed image.\n\n💻Usage: *.ninjalogo*\nℹ️Desc: Enters the text as the caption for a ninja themed logo.\n\n💻Usage: *.neonlight*\nℹ️Desc: Converts the text into a neonlight themed image.\n\n💻Usage: *.3dtext*\nℹ️Desc: Converts the provided text into a 3D style image.');
+    await message.sendMessage('💻Usage: *.glitch*\nℹ️Desc: එය සපයා ඇති text glitch style රූපයක් යවයි.\nඔබ විසින් වෙන් කරන ලද Top සහ bottom text ඇතුළත් කළ යුතුය Ex: .glitch Black/Amda*/* in order!.\n\n💻Usage: *.pornhub*\nℹ️Desc: එය සපයා ඇති text කළු පැහැති තැඹිලි පාට රූපයක් යවයි.\nYou must enter the heading and subheading seperated by */* in order!.\n\n💻Usage: *.sandwriting*\nℹ️Desc: It Sends a sand image of the text provided.\n\n💻Usage: *.blackpink*\nℹ️Desc: It Sends a blackish pink image of the text provided.\n\n💻Usage: *.blood*\nℹ️Desc: It Sends a blood image of the text provided.\n\n💻Usage: *.snow*\nℹ️Desc: It Sends a snow image of the text provided.\n\n💻Usage: *.cloud*\nℹ️Desc: It Sends a sky image of the text provided\n\n💻Usage: *.barcode*\nℹ️Desc: It give you a barcode of ur text.\n\n💻Usage: *.pemoji*\nℹ️Desc: Converts the emoji into picture.\n\n💻Usage: *.sparkling*\nℹ️Desc: Converts the text into a sparkling themed image\nYou must enter the heading and subheading seperated by */* in order!\n\n💻Usage: *.watercolour*\nℹ️Desc: Converts the text into a watercolour themed image.\n\n💻Usage: *.ninjalogo*\nℹ️Desc: Enters the text as the caption for a ninja themed logo.\n\n💻Usage: *.jokerlogo*\nℹ️Desc: Enters the text as the caption for a joker themed logo.\n\n💻Usage: *.lionlogo*\nℹ️Desc: Enters the text as the caption for a lion themed logo.\n\n💻Usage: *.neonlight*\nℹ️Desc: Converts the text into a neonlight themed image.\n\n💻Usage: *.3dtext*\nℹ️Desc: Converts the provided text into a 3D style image.');
 
     }));
 
@@ -44,11 +44,17 @@ if (Config.WORKTYPE == 'private') {
     }));
 
 
-    Asena.addCommand({pattern: 'wood ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    Asena.addCommand({pattern: 'lionlogo ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
+        
+     var topText, bottomText;
+    if (match[1].includes('/')) {
+        var split = match[1].split('/');
+        bottomText = split[1];
+        topText = split[0];
 
-    var webimage = await axios.get(`https://videfikri.com/api/textmaker/woodblock/?text=${match[1]}`, { responseType: 'arraybuffer' })
+    var webimage = await axios.get(`https://api.xteam.xyz/textpro/lionlogomascot?text=${topText}&text2=${bottomText}&APIKEY=ab9942f95c09ca89`, { responseType: 'arraybuffer' })
 
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'})
 
@@ -81,11 +87,11 @@ if (Config.WORKTYPE == 'private') {
 
     }));
 
-    Asena.addCommand({pattern: 'underwater ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    Asena.addCommand({pattern: 'jokerlogo ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
-    var webimage = await axios.get(`https://videfikri.com/api/textmaker/underwater/?text=${match[1]}`, { responseType: 'arraybuffer' })
+    var webimage = await axios.get(`https://api.xteam.xyz/textpro/jokerlogo?text=${match[1]}&APIKEY=ab9942f95c09ca89`, { responseType: 'arraybuffer' })
 
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'})
 
@@ -299,7 +305,7 @@ else if (Config.WORKTYPE == 'public') {
 
     Asena.addCommand({pattern: 'effectimg', fromMe: false, desc: EFFECT_DESC}, (async (message, match) => {    
 
-    await message.sendMessage('💻Usage: *.glitch*\nℹ️Desc: එය සපයා ඇති text glitch style රූපයක් යවයි.\nඔබ විසින් වෙන් කරන ලද Top සහ bottom text ඇතුළත් කළ යුතුය Ex: .glitch Black/Amda*/* in order!.\n\n💻Usage: *.pornhub*\nℹ️Desc: එය සපයා ඇති text කළු පැහැති තැඹිලි පාට රූපයක් යවයි.\nYou must enter the heading and subheading seperated by */* in order!.\n\n💻Usage: *.sandwriting*\nℹ️Desc: It Sends a sand image of the text provided.\n\n💻Usage: *.blackpink*\nℹ️Desc: It Sends a blackish pink image of the text provided.\n\n💻Usage: *.blood*\nℹ️Desc: It Sends a blood image of the text provided.\n\n💻Usage: *.snow*\nℹ️Desc: It Sends a snow image of the text provided.\n\n💻Usage: *.cloud*\nℹ️Desc: It Sends a sky image of the text provided\n\n💻Usage: *.barcode*\nℹ️Desc: It give you a barcode of ur text.\n\n💻Usage: *.pemoji*\nℹ️Desc: Converts the emoji into picture.\n\n💻Usage: *.sparkling*\nℹ️Desc: Converts the text into a sparkling themed image\nYou must enter the heading and subheading seperated by */* in order!\n\n💻Usage: *.watercolour*\nℹ️Desc: Converts the text into a watercolour themed image.\n\n💻Usage: *.ninjalogo*\nℹ️Desc: Enters the text as the caption for a ninja themed logo.\n\n💻Usage: *.neonlight*\nℹ️Desc: Converts the text into a neonlight themed image.\n\n💻Usage: *.3dtext*\nℹ️Desc: Converts the provided text into a 3D style image.');
+    await message.sendMessage('💻Usage: *.glitch*\nℹ️Desc: එය සපයා ඇති text glitch style රූපයක් යවයි.\nඔබ විසින් වෙන් කරන ලද Top සහ bottom text ඇතුළත් කළ යුතුය Ex: .glitch Black/Amda*/* in order!.\n\n💻Usage: *.pornhub*\nℹ️Desc: එය සපයා ඇති text කළු පැහැති තැඹිලි පාට රූපයක් යවයි.\nYou must enter the heading and subheading seperated by */* in order!.\n\n💻Usage: *.sandwriting*\nℹ️Desc: It Sends a sand image of the text provided.\n\n💻Usage: *.blackpink*\nℹ️Desc: It Sends a blackish pink image of the text provided.\n\n💻Usage: *.blood*\nℹ️Desc: It Sends a blood image of the text provided.\n\n💻Usage: *.snow*\nℹ️Desc: It Sends a snow image of the text provided.\n\n💻Usage: *.cloud*\nℹ️Desc: It Sends a sky image of the text provided\n\n💻Usage: *.barcode*\nℹ️Desc: It give you a barcode of ur text.\n\n💻Usage: *.pemoji*\nℹ️Desc: Converts the emoji into picture.\n\n💻Usage: *.sparkling*\nℹ️Desc: Converts the text into a sparkling themed image\nYou must enter the heading and subheading seperated by */* in order!\n\n💻Usage: *.watercolour*\nℹ️Desc: Converts the text into a watercolour themed image.\n\n💻Usage: *.ninjalogo*\nℹ️Desc: Enters the text as the caption for a ninja themed logo.\n\n💻Usage: *.jokerlogo*\nℹ️Desc: Enters the text as the caption for a joker themed logo.\n\n💻Usage: *.lionlogo*\nℹ️Desc: Enters the text as the caption for a lion themed logo.\n\n💻Usage: *.neonlight*\nℹ️Desc: Converts the text into a neonlight themed image.\n\n💻Usage: *.3dtext*\nℹ️Desc: Converts the provided text into a 3D style image.');
 
     }));
 
@@ -331,11 +337,17 @@ else if (Config.WORKTYPE == 'public') {
     }));
 
 
-    Asena.addCommand({pattern: 'wood ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    Asena.addCommand({pattern: 'lionlogo ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
+        
+     var topText, bottomText;
+    if (match[1].includes('/')) {
+        var split = match[1].split('/');
+        bottomText = split[1];
+        topText = split[0];
 
-    var webimage = await axios.get(`https://videfikri.com/api/textmaker/woodblock/?text=${match[1]}`, { responseType: 'arraybuffer' })
+    var webimage = await axios.get(`https://api.xteam.xyz/textpro/lionlogomascot?text=${topText}&text2=${bottomText}&APIKEY=ab9942f95c09ca89`, { responseType: 'arraybuffer' })
 
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'})
 
@@ -368,11 +380,11 @@ else if (Config.WORKTYPE == 'public') {
 
     }));
 
-    Asena.addCommand({pattern: 'underwater ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    Asena.addCommand({pattern: 'jokerlogo ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
-    var webimage = await axios.get(`https://videfikri.com/api/textmaker/underwater/?text=${match[1]}`, { responseType: 'arraybuffer' })
+    var webimage = await axios.get(`https://api.xteam.xyz/textpro/jokerlogo?text=${match[1]}&APIKEY=ab9942f95c09ca89`, { responseType: 'arraybuffer' })
 
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'})
 
