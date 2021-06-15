@@ -37,6 +37,15 @@ if (Config.WORKTYPE == 'private') {
         await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: Config.ALIVEMSG + '\n\n*Copyright © 2021 | Queen Amdi*' })
      }
     }));
+    
+    Asena.addCommand({pattern: 'patch', fromMe: true, desc: Lang.PATCH_DESC}, (async (message, match) => {
+
+        if (Config.PATCHNOTE == 'default') {
+       
+            await message.client.sendMessage(message.jid, '', MessageType.text);
+        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```👸💎 Hey There! I'm Online now. 😙```\n\n*Version:* ```v1.4 - Stable```\n\n*Developer:* ```Black Amda```\n\n*WhatsApp Support Group :* https://chat.whatsapp.com/Hkm79J2sapyLGD0rvRTfkq\n\n```Thank You For Using Queen Amdi💞```"})
+    }
+    }));
 
     Asena.addCommand({pattern: 'sysd', fromMe: true, desc: Lang.SYSD_DESC}, (async (message, match) => {
 
