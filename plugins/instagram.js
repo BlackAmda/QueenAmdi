@@ -45,26 +45,29 @@ if (cn.WORKTYPE == 'private') {
         await message.sendMessage(infoMessage(Lang.LOADING))
 
         await axios
-          .get(`https://videfikri.com/api/igstalk/?username=${userName}`)
+          .get(`https://docs-jojo.herokuapp.com/api/stalk?username=${userName}`)
           .then(async (response) => {
             const {
-              profile_hd,
               username,
-              bio,
+              biography,
+              external_url,
               followers,
               following,
-              full_name,
+              name,
+              category_name,
               is_private,
+              is_verified,
+              profile_pic,
             } = response.data.result
 
-            const profileBuffer = await axios.get(profile_hd, {
+            const profileBuffer = await axios.get(profile_pic, {
               responseType: 'arraybuffer',
             })
 
             const msg = `
-            *${Lang.NAME}*: ${full_name}
+            *${Lang.NAME}*: ${name}
             *${Lang.USERNAME}*: ${username}
-            *${Lang.BIO}*: ${bio}
+            *${Lang.BIO}*: ${biography}
             *${Lang.FOLLOWERS}*: ${followers}
             *${Lang.FOLLOWS}*: ${following}
             *${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`
@@ -99,13 +102,16 @@ else if (cn.WORKTYPE == 'public') {
           .get(`https://videfikri.com/api/igstalk/?username=${userName}`)
           .then(async (response) => {
             const {
-              profile_hd,
               username,
-              bio,
+              biography,
+              external_url,
               followers,
               following,
-              full_name,
+              name,
+              category_name,
               is_private,
+              is_verified,
+              profile_pic,
             } = response.data.result
 
             const profileBuffer = await axios.get(profile_hd, {
@@ -113,9 +119,9 @@ else if (cn.WORKTYPE == 'public') {
             })
 
             const msg = `
-            *${Lang.NAME}*: ${full_name}
+            *${Lang.NAME}*: ${name}
             *${Lang.USERNAME}*: ${username}
-            *${Lang.BIO}*: ${bio}
+            *${Lang.BIO}*: ${biography}
             *${Lang.FOLLOWERS}*: ${followers}
             *${Lang.FOLLOWS}*: ${following}
             *${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`
