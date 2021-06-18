@@ -30,8 +30,8 @@ if (Config.WORKTYPE == 'private') {
         var topText, bottomText;
         if (match[1].includes(';')) {
             var split = match[1].split(';');
-            topText = split[1];
-            bottomText = split[0];
+            bottomText = split[1];
+            topText = split[0];
         }
 	    else {
             topText = match[1];
@@ -50,12 +50,12 @@ if (Config.WORKTYPE == 'private') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'asena-meme.png',
+            outfile: 'ammo-meme.png',
             topText: topText,
             bottomText: bottomText,
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('asena-meme.png'), MessageType.image, {filename: 'asena-meme.png', mimetype: Mimetype.png, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'});
+            await message.client.sendMessage(message.jid, fs.readFileSync('ammo-meme.png'), MessageType.image, {filename: 'ammo-meme.png', mimetype: Mimetype.png, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'});
             await info.delete();    
         });
     }));
@@ -74,8 +74,8 @@ else if (Config.WORKTYPE == 'public') {
         var topText, bottomText;
         if (match[1].includes(';')) {
             var split = match[1].split(';');
-            topText = split[1];
-            bottomText = split[0];
+            bottomText = split[1];
+            topText = split[0];
         }
 	    else {
             topText = match[1];
@@ -94,12 +94,12 @@ else if (Config.WORKTYPE == 'public') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'asena-meme.png',
+            outfile: 'ammo-meme.png',
             topText: topText,
             bottomText: bottomText,
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('asena-meme.png'), MessageType.image, {filename: 'asena-meme.png', mimetype: Mimetype.png, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'});
+            await message.client.sendMessage(message.jid, fs.readFileSync('ammo-meme.png'), MessageType.image, {filename: 'ammo-meme.png', mimetype: Mimetype.png, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'});
             await info.delete();    
         });
     }));
