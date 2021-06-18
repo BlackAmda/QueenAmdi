@@ -37,16 +37,16 @@ if (cn.WORKTYPE == 'private') {
             return;
         }
 
-
         const userName = match[1]
 
-        if (!userName) return await message.sendMessage(errorMessage(Lang.NEED_WORD))
+        if (userName === '') return await message.client.sendMessage(errorMessage(Lang.NEED_WORD))
 
         await message.sendMessage(infoMessage(Lang.LOADING))
 
         await axios
           .get(`https://docs-jojo.herokuapp.com/api/stalk?username=${userName}`)
           .then(async (response) => {
+            
             const {
               username,
               biography,
@@ -64,14 +64,8 @@ if (cn.WORKTYPE == 'private') {
               responseType: 'arraybuffer',
             })
 
-            const msg = `
-            *${Lang.NAME}*: ${name}
-            *${Lang.USERNAME}*: ${username}
-            *${Lang.BIO}*: ${biography}
-            *${Lang.FOLLOWERS}*: ${followers}
-            *${Lang.FOLLOWS}*: ${following}
-            *${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`
-
+            const msg = `*${Lang.NAME}*: ${name} \n*${Lang.USERNAME}*: ${username} \n*${Lang.BIO}*: ${biography} \n*${Lang.FOLLOWERS}*: ${followers} \n*${Lang.FOLLOWS}*: ${following} \n*${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`);
+            
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
               caption: msg,
             })
@@ -118,14 +112,8 @@ else if (cn.WORKTYPE == 'public') {
               responseType: 'arraybuffer',
             })
 
-            const msg = `
-            *${Lang.NAME}*: ${name}
-            *${Lang.USERNAME}*: ${username}
-            *${Lang.BIO}*: ${biography}
-            *${Lang.FOLLOWERS}*: ${followers}
-            *${Lang.FOLLOWS}*: ${following}
-            *${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`
-
+            const msg = `*${Lang.NAME}*: ${name} \n*${Lang.USERNAME}*: ${username} \n*${Lang.BIO}*: ${biography} \n*${Lang.FOLLOWERS}*: ${followers} \n*${Lang.FOLLOWS}*: ${following} \n*${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`);
+                        
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
               caption: msg,
             })
