@@ -50,7 +50,7 @@ if (Config.WORKTYPE == 'private') {
         }
 
         ffmpeg(location)
-            .outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 512x512"])
+            .outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 600x600"])
             .save('sticker.webp')
             .on('end', async () => {
                 await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
@@ -90,7 +90,7 @@ else if (Config.WORKTYPE == 'public') {
         }
 
         ffmpeg(location)
-            .outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 512x512"])
+            .outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 600x600"])
             .save('sticker.webp')
             .on('end', async () => {
                 await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
