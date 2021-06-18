@@ -341,13 +341,13 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                     '*සිදු වූ දෝෂය:* ```' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false});
                             } else {
-                                await conn.sendMessage(conn.user.jid, '*-- ERROR REPORT [QUEEN AMDI] --*' + 
-                                    '\n*Bot දෝෂයක් සිදුවී ඇත!*'+
-                                    '\n_මෙම දෝෂ logs ඔබගේ අංකය හෝ ප්‍රති පාර්ශ්වයේ අංකය අඩංගු විය හැකිය. කරුණාකර එය සමග සැලකිලිමත් වන්න!_' +
+                                await conn.sendMessage(conn.user.jid, '*-- බොට් වාර්තාව [QUEEN AMDI] --*' + 
+                                    '\n*බොට් නිසි ලෙස ක්රියා කරයි.*'+
+                                    '\n_Message logs ඔබගේ අංකය හෝ ප්‍රති පාර්ශ්වයේ අංකය අඩංගු විය හැකිය. කරුණාකර එය සමග සැලකිලිමත් වන්න!_' +
                                     '\n_උදව් සඳහා ඔබට අපගේ whatsapp support කණ්ඩායමට ලිවිය හැකිය._' +
-                                    '\n_මෙම පණිවිඩය ඔබගේ අංකයට ගොස් තිබිය යුතුය (සුරකින ලද පණිවිඩ)_' +
-                                    '\n_https://chat.whatsapp.com/Hkm79J2sapyLGD0rvRTfkq ඔබට එය මෙම group යොමු කළ හැකිය._\n\n' +
-                                    '*Error:* ```' + error + '```\n\n'
+                                    '\n_(සුරකින ලද පණිවිඩ)_' +
+                                    '\n_ඔබේ bot සඳහා යම් උදව්වක් අවශ්‍ය නම්, https://chat.whatsapp.com/Hkm79J2sapyLGD0rvRTfkq_\n\n' +
+                                    '*Report:* ```' + error + '```\n\n'
                                     , MessageType.text);
                             }
                         }
