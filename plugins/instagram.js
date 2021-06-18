@@ -30,7 +30,7 @@ const Lang = Language.getString('instagram')
 
 if (cn.WORKTYPE == 'private') {
 
-    Asena.addCommand({ pattern: 'insta ?(.*)', fromMe: true, usage: Lang.USAGE, desc: Lang.DESC }, async (message, match) => {
+    Asena.addCommand({ pattern: 'readig ?(.*)', fromMe: true, usage: Lang.USAGE, desc: Lang.DESC }, async (message, match) => {
 
         if (message.jid === '905524317852-1612300121@g.us') {
 
@@ -81,7 +81,7 @@ if (cn.WORKTYPE == 'private') {
 }
 else if (cn.WORKTYPE == 'public') {
 
-    Asena.addCommand({ pattern: 'insta ?(.*)', fromMe: false, usage: Lang.USAGE, desc: Lang.DESC }, async (message, match) => {
+    Asena.addCommand({ pattern: 'readig ?(.*)', fromMe: false, usage: Lang.USAGE, desc: Lang.DESC }, async (message, match) => {
 
         if (message.jid === '905524317852-1612300121@g.us') {
 
