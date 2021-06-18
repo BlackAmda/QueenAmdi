@@ -135,7 +135,7 @@ $ `bash <(curl -L https://t.ly/tHxh)`
 
 #### 02. Click Deploy button
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BlackAmda/QueenAmdi)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BlackAmda/QueenAmdi/tree/Beta-1.5v)
 
 සිංහල tutorial ළඟදීම එළියට එනු ඇත : https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ
 
