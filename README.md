@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://cdn.dribbble.com/users/812421/screenshots/3572056/peerlink_bot_dribbble_shot-01.png?compress=1&resize=400x300" width="400" height="300">
+  <img src="https://cdn.dribbble.com/users/812421/screenshots/3572056/peerlink_bot_dribbble_shot-01.png?compress=1&resize=400x300" width="250" height="180">
   <h1>👸💎 QUEEN AMDI BOT 💎👸</h1>
 </div>
 <p align="center">
-    Makes it easy and fun to use Whatsapp. Also first userbot for Whatsapp
+    Whatsapp භාවිතා කිරීම පහසු සහ විනෝදජනක කරයි. Whatsapp සඳහා පළමු සිංහල පරිශීලක බොට් ද වේ.
     <br>
         <a href="https://chat.whatsapp.com/CE768WDzDoR3j6g2NxrpFZ">Whatsapp Group</a> |
         <a href="https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ">Youtube Channel</a>
@@ -60,9 +60,9 @@
   </a>
 </p>
 
-## Queen Amdi bot Features
+## Queen Amdi bot විශේෂාංග
 
-| All Features 📢|Available ☑️|Version 🔎|
+| සියලුම විශේෂාංග 📢| ☑️|Version 🔎|
 | ------------- | ------------ | ---------- |
 | Admin Commands|✅|1.0|
 | AFK|✅|1.2|
@@ -108,62 +108,62 @@ Queen Amdi bot යනු සංවර්ධනය සඳහා විවෘත �
 
 
 ## 📢 Guide
-> [New support & help group.](https://chat.whatsapp.com/CE768WDzDoR3j6g2NxrpFZ) (New)
+> [නව සහාය සහ උපකාරක whatsapp කණ්ඩායම.](https://chat.whatsapp.com/CE768WDzDoR3j6g2NxrpFZ) (New)
 
-> [Install Guide](https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki/%F0%9F%87%AC%F0%9F%87%A7-How-to-Setup-WhatsAsena)
+> [උපදෙස්](https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki/%F0%9F%87%AC%F0%9F%87%A7-How-to-Setup-WhatsAsena)
 
-## 🔎 What is AN Tech Bot?
-**AN Tech Bot,** is a WhatsApp helper bot.
+## 🔎 Queen Amdi bot යනු කුමක්ද?
+**Queen Amdi Bot,** WhatsApp උදව් බොට් කෙනකි.
 
 ## Setup
 
-### Simple Method
+### සරල ක්‍රමය
 #### 01. Click Run on Repl.it (Computer users) and Run the qr generator by clicking play button.
 
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://repl.it/@phaticusthiccy/WhatsAsena-QR)
 
-#### If you are mobile user. You can get QR code by using termux. (Android only. IOS users have to use repl.it button)
+#### ඔබ ජංගම ජංගම දුරකථන භාවිතා කරන්නෙක් නම්. Termux භාවිතා කිරීමෙන් ඔබට QR කේතය ලබා ගත හැකිය. (Android පමනි. IOS භාවිතා කරන්නන්ට repl.it button භාවිතා කළ යුතුය)
 
 Termux:
 
 $ `bash <(curl -L https://t.ly/tHxh)`
 
-`You need 2 devices to build the Queen Amdi bot!
-You will do the process from the second device. 
-You will only scan QR code with the first device.
-I mean by the first device is you want to install the Queen Amdi.`
+`Queen Amdi bot ගොඩනැගීමට ඔබට ජංගම දුරකථන 2 ක් අවශ්‍ය වේ!
+ඔබ දෙවන උපාංගයෙන් bot ක්‍රියා කරනු ඇත. 
+ඔබ පළමු උපාංගය සමඟ පමණක් QR කේතය generate කරනු ඇත.
+පළමු උපාංගයෙන් ඔබට Queen Amdi Bot install කිරීමට අවශ්‍යයි.`
 
 #### 02. Click Deploy button
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BlackAmda/QueenAmdi)
 
-Sinhala tutorial will come out soon : https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ
+සිංහල tutorial ළඟදීම එළියට එනු ඇත : https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ
 
 ### ⚒️ Setup Wiki 
 [![Setup](https://image.freepik.com/free-vector/robot-icon-bot-sign-design-chatbot-symbol-concept-voice-support-service-bot-online-support-bot-vector-stock-illustration_100456-34.jpg)](https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki)
 
 ## F.A.Q
-Answer a few frequently asked questions;
-### Can you read my messages?
-This project is open source so all the codes are clear. Neither less nor more; you can look what you want. **We absolutely do not have access to your accounts.**
+නිතර අසන ප්‍රශ්න කිහිපයකට පිළිතුරු සපයන්න;
+### ඔබට මගේ පණිවිඩ කියවිය හැකිද??
+මෙම ව්‍යාපෘතිය විවෘත කේතයක් බැවින් සියලු කේත පැහැදිලි වේ. අඩු හෝ වැඩි නොවේ; ඔබට අවශ්‍ය දේ බැලීමට ඔබට හැකිය. **අපට ඔබගේ ගිණුම් වලට ප්‍රවේශයක් නොමැත.**
 
-### What about our security?
-If you are concerned about security, you can install it on your own computer. If you think someone else has captured your data, simply click on **Whatsapp> Three Dots> Whatsapp Web> Logout** from all sessions button.
+### අපේ ආරක්ෂාව ගැන කුමක් කිව හැකිද?
+ඔබ ආරක්ෂාව ගැන සැලකිලිමත් වන්නේ නම්, ඔබට එය ඔබේම පරිගණකයකින් install කළ හැකිය. වෙනත් අයෙකු ඔබගේ දත්ත ග්‍රහණය කර ගෙන ඇතැයි ඔබ සිතන්නේ නම්, **Whatsapp> Three Dots> Whatsapp Web> Logout**.
 
-### Is it paid?
-**Of course not.** It will never happen. But you can donate to us. You can reach me via [Telegram](https://t.me/fusuf) .
+### මෙම බොට් ගෙවිය යුතුද?
+**ඇත්ත වශයෙන්ම නැත.** එය කිසි විටෙකත් සිදු නොවේ. නමුත් ඔබට අපට donation කළ හැකිය. You can reach me via [Whatsapp](https://wa.me/94757405652) .
 
-Here Are All Commands With Description [GistHub](https://gist.github.com/BlackAmda/28493a9b3e4f6f7ade7774a68b7c1c05)
+විස්තර සහිත සියලුම විධාන මෙන්න. [GistHub](https://gist.github.com/BlackAmda/28493a9b3e4f6f7ade7774a68b7c1c05)
 
-## Thanks for Everything 
-### We will always remember you..
+## සැමට ස්තූතියි! 
+### අපි ඔබව සැමවිටම මතක තබා ගන්නෙමු..
 
 ### ⚠️ Warning! 
 ```
-Due to Userbot; Your WhatsApp account may be banned.
-This is an open source project, you are responsible for everything you do. 
-Absolutely, Queen Amda executives do not accept responsibility.
-By establishing the Queen Amdi, you are deemed to have accepted these responsibilities.
+පරිශීලක බොට් නිසා; ඔබගේ WhatsApp ගිණුම banned කළ හැකිය.
+මෙය විවෘත මූලාශ්‍ර ව්‍යාපෘතියකි, ඔබ කරන සෑම දෙයකටම ඔබ වගකිව යුතුය. 
+නියත වශයෙන්ම, Queen Amdi විධායකයන් වගකීම භාර නොගනී.
+Queen Amdi Bot පිහිටුවීමෙන් ඔබ මෙම වගකීම් භාරගෙන ඇති බව සලකනු ලැබේ.
 ```
 
 ## Developers
@@ -172,9 +172,9 @@ By establishing the Queen Amdi, you are deemed to have accepted these responsibi
 
 [Black Amda](https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ)
 
-## License
-This project is protected by `GNU General Public Licence v3.0` license.
-Assign Credit to developers.Dont edit out the copyright messages!
+## බලපත්රය
+මෙම ව්‍යාපෘතිය `GNU General Public License v3.0` බලපත්රයෙන් ආරක්ෂා කර ඇත.
+ප්‍රකාශන හිමිකම් පණිවිඩ සංස්කරණය නොකරන්න!
 
 ### Disclaimer
-`WhatsApp` name, its variations and the logo are registered trademarks of Facebook. We have nothing to do with the registered trademark
+`WhatsApp` name, එහි වෙනස්කම් සහ ලාංඡනය ෆේස්බුක් හි ලියාපදිංචි වෙළඳ ලකුණු වේ. ලියාපදිංචි වෙළඳ ලකුණ සමඟ අපට කිසිදු සම්බන්ධයක් නැත.
