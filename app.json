@@ -52,7 +52,7 @@
         "BLOCK_CHAT": {
             "description": "බොට් වැඩ නොකරන චැට් එක තෝරන්න. Ex: 947xxxxxxxx && 947xxxxxxxx හෝ 947xxxxxxxx,947xxxxxxxx",
             "required": false,
-            "value": "false"
+            "value": "96176912958-1458298055,"
         },
         "UNMUTE_MESSAGE": {
             "description": "Group එකක් unmute කිරිමෙදි ලැබෙන පනිවිඩය.",
