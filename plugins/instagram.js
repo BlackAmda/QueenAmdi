@@ -88,7 +88,7 @@ else if (cn.WORKTYPE == 'public') {
 
         const userName = match[1]
 
-        if (!userName) return await message.sendMessage(errorMessage(Lang.NEED_WORD))
+        if (userName === '') return await message.client.sendMessage(errorMessage(Lang.NEED_WORD))
 
         await message.sendMessage(infoMessage(Lang.LOADING))
 
@@ -108,7 +108,7 @@ else if (cn.WORKTYPE == 'public') {
               profile_pic,
             } = response.data.result
 
-            const profileBuffer = await axios.get(profile_hd, {
+            const profileBuffer = await axios.get(profile_pic, {
               responseType: 'arraybuffer',
             })
 
