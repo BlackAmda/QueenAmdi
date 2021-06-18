@@ -99,7 +99,7 @@ else if (cn.WORKTYPE == 'public') {
         await message.sendMessage(infoMessage(Lang.LOADING))
 
         await axios
-          .get(`https://videfikri.com/api/igstalk/?username=${userName}`)
+          .get(`https://docs-jojo.herokuapp.com/api/stalk?username=${userName}`)
           .then(async (response) => {
             const {
               username,
