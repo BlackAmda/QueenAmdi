@@ -44,7 +44,7 @@ if (Config.WORKTYPE == 'private') {
                     throw err;
                 }
         
-                await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker, {quoted: message.data});
+                await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker);
             });
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
         }
@@ -53,7 +53,7 @@ if (Config.WORKTYPE == 'private') {
             .outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 512x512"])
             .save('sticker.webp')
             .on('end', async () => {
-                await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker, {quoted: message.data});
+                await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
             });
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
@@ -84,7 +84,7 @@ else if (Config.WORKTYPE == 'public') {
                     throw err;
                 }
         
-                await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker, {quoted: message.data});
+                await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker);
             });
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
         }
@@ -93,7 +93,7 @@ else if (Config.WORKTYPE == 'public') {
             .outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 512x512"])
             .save('sticker.webp')
             .on('end', async () => {
-                await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker, {quoted: message.data});
+                await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
             });
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
