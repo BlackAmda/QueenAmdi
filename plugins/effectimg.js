@@ -39,7 +39,7 @@ if (Config.WORKTYPE == 'private') {
         
     var uri = encodeURI(match[1])
 
-    var ttinullimage = await axios.get('https://docs-jojo.herokuapp.com/api/emoji2png?emoji=' + uri + '&type=apple', { responseType: 'arraybuffer' })
+    var ttinullimage = await axios.get('https://docs-jojo.herokuapp.com/api/emoji2png?type=apple&emoji=' + uri, { responseType: 'arraybuffer' })
 
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'})
 
@@ -328,7 +328,7 @@ else if (Config.WORKTYPE == 'public') {
         
     var uri = encodeURI(match[1])
 
-    var ttinullimage = await axios.get('https://docs-jojo.herokuapp.com/api/emoji2png?emoji=' + uri + '&type=apple', { responseType: 'arraybuffer' })
+    var ttinullimage = await axios.get('https://docs-jojo.herokuapp.com/api/emoji2png?type=apple&emoji=' + uri, { responseType: 'arraybuffer' })
 
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'})
 
