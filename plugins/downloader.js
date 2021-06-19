@@ -20,10 +20,10 @@ Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: false, desc: IG_DESC}, async (me
     await message.sendMessage(infoMessage("Post බාගත කිරීම..."))
 
     await axios
-      .get(`https://api-anoncybfakeplayer.herokuapp.com/igdown?url=${userName}`)
+      .get(`https://lolhuman.herokuapp.com/api/instagram?apikey=1c65c45382ceb1d3c17921b4&url=${userName}`)
       .then(async (response) => {
         const {
-          url,
+          result,
           type,
         } = response.data.result[0]
 
