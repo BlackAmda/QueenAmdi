@@ -23,7 +23,7 @@ Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: false, desc: IG_DESC}, async (me
       .get(`https://api.zeks.xyz/api/ig?apikey=fHZpP3j61LgH80BzanBm92jch1Q&url=${userName}`)
       .then(async (response) => {
         const {
-          result,
+          url,
           type,
         } = response.data.result[0]
 
