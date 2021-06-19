@@ -32,33 +32,43 @@ if (cn.WORKTYPE == 'private') {
 
     Asena.addCommand({ pattern: 'readig ?(.*)', fromMe: true, usage: Lang.USAGE, desc: Lang.DESC }, async (message, match) => {
 
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+
         const userName = match[1]
 
-        if (userName === '') return await message.client.sendMessage(infoMessage(Lang.LOADING))
+        if (!userName) return await message.sendMessage(errorMessage(Lang.NEED_WORD))
+
+        await message.sendMessage(infoMessage(Lang.LOADING))
 
         await axios
-          .get(`https://docs-jojo.herokuapp.com/api/stalk?username=${userName}`)
+          .get(`https://videfikri.com/api/igstalk/?username=${userName}`)
           .then(async (response) => {
-            
             const {
+              profile_hd,
               username,
-              biography,
-              external_url,
+              bio,
               followers,
               following,
-              name,
-              category_name,
+              full_name,
               is_private,
-              is_verified,
-              profile_pic,
             } = response.data.result
 
-            const profileBuffer = await axios.get(profile_pic, {
+            const profileBuffer = await axios.get(profile_hd, {
               responseType: 'arraybuffer',
             })
 
-            const msg = (`*${Lang.NAME}*: ${name} \n*${Lang.USERNAME}*: ${username} \n*${Lang.BIO}*: ${biography} \n*${Lang.FOLLOWERS}*: ${followers} \n*${Lang.FOLLOWS}*: ${following} \n*${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`);
-            
+            const msg = `
+            *${Lang.NAME}*: ${full_name}
+            *${Lang.USERNAME}*: ${username}
+            *${Lang.BIO}*: ${bio}
+            *${Lang.FOLLOWERS}*: ${followers}
+            *${Lang.FOLLOWS}*: ${following}
+            *${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`
+
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
               caption: msg,
             })
@@ -73,32 +83,43 @@ else if (cn.WORKTYPE == 'public') {
 
     Asena.addCommand({ pattern: 'readig ?(.*)', fromMe: false, usage: Lang.USAGE, desc: Lang.DESC }, async (message, match) => {
 
+        if (message.jid === '905524317852-1612300121@g.us') {
+
+            return;
+        }
+
+
         const userName = match[1]
 
-        if (userName === '') return await message.client.sendMessage(infoMessage(Lang.LOADING))
+        if (!userName) return await message.sendMessage(errorMessage(Lang.NEED_WORD))
+
+        await message.sendMessage(infoMessage(Lang.LOADING))
 
         await axios
-          .get(`https://docs-jojo.herokuapp.com/api/stalk?username=${userName}`)
+          .get(`https://videfikri.com/api/igstalk/?username=${userName}`)
           .then(async (response) => {
             const {
+              profile_hd,
               username,
-              biography,
-              external_url,
+              bio,
               followers,
               following,
-              name,
-              category_name,
+              full_name,
               is_private,
-              is_verified,
-              profile_pic,
             } = response.data.result
 
-            const profileBuffer = await axios.get(profile_pic, {
+            const profileBuffer = await axios.get(profile_hd, {
               responseType: 'arraybuffer',
             })
 
-            const msg = (`*${Lang.NAME}*: ${name} \n*${Lang.USERNAME}*: ${username} \n*${Lang.BIO}*: ${biography} \n*${Lang.FOLLOWERS}*: ${followers} \n*${Lang.FOLLOWS}*: ${following} \n*${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`);
-                        
+            const msg = `
+            *${Lang.NAME}*: ${full_name}
+            *${Lang.USERNAME}*: ${username}
+            *${Lang.BIO}*: ${bio}
+            *${Lang.FOLLOWERS}*: ${followers}
+            *${Lang.FOLLOWS}*: ${following}
+            *${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`
+
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
               caption: msg,
             })
