@@ -323,10 +323,16 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                         } else {
                             whats = new Message(conn, msg);
                         }
-
-                        if (command.deleteCommand && msg.key.fromMe) {
-                            await whats.delete(); 
-                        }
+                        if (msg.key.fromMe) {
+                            var vers = conn.user.phone.wa_version.split('.')[2]
+                            try {
+                                if (command.deleteCommand && vers < 12) { 
+                                    await whats.delete() 
+                                 }
+                                 else { 
+                                     await command.function(whats, match);
+                                 }
+                             } catch (err) { await command.function(whats, match) } }
 
                         try {
                             await command.function(whats, match);
