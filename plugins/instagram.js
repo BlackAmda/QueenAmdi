@@ -45,19 +45,19 @@ if (cn.WORKTYPE == 'private') {
         await message.sendMessage(infoMessage(Lang.LOADING))
 
         await axios
-          .get(`https://videfikri.com/api/igstalk/?username=${userName}`)
+          .get(`https://api.zeks.xyz/api/igstalk?apikey=fHZpP3j61LgH80BzanBm92jch1Q&username=${userName}`)
           .then(async (response) => {
             const {
-              profile_hd,
+              profile_pic,
               username,
               bio,
-              followers,
+              follower,
               following,
               full_name,
               is_private,
             } = response.data.result
 
-            const profileBuffer = await axios.get(profile_hd, {
+            const profileBuffer = await axios.get(profile_pic, {
               responseType: 'arraybuffer',
             })
 
@@ -65,7 +65,7 @@ if (cn.WORKTYPE == 'private') {
             *${Lang.NAME}*: ${full_name}
             *${Lang.USERNAME}*: ${username}
             *${Lang.BIO}*: ${bio}
-            *${Lang.FOLLOWERS}*: ${followers}
+            *${Lang.FOLLOWERS}*: ${follower}
             *${Lang.FOLLOWS}*: ${following}
             *${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`
 
@@ -96,19 +96,19 @@ else if (cn.WORKTYPE == 'public') {
         await message.sendMessage(infoMessage(Lang.LOADING))
 
         await axios
-          .get(`https://videfikri.com/api/igstalk/?username=${userName}`)
+          .get(`https://api.zeks.xyz/api/igstalk?apikey=fHZpP3j61LgH80BzanBm92jch1Q&username=${userName}`)
           .then(async (response) => {
             const {
-              profile_hd,
+              profile_pic,
               username,
               bio,
-              followers,
+              follower,
               following,
               full_name,
               is_private,
             } = response.data.result
 
-            const profileBuffer = await axios.get(profile_hd, {
+            const profileBuffer = await axios.get(profile_pic, {
               responseType: 'arraybuffer',
             })
 
@@ -116,7 +116,7 @@ else if (cn.WORKTYPE == 'public') {
             *${Lang.NAME}*: ${full_name}
             *${Lang.USERNAME}*: ${username}
             *${Lang.BIO}*: ${bio}
-            *${Lang.FOLLOWERS}*: ${followers}
+            *${Lang.FOLLOWERS}*: ${follower}
             *${Lang.FOLLOWS}*: ${following}
             *${Lang.ACCOUNT}*: ${is_private ? Lang.HIDDEN : Lang.PUBLIC}`
 
