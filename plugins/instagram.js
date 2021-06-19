@@ -32,16 +32,9 @@ if (cn.WORKTYPE == 'private') {
 
     Asena.addCommand({ pattern: 'readig ?(.*)', fromMe: true, usage: Lang.USAGE, desc: Lang.DESC }, async (message, match) => {
 
-        if (message.jid === '905524317852-1612300121@g.us') {
-
-            return;
-        }
-
         const userName = match[1]
 
-        if (userName === '') return await message.client.sendMessage(errorMessage(Lang.NEED_WORD))
-
-        await message.sendMessage(infoMessage(Lang.LOADING))
+        if (userName === '') return await message.client.sendMessage(infoMessage(Lang.LOADING))
 
         await axios
           .get(`https://docs-jojo.herokuapp.com/api/stalk?username=${userName}`)
@@ -80,17 +73,9 @@ else if (cn.WORKTYPE == 'public') {
 
     Asena.addCommand({ pattern: 'readig ?(.*)', fromMe: false, usage: Lang.USAGE, desc: Lang.DESC }, async (message, match) => {
 
-        if (message.jid === '905524317852-1612300121@g.us') {
-
-            return;
-        }
-
-
         const userName = match[1]
 
-        if (userName === '') return await message.client.sendMessage(errorMessage(Lang.NEED_WORD))
-
-        await message.sendMessage(infoMessage(Lang.LOADING))
+        if (userName === '') return await message.client.sendMessage(infoMessage(Lang.LOADING))
 
         await axios
           .get(`https://docs-jojo.herokuapp.com/api/stalk?username=${userName}`)
