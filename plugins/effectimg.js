@@ -36,8 +36,10 @@ if (Config.WORKTYPE == 'private') {
     Asena.addCommand({pattern: 'pemoji ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
+        
+    var uri = encodeURI(match[1])
 
-    var webimage = await axios.get(`https://docs-jojo.herokuapp.com/api/emoji2png?emoji=${match[1]}&type=apple`, { responseType: 'arraybuffer' })
+    var ttinullimage = await axios.get('https://docs-jojo.herokuapp.com/api/emoji2png?emoji=' + uri + '&type=apple', { responseType: 'arraybuffer' })
 
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'})
 
@@ -323,8 +325,10 @@ else if (Config.WORKTYPE == 'public') {
     Asena.addCommand({pattern: 'pemoji ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
+        
+    var uri = encodeURI(match[1])
 
-    var webimage = await axios.get(`https://docs-jojo.herokuapp.com/api/emoji2png?emoji=${match[1]}&type=apple`, { responseType: 'arraybuffer' })
+    var ttinullimage = await axios.get('https://docs-jojo.herokuapp.com/api/emoji2png?emoji=' + uri + '&type=apple', { responseType: 'arraybuffer' })
 
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ'})
 
