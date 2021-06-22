@@ -43,7 +43,7 @@ Asena.addCommand({pattern: 'update$', fromMe: true, desc: Lang.UPDATER_DESC}, (a
     }
 }));
 
-Asena.addCommand({pattern: 'update now$', fromMe: true, desc: Lang.UPDATE_NOW_DESC, dontAddCommandList: true}, (async (message, match) => {
+Asena.addCommand({pattern: 'update now$', fromMe: true, desc: Lang.UPDATE_NOW_DESC}, (async (message, match) => {
     await git.fetch();
     var commits = await git.log([Config.BRANCH + '..origin/' + Config.BRANCH]);
     if (commits.total === 0) {
@@ -57,8 +57,11 @@ Asena.addCommand({pattern: 'update now$', fromMe: true, desc: Lang.UPDATE_NOW_DE
             try {
                 var app = await heroku.get('/apps/' + Config.HEROKU.APP_NAME)
             } catch {
-                return await message.client.sendMessage(
+                await message.client.sendMessage(
                     message.jid,Lang.INVALID_HEROKU, MessageType.text);
+                await new Promise(r => setTimeout(r, 1000));
+                return await message.client.sendMessage(
+                    message.jid,Lang.IN_AF, MessageType.text);
             }
 
             git.fetch('upstream', Config.BRANCH);
@@ -86,7 +89,7 @@ Asena.addCommand({pattern: 'update now$', fromMe: true, desc: Lang.UPDATE_NOW_DE
                     exec('npm install').stderr.pipe(process.stderr);
                 } else if (err) {
                     await message.client.sendMessage(
-                        message.jid,'*❌ Güncelleme başarısız oldu!*\n*Hata:* ```' + err + '```', MessageType.text);
+                        message.jid,'*❌ යාවත්කාලීන කිරීම අසාර්ථක විය!*\n*දෝෂයකි:* ```' + err + '```', MessageType.text);
                 }
             }));
             await guncelleme.delete();
