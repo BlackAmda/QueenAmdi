@@ -41,7 +41,7 @@
             "required": true
         },
         "HEROKU_APP_NAME": {
-            "description": "ඉහත යෙදු රහස් වචනයම යොදන්න.",
+            "description": "ඉහත App name එකම යොදන්න.",
             "required": true
         },
         "MUTE_MESSAGE": {
