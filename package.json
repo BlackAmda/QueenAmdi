@@ -33,6 +33,7 @@
     "dotenv": "^8.2.0",
     "exchange-rates-api": "^1.0.2",
     "fluent-ffmpeg": "^2.1.2",
+    "axios": "^0.21.1",
     "form-data": "^3.0.0",
     "g-i-s": "^2.1.6",
     "google-translate-tts": "^0.3.0",
