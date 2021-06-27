@@ -87,7 +87,9 @@ Queen Amdi bot විශේෂාංග මෙන්න.
 ## 📢 Guide
 > [නව සහාය සහ උපකාරක whatsapp කණ්ඩායම.](https://chat.whatsapp.com/CE768WDzDoR3j6g2NxrpFZ) (New)
 
-> [උපදෙස්](https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki/%F0%9F%87%AC%F0%9F%87%A7-How-to-Setup-WhatsAsena)
+> [සිංහල tutorial](https://www.youtube.com/watch?v=mksNihEYSXs&ab_channel=D_KTWorld_%C2%A9)
+
+> [![සිංහල tutorial](https://img.youtube.com/vi/mksNihEYSXs/0.jpg)](https://www.youtube.com/watch?v=mksNihEYSXs)
 
 ## 🔎 Queen Amdi bot යනු කුමක්ද?
 **Queen Amdi Bot,** WhatsApp උදව් බොට් කෙනකි.
@@ -114,7 +116,7 @@ $ `bash <(curl -L https://t.ly/tHxh)`
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BlackAmda/QueenAmdi)
 
-සිංහල tutorial ළඟදීම එළියට එනු ඇත : https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ
+AN Tech Official Youtube Channel : https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ
 
 ### ⚒️ Setup Wiki 
 [![Setup](https://image.freepik.com/free-vector/robot-icon-bot-sign-design-chatbot-symbol-concept-voice-support-service-bot-online-support-bot-vector-stock-illustration_100456-34.jpg)](https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki)
