@@ -60,7 +60,8 @@
             "AFK_TEXT_NOMD": "බිප් බොප්! මම බොට් ය.",
             "HOUR": "පැය",
             "MINUTE": "විනාඩි",
-            "SECOND": "දෙවැනි"
+            "SECOND": "තත්පර"
+            "AGO": " පෙර```"
         },
         "evaluators": {
             "TERM_DESC": "Server command shell ක්‍රියාත්මක කිරීමට ඉඩ දෙන්න.",
