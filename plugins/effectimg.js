@@ -39,7 +39,7 @@ if (Config.WORKTYPE == 'private') {
         
     var uri = encodeURI(match[1])
     
-    var ttinullimage = await axios.get('https://lolhuman.herokuapp.com/api/smoji/' + uri + '?apikey=e1ee2b3d3b00e58f2511ad95', { responseType: 'arraybuffer' })
+    var ttinullimage = await axios.get('https://api.zeks.xyz/api/emoji-image?apikey=fHZpP3j61LgH80BzanBm92jch1Q&emoji=' + uri, { responseType: 'arraybuffer' })
     
     await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ' })
 
@@ -333,7 +333,7 @@ else if (Config.WORKTYPE == 'public') {
         
     var uri = encodeURI(match[1])
 
-    var ttinullimage = await axios.get('https://lolhuman.herokuapp.com/api/smoji/' + uri + '?apikey=e1ee2b3d3b00e58f2511ad95', { responseType: 'arraybuffer' })
+    var ttinullimage = await axios.get('https://api.zeks.xyz/api/emoji-image?apikey=fHZpP3j61LgH80BzanBm92jch1Q&emoji=' + uri, { responseType: 'arraybuffer' })
 
     await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Copyright © 2021 | Queen Amdi-ᴮʸ ᴮˡᵃᶜᵏ ᴬᵐᵈᵃ' })
 
