@@ -1,3 +1,4 @@
+/* 🥳 Queen Amdi v2 - Public Release
 moment = require('moment-timezone')
 const get = require('got')
 const { RemoveBgResult, removeBackgroundFromImageBase64, removeBackgroundFromImageFile } = require('remove.bg') //paid
