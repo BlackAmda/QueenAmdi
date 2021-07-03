@@ -79,6 +79,11 @@
             "required": true,
             "value": "false"
         },
+         "ALIVE_LOGO": {
+            "description": "Alive message පින්තූරය වෙනස් කිරීම සඳහා ඔබගේ image link පහත සඳහන් කරන්න.",
+            "required": true,
+            "value": "https://i.ibb.co/r7s9cML/20210305-083215.png"
+        },
         "REMOVE_BG_API_KEY": {
             "description": "මෙහිදි ඔබ remove.bg යන website එකට පිවිස signup වී, API key එකක් ලබාගන්න. එම API key එක මෙම හිස්තැනේ දමන්න.",
             "required": false
