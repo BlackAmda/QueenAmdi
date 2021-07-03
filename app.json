@@ -84,6 +84,16 @@
             "required": true,
             "value": "https://i.ibb.co/r7s9cML/20210305-083215.png"
         },
+        "WELCOME_LOGO": {
+            "description": "Welcome message video වෙනස් කිරීම සඳහා ඔබගේ video link පහත සඳහන් කරන්න.",
+            "required": true,
+            "value": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/H8WuRINimqur8ud/welcome-title-intro_ht4bgmri__7a6ea554b4aa0d38154353212f08f644__P360.mp4"
+        },
+        "BYE_LOGO": {
+            "description": "Goodbye message video වෙනස් කිරීම සඳහා ඔබගේ video link පහත සඳහන් කරන්න.",
+            "required": true,
+            "value": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/ETDyAQoFeik74vjsi/videoblocks-bye-comic-text-animation-with-alpha-matte-loop-4k_s5om9yamo__8d2e5edd98d109c768dd421c770feeea__P360.mp4"
+        },
         "REMOVE_BG_API_KEY": {
             "description": "මෙහිදි ඔබ remove.bg යන website එකට පිවිස signup වී, API key එකක් ලබාගන්න. එම API key එක මෙම හිස්තැනේ දමන්න.",
             "required": false
