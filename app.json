@@ -80,17 +80,17 @@
             "value": "false"
         },
          "ALIVE_LOGO": {
-            "description": "Alive message පින්තූරය වෙනස් කිරීම සඳහා ඔබගේ image link පහත සඳහන් කරන්න.",
+            "description": "Alive message පින්තූරය වෙනස් කිරීම සඳහා ඔබගේ image link පහත සඳහන් කරන්න. (ඔබට අවශ්‍ය පින්තුරය https://imgbb.com වෙබ්සයිට් හි upload කර එම ලින්ක් මෙහි යොදන්න.)",
             "required": true,
             "value": "https://i.ibb.co/r7s9cML/20210305-083215.png"
         },
         "WELCOME_LOGO": {
-            "description": "Welcome message video වෙනස් කිරීම සඳහා ඔබගේ video link පහත සඳහන් කරන්න.",
+            "description": "Welcome message video වෙනස් කිරීම සඳහා ඔබගේ video link පහත සඳහන් කරන්න.(ඔබට අවශ්‍ය video එක https://www.mailboxdrive.com/upload/ වෙබ්සයිට් හි upload කර එම ලින්ක් මෙහි යොදන්න.)",
             "required": true,
             "value": "https://tinyurl.com/queenamdi-welcome"
         },
         "BYE_LOGO": {
-            "description": "Goodbye message video වෙනස් කිරීම සඳහා ඔබගේ video link පහත සඳහන් කරන්න.",
+            "description": "Goodbye message video වෙනස් කිරීම සඳහා ඔබගේ video link පහත සඳහන් කරන්න.(ඔබට අවශ්‍ය video එක https://www.mailboxdrive.com/upload/ වෙබ්සයිට් හි upload කර එම ලින්ක් මෙහි යොදන්න.)",
             "required": true,
             "value": "https://tinyurl.com/queenamdi-goodbye"
         },
