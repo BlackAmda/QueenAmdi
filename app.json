@@ -26,6 +26,11 @@
             "required": true,
             "value": "^[.]"
         },
+        "CHAT_BOT": {
+            "description": "AI chat bot සක්‍රිය / අක්‍රිය කිරීමට. AI chat bot සක්‍රිය කිරීමට true ද, AI chat bot අක්‍රිය කිරීමට false ද යොදන්න.",
+            "required": true,
+            "value": "true"
+        },
         "SEND_READ": {
             "description": "Bot message seen කළාද නැතිද යන්න පරිශීලකට පෙන්විය යුතුද?",
             "required": true,
