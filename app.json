@@ -1,7 +1,7 @@
 {
     "name": "Queen Amdi v2.5",
     "description": "Queen Amdi is a chat bot for WhatsApp. Makes it easy and fun to use Whatsapp.",
-    "logo": "https://i.ibb.co/5rt16dP/Queen-Amdi.jpg",
+    "logo": "https://i.ibb.co/QNxJzy5/In-Shot-20210714-011128402.jpg",
     "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai", "Queen Amdi"],
     "repository": "",
     "website":   "https://chat.whatsapp.com/CE768WDzDoR3j6g2NxrpFZ",
@@ -87,7 +87,7 @@
          "ALIVE_LOGO": {
             "description": "Alive message පින්තූරය වෙනස් කිරීම සඳහා ඔබගේ image link පහත සඳහන් කරන්න. (ඔබට අවශ්‍ය පින්තුරය https://imgbb.com වෙබ්සයිට් හි upload කර එම ලින්ක් මෙහි යොදන්න.)",
             "required": true,
-            "value": "https://i.ibb.co/r7s9cML/20210305-083215.png"
+            "value": "https://i.ibb.co/QNxJzy5/In-Shot-20210714-011128402.jpg"
         },
         "WELCOME_LOGO": {
             "description": "Welcome message video වෙනස් කිරීම සඳහා ඔබගේ video link පහත සඳහන් කරන්න.(ඔබට අවශ්‍ය video එක https://www.mailboxdrive.com/upload/ වෙබ්සයිට් හි upload කර එම ලින්ක් මෙහි යොදන්න.)",
