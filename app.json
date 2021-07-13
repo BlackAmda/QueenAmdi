@@ -138,11 +138,6 @@
             "required": false,
             "value": "default"
         },
-        "GAN_IMAGE": {
-            "description": "මෙය වෙනස් කිරිමට අත්‍යාවශ්‍යම නොවේ.",
-            "required": true,
-            "value": "https://i.hizliresim.com/f8bleo5.png"
-        },
         "NO_ONLINE": {
             "description": "මෙය වෙනස් කිරිමට අත්‍යාවශ්‍යම නොවේ.",
             "required": false,
