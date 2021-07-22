@@ -85,7 +85,7 @@ Queen Amdi bot විශේෂාංග මෙන්න.
 
 
 ## 📢 Guide
-> [නව සහාය සහ උපකාරක whatsapp කණ්ඩායම.](https://chat.whatsapp.com/CE768WDzDoR3j6g2NxrpFZ) (New)
+> [නව සහාය සහ උපකාරක whatsapp කණ්ඩායම.](https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD) (New)
 
 > [සිංහල tutorial](https://www.youtube.com/watch?v=mksNihEYSXs&ab_channel=D_KTWorld_%C2%A9)
 
