@@ -5,7 +5,7 @@
 <p align="center">
     Whatsapp භාවිතා කිරීම පහසු සහ විනෝදජනක කරයි. Whatsapp සඳහා පළමු සිංහල පරිශීලක බොට් ද වේ.
     <br>
-        <a href="https://chat.whatsapp.com/CE768WDzDoR3j6g2NxrpFZ">Whatsapp Group</a> |
+        <a href="https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD">Whatsapp Group</a> |
         <a href="https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ">Youtube Channel</a>
     <br>
 </p>
