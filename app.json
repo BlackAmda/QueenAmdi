@@ -4,7 +4,7 @@
     "logo": "https://i.ibb.co/zF4r24v/LOGO.jpg",
     "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai", "Queen Amdi"],
     "repository": "",
-    "website":   "https://chat.whatsapp.com/CE768WDzDoR3j6g2NxrpFZ",
+    "website":   "https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD",
     "success_url": "https://chat.whatsapp.com/Hkm79J2sapyLGD0rvRTfkq",
     "stack": "container",
     "env": {
@@ -24,7 +24,7 @@
         "HANDLERS": {
             "description": "Bot ගේ ක්‍රියාකාරිත්වය සඳහා යෙදිය යුතු සලකුනු",
             "required": true,
-            "value": "^[.]"
+            "value": "^[.!]"
         },
         "CHAT_BOT": {
             "description": "AI chat bot සක්‍රිය / අක්‍රිය කිරීමට. AI chat bot සක්‍රිය කිරීමට true ද, AI chat bot අක්‍රිය කිරීමට false ද යොදන්න.",
@@ -57,7 +57,7 @@
         "BLOCK_CHAT": {
             "description": "බොට් වැඩ නොකරන චැට් එක තෝරන්න. Ex: 947xxxxxxxx && 947xxxxxxxx හෝ 947xxxxxxxx,947xxxxxxxx",
             "required": false,
-            "value": "96176912958-1458298055,"
+            "value": "no chats added"
         },
         "UNMUTE_MESSAGE": {
             "description": "Group එකක් unmute කිරිමෙදි ලැබෙන පනිවිඩය.",
