@@ -1,5 +1,5 @@
 {
-    "name": "Queen Amdi v2.6",
+    "name": "Queen Amdi 2.7v",
     "description": "Queen Amdi is a chat bot for WhatsApp. Makes it easy and fun to use Whatsapp.",
     "logo": "https://i.ibb.co/zF4r24v/LOGO.jpg",
     "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai", "Queen Amdi"],
@@ -92,7 +92,7 @@
         "WELCOME_LOGO": {
             "description": "Welcome message video වෙනස් කිරීම සඳහා ඔබගේ video link පහත සඳහන් කරන්න.(ඔබට අවශ්‍ය video එක https://www.mailboxdrive.com/upload/ වෙබ්සයිට් හි upload කර එම ලින්ක් මෙහි යොදන්න.)",
             "required": true,
-            "value": "https://tinyurl.com/queenamdi-welcome"
+            "value": "https://tinyurl.com/queenamdi-welcomev2"
         },
         "BYE_LOGO": {
             "description": "Goodbye message video වෙනස් කිරීම සඳහා ඔබගේ video link පහත සඳහන් කරන්න.(ඔබට අවශ්‍ය video එක https://www.mailboxdrive.com/upload/ වෙබ්සයිට් හි upload කර එම ලින්ක් මෙහි යොදන්න.)",
@@ -106,7 +106,7 @@
         "ALIVE_MESSAGE": {
             "description": "Bot online ද නැද්ද යන්න පරීක්ෂා කරන විට ලැබෙන මැසේජ් එක. මෙය වෙනස් කිරිමට අත්‍යාවශ්‍යම නොවේ.",
             "required": false,
-            "value": "default"
+            "value": "https://i.ibb.co/r3wmpwr/LOGO.jpg"
         },
         "BAN_MESSAGE": {
             "description": "යම් කෙනෙකු ඔබ .ban ලෙස කොමාන්ඩ් කර remove කලවිට ලැබෙන message එක. ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
