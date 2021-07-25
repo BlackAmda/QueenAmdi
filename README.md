@@ -99,7 +99,7 @@ Queen Amdi bot විශේෂාංග මෙන්න.
 ### සරල ක්‍රමය
 #### 01. Click Run on Repl.it (Computer users) and Run the qr generator by clicking play button.
 
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@BlackAmda/Queen-Amdi-QR)
+[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@BlackAmda/Queen-Amdi-QR-Code)
 
 #### ඔබ ජංගම ජංගම දුරකථන භාවිතා කරන්නෙක් නම්. Termux භාවිතා කිරීමෙන් ඔබට QR කේතය ලබා ගත හැකිය. (Android පමනි. IOS භාවිතා කරන්නන්ට repl.it button භාවිතා කළ යුතුය)
 
