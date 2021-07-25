@@ -106,7 +106,7 @@
         "ALIVE_MESSAGE": {
             "description": "Bot online ද නැද්ද යන්න පරීක්ෂා කරන විට ලැබෙන මැසේජ් එක. මෙය වෙනස් කිරිමට අත්‍යාවශ්‍යම නොවේ.",
             "required": false,
-            "value": "https://i.ibb.co/r3wmpwr/LOGO.jpg"
+            "value": "default"
         },
         "BAN_MESSAGE": {
             "description": "යම් කෙනෙකු ඔබ .ban ලෙස කොමාන්ඩ් කර remove කලවිට ලැබෙන message එක. ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
