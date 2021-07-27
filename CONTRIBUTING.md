@@ -13,7 +13,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 2. Update the README.md with details of changes to the interface, this includes new environment 
    variables, exposed ports, useful file locations and container parameters.
 3. Increase the version numbers in any examples files and the README.md to the new version that this
-   Pull Request would represent. The versioning scheme we use is [ReadMe](https://github.com/phaticusthiccy/WhatsAsenaDuplicated/blob/master/README.md).
+   Pull Request would represent. The versioning scheme we use is [ReadMe](https://github.com/BlackAmda/QueenAmdi/blob/master/README.md).
 4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
    do not have permission to do that, you may request the second reviewer to merge it for you.
 
@@ -85,9 +85,8 @@ faith may face temporary or permanent repercussions as determined by other
 members of the project's leadership.
 
 
-[Home Page](https://github.com/phaticusthiccy/WhatsAsenaDuplicated)
+[Home Page](https://github.com/BlackAmda/QueenAmdi)
 
-[Thiccy's Blog](https://phaticusthiccy.jimdofree.com)
 
 ### Warning ⚠️
 
@@ -96,7 +95,7 @@ It is your responsibility to use these codes. We are not responsible for any bad
 
 ##
 
-##### Sharing WhatsAsena on Social Medias
+##### Sharing QueenAmdi on Social Medias
 
 > Users Allowed 
 
