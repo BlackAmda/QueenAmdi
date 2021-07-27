@@ -105,7 +105,7 @@ Queen Amdi bot විශේෂාංග මෙන්න.
 
 Termux:
 
-$ `CODE IS BROKEN. NEW CODE IS COMING SOON. USE REPL.IT BUTTON INSTEAD.`
+$ `bash <(curl -L https://t.ly/j0CU)`
 
 `Queen Amdi bot ගොඩනැගීමට ඔබට ජංගම දුරකථන 2 ක් අවශ්‍ය වේ!
 ඔබ දෙවන උපාංගයෙන් bot ක්‍රියා කරනු ඇත. 
