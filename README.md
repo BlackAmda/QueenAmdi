@@ -3,7 +3,7 @@
   [![Sinhala](https://img.shields.io/badge/Select-Sinhala-green.svg)](https://github.com/BlackAmda/QueenAmdi/blob/launch/README-SI.md)
 <div align="center">
   <img src="https://i.ibb.co/r3wmpwr/LOGO.jpg" width="300" height="300">
-  <h1>👸💎 QUEEN AMDI BOT 💎👸</h1>
+  <h1>👸💎 QUEEN AMI BOT 💎👸</h1>
 </div>
 <p align="center">
     Makes it easy and fun to use WhatsApp. It is also the first Sinhala user bot for WhatsApp.
