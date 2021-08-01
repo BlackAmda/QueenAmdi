@@ -16,19 +16,17 @@
 ----
 
 <p align="center">
-  <a href="https://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/docker/pulls/fusuf/whatsasena?style=flat-square"/></a>
+  <a href="https://github.com/BlackAmda/QueenAmdi"><img alt="GitHub Clones" src="https://img.shields.io/badge/dynamic/json?style=flat-square&label=Docker pulls&query=count&url=https://github.com/BlackAmda/QueenAmdi/blob/launch/automated_repo.json?raw=True&logo=github"></a>
   
   </a>
   <a href="https://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/docker/image-size/fusuf/whatsasena?style=flat-square">
+    <img src="https://img.shields.io/docker/image-size/fusuf/whatsasena?style=flat-square&logo=github&label=Image Size">
     
   </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/MShawon/github-clone-count-badge"><img alt="GitHub Clones" src="https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://raw.githubusercontent.com/BlackAmda/QueenAmdi/launch/automated_repo.json?raw=True&logo=github"></a>
-  
+
   <a href="https://github.com/BlackAmda/QueenAmdi">
     <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FBlackAmda%2FQueenAmdi&count_bg=%2379C83D&title_bg=%23555555&icon=gitpod.svg&icon_color=%23E7E7E7&title=Views&edge_flat=false" alt="Views"/></a>
   
@@ -44,7 +42,7 @@
 
 <p align="center">
   <a href="httsp://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/github/repo-size/phaticusthiccy/WhatsAsenaDuplicated?color=purple&label=Repo%20Boyutu&style=plastic">
+    <img src="https://img.shields.io/github/repo-size/phaticusthiccy/WhatsAsenaDuplicated?color=purple&label=Repo%20Size&style=plastic">
 
   </a>
   <a href="https://github.com/phaticusthiccy/WhatsAsenaDuplicated/blob/master/LICENSE">
@@ -59,6 +57,8 @@
     <img src="https://img.shields.io/static/v1?label=Author&message=Black%20Amda&color=purple&style=plastic">
 
   </a>
+  </p>
+ <p align="center">
   <a href="https://wa.me/94757405652">
     <img src="https://img.shields.io/badge/Contact%20Me%20On%20Whatsapp-Queen%20Amdi%20Bot-purple&style=plastic">
 
