@@ -1,9 +1,12 @@
+#### Select your language
+  [![English](https://img.shields.io/badge/Select-English-red.svg)](https://github.com/BlackAmda/QueenAmdi/edit/launch/README.md)
+  [![Sinhala](https://img.shields.io/badge/Select-Sinhala-green.svg)](https://github.com/BlackAmda/QueenAmdi/edit/launch/README-SI.md)
 <div align="center">
   <img src="https://i.ibb.co/r3wmpwr/LOGO.jpg" width="300" height="300">
   <h1>👸💎 QUEEN AMDI BOT 💎👸</h1>
 </div>
 <p align="center">
-    Whatsapp භාවිතා කිරීම පහසු සහ විනෝදජනක කරයි. Whatsapp සඳහා පළමු සිංහල පරිශීලක බොට් ද වේ.
+    Makes it easy and fun to use WhatsApp. It is also the first Sinhala user bot for WhatsApp.
     <br>
         <a href="https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD">Whatsapp Group</a> |
         <a href="https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ">Youtube Channel</a>
@@ -61,23 +64,23 @@
 </p>
 
 ```
-Queen Amdi bot යනු සංවර්ධනය සඳහා විවෘත මෘදුකාංගයකි.
-වැරදි හෝ අනිසි ලෙස භාවිතා කිරීමෙන් ඇතිවිය හැකි සියලු ප්‍රතිවිපාක සඳහා පරිශීලකයා වගකිව යුතුය.
-එය විවෘත මූලාශ්‍ර ව්‍යාපෘතියක් බැවින් ඕනෑම කෙනෙකුට මෘදුකාංගය පිටපත් කිරීමට, එකතු කිරීමට සහ ඉවත් කිරීමට හැකිය,
-ඔවුන් අභිරුචිකරණය කරන ආකාරයට එය භාවිතා කරන්න. ඊට අමතරව, ප්ලග්-ඉන් සහාය පරිශීලකයින්ට සක්‍රීය කරයි
-මුල් මෘදුකාංගයට ඔවුන්ගේම ප්ලගීන ස්ථාපනය කර ඔවුන් කැමති පරිදි භාවිතා කරන්න.
-භාවිතය මුළුමනින්ම පරිශීලකයාගේ වගකීම වන අතර, අසෙනා පරිශීලක බොට් යනු අ
-යටිතල පහසුකම් පමණි. මෙහෙයුම් පද්ධතිය වගකිව යුතු නොවේ.
+Queen Amdi bot is an UserBot for WhatsApp That allowing you to get done so many tasks.
+The user is responsible for all possible consequences of misuse.
+This is not a Open-Source project. This is just a project that allow you to get deploy a bot.
+Additionally, it enables plug-in support for users.
+Install their own plugins to the original software and use as they please.
+Usage is entirely the responsibility of the user. The operating system is not responsible.
+HAVE A FUN!
 ```
 
-## Queen Amdi bot විශේෂාංග
-Queen Amdi bot විශේෂාංග මෙන්න.
+## Queen Amdi bot features
+Here is the Queen Amdi bot features.
 <a href="https://gist.github.com/BlackAmda/28493a9b3e4f6f7ade7774a68b7c1c05">
     <img src="https://img.shields.io/badge/Click%20here-purple&style=plastic">
 
   </a>
 
-නව යාවත්කාලීන කිරීම් බැලීමට මෙය ක්ලික් කරන්න(Updates). 
+Click here to see the latest updates. 
 <a href="https://gist.github.com/BlackAmda/890b6b31fcb8d376d6a68afcb7359324">
     <img src="https://img.shields.io/badge/Click%20here-purple&style=plastic">
 
@@ -85,32 +88,30 @@ Queen Amdi bot විශේෂාංග මෙන්න.
 
 
 ## 📢 Guide
-> [නව සහාය සහ උපකාරක whatsapp කණ්ඩායම.](https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD) (New)
+> [Public Bot Group](https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD) (New)
 
-> [සිංහල tutorial](https://www.youtube.com/watch?v=mksNihEYSXs&ab_channel=D_KTWorld_%C2%A9)
+> [Sinhala tutorial](https://www.youtube.com/watch?v=mksNihEYSXs&ab_channel=D_KTWorld_%C2%A9)
 
-> [![සිංහල tutorial](https://img.youtube.com/vi/mksNihEYSXs/0.jpg)](https://www.youtube.com/watch?v=mksNihEYSXs)
-
-## 🔎 Queen Amdi bot යනු කුමක්ද?
-**Queen Amdi Bot,** WhatsApp උදව් බොට් කෙනකි.
+## 🔎 What is Queen Amdi Bot?
+**Queen Amdi Bot,** is a WhatsApp userbot like Telegram bot.
 
 ## Setup
 
-### සරල ක්‍රමය
+### Easy Method
 #### 01. Click Run on Repl.it (Computer users) and Run the qr generator by clicking play button.
 
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@BlackAmda/Queen-Amdi-QR-Code)
 
-#### ඔබ ජංගම ජංගම දුරකථන භාවිතා කරන්නෙක් නම්. Termux භාවිතා කිරීමෙන් ඔබට QR කේතය ලබා ගත හැකිය. (Android පමනි. IOS භාවිතා කරන්නන්ට repl.it button භාවිතා කළ යුතුය)
+#### If you are a mobile phone user. You can get the QR code using Termux. (Android only. IOS users must use the repl.it button)
 
 Termux:
 
 $ `bash <(curl -L https://t.ly/j0CU)`
 
-`Queen Amdi bot ගොඩනැගීමට ඔබට ජංගම දුරකථන 2 ක් අවශ්‍ය වේ!
-ඔබ දෙවන උපාංගයෙන් bot ක්‍රියා කරනු ඇත. 
-ඔබ පළමු උපාංගය සමඟ පමණක් QR කේතය generate කරනු ඇත.
-පළමු උපාංගයෙන් ඔබට Queen Amdi Bot install කිරීමට අවශ්‍යයි.`
+`You need 2 mobile phones to build the Queen Amdi bot!
+You will run the bot from the second device.
+You will only generate a QR code with the first device.
+From the first device you need to install Queen Amdi Bot.`
 
 #### 02. Click Deploy button
 
@@ -118,31 +119,28 @@ $ `bash <(curl -L https://t.ly/j0CU)`
 
 AN Tech Official Youtube Channel : https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ
 
-### ⚒️ Setup Wiki 
-[![Setup](https://image.freepik.com/free-vector/robot-icon-bot-sign-design-chatbot-symbol-concept-voice-support-service-bot-online-support-bot-vector-stock-illustration_100456-34.jpg)](https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki)
-
 ## F.A.Q
-නිතර අසන ප්‍රශ්න කිහිපයකට පිළිතුරු සපයන්න;
-### ඔබට මගේ පණිවිඩ කියවිය හැකිද??
-මෙම ව්‍යාපෘතිය විවෘත කේතයක් බැවින් සියලු කේත පැහැදිලි වේ. අඩු හෝ වැඩි නොවේ; ඔබට අවශ්‍ය දේ බැලීමට ඔබට හැකිය. **අපට ඔබගේ ගිණුම් වලට ප්‍රවේශයක් නොමැත.**
+Answer a few frequently asked questions;
+### Can you read my messages???
+Since this project is open source, all codes are clear. Not more or less; You can see what you want. **Your accounts are not accessible.**
 
-### අපේ ආරක්ෂාව ගැන කුමක් කිව හැකිද?
-ඔබ ආරක්ෂාව ගැන සැලකිලිමත් වන්නේ නම්, ඔබට එය ඔබේම පරිගණකයකින් install කළ හැකිය. වෙනත් අයෙකු ඔබගේ දත්ත ග්‍රහණය කර ගෙන ඇතැයි ඔබ සිතන්නේ නම්, **Whatsapp> Three Dots> Whatsapp Web> Logout**.
+### What about our security?
+If you are concerned about security, you can install it on your own computer. If you think someone else has taken over your data, **Whatsapp> Three Dots> Whatsapp Web> Logout**.
 
-### මෙම බොට් ගෙවිය යුතුද?
-**ඇත්ත වශයෙන්ම නැත.** එය කිසි විටෙකත් සිදු නොවේ. නමුත් ඔබට අපට donation කළ හැකිය. You can reach me via [Whatsapp](https://wa.me/94757405652) .
+### Do these bots have to pay??
+**Of course not.** It never happens. But you can donate to us. You can reach me via [Whatsapp](https://wa.me/94757405652) .
 
-විස්තර සහිත සියලුම විධාන මෙන්න. [GistHub](https://gist.github.com/BlackAmda/28493a9b3e4f6f7ade7774a68b7c1c05)
+Here are all the commands with details. [GistHub](https://gist.github.com/BlackAmda/28493a9b3e4f6f7ade7774a68b7c1c05)
 
-## සැමට ස්තූතියි! 
-### අපි ඔබව සැමවිටම මතක තබා ගන්නෙමු..
+## Thanks everyone! 
+### We will always remember you..
 
 ### ⚠️ Warning! 
 ```
-පරිශීලක බොට් නිසා; ඔබගේ WhatsApp ගිණුම banned කළ හැකිය.
-මෙය විවෘත මූලාශ්‍ර ව්‍යාපෘතියකි, ඔබ කරන සෑම දෙයකටම ඔබ වගකිව යුතුය. 
-නියත වශයෙන්ම, Queen Amdi විධායකයන් වගකීම භාර නොගනී.
-Queen Amdi Bot පිහිටුවීමෙන් ඔබ මෙම වගකීම් භාරගෙන ඇති බව සලකනු ලැබේ.
+Because of user bots; Your WhatsApp account can be banned.
+This is an open source project, you are responsible for everything you do.
+Certainly, Queen Amdi executives do not take responsibility.
+By setting up Queen Amdi Bot you are considered to have assumed these responsibilities.
 ```
 
 ## Developers
@@ -151,9 +149,9 @@ Queen Amdi Bot පිහිටුවීමෙන් ඔබ මෙම වගක�
 
 [Black Amda](https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ)
 
-## බලපත්රය
-මෙම ව්‍යාපෘතිය `GNU General Public License v3.0` බලපත්රයෙන් ආරක්ෂා කර ඇත.
-ප්‍රකාශන හිමිකම් පණිවිඩ සංස්කරණය නොකරන්න!
+## License
+This project is protected by the `GNU General Public License v3.0.`
+Do not edit copyright messages!
 
 ### Disclaimer
-`WhatsApp` name, එහි වෙනස්කම් සහ ලාංඡනය ෆේස්බුක් හි ලියාපදිංචි වෙළඳ ලකුණු වේ. ලියාපදිංචි වෙළඳ ලකුණ සමඟ අපට කිසිදු සම්බන්ධයක් නැත.
+`WhatsApp` name, its variations and logo are registered trademarks on Facebook. We have nothing to do with the registered trademark.
