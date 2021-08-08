@@ -6,7 +6,6 @@ you may not use this file except in compliance with the License.
 QueenAmdi - Black Amda
 */
 
-// Komutları burada tutacağız.
 var config = require('./config');
 var Commands = [];
 

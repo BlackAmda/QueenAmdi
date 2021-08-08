@@ -1,91 +1,93 @@
 {
     "__ASENAJSON__": true,
     "LANGUAGE": "English",
-    "LANGCODE": "en",
+    "LANGCODE": "english",
     "AUTHOR": "BlackAmda",
     "STRINGS": {
         "_amdi": {
-            "COMMAND": "විධානය",
-            "DESC": "විස්තරය",
-            "EXAMPLE": "උදාහරණයක්",
-            "NOT_FOUND": "*මට මේ වගේ විධානයක් සොයාගත නොහැකි විය😔*",
-            "WARN": "අවවාදයයි!!"
+            "COMMAND": "Command",
+            "DESC": "Description",
+            "EXAMPLE": "Example",
+            "NOT_FOUND": "*I could not find a command like this😔*",
+            "WARN": "Warning!!"
         },
         "_plugin": {
             "INSTALL_DESC": "Install external plugins.",
-            "NEED_URL": "කරුණාකර URL එකක් ඇතුළත් කරන්න! උදාහරණයක්:",
-            "INVALID_URL": "```වලංගු URL එක ඇතුලත් කරන්න!```",
-            "INVALID_PLUGIN": "*❌ ඔබගේ plugin අවලංගුය!*\n*දෝෂය:*",
+            "NEED_URL": "Please enter a plugin link! Example:",
+            "INVALID_URL": "```Please enter a valid URL!```",
+            "INVALID_PLUGIN": "*❌ Your plugin ink is invalid!*\n*Error:*",
             "INSTALLED": "*✅ Plugin සාර්ථකව install කර ඇත!*",
-            "PLUGIN_DESC": "ඔබ install කර ඇති plugin පෙන්වයි.",
-            "INSTALLED_FROM_REMOTE": "*ඔබ බාහිරව install කරන plugins:*\n",
-            "NO_PLUGIN": "*ඔබ කිසිදු බාහිර plugin install කර නැත!*",
-            "REMOVE_DESC": "Plugin ඉවත් කරයි.",
-            "NEED_PLUGIN": "```කරුණාකර plugin name ඇතුළත් කරන්න! Example: .plugin __test```",
-            "NOT_FOUND_PLUGIN": "```සමහර විට ඔබ එවැනි plugin install කර නැත. නමුත් එය දැන් නොමැත.```",
-            "DELETED": "*✅ Plugin සාර්ථකව මකා දමන ලදි!*"
+            "PLUGIN_DESC": "Shows the plugin you have installed.",
+            "INSTALLED_FROM_REMOTE": "*Plugins that you install externally:*\n",
+            "NO_PLUGIN": "*You have not installed any external plugin!*",
+            "REMOVE_DESC": "Removing the plugin.",
+            "NEED_PLUGIN": "```Please enter a plugin name! Example: .plugin __test```",
+            "NOT_FOUND_PLUGIN": "```You may not have such a plugin installed. But it is not there now.```",
+            "DELETED": "*✅ Plugin successfully deleted!*"
         },
         "admin": {
-            "BAN_DESC": "කණ්ඩායමේ කෙනෙකු ඉවත් කරන්න. පණිවිඩයට පිළිතුරු දෙන්න හෝ විධානය භාවිතා කිරීමට පුද්ගලයෙකු ටැග් කරන්න.",
-            "IM_NOT_ADMIN": "*මම මෙම කණ්ඩායමේ admin නොවේ!*",
-            "BANNED": "🚮 කණ්ඩායමෙන් පන්නා දැමුවා!",
-            "GIVE_ME_USER": "*මට පරිශීලකයෙකු ටැග් කරන්න!*",
-            "ADD_DESC": "කණ්ඩායමට යමෙකුව එකතු කරයි.",
-            "ADDED": "කණ්ඩායමට එකතු කරන ලදි!",
-            "ALREADY_PROMOTED": "```දැනටමත් admin ලෙස කටයුතු කරන අයෙකු admin කරන්නේ කෙසේද?```",
-            "PROMOTED": "```, admin බලතල ලබා දෙන ලදි!😊```",
-            "PROMOTE_DESC": "ඕනෑම පුද්ගලයෙකු පරිපාලකයෙකු කරයි.",
-            "DEMOTE_DESC": "ඕනෑම පරිපාලකයෙකුගේ බලය ගනී.",
-            "ALREADY_NOT_ADMIN": "```දැනටමත් admin නොවන කෙනෙකු admin නොකරන්නේ කෙසේද?```",
-            "DEMOTED": "```, admin බලතල ඉවත් කර ඇත!```",
-            "MUTE_DESC": "කණ්ඩායම් chat නිශ්ශබ්ද කිරීමට. පණිවිඩයක් යැවිය හැක්කේ adminට පමණි. Example : .mute 10m",
-            "MUTED": "```🔇 කණ්ඩායම් chat mute විය!```",
-            "UNMUTE_DESC": "කණ්ඩායම් chat නිශ්ශබ්ද ඉවත් කරන්න. ඕනෑම කෙනෙකුට පණිවිඩයක් යැවිය හැකිය.",
-            "UNMUTED": "```🔊 කණ්ඩායම් chat unmute කර ඇත!```",
-            "INVITE_DESC": "කණ්ඩායමේ invite සපයයි.",
+            "BAN_DESC": "Remove someone from the group. Reply to message or tag a person to use the command.",
+            "IM_NOT_ADMIN": "*I am not the admin of this group!*",
+            "BANNED": "🚮 Kicked out of the group!",
+            "GIVE_ME_USER": "*Tag me a user!*",
+            "ADD_DESC": "Adds someone to the group.",
+            "ADDED": "Added to group!",
+            "ALREADY_PROMOTED": "```How can someone who is already an admin do admin?```",
+            "PROMOTED": "```, was promoted as an Admin!😊```",
+            "PROMOTE_DESC": "Promoting memebers into Admin.",
+            "DEMOTE_DESC": "Demoting Admin into member.",
+            "ALREADY_NOT_ADMIN": "```How can someone who is not already an admin demote as an admin?```",
+            "DEMOTED": "```, was demoted as a member```",
+            "MUTE_DESC": "To mute group chat. Only admin can send message. Example : .mute 10m",
+            "MUTED": "```🔇 The group chat was muted!```",
+            "UNMUTE_DESC": "Remove group chat mute. Anyone can send a message.",
+            "UNMUTED": "```🔊 Group chat unmuted!```",
+            "INVITE_DESC": "Provides group invite link.",
             "INVITE": "```Invitation link: ```",
-            "ADMINDESC": "Admin විධාන ලැයිස්තුව ලබා ගැනීමට",
-            "SUB": "✅ Group නම වෙනස් කරන ලදි.",
-            "NEED_SUB": "Group නමක් ටයිප් කල යුතුයි.",
-            "END": "Clear chat"
+            "ADMINDESC": "To get the admin command list",
+            "SUB": "✅ Group name changed.",
+            "NEED_SUB": "You must type a group name.",
+            "END": "Clear chat",
+            "SEARCH": "To view the current plugin list supported to Queen Amdi.",
+            "AD_DESC": "💠🔑 ●QUEEN AMDI ADMIN PANEL● 🔑💠\n\n⚙️COMMAND: *.ban*\nℹ️DESCRIPTION: Remove someone from the group. Mention the message or tag a person to use command.\n\n⚙️COMMAND: *.add*\nℹ️DESCRIPTION: Adds someone to the group.\n\n⚙️COMMAND: *.mute*\nℹ️DESCRIPTION: Mute group chat. Messages can only be sent by admin. \n\n⚙️COMMAND: *.unmute*\nℹ️DESCRIPTION: Remove group chat mute. Anyone can send a message.\n\n⚙️COMMAND: *.clear*\nℹ️DESCRIPTION: Clearing chat.\n\n⚙️COMMAND: *.subject*\nℹ️DESCRIPTION: Change group name. \n\n⚙️COMMAND: *.promote*\nℹ️DESCRIPTION: Promoting members to admin.\n\n⚙️COMMAND: *.demote*\nℹ️DESCRIPTION: Demoting admins.\n\n⚙️COMMAND: *.search*\nℹ️DESCRIPTION: To view the current plugin list from Queen Amdi.\n\n⚙️COMMAND: *.plugin*\nℹ️DESCRIPTION: Install external plugins.\n\n⚙️COMMAND: *.remove*\nℹ️DESCRIPTION: Removes the plugin.\n\n⚙️COMMAND: *.invite*\nℹ️DESCRIPTION: Provides group invitation link.\n\n⚙️COMMAND: *.afk*\nℹ️DESCRIPTION: It turns bot bot AFK - Away From Keyboard.\n\n⚙️COMMAND: *.restart*\nℹ️DESCRIPTION: Restart the bot.\n\n⚙️COMMAND: *.shutdown*\nℹ️DESCRIPTION: Shutdown the Bot.\n\n⚙️COMMAND: *.setvar*\nℹ️DESCRIPTION: Change heroku config vars.\n\n⚙️COMMAND: *.getvar*\nℹ️DESCRIPTION: Get heroku config var.\n\n⚙️COMMAND: *.speedtest*\nℹ️DESCRIPTION:Check download and upload speed.\n\n⚙️COMMAND: *.filter*\nℹ️DESCRIPTION: It adds filters. If someone writes your filter word, it sends the answer. If you write a .filter it will show your list of filters.\n\n⚙️COMMAND: *.stop*\nℹ️DESCRIPTION: Stops the filters you added earlier.\n\n⚙️COMMAND: *.welcome*\nℹ️DESCRIPTION: It sets the welcome message.\n\n⚙️COMMAND: *.goodbye*\nℹ️DESCRIPTION: Sets the goodbye  message.\n\n⚙️COMMAND: *.kickme*\nℹ️DESCRIPTION: It removes the bot from the group that provided the command.\n\n⚙️COMMAND: *.pp*\nℹ️DESCRIPTION: The photo you mention mentions the bot profile photo.\n\n⚙️COMMAND: *.block*\nℹ️DESCRIPTION: Block tagged user.\n\n⚙️COMMAND: *.unblock*\nℹ️DESCRIPTION: Unblock tagged user.\n\n⚙️COMMAND: *.jid*\nℹ️DESCRIPTION: Giving user JID.\n\n⚙️COMMAND *.tagall*\nℹ️DESCRIPTION: Tag everyone in group.\n\n⚙️COMMAND: *.update*\nℹ️DESCRIPTION: Check for updates.\n\n⚙️COMMAND: *.update now*\nℹ️DESCRIPTION: To update your bot.\n\n⚙️COMMAND: *.dyno*\nℹ️DESCRIPTION: Showing heroku dyno hours.\n\n⚙️COMMAND: *.sysd*\nℹ️DESCRIPTION: Show system properties.\n\n⚙️COMMAND: *.scam*\nℹ️DESCRIPTION: Scam actions for 5min.\n\n*⚠️ The above command only works for Admin, Bot and SUDO numbers.*"
         },
         "locate": {
-            "L_DESC": "එය ඔබගේ locations යවයි.",
-            "L_WARN": "විධානය භාවිතා කිරීමට පෙර කරුණාකර ඔබේ location options on කරන්න!"
+            "L_DESC": "It sends your locations.",
+            "L_WARN": "Please turn on your location options before using the command!"
         },
         "afk": {
-            "AFK_DESC": "එය ඔබ offline බව කියනු ඇත.",
-            "IM_AFK": "*මම දැන් offline! කරුණාකර රැඳී සිටින්න (මෙය ස්වයංක්‍රීය පණිවිඩයකි.)*",
-            "IM_AFK_NOMD": "මම දැන් offline! කරුණාකර රැඳී සිටින්න (මෙය ස්වයංක්‍රීය පණිවිඩයකි.)",
-            "REASON": "හේතුව",
+            "AFK_DESC": "It will tell you offline.",
+            "IM_AFK": "*I'm offline now! Please wait (This is an automatic message.)*",
+            "IM_AFK_NOMD": "I'm offline now! Please wait (This is an automatic message.)",
+            "REASON": "Reason",
             "LAST_SEEN": "Last Seen",
-            "IM_NOT_AFK": "```මම තවදුරටත් offline නොවේ!```",
-            "AFK_TEXT": "```බිප් බොප්! මම බොට් ය. මගේ හිමිකරු මේ මොහොතේ මෙහි නොමැත.```",
-            "AFK_TEXT_NOMD": "බිප් බොප්! මම බොට් ය.",
-            "HOUR": "පැය",
-            "MINUTE": "විනාඩි",
-            "SECOND": "තත්පර",
-            "AGO": " පෙර```"
+            "IM_NOT_AFK": "```I'm not offline anymore!```",
+            "AFK_TEXT": "```Bip Bop! I am a bot. My owner is not here at the moment.```",
+            "AFK_TEXT_NOMD": "Bip Bop! I am a bot.",
+            "HOUR": "Hour",
+            "MINUTE": "Minutes",
+            "SECOND": "Seconds",
+            "AGO": "Ago```"
         },
         "effects":{
-            "NEED_WORD": "*ඔබ වචනයක් ඇතුළත් කළ යුතුය*",
-            "QR_DESC": "එය text Qr කේතයට පරිවර්තනය කරයි",
-            "NEED_TEXT": "*වචන ඇතුළත් කළ යුතුය*"
+            "NEED_WORD": "*You must enter a word*",
+            "QR_DESC": "It converts text to Qr code",
+            "NEED_TEXT": "*Words must be entered*"
         },
         "evaluators": {
-            "TERM_DESC": "Server command shell ක්‍රියාත්මක කිරීමට ඉඩ දෙන්න.",
-            "GIVE_ME_CODE": "*මට කේතයක් දෙන්න!*"
+            "TERM_DESC": "Allow server command shell to run.",
+            "GIVE_ME_CODE": "*Give me a code!*"
         },
         "nekobin": {
-            "NEKO_DESC": "පිළිතුරු දුන් පණිවිඩ nekobin.com වෙත එක් කරනු ඇත.",
-            "NEED_REPLY": "```කරුණාකර පණිවිඩයකට tag දෙන්න!```",
-            "MUST_TEXT": "```කරුණාකර ඕනෑම පණිවිඩයකට tag දෙන්න```"
+            "NEKO_DESC": "Reply messages will be added to nekobin.com",
+            "NEED_REPLY": "```Please tag a message!``` ",
+            "MUST_TEXT": "```Please tag any message```"
         },
         "heroku": {
-            "RESTART_DESC": "Queen Amdi නැවත ආරම්භ කරන්න",
-            "RESTART_MSG": "```♻️ නැවත ආරම්භ කිරීම...```",
-            "SHUTDOWN_DESC": "Bot වසා දැමීමට",
-            "SHUTDOWN_MSG": "```වසා දමයි ⛔```",
+            "RESTART_DESC": "Restart Queen Amdi",
+            "RESTART_MSG": "```♻️ Restarting...```",
+            "SHUTDOWN_DESC": "To shut down bot",
+            "SHUTDOWN_MSG": "```Shutdown ⛔```",
             "DYNO_DESC": "Check heroku dyno usage",
             "DYNO_TOTAL": "```Total Quota```",
             "DYNO_USED": "```Quota used```",
@@ -101,109 +103,109 @@
             "NOT_FOUND": "```no results found for this key```"           
         },
         "filters": {
-            "FILTER_DESC": "එය filters එක් කරයි. කවුරුහරි ඔබේ filters ලියන්නේ නම්, එය පිළිතුර යවයි. ඔබ .filter ලියන්නේ නම්, එය ඔබගේ filters ලැයිස්තුව පෙන්වයි.",
+            "FILTER_DESC": "It adds filters. If someone writes your filters, it sends the answer. If you write a .filter, it will show your list of filters.",
             "NO_FILTER": "*❌ There are no filters in this chat!*",
             "FILTERS": "*🔎 There is your filters in this chat:*",
             "NEED_REPLY": "*❌ Please type in reply!*\n*Example:*",
             "FILTERED": "*✅ Successfully set* ```{}``` *to filter!*",
-            "STOP_DESC": "ඔබ කලින් එකතු කළ පෙරණය නවත්වයි.",
+            "STOP_DESC": "Stops the filter you added earlier.",
             "NEED_FILTER": "*❌ Please type a filter!*\n*Example:*",
             "ALREADY_NO_FILTER": "*❌ There is already no filter like this!*",
             "DELETED": "*✅ The filter was successfully deleted!*"
         },
         "greetings": {
-            "WELCOME_DESC": "එය පිළිගැනීමේ පණිවිඩය සකසයි. ඔබ එය හිස්ව තැබුවහොත් එය පිළිගැනීමේ පණිවිඩය පෙන්වයි.",
-            "NOT_SET_WELCOME": "*ඔබ තවමත් පිළිගැනීමේ පණිවිඩය සකසා නැත.!*\n**සැකසීමට:** ```.welcome ඔබගේ පිළිගැනීමේ පණිවිඩය```",
-            "WELCOME_ALREADY_SETTED": "*✅ පිළිගැනීමේ පණිවිඩය දැනටමත් සකසා ඇත!*\n*පණිවුඩය:* ```",
-            "NEED_WELCOME_TEXT": "*පිළිගැනීමේ පණිවිඩය සැකසීමට ඔබ පණිවිඩයක් ලිවිය යුතුය.*\n*Example:* ```.welcome WELCOME!```",
-            "WELCOME_DELETED": "*✅ පිළිගැනීමේ පණිවිඩය සාර්ථකව මකා දමා ඇත!*",
-            "WELCOME_SETTED": "*✅ පිළිගැනීමේ පණිවිඩය සාර්ථකව සකසා ඇත!*",
-            "GOODBYE_DESC": "සමුගැනීමේ පණිවිඩය සකසයි. ඔබ හිස්ව තැබුවහොත්, එය සමුගැනීමේ පණිවිඩයයි.",
-            "NOT_SET_GOODBYE": "*ඔබ සමුගැනීමේ පණිවිඩයක් සකසා නැත!*\n*To set:* ```.goodbye ඔබගේ ආයුබෝවන් පණිවිඩය```",
-            "GOODBYE_ALREADY_SETTED": "*✅ සමුගැනීමේ පණිවිඩය සකසා ඇත!*\n*Message:* ```",
-            "NEED_GOODBYE_TEXT": "*සමුගැනීමේ පණිවිඩය සැකසීමට ඔබ පණිවිඩයක් ලිවිය යුතුය.*\n*Example:* ```.goodbye Goodbye!```",
-            "GOODBYE_DELETED": "*✅ සමුගැනීමේ පණිවිඩය සාර්ථකව මකා දමා ඇත!*",
-            "GOODBYE_SETTED": "*✅ සමුගැනීමේ පණිවිඩය සාර්ථකව සකසා ඇත!*"
+            "WELCOME_DESC": "It sets the welcome message. If you leave it blank it shows the welcome message.",
+            "NOT_SET_WELCOME": "*You don't set the welcome message yet.!*\n**To set:** ```.welcome hi && hi#how are you?```",
+            "WELCOME_ALREADY_SETTED": "*✅ Welcome message already set!*\n*Message:* ```",
+            "NEED_WELCOME_TEXT": "*You must write a message to set up the welcome message.*\n*Example:* ```.welcome hi && hi#how are you?```",
+            "WELCOME_DELETED": "*✅ Welcome message has been deleted successfully!*",
+            "WELCOME_SETTED": "*✅ Welcome message has been set successfully!*",
+            "GOODBYE_DESC": "Sets the goodbye message. If you leave blank, it show's the goodbye message.",
+            "NOT_SET_GOODBYE": "*You didn't set a goodbye message!*\n*To set:* ```.goodbye bye && bye#see ya```",
+            "GOODBYE_ALREADY_SETTED": "*✅ Goodbye message has been set!*\n*Message:* ```",
+            "NEED_GOODBYE_TEXT": "*You must write a message to set up the goodbye message.*\n*Example:* ```.goodbye bye && bye#see ya```",
+            "GOODBYE_DELETED": "*✅ Goodbye message has been deleted successfully!*",
+            "GOODBYE_SETTED": "*✅ Goodbye message has been setted successfully!*"
         },
         "lydia": {
-            "ADDLYDIA_DESC": "පරිශීලකයා සඳහා lydia (AI) සක්‍රීය කරයි.",
-            "NEED_REPLY": "```කරුණාකර පරිශීලක පණිවිඩයකට ප්‍රතිචාර දක්වන්න!```",
-            "COFFEEHOUSE": "```ඔබ coffehouse API යතුර නැත! ```",
-            "ENABLED_LYDIA": "```මෙම පරිශීලකයා සඳහා lydia සක්‍රිය කර ඇත!```",
-            "RMLYDIA_DESC": "පරිශීලකයා සඳහා ලිඩියා අක්‍රීය කරයි.",
-            "ALREADY_EMPTY": "```ඔබගේ පරිශීලක ලැයිස්තුව දැනටමත් හිස් ය!```",
-            "NOT_ADDED": "```ඔබ දැනටමත් මෙම පරිශීලකයා එකතු කර නැත!```",
-            "DISABLED": "```මෙම පරිශීලකයා සඳහා lydia AI අක්‍රීය කර ඇත!```"
+            "ADDLYDIA_DESC": "Activates Lydia (AI) for the user.",
+            "NEED_REPLY": "```Please respond to a user's message!```",
+            "COFFEEHOUSE": "```You haven't defined the Coffehouse API Key! ```",
+            "ENABLED_LYDIA": "```Lydia has been activated for this user!```",
+            "RMLYDIA_DESC": "Makes Lydia disabled for the user.",
+            "ALREADY_EMPTY": "```Your user list is already empty!```",
+            "NOT_ADDED": "```You haven't added this user already!```",
+            "DISABLED": "```Lydia has been disabled for this user!```"
         },
         "memes": {
-            "MEMES_DESC": "ඔබ පිළිතුරු දුන් ඡායාරූප මේමස්.",
-            "NEED_REPLY": "*ඡායාරූපයකට mention දෙන්න!*",
-            "DOWNLOADING": "```🔄 මාධ්‍ය බාගත කිරීම සහ meme සෑදීම ආරම්භ විය.....```"
+            "MEMES_DESC": "The photos you replied to are memes.",
+            "NEED_REPLY": "*Mention a photo!*",
+            "DOWNLOADING": "🔄 Media download and meme creation started ..."
         },
         "ocr": {
-            "OCR_DESC": "ඔබ mention දුන් ඡායාරූපයෙහි පෙළ කියවයි.",
-            "NEED_REPLY": "*ඡායාරූපයකට mention දෙන්න!*",
-            "DOWNLOADING": "```🔄 මාධ්‍ය බාගත කිරීම සහ කියවීම...```",
-            "ERROR": "```මට මෙය කියවීමට නොහැකි විය :/```\n*දෝෂය:*```{}```",
-            "RESULT": "*භාෂාව:* ```{}```\n*මෙන්න මම කියවූ දේ:* ```{}```"
+            "OCR_DESC": "Scan your picture into text.",
+            "NEED_REPLY": "*Please reply a picture!*",
+            "DOWNLOADING": "```🔄 Downloading and reading...```",
+            "ERROR": "```Sorry, Can't read this :/```\n*Error:*```{}```",
+            "RESULT": "*Language:* ```{}```\n*This is what I read:* ```{}```"
         },
         "profile": {
-            "KICKME_DESC": "එය ඔබ භාවිතා කරන කණ්ඩායමෙන් ඔබව ඉවත් කරයි.",
-            "KICKME": "```මම යනවා! ගිහින් එන්නම් 🤠```",
-            "PP_DESC": "ඔබ පිළිතුරු දෙන ඡායාරූපය පැතිකඩ ඡායාරූපය කරයි.",
-            "NEED_PHOTO": "*මට ඡායාරූපයක් දෙන්න!*",
-            "PPING": "```Profile ඡායාරූපය සැකසීම...```",
-            "BLOCK_DESC": "පරිශීලක අවහිර කිරීම.",
-            "UNBLOCK_DESC": "පරිශීලක වාරණය ඉවත් කිරීම.",
-            "BLOCKED": "අවහිර කර ඇත",
-            "UNBLOCKED": "Unblock කර ඇත",
-            "BLOCKED_UPPER": "අවහිර කර ඇත!",
-            "UNBLOCKED_UPPER": "Unblock කර ඇත.",
-            "NEED_USER": "මට user කෙනෙක් mention කරන්න.!",
-            "JID_DESC": "User's JID දීම.",
+            "KICKME_DESC": "It kicks you from the group you are using it in.",
+            "KICKME": "```Bye bye! I am going 💃🏻```",
+            "PP_DESC": "Makes the profile photo what photo you reply.",
+            "NEED_PHOTO": "*Give me a photo!*",
+            "PPING": "```Setting profile photo...```",
+            "BLOCK_DESC": "Block user.",
+            "UNBLOCK_DESC": "Unblock user.",
+            "BLOCKED": "Blocked",
+            "UNBLOCKED": "unblocked",
+            "BLOCKED_UPPER": "Blocked!",
+            "UNBLOCKED_UPPER": "Unblocked.",
+            "NEED_USER": "Give me a user!",
+            "JID_DESC": "Giving user's JID.",
             "JID": "```JID address of``` @{} ```: {}```",
             "JID_CHAT": "```Chat's JID address: {}```"
         },
         "removebg": {
-            "REMOVEBG_DESC": "ඡායාරූපවල පසුබිම ඉවත් කරයි.",
-            "NEED_PHOTO": "*මට ඡායාරූපයක් දෙන්න!*",
-            "NO_API_KEY": "*ඔබට API key නොමැත!*\nමෙහිදි ඔබ remove.bg යන website එකට පිවිස signup වී, API key එකක් ලබාගන්න.",
-            "RBGING": "```🔄 පසුබිම ඉවත් කරමින් පවතී...```"
+            "REMOVEBG_DESC": "Removing background of image.",
+            "NEED_PHOTO": "*Please reply to a image!*",
+            "NO_API_KEY": "*You haven't got API key!*\nYou can get API key by sigining up remove.bg site",
+            "RBGING": "```🔄 Removing background...```"
         },
         "scrapers": {
-            "TRANSLATE_DESC": "එය ගූගල් පරිවර්තනය සමඟ පරිවර්තනය කරයි. ඔබ ඕනෑම පණිවිඩයකට mention දිය යුතුය.",
+            "TRANSLATE_DESC": "It translates with Google Translator. You must mention any message.",
             "TRANSLATE_USAGE": ".trt en si (From English to Sinhala)",
-            "NEED_REPLY": "```කරුණාකර ඕනෑම පණිවිඩයකට mention දෙන්න!```",
-            "LANG": "භාෂාව",
-            "FROM": "පරිවර්තනය කළ භාෂාව",
-            "RESULT": "පරිවර්තනය කළ පණිවිඩය",
-            "TRANSLATE_ERROR": "❌ පරිවර්තනය කිරීමේදී දෝෂයක් සිදුවිය!*",
-            "CURRENCY_ERROR": "```Syntax error! උදාහරණයක්: .currency 1 USD LKR```",
-            "INVALID_CURRENCY": "```විදේශ මුදල් ගනුදෙනුව අසාර්ථක විය. ඔබ වැරදි මුදල් ලියා ඇත!```",
-            "UNKNOWN_ERROR": "```දෝෂයක් ඇතිවිය. විදේශ මුදල් ගනුදෙනුව අසාර්ථක විය!```",
-            "TTS_DESC": "එය වචන voice messageට පරිවර්තනය කරයි.",
-            "TTS_ERROR": "```දෝෂය, ඔබේ වාක්‍යයේ කථන voice message කළ නොහැක!```",
-            "SONG_DESC": "ඔබ ලියූ ගීතය උඩුගත කරයි.",
-            "NEED_TEXT_SONG": "*කරුණාකර ගීතයක් කියන්න!*\n*උදාහරණයක්:* ```.song kelinma ahanna ayya song```",
-            "NO_RESULT": "*මට කිසිවක් සොයාගත නොහැකි විය :(*",
-            "DOWNLOADING_SONG": "```🔄 ඔබේ ගීතය download කරමින් පවති...```",
-            "UPLOADING_SONG": "```🔂 ඔබේ ගීතය upload කරමින් පවති...```",
-            "VIDEO_DESC": "යූ ටියුබ් වෙතින් වීඩියෝ බාගත කරයි.",
-            "NEED_VIDEO": "*කරුණාකර වීඩියෝ link එකක් ලියන්න!*\n*උදාහරණයක්:* .video https://www.youtube.com/watch?v=cXcQMXC66c4",
-            "DOWNLOADING_VIDEO": "```🔄 ඔබගේ වීඩියෝව download කරමින් පවති...```",
-            "UPLOADING_VIDEO": "```⬆️ ඔබේ වීඩියෝව upload කරමින් පවති...```",
-            "YT_DESC": "එය යූ ටියුබ් තුළ සොයයි.",
-            "NEED_WORDS": "```කරුණාකර වචන කිහිපයක් ලියන්න!```",
-            "GETTING_VIDEOS": "```🔎 කරුණාකර රැඳී සිටින්න, වීඩියෝ serach කරමින් පවති...```",
-            "NOT_FOUND": "*මට කිසිවක් සොයාගත නොහැකි විය :(*",
-            "SEARCHING": "* 🔎 Searching...*",
-            "WIKI_DESC": "Wikipedia සොයයි.",
-            "IMG_DESC": "ගූගල් හි අදාළ පින්තූර සෙවීම.",
-            "IMG": "🔄 ඡායාරූපය upload කිරීම ```{}``` ගණන ```{} ```...",
-            "CURRENCY_DESC": "මුදල් ඒකක පරිවර්තනය කිරීමට.",
-            "EFFECT_DESC": "Text effect රූප බවට පරිවර්තනය කිරීම සඳහා විධාන කට්ටලයක්.",
-            "IG_DESC": "Instagram වෙතින් රූපය / වීඩියෝ බාගන්න",
-            "NEED_WORD": "කරුණාකර වලංගු link ඇතුළත් කරන්න",
+            "NEED_REPLY": "```Please mention any message!```",
+            "LANG": "Language",
+            "FROM": "Translated language",
+            "RESULT": "Translated message",
+            "TRANSLATE_ERROR": "❌ An error occurred while translating!*",
+            "CURRENCY_ERROR": "```Syntax error! Example: .currency 1 USD LKR```",
+            "INVALID_CURRENCY": "```The foreign currency transaction failed. You wrote the wrong money!```",
+            "UNKNOWN_ERROR": "```There was an error. Foreign currency transaction failed!```",
+            "TTS_DESC": "It translates words into voice messages.",
+            "TTS_ERROR": "```Error, you can't voice message in your sentence!```",
+            "SONG_DESC": "Uploading the songs.",
+            "NEED_TEXT_SONG": "*Please give me song name!*\n*Example:* ```.song build a bitch```",
+            "NO_RESULT": "*I could not find anything. :(*",
+            "DOWNLOADING_SONG": "```🔄 Downloading your song...```",
+            "UPLOADING_SONG": "```🔂 Uploading your song...```",
+            "VIDEO_DESC": "Downloading videos from YouTube",
+            "NEED_VIDEO": "*Please write a video link!*\n*Example:* .video https://www.youtube.com/watch?v=cXcQMXC66c4",
+            "DOWNLOADING_VIDEO": "```🔄 Downloading your video...```",
+            "UPLOADING_VIDEO": "```⬆️ Uploading your video...```",
+            "YT_DESC": "Searchng videos on YouTube.",
+            "NEED_WORDS": "```Need words to search!```",
+            "GETTING_VIDEOS": "```🔎 Please wait, the video is being searched...```",
+            "NOT_FOUND": "*I could not find anything :(*",
+            "SEARCHING": "*🔎 Searching...*",
+            "WIKI_DESC": "Search Wikipedia.",
+            "IMG_DESC": "Downloading google images.",
+            "IMG": "🔄 Uploading images ```{}``` numbers ```{} ```...",
+            "CURRENCY_DESC": "To convert currencies.",
+            "EFFECT_DESC": "A set of commands for converting text to effect images.",
+            "IG_DESC": "Download instagram videos.",
+            "NEED_WORD": "Please enter a valid link!",
             "QUOTE_DESC": "It Sends Random Quote",
             "NEED_LOCATIONA": "*Invalid Request*",
             "QUOTE": "Quote :",
@@ -215,68 +217,76 @@
             "WAME_DESC": "Get a link to the user chat.",
             "WAME": "```Chat link from```@{}: https://wa.me/{}",
             "NEED_UWONG": "*Give me a user!*",
-            "FBDESC": "ෆේස්බුක් වෙතින් වීඩියෝ බාගත කරයි",
-            "NOT_FOUNDFB": "වීඩියෝව හමු නොවීය",
+            "FBDESC": "Download Facebook videos.",
+            "NOT_FOUNDFB": "Can't find the video",
             "CAPTION": "Caption",
-            "LOADING": "🔄 ඔබගේ වීඩියෝව download කරමින් පවති...",
-            "DL_VID": "🔄 Video බාගත කිරීම...",
-            "ERR_VID": "කරුණාකර වලංගු Instagram link ඇතුළත් කරන්න"
+            "DL_VID": "🔄 Downloading your video...",
+            "UP_VID": "🔄 Uploading your video...",
+            "ERR_VID": "Please enter a valid link!"
         },
         "sticker": {
-            "STICKER_DESC": "එය ඔබගේ mention දුන් ඡායාරූපය හෝ වීඩියෝව ස්ටිකර් බවට පරිවර්තනය කරයි.",
-            "NEED_REPLY": "*ඡායාරූපයකට හෝ වීඩියෝවකට mention දෙන්න!*",
-            "DOWNLOADING": "```🔄 මාධ්‍ය download කිරීම සහ ස්ටිකර් බවට පරිවර්තනය කිරීම...```"
+            "STICKER_DESC": "Make stickers to your images. Reply to an image.",
+            "NEED_REPLY": "*Please reply an image!*",
+            "DOWNLOADING": "```🔄 Downloading media and making sticker...```",
+            "ANI_STICK": "Converts animated stickers to video.",
+            "ANI_REPLY": "*Please reply an animated sticker*",
+            "ANIMATE": "```🔄 Converting Animated Sticker To Video..```"
         },
         "system_stats": {
-            "ALIVE_DESC": "බොට් වැඩ කරන්නේ නැද්ද යන්න පරීක්ෂා කිරීමට?",
-            "SYSD_DESC": "System properties පෙන්වයි.",
-            "BOT_V": "ඔබ දැනට install කර තිබෙන bot version එක පෙන්වීම.",
-            "version": "2.7 - Public Release"
+            "ALIVE_DESC": "Check bot online or not",
+            "SYSD_DESC": "System properties.",
+            "BOT_V": "Check version of bot.",
+            "version": "2.9 - VIP Edition"
         },
         "tagall": {
-            "TAGALL_DESC": "කණ්ඩායමේ සිටින සියල්ලන් ටැග් කරයි.",
-            "ADMİN": "*මම මෙම කණ්ඩායමේ admin නොවේ!*",
-            "TAGADMİN": "Admins ටැග් කිරීමට."
+            "TAGALL_DESC": "Tag everyone in the group.",
+            "ADMİN": "*I am not an Admin here!*",
+            "TAGADMİN": "Tag all group admins."
         },
         "updater": {
-            "UPDATER_DESC": "Updates පරීක්ෂා කරයි.",
-            "UPDATE": "*ඔබේ bot සම්පූර්ණයෙන්ම යාවත්කාලීනයි!✅*",
-            "NEW_UPDATE": "*Bot සඳහා නව යාවත්කාලීන කිරීම් තිබේ!*\n.update now ටයිප් කර update කරගත හැක.\n\nවෙනස්කම්:\n```",
-            "UPDATE_NOW_DESC": "එය යාවත්කාලීන කරයි.",
+            "UPDATER_DESC": "Check for updates.",
+            "UPDATE": "*Your bot is completely updated!✅*",
+            "NEW_UPDATE": "*Your bot have some updates!*\nType *.update now*\n\nChanges:\n```",
+            "UPDATE_NOW_DESC": "Updating your bot",
             "UPDATING": "_Updating...🔄_",
-            "INVALID_HEROKU": "*❌ ඔබේ HEROKU_API_KEY තොරතුරු වැරදිය!*",
-            "UPDATED": "*✅ සාර්ථකව update කරන ලදි!*",
-            "UPDATED_LOCAL": "*✅ සාර්ථකව update කරන ලදි!*",
-            "AFTER_UPDATE": "*💬 Queen amdi ස්වයංක්‍රීයව නැවත ආරම්භ කිරීම!*"
+            "INVALID_HEROKU": "*❌ Your HEROKU_API_KEY wrong! Visit https://dashboard.heroku.com/account . Scroll down to API key. Click reveal buttong. Copy that API key and paste it in HEROKU_API_KEY config vars.*",
+            "UPDATED": "*✅ Successfully updated!*",
+            "UPDATED_LOCAL": "*✅ Successfully updated!*",
+            "AFTER_UPDATE": "*💬 Queen Amdi automatically restarting!*",
+            "VERIFY_DESC": "Verify your bot officially.",
+            "VERIFY": "*Your bot is verified!✅*",
+            "VERIFIED": "*✅ Successfully verified!*",
+            "VERIFIED_LOCAL": "*✅ Successfully verified!*",
+            "VERIFYING": "_🎲 Verifying..._"
         },
         "weather": {
-            "WEATHER_DESC": "කාලගුණය පෙන්වයි.",
-            "NEED_LOCATION": "*කරුණාකර ස්ථානයක් ලියන්න!*\n*Example:* ```.weather Colombo```",
-            "LOCATION": "ස්ථානය",
-            "TEMP": "උෂ්ණත්වය",
-            "DESC": "විස්තර",
-            "HUMI": "ආර්ද්‍රතාවය",
-            "WIND": "සුළං වේගය",
-            "CLOUD": "වලාකුළු",
-            "NOT_FOUND": "```මට මෙම නම සහිත නගරයක් සොයාගත නොහැකි විය. 😖```"
+            "WEATHER_DESC": "Check weather.",
+            "NEED_LOCATION": "*Please wirte a place!*\n*Example:* ```.weather Colombo```",
+            "LOCATION": "Place",
+            "TEMP": "Temperature",
+            "DESC": "Description",
+            "HUMI": "Humidity",
+            "WIND": "Wind speed",
+            "CLOUD": "Cloud",
+            "NOT_FOUND": "```I can't find that place. 😖```"
         },
         "web": {
-            "SPEEDTEST_DESC": "Download කිරීම සහ Upload කිරීමේ වේගය මැනීම.",
+            "SPEEDTEST_DESC": "Check download and upload speed",
             "SPEEDTESTING": "```🔄 Running speed test...```",
             "SPEEDTEST_RESULT": "*✅ Speed ​​test completed!*",
             "UPLOAD": "Upload",
             "DOWNLOAD": "Download",
-            "PING_DESC": "ඔබේ ping මැනීම.",
-            "URL": "Links shorten කරන්න."
+            "PING_DESC": "Your ping.",
+            "URL": "Shorten link."
         },
         "conventer": {
-            "MP4TOAUDİO_DESC": "වීඩියෝව mp3 බවට පරිවර්තනය කරයි.",
-            "MP4TOAUDİO_NEEDREPLY": "*ඔබ වීඩියෝවකට mention දිය යුතුය!*",
-            "MP4TOAUDİO": "```🔄 වීඩියෝව mp3 බවට පරිවර්තනය කිරීම..```",
-            "STİCKER_DESC": "ස්ටිකරය ඡායාරූපයකට පරිවර්තනය කරයි.",
-            "STİCKER_NEEDREPLY": "*ඔබ ස්ටිකරයකට mention දිය යුතුය!*",
-            "STİCKER": "```🔄 ස්ටිකරය ඡායාරූපයකට පරිවර්තනය කිරීම..```",
-            "XMEDİA_DESC": "එය මාධ්‍ය මෙවලම් 25 කට වඩා ඇති ප්ලගිනයකි.",
+            "MP4TOAUDİO_DESC": "Convert mp4 into mp3.",
+            "MP4TOAUDİO_NEEDREPLY": "*Please reply to a video!*",
+            "MP4TOAUDİO": "```🔄 Converting mp4 to mp3..```",
+            "STİCKER_DESC": "Convert sticker into an image.",
+            "STİCKER_NEEDREPLY": "*Please reply to a sticker!*",
+            "STİCKER": "```🔄 Converting sticker into image..```",
+            "XMEDİA_DESC": "A plugin that have 25 media tools.",
             "T_FALSE": "```❌ Incorrect Blend Effect Entered!```\n```🔎 Existing Commands:```\n\n*$dodge* - Applies a pink color filter to the video.\n*$multiply* - Applies a green color filter to the video.\n*$grainmerge* - Increases the contrast of the video.\n*$and* - Applies black lightning effect according to the speed of the video.\n*$or* - Applies a white lightning effect according to the speed of the video.\n*$burn* - Applies green contrast to video.\n*$difference* - Shows the differences by applying green relief to the video.\n*$grainextract* - Shows the differences by applying gray relief to the video.\n*$divide* - Demonstrates the differences by applying a pink relief to the video.\n*$xor* - Applies both green relief and lightning effect to video.\n*$hardmix* - Mixes the colors of the video into a yellow and red tone.\n*$negation* - Turns the dynamics of the video to pink.",
             "T_NOT": "```💭 You Need To Enter Any Blend Effects!\n```🔎 Existing Commands:```\n\n*$dodge* - Applies a pink color filter to the video.\n*$multiply* - Applies a green color filter to the video.\n*$grainmerge* - Increases the contrast of the video.\n*$and* - Applies black lightning effect according to the speed of the video.\n*$or* - Applies a white lightning effect according to the speed of the video.\n*$burn* - Applies green contrast to video.\n*$difference* - Shows the differences by applying green relief to the video.\n*$grainextract* - Shows the differences by applying gray relief to the video.\n*$divide* - Demonstrates the differences by applying a pink relief to the video.\n*$xor* - Applies both green relief and lightning effect to video.\n*$hardmix* - Mixes the colors of the video into a yellow and red tone.\n*$negation* - Turns the dynamics of the video to pink.",
             "T_DESC": "Applies the selected TBlend effect to videos." 
@@ -357,16 +367,16 @@
             "GÜNİKİMUTE": "*The group was silenced for 2 day!*",
             "GÜNÜÇMUTE": "*The group was silenced for 3 day!*",
             "TÜR": "*Unknown Command!*\n_Minute: 1-59m_\n_Hour: 1-12h_\n_Day: 1d-3d_",
-            "MUTE_DESC": "කණ්ඩායම් chat අක්‍රිය කරයි. පණිවිඩ යැවිය හැක්කේ adminට පමණි!",
-            "MUTE_OPEN": "*කමක් නැහැ! චැට් විවෘත කර ඇත!*"
+            "MUTE_DESC": "Mute the group chat. Admins can only message in that moment!",
+            "MUTE_OPEN": "*Alright! Chat has been unmuted!*"
         },
         "unvoice": {
-            "UV_DESC": "Mp3 files, voice message බවට පරිවර්තනය කරයි.",
-            "UV_REPLY": "*ඔබ mp3 file mention දිය යුතුය!*",
-            "UV_PROC": "```🔄 ශබ්ද පටිගත කිරීමකට පරිවර්තනය කිරීම..```"
+            "UV_DESC": "Convert mp3 into a WA voice message",
+            "UV_REPLY": "*Please reply to a mp3!*",
+            "UV_PROC": "```🔄 Recording the audio..```"
         },
         "ffmpeg": {
-            "FF_DESC": "වීඩියෝවට අපේක්ෂිත ffmpeg filter යොදයි.\n⌨️ Example: .ffmpeg fade=in:0:30",
+            "FF_DESC": "Apply ffmpeg filter to a video\n⌨️ Example: .ffmpeg fade=in:0:30",
             "FF_PROC": "🔄 Applying Effect.."
         },
         "spammer": {
@@ -376,63 +386,63 @@
             "STOP_SPAM": "✅ *Spam successfully stopped! Please wait a moment.*"
         },
         "carbon": {
-            "CARBON_DESC": "ඔබ mention කරන text එක carbon.sh මඟින් carbon image කරයි.",
+            "CARBON_DESC": "Convert text into Carbon effect",
             "CARBON_NEEDWORD": "*Not enough arguments to translate Text-to-Image!*\nExample: ```.carbon test```\nExample: ```.carbon making#test```",
-            "CARBON_WARN": "කරුණාකර english අක්ෂර පමණක් ටයිප් කරන්න!",
-            "NEED_WORD": "*ඔබ වචනයක් ඇතුළත් කළ යුතුය*"
+            "CARBON_WARN": "Please type only English letters!",
+            "NEED_WORD": "*Please reply to a message*"
         },
         "scam": {
-            "SCAM_DESC": "මිනිත්තු 5 ක ව්‍යාජ ක්‍රියා නිර්මාණය කරයි.",
+            "SCAM_DESC": "Scam for 5min.",
             "SCAM_NOTFOUND": "*You Must Enter Fake Action!*\nExisting Types: ```typing & recording & online & stop```",
             "SCAM_NULL": "```Wrong Action Entered! Please use existing types.```"
         },
         "deepai": {
-            "DEEPAI_DESC": "කෘතිම ස්නායුක ජාල භාවිතා කරමින් වඩාත් ප්‍රබල කෘතිම බුද්ධි මෙවලම් ධාවනය කරයි.",
+            "DEEPAI_DESC": "AI chat(OLD)",
             "TEXT": "*You must enter text! Although I am a powerful artificial intelligence, I cannot read your thoughts!*",
             "URL": "*You must enter the image URL!*\n*Example:* https://i.ibb.co/5rt16dP/Queen-Amdi.jpg"
         },
         "ttp": {
-            "TTP_DESC": "Text සරල image බවට පරිවර්තනය කරයි.",
-            "ATTP_DESC": "දේදුන්න text ස්ටිකරයක් ලෙස එක් කරයි.",
-            "NEED_WORD": "*ඔබ වචන ඇතුළත් කළ යුතුය!*",
-            "ANIME_DESC": "එය anime girl රඳවාගෙන සිටින banner තුළ text ලියයි",
-            "TRUMP_DESC": "Trumpගේ tweet එකට text පරිවර්තනය කරයි.",
-            "CHANGE_DESC": "Change my mind meme පෝස්ටරය වෙනස් කිරීම සඳහා text හරවයි."
+            "TTP_DESC": "Make text image",
+            "ATTP_DESC": "Make animated text stickers in Rainbow theme",
+            "NEED_WORD": "*Please enter words!*",
+            "ANIME_DESC": "Write text on anime girl's paper",
+            "TRUMP_DESC": "Write text on Trump Twitter",
+            "CHANGE_DESC": "Weite chaged my mind themed memes"
        },
        "anime": { 
-            "AN": "එය අහඹු ලෙස anime යවයි."
+            "AN": "Random anime pictures."
         },
         "wallpaper": {
-            "WP": "එය high resolution wallpaper යවයි."
+            "WP": "High-resolution wallpapers"
         },
         "webss": {
-            "SS_DESC": "දී ඇති linkයේ website screenshot ගනී.",
-            "LİNK": "ඔබ link ඇතුළත් කළ යුතුය!"
+            "SS_DESC": "Take screenshot of given links",
+            "LİNK": "Please enter a link!"
         },
         "voicy": {
-            "NEED_REPLY": "```කරුණාකර ඕනෑම පණිවිඩයකට mention දෙන්න!```",
-            "ONLY_AUDIO":"```ශ්රව්ය ගොනුව පමණක් පිළිගනු ලැබේ.```",
-            "USAGE": "එය mp3 text බවට පරිවර්තනය කරයි.",
-            "TEXT": "*හේයි! මම මේ voice ට ඇහුම්කන් දුන්නෙමි.:* \n\n"
+            "NEED_REPLY": "```Please reply to a message```",
+            "ONLY_AUDIO":"```Only audios allowed.```",
+            "USAGE": "Convert into a mp3",
+            "TEXT": "*Hey! I listen to this audio:* \n\n"
         },
         "notes": {
-            "NOTES_USAGE": "ඔබගේ පවතින සියලුම සටහන් පෙන්වයි.",
-            "NO_SAVED": "ඔබට සුරකින ලද සටහන් කිසිවක් නොමැත.",
+            "NOTES_USAGE": "Show your notes.",
+            "NO_SAVED": "You haven't any notes saved.",
             "SAVED": "Here is your saved messages: ",
-            "SAVE_USAGE": "පණිවිඩයකට mention දී ටයිප් කරන්න .save හෝ භාවිතා කරන්න .save <ඔබේ සටහන>",
-            "REPLY": "කරුණාකර සටහනක් හෝ පණිවිඩයකට mention දෙන්න.",
+            "SAVE_USAGE": "Reply *.save* to a message or type *.save <your_note>*",
+            "REPLY": "Please give me the note.",
             "SUCCESSFULLY_ADDED": "Successfully added new note, check your notes with .notes.",
             "UNSUCCESSFUL": "Could not add note, please try again later or contact QueenAmdi developers.",
-            "DELETE_USAGE": "ඔබගේ සුරකින ලද සටහන් *සියල්ල* මකා දමයි.",
+            "DELETE_USAGE": "Clear your all notes.",
             "SUCCESSFULLY_DELETED": "Successfully deleted all your notes."
         },
         "instagram": {
-            "NEED_WORD": "*කරුණාකර ඕනෑම instagram ගිණුමක username ඇතුළත් කරන්න.*",
+            "NEED_WORD": "*Please enter a IG username*",
             "USAGE": ".insta <userName>",
-            "DESC": "ඉන්ස්ටග්‍රෑම් වෙතින් පරිශීලක තොරතුරු ලබා ගනී",
-            "LOADING": "🔄 පරිශීලක දත්ත ලබා ගැනීම.. කරුණාකර රැඳී සිටින්න..",
+            "DESC": "Stalk instagram account details",
+            "LOADING": "🔄 Checking username.. Please wait..",
             "USERNAME": "Username",
-            "NAME": "නම",
+            "NAME": "Name",
             "BIO": "Bio",
             "FOLLOWERS": "Followers",
             "FOLLOWS": "Follows",
@@ -440,12 +450,12 @@
             "PUBLIC": "Public",
             "HIDDEN": "Hidden",
             "NOT_FOUND":"User not found: ",
-            "POST_COUNT":"Post ගණන",
-            "HL_COUNT":"Highlight story ගණන"
+            "POST_COUNT":"Post",
+            "HL_COUNT":"Highlight story"
         },
         "github": {
-            "GİTHUB_DESC": "දී ඇති පරිශීලක නාමයෙන් github තොරතුරු රැස් කරයි.\n⌨️ Example: .github BlackAmda",
-            "REPLY": "```ඔබට ඕනෑම username ටයිප් කිරීමට අවශ්‍යයි!```",
+            "GİTHUB_DESC": "Stalk github profiles of given username.\n⌨️ Example: .github BlackAmda",
+            "REPLY": "```Please type github username!```",
             "NOT": "```User not found!```",
             "FOLLOWERS": "Followers:",
             "NAME": "Name:",
@@ -466,41 +476,41 @@
             "UPDATE": "Last Update:"
         },
         "info": {
-            "INFO_DESC": "අදාළ chatහි විස්තර පතක් සපයයි.",
-            "GRP_NAME": "*ℹ️ කණ්ඩායම් නම :*",
-            "GRP_JID": "*💬 කණ්ඩායම් JID අංකය :*",
-            "GRP_OWN": "*⚜️ කණ්ඩායම අයිතිය :*",
-            "GRP_COD": "*🆔 කණ්ඩායම් කේතය :*",
-            "GRP_DES": "*🗨️ කණ්ඩායම් විස්තරය :*",
-            "PRO_JID": "*💬 User JID අංකය :*",
-            "PRO_DES": "*🗨️ විස්තරය :*"
+            "INFO_DESC": "Show chat details",
+            "GRP_NAME": "*ℹ️ Group name :*",
+            "GRP_JID": "*💬 Group JID :*",
+            "GRP_OWN": "*⚜️ Group owner :*",
+            "GRP_COD": "*🆔 Group invite link :*",
+            "GRP_DES": "*🗨️ Group description :*",
+            "PRO_JID": "*💬 User JID :*",
+            "PRO_DES": "*🗨️ Description :*"
         },
         "spotify": {
-            "SPO_DESC": "ඔබට spotify ගීත links මඟින් download කරගත හැක.",
-            "SPO_NEED": "ඔබ link ඇතුළත් කළ යුතුය!",
-            "SPO_DOWN": "🔄 ඔබේ ගීතය download කරමින් පවති...",
-            "SPO_UP": "⬆️ ඔබේ ගීතය upload කරමින් පවති...",
-            "SPO_ERR": "කරුණාකර වලංගු spotify link ඇතුළත් කරන්න"
+            "SPO_DESC": "Download spotify songs.",
+            "SPO_NEED": "Please enter a link!",
+            "SPO_DOWN": "🔄 Downloading your song...",
+            "SPO_UP": "⬆️ Uploading your song...",
+            "SPO_ERR": "Please enter a valid spotify link!"
         },
         "chatbot":{
-            "BOT_DESC": "AI chat bot සමඟ කතාබස් කරන්න.",
+            "BOT_DESC": "Chat with AI bot.",
             "BOT": ":",
             "NOT_FOUNDAC": "*Invaild Request*",
             "NEED_LOCATIONA": "*Invaild Request*",
-            "SWITCH_DESC": "AI chat bot සක්‍රිය / අක්‍රිය කිරීමට.\n⌨️ උදාහරණය: AI chat bot සක්‍රිය කිරීමට, .switch CHAT_BOT:true විධානය කරන්න.\nAI chat bot අක්‍රිය කිරීමට, .switch CHAT_BOT:false විධානය කරන්න.\n(මෙය admin පමණක් විධානයකි.)",
-            "SWITCH_MISSING": "```විධානය අවලංගුය.```",
-            "SWITCH_SUCCESS": "```විධානය ලැබුණා```",
-            "SWITCH_INVALID": "```විධානය අවලංගුය.```",
-            "NOT_AVAILABLE": "🚫 AI chat bot අක්‍රිය කර ඇත."
+            "SWITCH_DESC": "Turn on/off chat bot.\n⌨️ Example: To turn on AI chat, *.switch CHAT_BOT:true*\nTo turn on AI chat, *.switch CHAT_BOT:false*\n(This is a only admin command)",
+            "SWITCH_MISSING": "```Invalid command.```",
+            "SWITCH_SUCCESS": "```AI chat command detected.```",
+            "SWITCH_INVALID": "```Invalid command.```",
+            "NOT_AVAILABLE": "🚫 AI chat bot in sleep mode."
         },
         "random_pic":{
-            "BTS_DESC": "BTS සංගීත කණ්ඩායමේ පින්තුර ලබා දෙයි.",
-            "EXO_DESC" : "EXO සංගීත කණ්ඩායමේ පින්තුර ලබා දෙයි.",
-            "BP_DESC": "Black pink සංගීත කණ්ඩායමේ පින්තුර ලබා දෙයි."
+            "BTS_DESC": "Get BTS random images.",
+            "EXO_DESC" : "Get EXO random images.",
+            "BP_DESC": "Get Black Pink random images."
         },
         "tiktok":{
-            "TK_DESC": "දී ඇති usrname යෙන් tiktok තොරතුරු රැස් කරයි.\n⌨️ Example: .tk _black.amda_",
-            "REPLY": "```ඔබට ඕනෑම username ටයිප් කිරීමට අවශ්‍යයි!```",
+            "TK_DESC": "Stalk tiktok profile to a given username.\n⌨️ Example: .tk _black.amda_",
+            "REPLY": "```Please enter a valid tiktok username!```",
             "USERNAME": "Username :",
             "NAME": "Nickname :",
             "BIO": "Bio :",
@@ -508,12 +518,37 @@
             "FOLLOWING": "Followings :",
             "LIKES": "Likes :",
             "VIDEOS": "Videos :",
-            "NOT": "```User not found!```"
+            "NOT": "```User not found!```",
+            "TIKTOK_DESC": "Download without watermark videos from Tiktok",
+            "NEED_WORD": "Must Enter a tiktok link!",
+            "DLOAD_TK": "```🔄 Your tiktok is downloading...```",
+            "UPLOADING_TK": "```🔂 Your tiktok is uploading...```",
+            "INVALID_TK": "*I could not find anything :(*"
         },
         "lyric":{
-            "LY_DESC": "සිංදු වල lyrics ලබා දෙයි.",
-            "NEED_WORD": "*ඔබ සිංදු නම ඇතුළත් කළ යුතුය*",
-            "NO_RESULT": "*මට සිංදුව සොයාගත නොහැකි විය :(*"
+            "LY_DESC": "Song lyrics.",
+            "NEED_WORD": "*Please enter a song name*",
+            "NO_RESULT": "*I can't find that song :(*"
+        },
+        "search":{
+            "USAGE": "Search modded apk in Moddroid site.",
+            "NEED_WORDS": "```Need words to search!```",
+            "GET_MODD": "```🔎 Please wait..```",
+            "NOT_FOUND": "*I could not find this😔*",
+            "SPO_USAGE": "Search songs from spotify."
+        },
+        "information":{
+            "COVID_DESC": "Check information about Covid-19 of countries.\nExample : .covid Sri Lanka",
+            "NEED_CON": "Please enter a country name.",
+            "NO_RESULT": "*I could not find that country :(*",
+            "COUNTRY": "🌏 *Country* : ",
+            "CASES": "📢 *Covid patients* : ",
+            "TCASES": "🔎 *Today* : ",
+            "DEATHS": "⚰️ *Deaths* : ",
+            "TDEATHS": "⚰️ *Today Deaths* : ",
+            "RECO": "⚕️ *Recovered* : ",
+            "CRIT": "😵 *Critical* : ",
+            "TEST": "🔬 *Total Tests* : "
         }
     }
 }

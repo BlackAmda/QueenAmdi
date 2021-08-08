@@ -20,6 +20,7 @@ function getString(file) {
     return json['STRINGS'][file];
 }
 
+
 module.exports = {
     language: json,
     getString: getString

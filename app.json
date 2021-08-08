@@ -1,7 +1,7 @@
 {
-    "name": "Queen Amdi 2.8v",
+    "name": "Queen Amdi 2.9v",
     "description": "Queen Amdi is a chat bot for WhatsApp. Makes it easy and fun to use Whatsapp.",
-    "logo": "https://i.ibb.co/zF4r24v/LOGO.jpg",
+    "logo": "https://i.ibb.co/r3wmpwr/LOGO.jpg",
     "keywords": ["whatsapp", "userbot", "bot", "api", "ai", "Queen Amdi"],
     "repository": "",
     "website":   "https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD",
@@ -83,6 +83,11 @@
             "description": "If you do not know this. Give it up.",
             "required": true,
             "value": "false"
+        },
+        "MENU": {
+            "description": "Customizeable commands list request command. Keep panel if you don't want to change.",
+            "required": true,
+            "value": "panel"
         },
          "ALIVE_LOGO": {
             "description": "Alive message Enter your image link below to change the image. (Upload the image you want to https://imgbb.com and put that link here.)",

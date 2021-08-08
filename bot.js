@@ -46,7 +46,7 @@ fs.readdirSync('./plugins/sql/').forEach(plugin => {
 
 const plugindb = require('./plugins/sql/plugin');
 
-// Yalnızca bir kolaylık. https://stackoverflow.com/questions/4974238/javascript-equivalent-of-pythons-format-function //
+// just a convenience. https://stackoverflow.com/questions/4974238/javascript-equivalent-of-pythons-format-function //
 String.prototype.format = function () {
     var i = 0, args = arguments;
     return this.replace(/{}/g, function () {
@@ -266,6 +266,7 @@ ${chalk.blue.italic('ℹ️ WhatsApp වෙත සම්බන්ධ වෙම�
         }
     });
 
+    
     
     conn.on('message-new', async msg => {
         if (msg.key && msg.key.remoteJid == 'status@broadcast') return;

@@ -82,7 +82,7 @@ Queen Amdi bot විශේෂාංග මෙන්න.
 
   </a>
 
-නව යාවත්කාලීන කිරීම් බැලීමට මෙය ක්ලික් කරන්න(Updates). 
+නව යාවත්කාලීන කිරීම් බැලීමට මෙය ක්ලික් කරන්න(2.9v Updates). 
 <a href="https://gist.github.com/BlackAmda/890b6b31fcb8d376d6a68afcb7359324">
     <img src="https://img.shields.io/badge/Click%20here-purple&style=plastic">
 

@@ -82,7 +82,7 @@ Here is the Queen Amdi bot features.
 
   </a>
 
-Click here to see the latest updates. 
+Click here to see the latest updates (2.9v update). 
 <a href="https://gist.github.com/BlackAmda/890b6b31fcb8d376d6a68afcb7359324">
     <img src="https://img.shields.io/badge/Click%20here-purple&style=plastic">
 

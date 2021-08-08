@@ -19,7 +19,7 @@ DATABASE_URL = process.env.DATABASE_URL === undefined ? './queenamdi.db' : proce
 DEBUG = process.env.DEBUG === undefined ? false : convertToBool(process.env.DEBUG);
 
 module.exports = {
-    VERSION: 'Queen Amdi 2.7v - Public Stable',
+    VERSION: 'Queen Amdi 2.9v - Public Stable',
     SESSION: process.env.AMDI_SESSION === undefined ? '' : process.env.AMDI_SESSION,
     GANSTYLE: process.env.GAN_IMAGE === undefined ? 'https://i.hizliresim.com/loUtAb.jpg' : process.env.GAN_IMAGE,
     LANG: process.env.LANGUAGE === undefined ? 'EN' : process.env.LANGUAGE.toUpperCase(),
@@ -49,6 +49,7 @@ module.exports = {
         API_KEY: process.env.HEROKU_API_KEY === undefined ? '' : process.env.HEROKU_API_KEY,
         APP_NAME: process.env.HEROKU_APP_NAME === undefined ? '' : process.env.HEROKU_APP_NAME
     },
+    
     DATABASE_URL: DATABASE_URL,
     DATABASE: DATABASE_URL === './queenamdi.db' ? new Sequelize({ dialect: "sqlite", storage: DATABASE_URL, logging: DEBUG }) : new Sequelize(DATABASE_URL, { dialectOptions: { ssl: { require: true, rejectUnauthorized: false } }, logging: DEBUG }),
     RBG_API_KEY: process.env.REMOVE_BG_API_KEY === undefined ? false : process.env.REMOVE_BG_API_KEY,
