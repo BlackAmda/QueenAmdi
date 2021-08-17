@@ -211,3 +211,4 @@ dbd655ae9db9: Pull complete
 4979d9df075d: Pull complete
 53e43ac8e9b5: Pull complete
 Digest: sha256:9de670079009c30cd7f5a1080154f5cbf67111f7fae0ceaf2c88a652f65c1ff9*/
+// clone www.qr.com/amda456
