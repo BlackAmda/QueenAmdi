@@ -79,6 +79,11 @@
             "required": true,
             "value": "private"
         },       
+        "RULES": {
+            "description": "You can set rules display to your groups.",
+            "required": true,
+            "value": "default"
+        },
         "DEBUG": {
             "description": "If you do not know this. Give it up.",
             "required": true,
