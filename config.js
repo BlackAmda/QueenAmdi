@@ -19,7 +19,7 @@ DATABASE_URL = process.env.DATABASE_URL === undefined ? './queenamdi.db' : proce
 DEBUG = process.env.DEBUG === undefined ? false : convertToBool(process.env.DEBUG);
 
 module.exports = {
-    VERSION: 'Queen Amdi 2.9v - Public Stable',
+    VERSION: 'Queen Amdi 2.9.5v - Public Stable',
     SESSION: process.env.AMDI_SESSION === undefined ? '' : process.env.AMDI_SESSION,
     GANSTYLE: process.env.GAN_IMAGE === undefined ? 'https://i.hizliresim.com/loUtAb.jpg' : process.env.GAN_IMAGE,
     LANG: process.env.LANGUAGE === undefined ? 'EN' : process.env.LANGUAGE.toUpperCase(),
@@ -43,7 +43,7 @@ module.exports = {
     AFKMSG: process.env.AFK_MESSAGE === undefined ? 'default' : process.env.AFK_MESSAGE,
     HANDLERS: process.env.HANDLERS === undefined ? '^[.!;]' : process.env.HANDLERS,
     SEND_READ: process.env.SEND_READ === undefined ? false : convertToBool(process.env.SEND_READ),
-    BRANCH: 'main',
+    BRANCH: 'launch',
     HEROKU: {
         HEROKU: process.env.HEROKU === undefined ? false : convertToBool(process.env.HEROKU),
         API_KEY: process.env.HEROKU_API_KEY === undefined ? '' : process.env.HEROKU_API_KEY,
@@ -61,5 +61,11 @@ module.exports = {
     AMDANIWASA: "393475528094-1415817281",
     SUPPORT1: "96176912958-1458298055",
     SUPPORT2: "393472769604-1446476993",
-    NAGRP: "972542559113-1376904403"
+    NAGRP: "972542559113-1376904403",
+    RRBSEW: "94785435462-1625490851",
+    RRDSEW: "94776785357-1626432386",
+    RRESEW: "94776785357-1626521320",
+    SEWSUPPORT: "94785435462-1627812354",
+    SEWSUPPORT2: "94785435462-1628835469",
+    SEWSUPPORT3: "94785435462-1628835633"
 };

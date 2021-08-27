@@ -1,5 +1,5 @@
 {
-    "__ASENAJSON__": true,
+    "__AMDIJSON__": true,
     "LANGUAGE": "English",
     "LANGCODE": "english",
     "AUTHOR": "BlackAmda",
@@ -140,12 +140,12 @@
         "memes": {
             "MEMES_DESC": "The photos you replied to are memes.",
             "NEED_REPLY": "*Mention a photo!*",
-            "DOWNLOADING": "🔄 Media download and meme creation started ..."
+            "DOWNLOADING": "\n```🔄 Media download and meme creation started...```\n"
         },
         "ocr": {
             "OCR_DESC": "Scan your picture into text.",
             "NEED_REPLY": "*Please reply a picture!*",
-            "DOWNLOADING": "```🔄 Downloading and reading...```",
+            "DOWNLOADING": "\n```🔄 Downloading and reading...```\n",
             "ERROR": "```Sorry, Can't read this :/```\n*Error:*```{}```",
             "RESULT": "*Language:* ```{}```\n*This is what I read:* ```{}```"
         },
@@ -170,7 +170,7 @@
             "REMOVEBG_DESC": "Removing background of image.",
             "NEED_PHOTO": "*Please reply to a image!*",
             "NO_API_KEY": "*You haven't got API key!*\nYou can get API key by sigining up remove.bg site",
-            "RBGING": "```🔄 Removing background...```"
+            "RBGING": "\n```🔄 Removing background...```\n"
         },
         "scrapers": {
             "TRANSLATE_DESC": "It translates with Google Translator. You must mention any message.",
@@ -188,20 +188,20 @@
             "SONG_DESC": "Uploading the songs.",
             "NEED_TEXT_SONG": "*Please give me song name!*\n*Example:* ```.song build a bitch```",
             "NO_RESULT": "*I could not find anything. :(*",
-            "DOWNLOADING_SONG": "```🔄 Downloading your song...```",
-            "UPLOADING_SONG": "```🔂 Uploading your song...```",
+            "DOWNLOADING_SONG": "\n```🔄 Downloading your song...```\n",
+            "UPLOADING_SONG": "\n```🔂 Uploading your song...```\n",
             "VIDEO_DESC": "Downloading videos from YouTube",
-            "NEED_VIDEO": "*Please write a video link!*\n*Example:* .video https://www.youtube.com/watch?v=cXcQMXC66c4",
-            "DOWNLOADING_VIDEO": "```🔄 Downloading your video...```",
-            "UPLOADING_VIDEO": "```⬆️ Uploading your video...```",
+            "NEED_VIDEO": "*Please write a video link!*\n*Example:* .video https://www.youtube.com/watch?v=PgCliOxl41o",
+            "DOWNLOADING_VIDEO": "\n```🔄 Downloading your video...```\n",
+            "UPLOADING_VIDEO": "\n```⬆️ Uploading your video...```\n",
             "YT_DESC": "Searchng videos on YouTube.",
             "NEED_WORDS": "```Need words to search!```",
             "GETTING_VIDEOS": "```🔎 Please wait, the video is being searched...```",
             "NOT_FOUND": "*I could not find anything :(*",
-            "SEARCHING": "*🔎 Searching...*",
+            "SEARCHING": "\n*🔎 Searching...*\n",
             "WIKI_DESC": "Search Wikipedia.",
             "IMG_DESC": "Downloading google images.",
-            "IMG": "🔄 Uploading images ```{}``` numbers ```{} ```...",
+            "IMG": "\n🔄 Uploading images ```{}``` numbers ```{} ```...\n",
             "CURRENCY_DESC": "To convert currencies.",
             "EFFECT_DESC": "A set of commands for converting text to effect images.",
             "IG_DESC": "Download instagram videos.",
@@ -212,7 +212,7 @@
             "AUTHOR": "Author :",
             "NOT_FOUNDA": "```Sorry,I could not find a quote. 😖```",
             "SPDF_DESC": "Converts a Site into PDF",
-            "SPDF_PROC": "```Converting Site into PDF```",
+            "SPDF_PROC": "\n```Converting Site into PDF```\n",
             "SPDF_LINK": "*Must Enter a URL*",
             "WAME_DESC": "Get a link to the user chat.",
             "WAME": "```Chat link from```@{}: https://wa.me/{}",
@@ -220,23 +220,26 @@
             "FBDESC": "Download Facebook videos.",
             "NOT_FOUNDFB": "Can't find the video",
             "CAPTION": "Caption",
-            "DL_VID": "🔄 Downloading your video...",
-            "UP_VID": "🔄 Uploading your video...",
-            "ERR_VID": "Please enter a valid link!"
+            "DL_VID": "\n🔄 Downloading your video...\n",
+            "UP_VID": "\n🔄 Uploading your video...\n",
+            "ERR_VID": "Please enter a valid link!",
+            "SHORTS": "```Sorry,I can not get short videos. 😖```"
         },
         "sticker": {
             "STICKER_DESC": "Make stickers to your images. Reply to an image.",
             "NEED_REPLY": "*Please reply an image!*",
-            "DOWNLOADING": "```🔄 Downloading media and making sticker...```",
+            "DOWNLOADING": "\n```🔄 Downloading media and making sticker...```\n",
             "ANI_STICK": "Converts animated stickers to video.",
             "ANI_REPLY": "*Please reply an animated sticker*",
-            "ANIMATE": "```🔄 Converting Animated Sticker To Video..```"
+            "ANIMATE": "\n```🔄 Converting Animated Sticker To Video..```\n"
         },
         "system_stats": {
             "ALIVE_DESC": "Check bot online or not",
             "SYSD_DESC": "System properties.",
             "BOT_V": "Check version of bot.",
-            "version": "2.9 - VIP Edition"
+            "version": "2.9.5 - Public Release",
+            "RULE_DESC": "Shows setted rules by Group Admins",
+            "rules": "*There is no rules setted by Admins.*"
         },
         "tagall": {
             "TAGALL_DESC": "Tag everyone in the group.",
@@ -272,7 +275,7 @@
         },
         "web": {
             "SPEEDTEST_DESC": "Check download and upload speed",
-            "SPEEDTESTING": "```🔄 Running speed test...```",
+            "SPEEDTESTING": "\n```🔄 Running speed test...```\n",
             "SPEEDTEST_RESULT": "*✅ Speed ​​test completed!*",
             "UPLOAD": "Upload",
             "DOWNLOAD": "Download",
@@ -282,10 +285,10 @@
         "conventer": {
             "MP4TOAUDİO_DESC": "Convert mp4 into mp3.",
             "MP4TOAUDİO_NEEDREPLY": "*Please reply to a video!*",
-            "MP4TOAUDİO": "```🔄 Converting mp4 to mp3..```",
+            "MP4TOAUDİO": "\n```🔄 Converting mp4 to mp3..```\n",
             "STİCKER_DESC": "Convert sticker into an image.",
             "STİCKER_NEEDREPLY": "*Please reply to a sticker!*",
-            "STİCKER": "```🔄 Converting sticker into image..```",
+            "STİCKER": "\n```🔄 Converting sticker into image..```\n",
             "XMEDİA_DESC": "A plugin that have 25 media tools.",
             "T_FALSE": "```❌ Incorrect Blend Effect Entered!```\n```🔎 Existing Commands:```\n\n*$dodge* - Applies a pink color filter to the video.\n*$multiply* - Applies a green color filter to the video.\n*$grainmerge* - Increases the contrast of the video.\n*$and* - Applies black lightning effect according to the speed of the video.\n*$or* - Applies a white lightning effect according to the speed of the video.\n*$burn* - Applies green contrast to video.\n*$difference* - Shows the differences by applying green relief to the video.\n*$grainextract* - Shows the differences by applying gray relief to the video.\n*$divide* - Demonstrates the differences by applying a pink relief to the video.\n*$xor* - Applies both green relief and lightning effect to video.\n*$hardmix* - Mixes the colors of the video into a yellow and red tone.\n*$negation* - Turns the dynamics of the video to pink.",
             "T_NOT": "```💭 You Need To Enter Any Blend Effects!\n```🔎 Existing Commands:```\n\n*$dodge* - Applies a pink color filter to the video.\n*$multiply* - Applies a green color filter to the video.\n*$grainmerge* - Increases the contrast of the video.\n*$and* - Applies black lightning effect according to the speed of the video.\n*$or* - Applies a white lightning effect according to the speed of the video.\n*$burn* - Applies green contrast to video.\n*$difference* - Shows the differences by applying green relief to the video.\n*$grainextract* - Shows the differences by applying gray relief to the video.\n*$divide* - Demonstrates the differences by applying a pink relief to the video.\n*$xor* - Applies both green relief and lightning effect to video.\n*$hardmix* - Mixes the colors of the video into a yellow and red tone.\n*$negation* - Turns the dynamics of the video to pink.",
@@ -373,11 +376,11 @@
         "unvoice": {
             "UV_DESC": "Convert mp3 into a WA voice message",
             "UV_REPLY": "*Please reply to a mp3!*",
-            "UV_PROC": "```🔄 Recording the audio..```"
+            "UV_PROC": "\n```🔄 Recording the audio..```\n"
         },
         "ffmpeg": {
             "FF_DESC": "Apply ffmpeg filter to a video\n⌨️ Example: .ffmpeg fade=in:0:30",
-            "FF_PROC": "🔄 Applying Effect.."
+            "FF_PROC": "\n🔄 Applying Effect..\n"
         },
         "spammer": {
             "SPAM_DESC": "This not available.\n⌨️ Example: .spam test",
@@ -440,7 +443,7 @@
             "NEED_WORD": "*Please enter a IG username*",
             "USAGE": ".insta <userName>",
             "DESC": "Stalk instagram account details",
-            "LOADING": "🔄 Checking username.. Please wait..",
+            "LOADING": "\n🔄 Checking username.. Please wait..\n",
             "USERNAME": "Username",
             "NAME": "Name",
             "BIO": "Bio",
@@ -488,8 +491,8 @@
         "spotify": {
             "SPO_DESC": "Download spotify songs.",
             "SPO_NEED": "Please enter a link!",
-            "SPO_DOWN": "🔄 Downloading your song...",
-            "SPO_UP": "⬆️ Uploading your song...",
+            "SPO_DOWN": "\n```🔄 Downloading your song...```\n",
+            "SPO_UP": "\n```⬆️ Uploading your song...```\n",
             "SPO_ERR": "Please enter a valid spotify link!"
         },
         "chatbot":{
@@ -521,8 +524,8 @@
             "NOT": "```User not found!```",
             "TIKTOK_DESC": "Download without watermark videos from Tiktok",
             "NEED_WORD": "Must Enter a tiktok link!",
-            "DLOAD_TK": "```🔄 Your tiktok is downloading...```",
-            "UPLOADING_TK": "```🔂 Your tiktok is uploading...```",
+            "DLOAD_TK": "\n```🔄 Your tiktok is downloading...```\n",
+            "UPLOADING_TK": "\n```🔂 Your tiktok is uploading...```\n",
             "INVALID_TK": "*I could not find anything :(*"
         },
         "lyric":{
@@ -533,7 +536,7 @@
         "search":{
             "USAGE": "Search modded apk in Moddroid site.",
             "NEED_WORDS": "```Need words to search!```",
-            "GET_MODD": "```🔎 Please wait..```",
+            "GET_MODD": "\n```🔎 Please wait..```\n",
             "NOT_FOUND": "*I could not find this😔*",
             "SPO_USAGE": "Search songs from spotify."
         },
@@ -549,6 +552,21 @@
             "RECO": "⚕️ *Recovered* : ",
             "CRIT": "😵 *Critical* : ",
             "TEST": "🔬 *Total Tests* : "
+        },
+        "report":{
+            "REPORT": "Report someone in the group to admins.",
+            "R_WORD": "╔═➤═ *Group Report* ═➤\n║\n",
+            "ID_WORD": "║ _Report ID :_ ",
+            "USER": "║ _User :_ ",
+            "REASON": "║ _Reason :_ ",
+            "END": "╚═➤ *✘👸🏻♥️𝚀𝚞𝚎𝚎𝚗 𝙰𝚖𝚍𝚒 𝙿𝚞𝚋𝚕𝚒𝚌♥️👸🏻✘* ═➤",
+            "REPLY": "Please reply to a message",
+            "BR": "║"
+        },
+        "font":{
+            "FONT_DESC": "Make your text fancy.",
+            "NEED_WORD":"*You must enter a word*",
+            "NO_RESULT": "*I can not make this fancy. :(*"
         }
     }
 }

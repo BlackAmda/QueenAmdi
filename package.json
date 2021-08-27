@@ -1,6 +1,6 @@
 {
   "name": "queen_amdi",
-  "version": "2.9v",
+  "version": "2.9.5v",
   "description": "Queen Amdi Bot project - a Whatsapp userbot helping to improve your Whatsapp experience.",
   "main": "./QueenAmdi/bot.js",
   "scripts": {
