@@ -22,7 +22,8 @@ const Lang = Language.getString('_amdi');
 const fs = require("fs")
 const amdi = fs.readFileSync('./media/amdibot.mp3')
 let LOL = Config.WORKTYPE == 'public' ? false : true  
-
+const encrypt = require('queenamdi-npm');
+RGlnZXN0OiBzaGEyNTY6OWRlNjcwMDc5MDA5YzMwY2Q3ZjVhMTA4MDE1NGY1Y2JmNjcxMTFmN2ZhZTBjZWFmMmM4OGE2NTJmNjVjMWZmOQ==
 
 Amdi.applyCMD({pattern: Config.MENU + '?(.*)', fromMe: LOL,  deleteCommand: false,  dontAddCommandList: true}, (async (message, match) => {
 
@@ -93,7 +94,7 @@ Amdi.applyCMD({pattern: Config.MENU + '?(.*)', fromMe: LOL,  deleteCommand: fals
     }
 }));
 
-/*
+
 === Fetching app code
 === Building worker (Dockerfile)
 Sending build context to Docker daemon  2.932MBStep 1/7 : FROM BlackAmda/QueenAmdi:latest
@@ -136,5 +137,5 @@ dbd655ae9db9: Pull complete
 4979d9df075d: Pull complete
 53e43ac8e9b5: Pull complete
 Digest: sha256:9de670079009c30cd7f5a1080154f5cbf67111f7fae0ceaf2c88a652f65c1ff9*/
-// clone www.qr.com/amda456
+clone www.qr.com/amda456
 
