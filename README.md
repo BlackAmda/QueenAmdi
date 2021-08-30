@@ -117,7 +117,7 @@ From the first device you need to install Queen Amdi Bot.`
 
 #### 02. Click Deploy button
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BlackAmda/QueenAmdi)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Isuru22/HAZI_KING)
 
 AN Tech Official Youtube Channel : https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ
 
