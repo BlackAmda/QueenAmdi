@@ -1,6 +1,6 @@
 #### Select your language
   [![English](https://img.shields.io/badge/Select-English-red.svg)](https://github.com/BlackAmda/QueenAmdi/blob/launch/README.md)
-  [![Sinhala](https://img.shields.io/badge/Select-Sinhala-green.svg)](https://github.com/BlackAmda/QueenAmdi/blob/launch/README-SI.md)
+  [![Sinhala](https://img.shields.io/badge/Select-Sinhala-blue.svg)](https://github.com/janith12345sa/King-BOT/blob/launch/README-SI.md)
 <div align="center">
   <img src="https://i.ibb.co/r3wmpwr/LOGO.jpg" width="300" height="300">
   <h1>👸💎 QUEEN AMDI BOT 💎👸</h1>
