@@ -1,0 +1,183 @@
+{
+    "name": "Queen Amdi 2.9.5v",
+    "description": "Queen Amdi is a chat bot for WhatsApp. Makes it easy and fun to use Whatsapp.",
+    "logo": "https://i.ibb.co/r3wmpwr/LOGO.jpg",
+    "keywords": ["whatsapp", "userbot", "bot", "api", "ai", "Queen Amdi"],
+    "repository": "",
+    "website":   "https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD",
+    "success_url": "https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD",
+    "stack": "container",
+    "env": {
+        "AMDI_SESSION": {
+            "description": "Paste your QR session that you got from https://replit.com/@BlackAmda/Queen-Amdi-QR-Code.",
+            "required": true
+        },
+        "SUDO": {
+            "description": "If you do not know how to use it, leave it blank! SUDO mode; Your number must be an international number. So you have to have your number after the country code. Example: 947xxxxxxxx (Sri lanka No. 94)",
+            "required": false
+        },
+        "LANGUAGE": {
+            "description": "Enter your language. To enable Sinhala, type SI. or to enable English, type EN.",
+            "required": true,
+            "value": "EN"
+        },
+        "AUTO_BIO": {
+            "description": "Setup AUTO BIO feature. Adding a live clock for your WhatsApp about.",
+            "required": true,
+            "value": "false"
+        },
+        "HANDLERS": {
+            "description": "Enter bot prefix to use commands.",
+            "required": true,
+            "value": "^[.!]"
+        },
+        "CHAT_BOT": {
+            "description": "To enable / disable the AI chat bot. Use true to enable AI chat bot and false to deactivate AI chat bot.",
+            "required": true,
+            "value": "true"
+        },
+        "SEND_READ": {
+            "description": "Need to show user whether bot message seen or not?",
+            "required": true,
+            "value": "true"
+        },
+        "HEROKU": {
+            "description": "Heroku",
+            "required": true,
+            "value": "true"
+        },
+        "HEROKU_API_KEY": {
+            "description": "https://dashboard.heroku.com/account Click this link. Scroll down for the API key. Then click the Reveal button. Copy the API key and paste the API Key empty box below.",
+            "required": true
+        },
+        "HEROKU_APP_NAME": {
+            "description": "Use the same App name as first.",
+            "required": true
+        },
+        "SONG_TYPE": {
+            "description": "Choose your .song file type.(document or audio)",
+            "required": true,
+            "value": "document"
+        },
+        "CAP": {
+            "description": "Set your caption under medias.",
+            "required": true,
+            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Qᵘᵉᵉⁿ ᴬᵐᵈᶦ₂₀₂₁"
+        },
+        "IMGBB": {
+            "description": "Paste your imgbb API to change ALIVE,Welcome,Bye pictures by a command. (Visit https://imgbb.com/ and signup there. And get an API key from https://api.imgbb.com/)",
+            "required": true,
+            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Qᵘᵉᵉⁿ ᴬᵐᵈᶦ₂₀₂₁"
+        },
+        "MUTE_MESSAGE": {
+            "description": "Message received when mute a group. If you do not want to change this message, type default.",
+            "required": false,
+            "value": "default"
+        },
+        "BLOCK_CHAT": {
+            "description": "Select the chat where the bot does not work. Ex: 947xxxxxxxx && 947xxxxxxxx හෝ 947xxxxxxxx,947xxxxxxxx",
+            "required": false,
+            "value": "no chats added"
+        },
+        "ANTIBAD": {
+            "description": "Activate Anti-Bad word for your groups.",
+            "required": true,
+            "value": "false"
+        },
+        "UNMUTE_MESSAGE": {
+            "description": "Message received when unmuteing a group.",
+            "required": false,
+            "value": "default"
+        },
+        "BLOCK_MESSAGE": {
+            "description": "Modifiable chat block notification. If you do not want to change this message, type default.",
+            "required": false,
+            "value": "default"
+        },
+        "UNBLOCK_MESSAGE": {
+            "description": "Modifiable chat unblock notification. If you do not want to change this message, type default.",
+            "required": false,
+            "value": "default"
+        },
+        "WORK_TYPE": {
+            "description": "The way the bot works. If you use public, everyone can use the bot. If you use private, only you can use your bot.",
+            "required": true,
+            "value": "private"
+        },       
+        "RULES": {
+            "description": "You can set rules display to your groups.",
+            "required": true,
+            "value": "default"
+        },
+        "PANEL_EMOJI": {
+            "description": "You can change panel emojis. (Make sure to split emojis with / )",
+            "required": true,
+            "value": "📘/📖"
+        },
+        "DEBUG": {
+            "description": "If you do not know this. Give it up.",
+            "required": true,
+            "value": "false"
+        },
+        "MENU": {
+            "description": "Customizeable commands list request command. Keep panel if you don't want to change.",
+            "required": true,
+            "value": "panel"
+        },
+        "REMOVE_BG_API_KEY": {
+            "description": "Here you go to the website remove.bg and sign up and get an API key. Leave the API key in this space.",
+            "required": false
+        },
+        "ALIVE_MESSAGE": {
+            "description": "The message you get when you check whether the bot is online or not. This is not necessarily the case.",
+            "required": false,
+            "value": "default"
+        },
+        "BAN_MESSAGE": {
+            "description": "The message you get when someone commands you as .ban and removes it. If you do not want to change this message, type default.",
+            "required": false,
+            "value": "default"
+        },
+        "ADD_MESSAGE": {
+            "description": "If you do not want to change this message, type default.",
+            "required": false,
+            "value": "default"
+        },
+        "KICKME_MESSAGE": {
+            "description": "If you do not want to change this message, type default.",
+            "required": false,
+            "value": "default"
+        },
+        "PROMOTE_MESSAGE": {
+            "description": "If you do not want to change this message, type default.",
+            "required": false,
+            "value": "default"
+        },
+        "DEMOTE_MESSAGE": {
+            "description": "If you do not want to change this message, type default.",
+            "required": false,
+            "value": "default"
+        },
+        "AFK_MESSAGE": {
+            "description": "If you do not want to change this message, type default.",
+            "required": false,
+            "value": "default"
+        },
+        "NO_ONLINE": {
+            "description": "This is not necessarily the case.",
+            "required": false,
+            "value": "true"
+        },
+        "COFFEEHOUSE_API_KEY": {
+            "description": "Give it up. We give you this.",
+            "required": false,
+            "value": "true"
+        }
+    },
+    "addons": [{
+      "plan": "heroku-postgresql"
+    }],
+    "buildpacks": [{
+      "url": "heroku-community/apt"
+      }]
+  }
