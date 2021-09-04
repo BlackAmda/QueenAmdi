@@ -102,12 +102,6 @@ Amdi.applyCMD({pattern: 'update now$', fromMe: true, desc: Lang.UPDATE_NOW_DESC,
 Amdi.applyCMD({pattern: 'verify$', fromMe: true, desc: Lang.VERIFY_DESC, dontAddCommandList: true}, (async (message, match) => {
     await git.fetch();
     var commits = await git.log([Config.BRANCH + '..origin/' + Config.BRANCH]);
-    if (commits.total === 0) {
-        return await message.client.sendMessage(
-            message.jid,
-            Lang.VERIFY, MessageType.text
-        );    
-    } else {
         var guncelleme = await message.reply(Lang.VERIFYING);
         if (Config.HEROKU.HEROKU) {
             try {
@@ -150,5 +144,4 @@ Amdi.applyCMD({pattern: 'verify$', fromMe: true, desc: Lang.VERIFY_DESC, dontAdd
             }));
             await guncelleme.delete();
         }
-    }
 }));
