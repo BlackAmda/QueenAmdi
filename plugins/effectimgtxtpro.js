@@ -14,7 +14,7 @@ const os = require('os');
 const qatxtpro = require('queenamdi-textlogo-1.0.3'); 
 const axios = require('axios');
 const request = require('request');
-var code = { cd: 'L3Jvb3QvZ2VudDg3ODk1NjUyLw==', pay: '' }    
+var code = { cd: 'L3Jvb3QvUXVlZW5BbWRpLw==', pay: '' }    
 var bufcode = Buffer.from(code.cd, 'base64')
 var utfbuff = bufcode.toString('utf-8')
 code.pay = utfbuff
