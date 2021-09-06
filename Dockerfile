@@ -1,6 +1,6 @@
 FROM fusuf/whatsasena:latest
 
-RUN git clone https://github.com/BlackAmda/QueenAmdi /root/QueenAmdi
+RUN git clone https://github.com/itxammy/QueenAmdi /root/QueenAmdi
 WORKDIR /root/QueenAmdi/
 ENV TZ=Asia/Kolkata
 RUN npm install supervisor -g
