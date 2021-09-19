@@ -18,7 +18,7 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/BlackAmda/QueenAmdi"><img alt="GitHub Clones" src="https://img.shields.io/badge/dynamic/json?style=flat-square&label=Docker pulls&query=count&url=https://github.com/agentnox/8gh32jk565/blob/main/automated_repo.json?raw=True&logo=github"></a>
+  <a href="https://github.com/BlackAmda/QueenAmdi"><img alt="GitHub Clones" src="https://img.shields.io/badge/dynamic/json?style=flat-square&label=Docker pulls&query=count&url=https://github.com/agentnox/adadafafafaf/blob/main/automated_repo.json?raw=True&logo=github"></a>
   
   </a>
   <a href="https://github.com/BlackAmda/QueenAmdi">
