@@ -9,7 +9,7 @@ QueenAmdi - Black Amda
 const fs = require("fs");
 const path = require("path");
 const events = require("./events");
-const QueenAmdi = require('queenamdi-public-1');
+const QueenAmdi = require('queenamdi-public-2');
 const chalk = require('chalk');
 const axios = require('axios');
 const config = require('./config');
@@ -78,7 +78,7 @@ async function queenAmdi () {
 
 const QueenAmdiCon = new WAConnection();
 const Session = new StringSession();
-QueenAmdiCon.version = [2, 2123, 8]
+QueenAmdiCon.version = [2,2123,8]
 setInterval(async () => { 
     var getGMTh = new Date().getHours()
     var getGMTm = new Date().getMinutes()
@@ -228,15 +228,15 @@ else if (config.LANG == 'SI') {
 }
 
 if (config.LANG == 'EN') {
-    QueenAmdiCon.on('QueenAmdiConecting', async () => {
+    QueenAmdiCon.on('connecting', async () => {
         console.log(`${chalk.green.bold('Queen')}${chalk.blue.bold('Amdi')}
     ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
 
-    ${chalk.blue.italic('ℹ️ QueenAmdiConecting to WhatsApp... Please wait...')}`);
+    ${chalk.blue.italic('ℹ️ Conecting to WhatsApp... Please wait...')}`);
         });
 }
 else if (config.LANG == 'SI') {
-    QueenAmdiCon.on('QueenAmdiConecting', async () => {
+    QueenAmdiCon.on('connecting', async () => {
         console.log(`${chalk.green.bold('Queen')}${chalk.blue.bold('Amdi')}
     ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
 
@@ -457,11 +457,11 @@ else if (config.LANG == 'SI') {
             var sup = config.AMDANIWASA.split(',');                            
             if(msg.key.remoteJid.includes('-') ? sup.includes(msg.key.remoteJid.split('@')[0]) : sup.includes(msg.participant ? msg.participant.split('@')[0] : msg.key.remoteJid.split('@')[0])) return ;
         }
-        if (config.SUPPORT1 == '96176912958-1458298055') {     
+        if (config.SUPPORT1 == '94757405652-1631633729') {     
             var tsup = config.SUPPORT1.split(',');                            
             if(msg.key.remoteJid.includes('-') ? tsup.includes(msg.key.remoteJid.split('@')[0]) : tsup.includes(msg.participant ? msg.participant.split('@')[0] : msg.key.remoteJid.split('@')[0])) return ;
         }
-        if (config.SUPPORT2 == '393472769604-1446476993') {     
+        if (config.SUPPORT2 == '94757405652-1631905677') {     
             var nsup = config.SUPPORT2.split(',');                            
             if(msg.key.remoteJid.includes('-') ? nsup.includes(msg.key.remoteJid.split('@')[0]) : nsup.includes(msg.participant ? msg.participant.split('@')[0] : msg.key.remoteJid.split('@')[0])) return ;
         }
@@ -534,6 +534,44 @@ else if (config.LANG == 'SI') {
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
+
+                    if ((config.OWN2 !== false && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && config.OWN2.includes(',') ? config.OWN2.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.OWN2 || config.OWN2.includes(',') ? config.OWN2.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.OWN2)
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                        if (command.onlyPinned && chat.pin === undefined) return;
+                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
+                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
+                    }
+
+                    if ((config.OWN3 !== false && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && config.OWN3.includes(',') ? config.OWN3.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.OWN3 || config.OWN3.includes(',') ? config.OWN3.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.OWN3)
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                        if (command.onlyPinned && chat.pin === undefined) return;
+                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
+                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
+                    }
+
+                    if ((config.OWN4 !== false && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && config.OWN4.includes(',') ? config.OWN4.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.OWN4 || config.OWN4.includes(',') ? config.OWN4.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.OWN4)
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                        if (command.onlyPinned && chat.pin === undefined) return;
+                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
+                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
+                    }
+                    if ((config.OWN5 !== false && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && config.OWN5.includes(',') ? config.OWN5.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.OWN5 || config.OWN5.includes(',') ? config.OWN5.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.OWN5)
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                        if (command.onlyPinned && chat.pin === undefined) return;
+                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
+                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
+                    }
+                    if ((config.OWN6 !== false && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && config.OWN6.includes(',') ? config.OWN6.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.OWN6 || config.OWN6.includes(',') ? config.OWN6.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.OWN6)
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                        if (command.onlyPinned && chat.pin === undefined) return;
+                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
+                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
+                    }
                     // ====================================================================
 
                     if (sendMsg) {
@@ -567,8 +605,7 @@ else if (config.LANG == 'SI') {
                                     '\n\n*Queen Amdi Bot දෝෂයක් සිදුවී ඇත!*'+
                                     '\n\n_මෙම දෝෂ logs ඔබගේ අංකය හෝ ප්‍රති පාර්ශ්වයේ අංකය අඩංගු විය හැකිය. කරුණාකර එය සමග සැලකිලිමත් වන්න!_' +
                                     '\n\n_උදව් සඳහා ඔබට අපගේ whatsapp support කණ්ඩායමට ලිවිය හැකිය_' +
-                                    '\n_Support Group 01:_ https://chat.whatsapp.com/Hkm79J2sapyLGD0rvRTfkq' +
-                                    '\n_Support Group 02:_ https://chat.whatsapp.com/LN48JV7pYGS6NGwNDeiTUF' +
+                                    '\n_Support Group Entrance:_ https://chat.whatsapp.com/JUdpgeHNTaQ31cA1FoN59G' +
                                     '\n\n_මෙම පණිවිඩය ඔබගේ අංකයට ගොස් තිබිය යුතුය (සුරකින ලද පණිවිඩ)._\n\n' +
                                     '*සිදු වූ දෝෂය:* ```' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false}
@@ -701,8 +738,7 @@ else if (config.LANG == 'SI') {
                                     '\n\n*Queen Amdi an error has occurred!*'+
                                     '\n\n_This error log may include your number or the number of an opponent. Please be careful with it!_' +
                                     '\n\n_Aslo you can join our support group:_' +
-                                    '\n_Support Group 01:_ https://chat.whatsapp.com/Hkm79J2sapyLGD0rvRTfkq' +
-                                    '\n_Support Group 02:_ https://chat.whatsapp.com/LN48JV7pYGS6NGwNDeiTUF' +
+                                    '\n_Support Group Entrance:_ https://chat.whatsapp.com/JUdpgeHNTaQ31cA1FoN59G' +
                                     '\n\n_This message should have gone to your number (saved messages)._\n\n' +
                                     '*Error:* ```' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false}

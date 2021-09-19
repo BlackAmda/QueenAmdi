@@ -228,7 +228,7 @@
             "SPDF_PROC": "\n```Converting Site into PDF```\n",
             "SPDF_LINK": "*Must Enter a URL*",
             "WAME_DESC": "Get a link to the user chat.",
-            "WAME": "```Chat link from```@{}: https://wa.me/{}",
+            "WAME": "```Chat link from ```@{} : \nhttps://wa.me/{}",
             "NEED_UWONG": "*Give me a user!*",
             "FBDESC": "Download Facebook videos.",
             "NOT_FOUNDFB": "Can't find the video",
@@ -249,7 +249,19 @@
             "APK_DEV": "\n👨🏻‍💻 Developer : ",
             "APK_V": "\n📟 Version : ",
             "APK_SUM": "\n📃 Summary : ",
-            "ATTP_DESC": "A set of commands for converting text to stickers."
+            "ATTP_DESC": "A set of commands for converting text to stickers.",
+            "yt_title": "📄 *Title* : ",
+            "yt_time": "\n⏳ *Duration* : ",
+            "yt_chan": "\n🎬 *Author* : ",
+            "yt_link": "\n🌐 *Youtube link* : ",
+            "yt_views": "\n👁️ *Views* : ",
+            "yt_likes": "\n👍🏻 *Likes* : ",
+            "mf_desc": "Download any file from Mediafire links.",
+            "mf_need": "*Please enter a valid Mediafire link!*\nExample : _.mediafire https://www.mediafire.com/file/cd2aodfkr0qu9xy/Queen_Amdi_Cover.jpg/file",
+            "telstic_desc": "Download telegram stickers by sticker pack link.",
+            "telstic_need": "*Please enter a valid Telegram sticker pack link!*\nExample : _.telstic https://t.me/addstickers/homer_jay_simpson_",
+            "tel_pack": "📂 Sticker pack : ",
+            "tel_title": "📄 Title : "
         },
         "sticker": {
             "STICKER_DESC": "Make stickers to your images. Reply to an image.",
@@ -263,7 +275,7 @@
             "ALIVE_DESC": "Check bot online or not",
             "SYSD_DESC": "System properties.",
             "BOT_V": "Check version of bot.",
-            "version": "3.0.0v - Public Stable",
+            "version": "3.0.1v - Public Stable",
             "RULE_DESC": "Shows setted rules by Group Admins",
             "rules": "*There is no rules setted by Admins.*"
         },
@@ -601,6 +613,12 @@
             "FONT_DESC": "Make your text fancy.",
             "NEED_WORD":"*You must enter a word*",
             "NO_RESULT": "*I can not make this fancy. :(*"
+        },
+        "ehi":{
+            "ehi_desc": "Make your data packages to unlimited data packages.\n*(Only for Sri Lankan Users)*",
+            "ehi_help": "*❖ Queen Amdi Unlimited Data ❖*\n```[EHI Method]```\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n📚 What is EHI?\n⚙️ Type *.ehi info* to know about EHI files.\n\n📚 How to install?\n⚙️ Type *.ehi help* to get instructions.\n\n📚 HTTP Injector App\n⚙️ Type *.ehi app* to get injector app.\n\n📚 US Server 01 all EHI files.\n⚙️ *.ehi us1*\n\n📚 US Server 02 all EHI files.\n⚙️ *.ehi us2*\n\n📚 Singapore Server all EHI files.\n⚙️ *.ehi sg*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬",
+            "ehi_info": "*✨ What is EHI file?*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\nAn EHI file is a config file used by Evozi HTTP Injector, an Android app that allows users to browse the Internet via a VPN.\nThese files contain settings to configure HTTP Injector, including server login credentials and security/locking information.\nHTTP Injector allows users to spoof their location and mask their identity while browsing the Internet, using an SSH connection and proxy servers.\nIt also allows users to access websites that have been blocked by their ISP's(Internet Service Provider Or your SIM company) firewall.\nAs such, the app and the EHI files associated with it are popular in countries that restrict or monitor their populace's Internet access.\n\n*In Sri Lanka,* we have unlimited packages from so many ISP.\n\n(Ex: Dialog Rs.97 Unlimited Facebook, WhatsApp & YouTube)\n\nSo, we can use this oppurtunity to crack their block and visit other sites blocker and brwose unlimited internet by using EHI.\n\n```[Author : Black Amda]```",
+            "ehi_how": "*How to install EHI?*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n_Note : You need to activate unilimited data package. And DON'T TRY THIS IF YOU ALREADY HAVE DATA REMAINING._\n\n1️⃣ Download and install HTTP Injector. (Type *.ehi app* to get apk)\n\n2️⃣ Download one of server EHI files from bot.\n🔧 Type *.ehi us1* to get US server EHI files.\n🔧 Type *.ehi us2* to get US server 02 EHI files.\n🔧 Type *.ehi sg* to get Singapore server EHI files.\n\n3️⃣ Select your suitable EHI for your package.\n```Example :``` If you have activated facebook only unlimited package from SIM. You have to choose EHI Files with name *Facebook*. Then, you can browse other sites from your facebook only unlimited data package.\n\n4️⃣ Now, click on your selected EHI file and open from HTTP Injector.\n\n5️⃣ Click *Start* button to connect EHI config.\n\nNow you can ENJOY UNLIMITED DATA.\n\nIf your connection slow, change EHI files from another server (US 01, US 02, SG).\n\nThese EHI files only valid for *30days* from import date. After that you have to get another set of EHI and renew. And also you can change server from Injector app settings.\n\n```Queen Amdi Team💃🏻♥️```"
         }
     }
 }
