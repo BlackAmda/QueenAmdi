@@ -275,7 +275,7 @@
             "ALIVE_DESC": "බොට් වැඩ කරන්නේ නැද්ද යන්න පරීක්ෂා කිරීමට?",
             "SYSD_DESC": "System properties පෙන්වයි.",
             "BOT_V": "ඔබ දැනට install කර තිබෙන bot version එක පෙන්වීම.",
-            "version": "3.0.1v - Public Stable",
+            "version": "3.0.2v - Public Stable",
             "RULE_DESC": "කණ්ඩායම් පරිපාලකයින් විසින් නියම කරන ලද නීති පෙන්වයි.",
             "rules": "*පරිපාලකයින් විසින් නියම කරන ලද නීති නොමැත.*"
         },

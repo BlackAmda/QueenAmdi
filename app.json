@@ -1,5 +1,5 @@
 {
-    "name": "Queen Amdi 3.0.1v",
+    "name": "Queen Amdi 3.0.2v",
     "description": "Queen Amdi is a chat bot for WhatsApp. Makes it easy and fun to use Whatsapp.",
     "logo": "https://i.ibb.co/r3wmpwr/LOGO.jpg",
     "keywords": ["whatsapp", "userbot", "bot", "api", "ai", "Queen Amdi"],
@@ -17,7 +17,7 @@
             "required": false
         },
         "LANGUAGE": {
-            "description": "Enter your language. To enable Sinhala, type SI. or to enable English, type EN.",
+            "description": "Enter your language. SI - Sinhala | EN - English | ES - Spanish(ag)",
             "required": true,
             "value": "EN"
         },
@@ -80,9 +80,29 @@
             "value": "no chats added"
         },
         "ANTIBAD": {
-            "description": "Activate Anti-Bad word for your groups.",
+            "description": "Activate Anti-Bad word for your groups. (Use true or false)",
             "required": true,
             "value": "false"
+        },
+        "ANTIBUG": {
+            "description": "Activate Anti-Bug sheild for your groups. And protect your groups by bug bots.(Use true or false)",
+            "required": true,
+            "value": "false"
+        },
+        "ALIVE_LOGO": {
+            "description": "Alive message logo. Enter your image link below to change the image. (Upload the image you want to https://imgbb.com and put that link here.)",
+            "required": true,
+            "value": "https://i.ibb.co/0h6pq4j/6fba2dec0129.jpg"
+        },
+        "WELCOME_LOGO": {
+            "description": "Welcome message logo. Enter your image link below to change the image. (Upload the image you want to https://imgbb.com and put that link here.)",
+            "required": true,
+            "value": "https://i.ibb.co/d54sGdd/f2097d7ddc39.jpg"
+        },
+        "BYE_LOGO": {
+            "description": "Good Bye message logo. Enter your image link below to change the image. (Upload the image you want to https://imgbb.com and put that link here.)",
+            "required": true,
+            "value": "https://i.ibb.co/pbjB2pS/93f527f9f2fb.jpg"
         },
         "UNMUTE_MESSAGE": {
             "description": "Message received when unmuteing a group.",
@@ -171,6 +191,11 @@
         "COFFEEHOUSE_API_KEY": {
             "description": "Give it up. We give you this.",
             "required": false,
+            "value": "true"
+        },
+        "YT_INFO": {
+            "description": "Do you want details of YouTube songs and video? Type 'true' or 'false' (YT Info may be cause song download speed slow)",
+            "required": true,
             "value": "true"
         }
     },

@@ -275,7 +275,7 @@
             "ALIVE_DESC": "Check bot online or not",
             "SYSD_DESC": "System properties.",
             "BOT_V": "Check version of bot.",
-            "version": "3.0.1v - Public Stable",
+            "version": "3.0.2v - Public Stable",
             "RULE_DESC": "Shows setted rules by Group Admins",
             "rules": "*There is no rules setted by Admins.*"
         },

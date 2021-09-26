@@ -78,13 +78,13 @@ async function queenAmdi () {
 
 const QueenAmdiCon = new WAConnection();
 const Session = new StringSession();
-QueenAmdiCon.version = [2,2123,8]
+QueenAmdiCon.version = [2, 2126, 14]
 setInterval(async () => { 
     var getGMTh = new Date().getHours()
     var getGMTm = new Date().getMinutes()
         await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
             const { infoen, infosi} = ann.data.announcements          
-            if (infoen !== '' && config.LANG == 'EN') {
+            if (infoen !== '' && config.LANG == 'EN' || config.LANG == 'ES') {
                 while (getGMTh == 08 && getGMTm == 00) { 
                     return QueenAmdiCon.sendMessage(QueenAmdiCon.user.jid, '[ ```🔔Queen Amdi Announcements🔔``` ]\n\n' + infoen.replace('{user}', QueenAmdiCon.user.name).replace('{wa_version}', QueenAmdiCon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', QueenAmdiCon.user.phone.os_version).replace('{device_model}', QueenAmdiCon.user.phone.device_model).replace('{device_brand}', QueenAmdiCon.user.phone.device_manufacturer), MessageType.text) 
                 }
@@ -102,7 +102,7 @@ setInterval(async () => {
     var getGMTm = new Date().getMinutes()
         await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
             const { infoen, infosi} = ann.data.announcements          
-            if (infoen !== '' && config.LANG == 'EN') {
+            if (infoen !== '' && config.LANG == 'EN' || config.LANG == 'ES') {
                 while (getGMTh == 18 && getGMTm == 00) { 
                     return QueenAmdiCon.sendMessage(QueenAmdiCon.user.jid, '[ ```🔔Queen Amdi Announcements🔔``` ]\n\n' + infoen.replace('{user}', QueenAmdiCon.user.name).replace('{wa_version}', QueenAmdiCon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', QueenAmdiCon.user.phone.os_version).replace('{device_model}', QueenAmdiCon.user.phone.device_model).replace('{device_brand}', QueenAmdiCon.user.phone.device_manufacturer), MessageType.text) 
                 }
@@ -199,7 +199,7 @@ var nodb;
         QueenAmdiCon.loadAuthInfo(Session.deCrypt(StrSes_Db[0].dataValues.value));
     }
 
-if (config.LANG == 'EN') {
+if (config.LANG == 'EN' || config.LANG == 'ES') {
     QueenAmdiCon.on ('credentials-updated', async () => {
         console.log(
             chalk.blueBright.italic('✅ Login details updated!')
@@ -227,7 +227,7 @@ else if (config.LANG == 'SI') {
     })
 }
 
-if (config.LANG == 'EN') {
+if (config.LANG == 'EN' || config.LANG == 'ES') {
     QueenAmdiCon.on('connecting', async () => {
         console.log(`${chalk.green.bold('Queen')}${chalk.blue.bold('Amdi')}
     ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
@@ -244,7 +244,7 @@ else if (config.LANG == 'SI') {
         });
 }
 
-if (config.LANG == 'EN') {
+if (config.LANG == 'EN' || config.LANG == 'ES') {
     QueenAmdiCon.on('open', async () => {
         console.log(
             chalk.green.bold('✅ Successfully logged-in!')
@@ -270,6 +270,10 @@ if (config.LANG == 'EN') {
             chalk.blueBright.italic('⬇️  Installing plugins...')
         );
 
+        console.log(
+            chalk.green.bold('✅ Plugins installed! Your bot successfully enabled.')
+        );
+
         fs.readdirSync('./plugins').forEach(plugin => {
             if(path.extname(plugin).toLowerCase() == '.js') {
                 require('./plugins/' + plugin);
@@ -277,7 +281,7 @@ if (config.LANG == 'EN') {
         });
 
         console.log(
-            chalk.green.bold('✅ Plugins installed! Your bot successfully enabled.')
+            chalk.green.bold('🛡️ Queen Amdi Sheild Activated!')
         );
         await new Promise(r => setTimeout(r, 1100));
 
@@ -354,6 +358,10 @@ else if (config.LANG == 'SI') {
             chalk.blueBright.italic('⬇️  Plugins ස්ථාපනය කිරීම...')
         );
 
+        console.log(
+            chalk.green.bold('✅ Plugins ස්ථාපනය කර ඇත! Bot දැන් ඔබට භාවිතා කළ හැකිය.')
+        );
+
         fs.readdirSync('./plugins').forEach(plugin => {
             if(path.extname(plugin).toLowerCase() == '.js') {
                 require('./plugins/' + plugin);
@@ -361,7 +369,7 @@ else if (config.LANG == 'SI') {
         });
 
         console.log(
-            chalk.green.bold('✅ Plugins ස්ථාපනය කර ඇත! Bot දැන් ඔබට භාවිතා කළ හැකිය.')
+            chalk.green.bold('🛡️ Queen Amdi Sheild Activated!.')
         );
         await new Promise(r => setTimeout(r, 1100));
 
