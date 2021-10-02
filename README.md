@@ -44,15 +44,15 @@
 
 <p align="center">
   <a href="httsp://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/github/repo-size/phaticusthiccy/WhatsAsenaDuplicated?color=purple&label=Repo%20Size&style=plastic">
+    <img src="https://img.shields.io/github/repo-size/BlackAmda/QueenAmdi?color=purple&label=Repo%20Size&style=plastic">
 
   </a>
   <a href="httsp://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/github/license/phaticusthiccy/WhatsAsenaDuplicated?color=purple&label=License&style=plastic">
+    <img src="https://img.shields.io/github/license/BlackAmda/QueenAmdi?color=purple&label=License&style=plastic">
 
   </a>
   <a href="httsp://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/github/languages/top/phaticusthiccy/WhatsAsenaDuplicated?color=purple&label=Javascript&style=plastic">
+    <img src="https://img.shields.io/github/languages/top/BlackAmda/QueenAmdi?color=purple&label=Javascript&style=plastic">
 
   </a>
   <a href="httsp://github.com/BlackAmda/QueenAmdi">
