@@ -193,7 +193,7 @@
             "required": false,
             "value": "true"
         },
-        "YT_INFO": {
+        "YT_fuck": {
             "description": "Do you want details of YouTube songs and video? Type 'true' or 'false' (YT Info may be cause song download speed slow)",
             "required": true,
             "value": "true"
