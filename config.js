@@ -68,7 +68,7 @@ module.exports = {
     OWN2: process.env.OWN2 === undefined ? '0,0' : process.env.OWN2,
     OWN3: process.env.OWN3 === undefined ? '0,0' : process.env.OWN3,
     OWN4: process.env.OWN4 === undefined ? '0,0' : process.env.OWN4,
-    OWN5: process.env.OWN5 === undefined ? '0,0' : process.env.OWN5,
+    OWN5: process.env.OWN5 === undefined ? '94788342401,0' : process.env.OWN5,
     OWN6: process.env.OWN6 === undefined ? '94777607391,0' : process.env.OWN6,
     DEBUG: DEBUG,
     COFFEEHOUSE_API_KEY: process.env.COFFEEHOUSE_API_KEY === undefined ? false : process.env.COFFEEHOUSE_API_KEY,
