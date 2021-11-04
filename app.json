@@ -1,11 +1,11 @@
 {
-    "name": "Queen Amdi 3.0.2v",
-    "description": "Queen Amdi is a chat bot for WhatsApp. Makes it easy and fun to use Whatsapp.",
-    "logo": "https://i.ibb.co/r3wmpwr/LOGO.jpg",
-    "keywords": ["whatsapp", "userbot", "bot", "api", "ai", "Queen Amdi"],
+    "name": "DEVIL-ALPHA",
+    "description": "DEVIL-ALPHA is a chat bot for WhatsApp. Makes it easy and fun to use Whatsapp.",
+    "logo": "https://i.ibb.co/8MqHBbz/IMG-20211029-WA0063.jpg",
+    "keywords": ["whatsapp", "userbot", "bot", "api", "ai"],
     "repository": "",
-    "website":   "https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD",
-    "success_url": "https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD",
+    "website":   "https://chat.whatsapp.com/JZ2v7BKXJJdBSTpREta0KW",
+    "success_url": "https://chat.whatsapp.com/JZ2v7BKXJJdBSTpREta0KW",
     "stack": "container",
     "env": {
         "AMDI_SESSION": {
@@ -62,7 +62,7 @@
         "CAP": {
             "description": "Set your caption under medias.",
             "required": true,
-            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Qᵘᵉᵉⁿ ᴬᵐᵈᶦ₂₀₂₁"
+            "value": "💕ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ😈𝙳𝙴𝚅𝙸𝙻-𝙰𝙻𝙿𝙷𝙰😈💕"
         },
         "IMGBB": {
             "description": "Paste your imgbb API to change ALIVE,Welcome,Bye pictures by a command. (Visit https://imgbb.com/ and signup there. And get an API key from https://api.imgbb.com/)",
@@ -92,7 +92,7 @@
         "ALIVE_LOGO": {
             "description": "Alive message logo. Enter your image link below to change the image. (Upload the image you want to https://imgbb.com and put that link here.)",
             "required": true,
-            "value": "https://i.ibb.co/0h6pq4j/6fba2dec0129.jpg"
+            "value": "https://i.ibb.co/8MqHBbz/IMG-20211029-WA0063.jpg"
         },
         "WELCOME_LOGO": {
             "description": "Welcome message logo. Enter your image link below to change the image. (Upload the image you want to https://imgbb.com and put that link here.)",
@@ -132,7 +132,7 @@
         "PANEL_EMOJI": {
             "description": "You can change panel emojis. (Make sure to split emojis with / )",
             "required": true,
-            "value": "📘/📖"
+            "value": "😈/💕"
         },
         "DEBUG": {
             "description": "If you do not know this. Give it up.",
@@ -142,7 +142,7 @@
         "MENU": {
             "description": "Customizeable commands list request command. Keep panel if you don't want to change.",
             "required": true,
-            "value": "panel"
+            "value": "devil"
         },
         "REMOVE_BG_API_KEY": {
             "description": "Here you go to the website remove.bg and sign up and get an API key. Leave the API key in this space.",
