@@ -53,7 +53,7 @@ Click WA logo to Join Support Group 👇
 
   ### Simple Method
   
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@mhmdmukrim/DEVIL-ALPHA-QR-CODE)
+[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@BlackAmda/Queen-Amdi-QR-Code)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mhmdmukrim/DEVIL-ALPHA-V2)
      </div>
@@ -64,30 +64,6 @@ If Repl.it not working Try Termux for Qr scanning.Just Copy the Link Below in Te
 bash <(curl -L https://t.ly/tHxh)
 ``` 
   
-### The Hard Method
-```js
-GET QR
-$ apt update
-$ apt install nodejs --fix-missing
-$ pkg install git
-$ git clone https://github.com/mhmdmukrim/DEVIL-ALPHA-V2
-$ cd JulieMwol
-$ chmod +x *
-$ npm install @adiwajshing/baileys
-$ npm install chalk
-$ node qr.js
-```
-      
-```js
-SETUP
-$ git clone https://github.com/mhmdmukrim/DEVIL-ALPHA-V2
-$ cd DEVIL-ALPHA-V2
-$ chmod +x *
-$ npm i
-$ node qr.js
-   // scan the qr using whatsapp web on your phone
-$ node bot.js
-```
 
 
 ### ⚠️ Warning! 
