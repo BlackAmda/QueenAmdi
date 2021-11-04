@@ -9,13 +9,13 @@ QueenAmdi - Black Amda
 const fs = require("fs");
 const path = require("path");
 const events = require("./events");
-const QueenAmdi = require('queenamdi-public-2');
+const DEVILALPHANEW = require('DEVIL-ALPHA-NEW');
 const chalk = require('chalk');
 const axios = require('axios');
 const config = require('./config');
 const Heroku = require('heroku-client');
 const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
-const {Message, StringSession, Image, Video} = require('./queenamdi');
+const {Message, StringSession, Image, Video} = require('./DEVIL-ALPHA-NEW');
 const { DataTypes } = require('sequelize');
 const { GreetingsDB, getMessage } = require("./plugins/sql/greetings");
 const got = require('got');
@@ -26,7 +26,7 @@ const heroku = new Heroku({
 
 let baseURI = '/apps/' + config.HEROKU.APP_NAME;
 
-const QueenAmdiDB = config.DATABASE.define('QueenAmdi', {
+const DEVILALPHADB = config.DATABASE.define('DEVIL-ALPHA', {
     info: {
       type: DataTypes.STRING,
       allowNull: false
@@ -67,31 +67,31 @@ Array.prototype.remove = function() {
     return this;
 };
 
-async function queenAmdi () {
+async function DEVILALPHA () {
     await config.DATABASE.sync();
-    var StrSes_Db = await QueenAmdiDB.findAll({
+    var StrSes_Db = await DEVILALPHADB.findAll({
         where: {
           info: 'StringSession'
         }
     });
     
 
-const QueenAmdiCon = new WAConnection();
+const DEVILALPHACon = new WAConnection();
 const Session = new StringSession();
-QueenAmdiCon.version = [2, 2140, 12]
+DEVIL ALPHACon.version = [2, 2140, 12]
 setInterval(async () => { 
     var getGMTh = new Date().getHours()
     var getGMTm = new Date().getMinutes()
-        await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
+        await axios.get('https://github.com/mhmdmukrim/DEVIL-ALPHA-NEW/raw/launch/New.js').then(async (ann) => {
             const { infoen, infosi} = ann.data.announcements          
             if (infoen !== '' && config.LANG == 'EN' || config.LANG == 'ES') {
                 while (getGMTh == 08 && getGMTm == 00) { 
-                    return QueenAmdiCon.sendMessage(QueenAmdiCon.user.jid, '[ ```🔔Queen Amdi Announcements🔔``` ]\n\n' + infoen.replace('{user}', QueenAmdiCon.user.name).replace('{wa_version}', QueenAmdiCon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', QueenAmdiCon.user.phone.os_version).replace('{device_model}', QueenAmdiCon.user.phone.device_model).replace('{device_brand}', QueenAmdiCon.user.phone.device_manufacturer), MessageType.text) 
+                    return DEVIL-ALPHACon.sendMessage(DEVIL-ALPHACon.user.jid, '[ ```🔔DEVIL-ALPHA ANNOUNCEMENT🔔``` ]\n\n' + infoen.replace('{user}', DEVIL-ALPHACon.user.name).replace('{wa_version}', DEVIL-ALPHACon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', DEVIL-ALPHACon.user.phone.os_version).replace('{device_model}', DEVIL-ALPHACon.user.phone.device_model).replace('{device_brand}', DEVIL-ALPHACon.user.phone.device_manufacturer), MessageType.text) 
                 }
             }
             else if (infosi !== '' && config.LANG == 'SI') {
                 while (getGMTh == 08 && getGMTm == 00) { 
-                    return QueenAmdiCon.sendMessage(QueenAmdiCon.user.jid, '[ ```🔔Queen Amdi නිවේදන🔔``` ]\n\n' + infosi.replace('{user}', QueenAmdiCon.user.name).replace('{wa_version}', QueenAmdiCon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', QueenAmdiCon.user.phone.os_version).replace('{device_model}', QueenAmdiCon.user.phone.device_model).replace('{device_brand}', QueenAmdiCon.user.phone.device_manufacturer), MessageType.text) 
+                    return DEVIL-ALPHACon.sendMessage(DEVIL-ALPHACon.user.jid, '[ ```🔔DEVIL-ALPHA නිවේදන🔔``` ]\n\n' + infosi.replace('{user}', DEVIL-ALPHACon.user.name).replace('{wa_version}', DEVIL-ALPHACon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', DEVIL-ALPHACon.user.phone.os_version).replace('{device_model}', DEVIL-ALPHACon.user.phone.device_model).replace('{device_brand}', DEVIL-ALPHACon.user.phone.device_manufacturer), MessageType.text) 
                 }
             }
         })
@@ -100,11 +100,11 @@ setInterval(async () => {
 setInterval(async () => { 
     var getGMTh = new Date().getHours()
     var getGMTm = new Date().getMinutes()
-        await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
+        await axios.get('https://github.com/mhmdmukrim/DEVIL-ALPHA-NEW/raw/launch/New.js').then(async (ann) => {
             const { infoen, infosi} = ann.data.announcements          
             if (infoen !== '' && config.LANG == 'EN' || config.LANG == 'ES') {
                 while (getGMTh == 18 && getGMTm == 00) { 
-                    return QueenAmdiCon.sendMessage(QueenAmdiCon.user.jid, '[ ```🔔Queen Amdi Announcements🔔``` ]\n\n' + infoen.replace('{user}', QueenAmdiCon.user.name).replace('{wa_version}', QueenAmdiCon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', QueenAmdiCon.user.phone.os_version).replace('{device_model}', QueenAmdiCon.user.phone.device_model).replace('{device_brand}', QueenAmdiCon.user.phone.device_manufacturer), MessageType.text) 
+                    return DEVIL-ALPHACon.sendMessage(DEVIL-ALPHACon.user.jid, '[ ```🔔DEVIL-ALPHA ANNOUNCEMENT🔔``` ]\n\n' + infoen.replace('{user}', QueenAmdiCon.user.name).replace('{wa_version}', QueenAmdiCon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', QueenAmdiCon.user.phone.os_version).replace('{device_model}', QueenAmdiCon.user.phone.device_model).replace('{device_brand}', QueenAmdiCon.user.phone.device_manufacturer), MessageType.text) 
                 }
             }
             else if (infosi !== '' && config.LANG == 'SI') {
