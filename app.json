@@ -4,8 +4,8 @@
     "logo": "https://i.ibb.co/r3wmpwr/LOGO.jpg",
     "keywords": ["whatsapp", "userbot", "bot", "api", "ai", "Queen Amdi"],
     "repository": "",
-    "website":   "https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD",
-    "success_url": "https://chat.whatsapp.com/LYk6el7Ief41N2ypxVqcXD",
+    "website":   "https://dashboard.heroku.com/apps/",
+    "success_url": "https://dashboard.heroku.com/apps/",
     "stack": "container",
     "env": {
         "AMDI_SESSION": {

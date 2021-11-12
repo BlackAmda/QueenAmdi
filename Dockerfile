@@ -1,4 +1,4 @@
-FROM fusuf/whatsasena:latest
+FROM blackamda/queenamdi:public
 
 RUN git clone https://github.com/BlackAmda/QueenAmdi /root/QueenAmdi
 WORKDIR /root/QueenAmdi/
