@@ -613,7 +613,7 @@ else if (config.LANG == 'SI') {
                                     '\n\n*Queen Amdi Bot දෝෂයක් සිදුවී ඇත!*'+
                                     '\n\n_මෙම දෝෂ logs ඔබගේ අංකය හෝ ප්‍රති පාර්ශ්වයේ අංකය අඩංගු විය හැකිය. කරුණාකර එය සමග සැලකිලිමත් වන්න!_' +
                                     '\n\n_උදව් සඳහා ඔබට අපගේ whatsapp support කණ්ඩායමට ලිවිය හැකිය_' +
-                                    '\n_Support Group Entrance:_ https://chat.whatsapp.com/BjfXHjC9E697thqYjwxAk0' +
+                                    '\n_Support Group Entrance:_ https://chat.whatsapp.com/C2ie0zy0gCqABMgYGiX284' +
                                     '\n\n_මෙම පණිවිඩය ඔබගේ අංකයට ගොස් තිබිය යුතුය (සුරකින ලද පණිවිඩ)._\n\n' +
                                     '*සිදු වූ දෝෂය:* ```' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false}
@@ -746,7 +746,7 @@ else if (config.LANG == 'SI') {
                                     '\n\n*Queen Amdi an error has occurred!*'+
                                     '\n\n_This error log may include your number or the number of an opponent. Please be careful with it!_' +
                                     '\n\n_Aslo you can join our support group:_' +
-                                    '\n_Support Group Entrance:_ https://chat.whatsapp.com/BjfXHjC9E697thqYjwxAk0' +
+                                    '\n_Support Group Entrance:_ https://chat.whatsapp.com/C2ie0zy0gCqABMgYGiX284' +
                                     '\n\n_This message should have gone to your number (saved messages)._\n\n' +
                                     '*Error:* ```' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false}
