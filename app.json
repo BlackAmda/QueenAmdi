@@ -1,8 +1,8 @@
 {
-    "name": "Queen Amdi 3.0.2v",
-    "description": "Queen Amdi is a chat bot for WhatsApp. Makes it easy and fun to use Whatsapp.",
+    "name": "3bas bn fernas 3.0.2v",
+    "description": "abas bn fernas is a chat bot for WhatsApp. Makes it easy and fun to use Whatsapp.",
     "logo": "https://i.ibb.co/r3wmpwr/LOGO.jpg",
-    "keywords": ["whatsapp", "userbot", "bot", "api", "ai", "Queen Amdi"],
+    "keywords": ["whatsapp", "userbot", "bot", "api", "ai", "abas"],
     "repository": "",
     "website":   "https://dashboard.heroku.com/apps/",
     "success_url": "https://dashboard.heroku.com/apps/",
@@ -57,12 +57,12 @@
         "SONG_TYPE": {
             "description": "Choose your .song file type.(document or audio)",
             "required": true,
-            "value": "document"
+            "value": "audio"
         },
         "CAP": {
             "description": "Set your caption under medias.",
             "required": true,
-            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Qᵘᵉᵉⁿ ᴬᵐᵈᶦ₂₀₂₁"
+            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ abas bn fernas₂₀₂₁"
         },
         "IMGBB": {
             "description": "Paste your imgbb API to change ALIVE,Welcome,Bye pictures by a command. (Visit https://imgbb.com/ and signup there. And get an API key from https://api.imgbb.com/)",
@@ -82,22 +82,22 @@
         "ANTIBAD": {
             "description": "Activate Anti-Bad word for your groups. (Use true or false)",
             "required": true,
-            "value": "false"
+            "value": "true"
         },
         "ANTIBUG": {
             "description": "Activate Anti-Bug sheild for your groups. And protect your groups by bug bots.(Use true or false)",
             "required": true,
-            "value": "false"
+            "value": "true"
         },
         "ALIVE_LOGO": {
             "description": "Alive message logo. Enter your image link below to change the image. (Upload the image you want to https://imgbb.com and put that link here.)",
             "required": true,
-            "value": "https://i.ibb.co/0h6pq4j/6fba2dec0129.jpg"
+            "value": "https://www.yabiladi.ma/files/articles/77921_9c2c0fd9723ec4affd4b09cde1e7a3f320190505210033_thumb_565.jpg"
         },
         "WELCOME_LOGO": {
             "description": "Welcome message logo. Enter your image link below to change the image. (Upload the image you want to https://imgbb.com and put that link here.)",
             "required": true,
-            "value": "https://i.ibb.co/d54sGdd/f2097d7ddc39.jpg"
+            "value": "http://assets.stickpng.com/images/58aff1e7829958a978a4a6ce.png"
         },
         "BYE_LOGO": {
             "description": "Good Bye message logo. Enter your image link below to change the image. (Upload the image you want to https://imgbb.com and put that link here.)",
@@ -112,22 +112,22 @@
         "BLOCK_MESSAGE": {
             "description": "Modifiable chat block notification. If you do not want to change this message, type default.",
             "required": false,
-            "value": "default"
+            "value": "roh t9awed"
         },
         "UNBLOCK_MESSAGE": {
             "description": "Modifiable chat unblock notification. If you do not want to change this message, type default.",
             "required": false,
-            "value": "default"
+            "value": "merhba bik tni"
         },
         "WORK_TYPE": {
             "description": "The way the bot works. If you use public, everyone can use the bot. If you use private, only you can use your bot.",
             "required": true,
-            "value": "private"
+            "value": "public"
         },       
         "RULES": {
             "description": "You can set rules display to your groups.",
             "required": true,
-            "value": "default"
+            "value": "9ra l9awanin lfo9"
         },
         "PANEL_EMOJI": {
             "description": "You can change panel emojis. (Make sure to split emojis with / )",
@@ -150,23 +150,23 @@
         },
         "ALIVE_MESSAGE": {
             "description": "The message you get when you check whether the bot is online or not. This is not necessarily the case.",
-            "required": false,
-            "value": "default"
+            "required": true,
+            "value": "ha ana a zbi"
         },
         "BAN_MESSAGE": {
             "description": "The message you get when someone commands you as .ban and removes it. If you do not want to change this message, type default.",
             "required": false,
-            "value": "default"
+            "value": "9owed"
         },
         "ADD_MESSAGE": {
             "description": "If you do not want to change this message, type default.",
             "required": false,
-            "value": "default"
+            "value": "merhba bik a brother f group 9ra l9awanin "
         },
         "KICKME_MESSAGE": {
             "description": "If you do not want to change this message, type default.",
             "required": false,
-            "value": "default"
+            "value": "ana rayeh"
         },
         "PROMOTE_MESSAGE": {
             "description": "If you do not want to change this message, type default.",
@@ -181,7 +181,7 @@
         "AFK_MESSAGE": {
             "description": "If you do not want to change this message, type default.",
             "required": false,
-            "value": "default"
+            "value": "rani mamsalix sorry"
         },
         "NO_ONLINE": {
             "description": "This is not necessarily the case.",
