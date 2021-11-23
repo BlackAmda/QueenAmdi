@@ -83,7 +83,7 @@ if (Build.LANG == 'EN') TTP9 = 'Animated red text sticker. [Sinhala font support
 
 
 Amdi.operate({pattern: 'ttp ?(.*)', fromMe: LOL, desc: TTP_DESC, dontAddCommandList: false, deleteCommand: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+    await QueenAmdi.amdi_setup()
     const txt = match[1]
 
     var BUTTHANDLE = '';
