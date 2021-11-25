@@ -192,8 +192,6 @@ Amdi.operate({pattern: 'allconfig', fromMe: true, desc: Lang.GETVAR_DESC, dontAd
     const ANBA = "ANTIBAD"
     const BUG = "ANTIBUG"
     const LINK = "ANTILINK"
-    const BIO = "AUTOBIO"
-    const BIOLIST = "AUTOBIO_LIST"
     const BANMSG = "BAN_MESSAGE"
     const BLOCK = "BLOCK_CHAT"
     const BLOMSG = "BLOCK_MESSAGE"
@@ -237,12 +235,6 @@ Amdi.operate({pattern: 'allconfig', fromMe: true, desc: Lang.GETVAR_DESC, dontAd
         }
         for (vr in vars) {
             if (ANBA.trim() == vr) var var6 = ("```💾 {} :``` \n{}\n\n".format(vr, vars[vr]));
-        }
-        for (vr in vars) {
-            if (BIO.trim() == vr) var var7 = ("```💾 {} :``` \n{}\n\n".format(vr, vars[vr]));
-        }
-        for (vr in vars) {
-            if (BIOLIST.trim() == vr) var var31 = ("```💾 {} :``` \n{}\n\n".format(vr, vars[vr]));
         }
         for (vr in vars) {
             if (BANMSG.trim() == vr) var var8 = ("```💾 {} :``` \n{}\n\n".format(vr, vars[vr]));
@@ -323,8 +315,6 @@ Amdi.operate({pattern: 'allconfig', fromMe: true, desc: Lang.GETVAR_DESC, dontAd
             var5 +
             var6 +
             var29 +
-            var7 +
-            var31 +
             var8 +
             var9 +
             var10 +
