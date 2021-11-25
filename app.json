@@ -1,0 +1,206 @@
+{
+    "name": "Queen Amdi 3.5.0v",
+    "description": "Queen Amdi is a chat bot for WhatsApp. 💃🏻❤️",
+    "keywords": [
+        "Queen Amdi",
+        "WhatsApp",
+        "User Bot",
+        "Chat bot",
+        "Button bot",
+        "Black Amda"
+    ],
+    "website": "https://amdaniwasa.com",
+    "repository": "https://github.com/BlackAmda/QueenAmdi",
+    "logo": "https://amdaniwasa.com/assets/QAAppjson.gif",
+    "success_url": "https://dashboard.heroku.com/apps/",
+    "stack": "container",
+    "env":{
+        "AMDI_SESSION": {
+            "description": "Paste the session code you received after scanning the QR from https://replit.com/@BlackAmda/Queen-Amdi-QR-Code",
+            "required": true
+        },
+        "ADD_MESSAGE": {
+            "description": "Message that a member has been added to the group. If you do not want to change it, keep 'default'.",
+            "required": true,
+            "value": "default"
+        },
+        "AFK_MESSAGE": {
+            "description": "AFK message when you in AFK mode.",
+            "required": true,
+            "value": "default"
+        },
+        "ALIVE_LOGO": {
+            "description": "Picture with alive message. Paste an image direct link or do '.setalive' command after deploying the bot.",
+            "required": true,
+            "value": "https://i.ibb.co/0h6pq4j/6fba2dec0129.jpg"
+        },
+        "ALIVE_MESSAGE": {
+            "description": "The message that appears when typing the '.alive' command. If you do not want to change it, keep 'default'.",
+            "required": true,
+            "value": "default"
+        },
+        "AMDI_CHAT": {
+            "description": "Full Artificial intelligence(AI) based chat bot feature. Type 'true' to enable and type 'false' to disable.",
+            "required": true,
+            "value": "false"
+        },
+        "ANTIBAD": {
+            "description": "Bad word protection for groups. Type 'true' to enable and type 'false' to disable Anti-Bad.",
+            "required": true,
+            "value": "false"
+        },
+        "ANTIBUG": {
+            "description": "Bug hole protection for groups. Type 'true' to enable and type 'false' to disable Anti-Bug.",
+            "required": true,
+            "value": "true"
+        },
+        "ANTILINK": {
+            "description": "Remove members when share unwanted links for groups. Type 'true' to enable and type 'false' to disable Anti-Link.",
+            "required": true,
+            "value": "false"
+        },
+        "BAN_MESSAGE": {
+            "description": "The remove message that appears when type the '.ban' command. If you do not want to change it, keep 'default'.",
+            "required": true,
+            "value": "default"
+        },
+        "BLOCK_CHAT": {
+            "description": "Type the JID address of the chat to disable the bot that works in chat.",
+            "value": "no chats added"
+        },
+        "BLOCK_MESSAGE": {
+            "description": "The message that appears when typing the '.block' command. If you do not want to change it, keep 'default'.",
+            "required": true,
+            "value": "default"
+        },
+        "BYE_LOGO": {
+            "description": "Picture with good bye message. Paste an image direct link or do '.setbye' command after deploying the bot.",
+            "required": true,
+            "value": "https://i.ibb.co/pbjB2pS/93f527f9f2fb.jpg"
+        },
+        "CAP": {
+            "description": "Caption of media files.",
+            "required": true,
+            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Qᵘᵉᵉⁿ ᴬᵐᵈᶦ₂₀₂₁"
+        },
+        "DEMOTE_MESSAGE": {
+            "description": "The message that appears when typing the '.demote' command. If you do not want to change it, keep 'default'.",
+            "required": true,
+            "value": "default"
+        },
+        "GAN_IMAGE": {
+            "description": "No need to change.",
+            "value": "https://i.ibb.co/0h6pq4j/6fba2dec0129.jpg"
+        },
+        "HANDLERS": {
+            "description": "Enter bot prefix to use commands.",
+            "required": true,
+            "value": "^[.!#]"
+        },
+        "IMGBB": {
+            "description": "Paste your imgbb API to change ALIVE,Welcome,Bye pictures by a command. (Visit https://imgbb.com/ and signup there. And get an API key from https://api.imgbb.com/)",
+            "required": true
+        },
+        "KICKME_MESSAGE": {
+            "description": "The message that appears when typing the '.kickme' command. If you do not want to change it, keep 'default'.",
+            "required": true,
+            "value": "default"
+        },
+        "LANGUAGE": {
+            "description": "Bot language. Type EN for English and type SI for Sinhala.",
+            "required": true,
+            "value": "EN"
+        },
+        "MAX_SIZE": {
+            "description": "Set maximum media file sending size. Type size in MB. To best performance keep 90mb.",
+            "required": true,
+            "value": "90"
+        },
+        "MENU": {
+            "description": "Set your command to get full command list.",
+            "required": true,
+            "value": "panel"
+        },
+        "MUTE_MESSAGE": {
+            "description": "The message that appears when typing the '.mute' command. If you do not want to change it, keep 'default'.",
+            "required": true,
+            "value": "default"
+        },
+        "NAME": {
+            "description": "Your name. This will appear in your menu and many commands.",
+            "required": true
+        },
+        "PANEL_EMOJI": {
+            "description": "You can change panel emojis. (Make sure to split emojis with / )",
+            "required": true,
+            "value": "📘/📖"
+        },
+        "PROMOTE_MESSAGE": {
+            "description": "The message that appears when typing the '.promote' command. If you do not want to change it, keep 'default'.",
+            "required": true,
+            "value": "default"
+        },
+        "SEND_READ": {
+            "description": "Need to show user whether bot message seen or not?",
+            "required": true,
+            "value": "true"
+        },
+        "SUDO": {
+            "description": "If you do not know how to use it, leave it blank! SUDO mode; Your number must be an international number. So you have to have your number after the country code. Example: 947xxxxxxxx (Sri lanka No. 94)",
+            "required": false
+        },
+        "UNMUTE_MESSAGE": {
+            "description": "The message that appears when typing the '.unmute' command. If you do not want to change it, keep 'default'.",
+            "required": true,
+            "value": "default"
+        },
+        "WELCOME_LOGO": {
+            "description": "Picture with welcome message. Paste an image direct link or do '.setwelcome' command after deploying the bot.",
+            "required": true,
+            "value": "https://i.ibb.co/XCfhtfH/301820a4f3c0.jpg"
+        },
+        "WORK_TYPE": {
+            "description": "The way the bot works. If you use public, everyone can use the bot. If you use private, only you can use your bot.",
+            "required": true,
+            "value": "private"
+        },
+        "HEROKU": {
+            "description": "Heroku",
+            "required": true,
+            "value": "true"
+        },
+        "HEROKU_API_KEY": {
+            "description": "https://dashboard.heroku.com/account Click this link. Scroll down for the API key. Then click the Reveal button. Copy the API key and paste the API Key empty box below.",
+            "required": true
+        },
+        "HEROKU_APP_NAME": {
+            "description": "Use the same App name as first.",
+            "required": true
+        },
+        "DEBUG": {
+            "description": "If you do not know this. Give it up.",
+            "required": true,
+            "value": "false"
+        },
+        "REMOVE_BG_API_KEY": {
+            "description": "Here you, go to the website remove.bg and sign up and get an API key. Leave the API key in this space.",
+            "required": false
+        },
+        "NO_ONLINE": {
+            "description": "This is not necessarily the case.",
+            "required": false,
+            "value": "true"
+        },
+        "COFFEEHOUSE_API_KEY": {
+            "description": "Give it up. We give you this.",
+            "required": false,
+            "value": "true"
+        }
+    },
+    "addons": [{
+      "plan": "heroku-postgresql"
+    }],
+    "buildpacks": [{
+      "url": "heroku-community/apt"
+    }]
+}
