@@ -17,7 +17,7 @@ you may not use this file except in compliance with the License.
 */
 
 const QueenAmdi = require('queenamdi-public');
-const {FancyText, fancyList} = require('fancy-amdi-sew-pre');
+const {FancyText, fancyList} = require('fancy-amdi-sew');
 const Amdi = QueenAmdi.events
 const Build = QueenAmdi.build
 const {MessageType} = require('@blackamda/queenamdi-web-api');
