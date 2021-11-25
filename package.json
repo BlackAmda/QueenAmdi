@@ -24,6 +24,6 @@
       "@blackamda/queenamdi-web-api": "^1.0.2",
       "queenamdi-public": "^1.0.3",
       "queenamdi-img": "1.0.0",
-      "fancy-amdi-sew": "^1.0.3"
+      "fancy-amdi-sew": "^1.0.5"
     }
   }

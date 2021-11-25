@@ -1,6 +1,6 @@
 {
     "name": "Queen Amdi 3.5.0v",
-    "description": "Queen Amdi is a chat bot for WhatsApp.",
+    "description": "Queen Amdi is a chat bot for WhatsApp. 💃🏻❤️",
     "keywords": [
         "Queen Amdi",
         "WhatsApp",
@@ -11,7 +11,7 @@
     ],
     "website": "https://amdaniwasa.com",
     "repository": "https://github.com/BlackAmda/QueenAmdi",
-    "logo": "https://i.ibb.co/r3wmpwr/LOGO.jpg",
+    "logo": "https://amdaniwasa.com/assets/QAAppjson.gif",
     "success_url": "https://dashboard.heroku.com/apps/",
     "stack": "container",
     "env":{
