@@ -24,7 +24,6 @@ const langs = require('langs');
 const {MessageType,Mimetype} = require('@blackamda/queenamdi-web-api');
 const translatte = require('translatte');
 const axios = require('axios')
-const ig = require("insta-fetcher");
 const googleTTS = require('google-translate-tts');
 const got = require("got");
 const gis = require("g-i-s");
