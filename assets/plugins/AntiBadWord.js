@@ -3225,7 +3225,7 @@ Amdi.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message
         let good01 = new RegExp('github.com/BlackAmda/QueenAmdi')
         let good02 = new RegExp('github.com/BlackAmda')
         let good03 = new RegExp('t.me/queenamdisupport')
-        const good04 = invite
+        // let good04 = new RegExp(invite)
         let good05 = new RegExp('https://chat.whatsapp.com/FufFv6v1M288le5TopCNMQ')
         let good06 = new RegExp('https://chat.whatsapp.com/BoBBR6O3gh6Jo5WRP9wiGN')
         let getlink01 = new RegExp('https://chat.whatsapp.com')
@@ -3248,9 +3248,9 @@ Amdi.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message
         if (good03.test(message.message)) {
             return;
         }
-        if (good04.test(message.message)) {
+        /*if (good04.test(message.message)) {
             return;
-        }
+        }*/
         if (good05.test(message.message)) {
             return;
         }
