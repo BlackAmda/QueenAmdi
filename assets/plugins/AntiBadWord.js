@@ -51,7 +51,7 @@ if (Build.LANG == 'EN') antilink = '_*⛔ Do not share links here.*_\n\n' + Buil
 
 Amdi.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message, match) => {  
     await QueenAmdi.amdi_setup()  
-    if (Build.ANTIBAD == 'true') {
+    if (Build.ANTIBAD == 'true' && message.jid.includes('g.us')) {
         let getword1bad = new RegExp('fuck')
         let getword2bad = new RegExp('f u c k')
         let getword3bad = new RegExp('Fuck')
@@ -3008,7 +3008,7 @@ Amdi.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message
     const actmsg = "❉ Safe Mode Activating...."
     const GUARD = "*************************************\n*🛡️Queen Amdi Virus Shield🛡️*\n\n       👑👑\n       \n\n\n\n```✨✨Do Not Go Up✨✨```\n*ඉහලට යෑමෙන් වලිකින්න.*\n            *Clear Ribbon*\n    _👑WARNING👑_\n    \n    \n\n```✨✨Do Not Go Up✨✨```\n*ඉහලට යෑමෙන් වලිකින්න.*\n            *Clear Ribbon*\n    _👑WARNING👑_\n    \n\n\n\n```✨✨Do Not Go Up✨✨```\n*ඉහලට යෑමෙන් වලිකින්න.*\n            *Clear Ribbon*\n    _👑WARNING👑_\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n```-Queen Amdi 2021-```\n*************************************"
 
-    if (Build.ANTIBUG == 'true') {
+    if (Build.ANTIBUG == 'true' && message.jid.includes('g.us')) {
         let getword1bug = new RegExp('HUNTED BY')
         let getword2bug = new RegExp('ATTACK STARTED')
         let getword3bug = new RegExp('ᴀᴍᴀᴢᴏɴᴇ ᴀʟᴇxᴀ')
@@ -3221,11 +3221,11 @@ Amdi.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message
     var invite = `\n https://chat.whatsapp.com/${code}`
 
 
-    if (Build.ANTILINK == 'true') {
+    if (Build.ANTILINK == 'true' && message.jid.includes('g.us')) {
         let good01 = new RegExp('github.com/BlackAmda/QueenAmdi')
         let good02 = new RegExp('github.com/BlackAmda')
         let good03 = new RegExp('t.me/queenamdisupport')
-        let good04 = new RegExp(invite)
+        const good04 = invite
         let good05 = new RegExp('https://chat.whatsapp.com/FufFv6v1M288le5TopCNMQ')
         let good06 = new RegExp('https://chat.whatsapp.com/BoBBR6O3gh6Jo5WRP9wiGN')
         let getlink01 = new RegExp('https://chat.whatsapp.com')

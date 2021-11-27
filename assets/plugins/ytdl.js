@@ -48,8 +48,8 @@ Amdi.operate({ pattern: 'qaytsong ?(.*)', fromMe: LOL,  deleteCommand: false, do
 
     const buttons = [
         {buttonId: BUTTHANDLE + 'qasongdoc ' + ytLink, buttonText: {displayText: 'Document' }, type: 1},
-        {buttonId: BUTTHANDLE + 'qasongaudio ' + ytLink, buttonText: {displayText: 'Audio' }, type: 1},
-        {buttonId: BUTTHANDLE + 'qasongplay ' + ytLink, buttonText: {displayText: 'Play now' }, type: 1}
+        {buttonId: BUTTHANDLE + 'qasongaudio ' + ytLink, buttonText: {displayText: 'Audio' }, type: 1}
+        // {buttonId: BUTTHANDLE + 'qasongplay ' + ytLink, buttonText: {displayText: 'Play now' }, type: 1}
     ]
     const buttonMessage = {
         contentText: SONGYT,
@@ -85,7 +85,7 @@ Amdi.operate({ pattern: 'qasongaudio ?(.*)', fromMe: LOL,  deleteCommand: false,
     return await message.client.deleteMessage(message.jid, {id: uploading.key.id, remoteJid: message.jid, fromMe: true})
 }))
 
-Amdi.operate({ pattern: 'qasongplay ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+/*Amdi.operate({ pattern: 'qasongplay ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
     await QueenAmdi.amdi_setup()
     const ytLink = match[1]
     const ytdata = await ytaudio(ytLink)
@@ -95,7 +95,7 @@ Amdi.operate({ pattern: 'qasongplay ?(.*)', fromMe: LOL,  deleteCommand: false, 
     var uploading = await message.client.sendMessage(message.jid,Lang.UPLOADING_SONG,MessageType.text, {quoted: message.data});
     await message.client.sendMessage(message.jid,Buffer.from(ytsong.data), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: true, quoted: message.data});
     return await message.client.deleteMessage(message.jid, {id: uploading.key.id, remoteJid: message.jid, fromMe: true})
-}))
+}))*/
 //==========================================
 
 //===================VIDEO===================
