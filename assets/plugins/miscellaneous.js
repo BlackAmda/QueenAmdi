@@ -22,51 +22,30 @@ const Build = QueenAmdi.build
 const tesseract = require("node-tesseract-ocr")
 const langs = require('langs');
 const {MessageType,Mimetype} = require('@blackamda/queenamdi-web-api');
+const _amdi = QueenAmdi.misc
 const translatte = require('translatte');
 const axios = require('axios')
-const ig = require("insta-fetcher");
 const googleTTS = require('google-translate-tts');
 const got = require("got");
-const gis = require("g-i-s");
 const wiki = require('wikijs').default;
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
 
-
 const Language = require('../language');
 const Lang = Language.getString('miscellaneous');
-let LOL = Build.WORKTYPE == 'public' ? false : true
+let Work_Mode = Build.WORKTYPE == 'public' ? false : true
 
 
-
-Amdi.operate({pattern: 'insta ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.IGSTALK}, (async (message, match) => {
+Amdi.operate({pattern: 'insta ?(.*)', fromMe: Work_Mode,  deleteCommand: false, desc: Lang.IGSTALK}, (async (amdiMSG, match) => {
 
     const username = match[1]
 
-    if (username === '') return await message.client.sendMessage(message.jid,Lang.NEED_USERNAME,MessageType.text,{quoted: message.data});
+    if (username === '') return await amdiMSG.client.sendMessage(amdiMSG.jid, Lang.NEED_USERNAME, MessageType.text, {quoted: amdiMSG.data});
 
-    await axios
-      .get(`https://api.lolhuman.xyz/api/stalkig/${username}?apikey=https://www.amdaniwasa.com`)
-      .then(async (response) => {
-        const {
-            photo_profile,
-            username,
-            fullname,
-            posts,
-            followers,
-            following,
-            bio
-        } = response.data.result
-
-    const pic = await axios.get(photo_profile, {responseType: 'arraybuffer'})
-
-    const msg = Lang.U_NAME + username + Lang.F_NAME + fullname + Lang.FOLLOW + followers + Lang.FOLLOWING + following + Lang.POST + posts + Lang.BIO + bio
-  
-    await message.client.sendMessage(message.jid,Buffer.from(pic.data), MessageType.image, {mimetype: Mimetype.jpg, caption: msg, quoted: message.data});
-    })
+    await _amdi.instaProfile( amdiMSG, username, Lang )
 }));
 
-Amdi.operate({pattern: 'trt(?: |$)(\\S*) ?(\\S*)', desc: Lang.TRANSLATE_DESC, usage: Lang.TRANSLATE_USAGE, fromMe: LOL}, (async (message, match) => {
+Amdi.operate({pattern: 'trt(?: |$)(\\S*) ?(\\S*)', desc: Lang.TRANSLATE_DESC, usage: Lang.TRANSLATE_USAGE, fromMe: Work_Mode}, (async (message, match) => {
 
     if (!message.reply_message) {
             return await message.client.sendMessage(message.jid,Lang.NEED_REPLY,MessageType.text,{quoted: message.data});
@@ -82,7 +61,7 @@ Amdi.operate({pattern: 'trt(?: |$)(\\S*) ?(\\S*)', desc: Lang.TRANSLATE_DESC, us
     }
 }));
 
-Amdi.operate({pattern: 'tts (.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.TTS_DESC}, (async (message, match) => {
+Amdi.operate({pattern: 'tts (.*)', fromMe: Work_Mode,  deleteCommand: false, desc: Lang.TTS_DESC}, (async (message, match) => {
 
     if(match[1] === undefined || match[1] == "")
         return;
@@ -109,7 +88,7 @@ Amdi.operate({pattern: 'tts (.*)', fromMe: LOL,  deleteCommand: false, desc: Lan
 }));
 
 
-Amdi.operate({pattern: 'wiki ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WIKI_DESC}, (async (message, match) => { 
+Amdi.operate({pattern: 'wiki ?(.*)', fromMe: Work_Mode,  deleteCommand: false, desc: Lang.WIKI_DESC}, (async (message, match) => { 
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text,{quoted: message.data});    
     var reply = await message.client.sendMessage(message.jid,Lang.SEARCHING,MessageType.text,{quoted: message.data});
@@ -123,7 +102,7 @@ Amdi.operate({pattern: 'wiki ?(.*)', fromMe: LOL,  deleteCommand: false, desc: L
 
 }));
 
-Amdi.operate({pattern: 'quote ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.QUOTE_DESC}, async (message, match) => {
+Amdi.operate({pattern: 'quote ?(.*)', fromMe: Work_Mode,  deleteCommand: false, desc: Lang.QUOTE_DESC}, async (message, match) => {
         
     if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
     const url = `https://api.quotable.io/random`;
@@ -138,7 +117,7 @@ Amdi.operate({pattern: 'quote ?(.*)', fromMe: LOL,  deleteCommand: false, desc: 
 });
 
 
-Amdi.operate({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WAME_DESC}, (async (message, match) => {    
+Amdi.operate({pattern: 'wame ?(.*)', fromMe: Work_Mode,  deleteCommand: false, desc: Lang.WAME_DESC}, (async (message, match) => {    
     if (message.reply_message !== false) {
         await message.client.sendMessage(message.jid, Lang.WAME.format(message.reply_message.jid.split('@')[0], message.reply_message.jid.replace('@s.whatsapp.net', ' ')), MessageType.text, {
                 quotedMessage: message.reply_message.data, contextInfo: {mentionedJid: [message.reply_message.jid.replace('c.us', 's.whatsapp.net')]}
@@ -154,7 +133,7 @@ Amdi.operate({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: L
     }
 }));
 
-Amdi.operate({pattern: 'ss ?(.*)', fromMe: LOL, desc: Lang.SS_DESC,  deleteCommand: false}, (async (message, match) => {
+Amdi.operate({pattern: 'ss ?(.*)', fromMe: Work_Mode, desc: Lang.SS_DESC,  deleteCommand: false}, (async (message, match) => {
     await QueenAmdi.amdi_setup()
     if (match[1] === '') return await message.sendMessage(Lang.LİNK);
 
@@ -164,7 +143,7 @@ Amdi.operate({pattern: 'ss ?(.*)', fromMe: LOL, desc: Lang.SS_DESC,  deleteComma
 
 }));
 
-Amdi.operate({pattern: 'mp4audio', fromMe: LOL,  deleteCommand: false, desc: Lang.MP4TOAUDİO_DESC}, (async (message, match) => {    
+Amdi.operate({pattern: 'mp4audio', fromMe: Work_Mode,  deleteCommand: false, desc: Lang.MP4TOAUDİO_DESC}, (async (message, match) => {    
 
     if (message.reply_message === false) return await message.client.sendMessage(message.jid, Lang.MP4TOAUDİO_NEEDREPLY, MessageType.text, {quoted: message.data});
     var downloading = await message.client.sendMessage(message.jid,Lang.MP4TOAUDİO,MessageType.text, {quoted: message.data});
@@ -186,7 +165,7 @@ Amdi.operate({pattern: 'mp4audio', fromMe: LOL,  deleteCommand: false, desc: Lan
 }));
 
 
-Amdi.operate({pattern: 'imagesticker', fromMe: LOL,  deleteCommand: false, desc: Lang.STİCKER_DESC}, (async (message, match) => {   
+Amdi.operate({pattern: 'imagesticker', fromMe: Work_Mode,  deleteCommand: false, desc: Lang.STİCKER_DESC}, (async (message, match) => {   
  
     if (message.reply_message === false) return await message.client.sendMessage(message.jid, Lang.STİCKER_NEEDREPLY, MessageType.text, {quoted: message.data});
     var downloading = await message.client.sendMessage(message.jid,Lang.STİCKER,MessageType.text, {quoted: message.data});
@@ -207,84 +186,14 @@ Amdi.operate({pattern: 'imagesticker', fromMe: LOL,  deleteCommand: false, desc:
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
 
-Amdi.operate({pattern: 'img ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.IMG_DESC}, (async (message, match) => { 
-    if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text, {quoted: message.data});
+Amdi.operate({pattern: 'img ?(.*)', fromMe: Work_Mode,  deleteCommand: false, desc: Lang.IMG_DESC}, (async (amdiMSG, input) => { 
+    const query = input[1]
+    if (query === '') return await amdiMSG.client.sendMessage(amdiMSG.jid, Lang.NEED_WORDS, MessageType.text, {quoted: amdiMSG.data});
 
-    if (Build.ANTIBAD == 'true') {
-        if (match[1] === 'sex') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'Sex') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'mia') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'khalifa') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'porn') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'fuck') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'dick') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'pussy') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'cum') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'ass') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'booty') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'boob') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'boobs') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'tits') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'puka') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'brazzers') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'wal') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'bitch') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'nude') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'nudity') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'pornhub') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'juicy') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'nigga') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'shit') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'blowjob') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'anal') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'hard') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'big tits') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        if (match[1] === 'leak') return await message.client.sendMessage(message.jid,"⚠️ Anti-bad system running...",MessageType.text, {quoted: message.data});
-        try {
-            if (Build.LANG == 'EN') {
-                var downloading = await message.client.sendMessage(message.jid, Lang.IMG.format(5, match[1]), MessageType.text, {quoted: message.data});
-            } else if (Build.LANG == 'SI') {
-                var downloading = await message.client.sendMessage(message.jid, Lang.IMG.format(match[1], 5), MessageType.text, {quoted: message.data});
-            }
-            gis(match[1], async (error, result) => {
-                for (var i = 0; i < (result.length < 5 ? result.length : 5); i++) {
-                    var get = got(result[i].url, {https: {rejectUnauthorized: false}});
-                    var stream = get.buffer();
-                        
-                    stream.then(async (image) => {
-                        await message.client.sendMessage(message.jid,image, MessageType.image, {thumbnail: qathmub});
-                    });
-                }
-            });
-            return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
-        } catch {
-            return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDA, MessageType.text, {quoted: message.data});
-        }
-    } else {
-        try {
-            if (Build.LANG == 'EN') {
-                var downloading = await message.client.sendMessage(message.jid, Lang.IMG.format(5, match[1]), MessageType.text, {quoted: message.data});
-            } else if (Build.LANG == 'SI') {
-                var downloading = await message.client.sendMessage(message.jid, Lang.IMG.format(match[1], 5), MessageType.text, {quoted: message.data});
-            }
-            gis(match[1], async (error, result) => {
-                for (var i = 0; i < (result.length < 5 ? result.length : 5); i++) {
-                    var get = got(result[i].url, {https: {rejectUnauthorized: false}});
-                    var stream = get.buffer();
-                        
-                    stream.then(async (image) => {
-                        await message.client.sendMessage(message.jid,image, MessageType.image, {thumbnail: qathmub});
-                    });
-                }
-            });
-            return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
-        } catch {
-            return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDA, MessageType.text, {quoted: message.data});
-        }
-    }
+    await _amdi.imageDL( amdiMSG, query, Lang )
 }));
 
-Amdi.operate({pattern: 'ocr', fromMe: LOL,  deleteCommand: false, desc: Lang.OCR_DESC}, (async (message, match) => { 
+Amdi.operate({pattern: 'ocr', fromMe: Work_Mode,  deleteCommand: false, desc: Lang.OCR_DESC}, (async (message, match) => { 
     if (message.reply_message === false) return await message.client.sendMessage(message.jid, Lang.NEED_IMG, MessageType.text, {quoted: message.data});
 
     var downloading = await message.client.sendMessage(message.jid,Lang.SCANNING,MessageType.text, {quoted: message.data});

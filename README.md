@@ -79,7 +79,7 @@
 
   </a>
 </p>
-
+ 
 ```
 Queen Amdi bot is an UserBot for WhatsApp That allowing you to get done so many tasks.
 The user is responsible for all possible consequences of misuse.

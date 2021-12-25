@@ -31,9 +31,9 @@ const pipeline = promisify(stream.pipeline);
 const Language = require('../language');
 const Lang = Language.getString('removebg');
 
-let LOL = Build.WORKTYPE == 'public' ? false : true
+let Work_Mode = Build.WORKTYPE == 'public' ? false : true
 
-Amdi.operate({pattern: 'removebg ?(.*)', fromMe: LOL, desc: Lang.REMOVEBG_DESC,  deleteCommand: false}, (async (message, match) => {    
+Amdi.operate({pattern: 'removebg ?(.*)', fromMe: Work_Mode, desc: Lang.REMOVEBG_DESC,  deleteCommand: false}, (async (message) => {    
     await QueenAmdi.amdi_setup()
     if (message.reply_message === false || message.reply_message.image === false) return await message.client.sendMessage(message.jid,Lang.NEED_PHOTO,MessageType.text, {quoted: message.data});
     if (Build.RBG_API_KEY === false) return await message.client.sendMessage(message.jid,Lang.NO_API_KEY,MessageType.text, {quoted: message.data});

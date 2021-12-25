@@ -26,19 +26,19 @@ const fs = require('fs')
 
 const Language = require('../language');
 const Lang = Language.getString('memes');
-let LOL = Build.WORKTYPE == 'public' ? false : true
+let Work_Mode = Build.WORKTYPE == 'public' ? false : true
 
 
-Amdi.operate({pattern: 'meme ?(.*)', fromMe: LOL, desc: Lang.MEMES_DESC,  deleteCommand: false}, (async (message, match) => {   
+Amdi.operate({pattern: 'meme ?(.*)', fromMe: Work_Mode, desc: Lang.MEMES_DESC,  deleteCommand: false}, (async (message, input) => {   
     await QueenAmdi.amdi_setup()
     if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text, {quoted: message.data});
     var topText, bottomText;
-    if (match[1].includes(';')) {
-        var split = match[1].split(';');
+    if (input[1].includes(';')) {
+        var split = input[1].split(';');
         bottomText = split[1];
         topText = split[0];
     } else {
-        topText = match[1];
+        topText = input[1];
         bottomText = '';
     }
     

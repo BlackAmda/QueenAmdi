@@ -1,5 +1,5 @@
 {
-    "name": "Queen Amdi 3.5.0v",
+    "name": "Queen Amdi 3.6.0v",
     "description": "Queen Amdi is a chat bot for WhatsApp. 💃🏻❤️",
     "keywords": [
         "Queen Amdi",
@@ -87,6 +87,11 @@
             "required": true,
             "value": "default"
         },
+        "DM_BLOCK": {
+            "description": "Block everyone when send a message to inbox. Type 'true' to enable and type 'false' to disable inbox blocker.",
+            "required": true,
+            "value": "false"
+        },
         "GAN_IMAGE": {
             "description": "No need to change.",
             "value": "https://i.ibb.co/0h6pq4j/6fba2dec0129.jpg"
@@ -128,6 +133,11 @@
         "NAME": {
             "description": "Your name. This will appear in your menu and many commands.",
             "required": true
+        },
+        "NO_ERROR_LOG": {
+            "description": "Stop all error messages in Log number. Type 'true' to enable and type 'false' to disable Error Log Blocker.",
+            "required": true,
+            "value": "false"
         },
         "PANEL_EMOJI": {
             "description": "You can change panel emojis. (Make sure to split emojis with / )",

@@ -29,7 +29,7 @@ const axios = require('axios');
 const FormData = require('form-data')
 const cheerio = require('cheerio')
 const fetch = require('node-fetch');
-let LOL = Build.WORKTYPE == 'public' ? false : true
+let Work_Mode = Build.WORKTYPE == 'public' ? false : true
 
 
 const Language = require('../language');
@@ -84,7 +84,7 @@ function webp2mp4File(path) {
 // End
 
 
-Amdi.operate({pattern: 'sticker$', fromMe: LOL, desc: Lang.STICKER_DESC,  deleteCommand: false}, (async (message, match) => {    
+Amdi.operate({pattern: 'sticker$', fromMe: Work_Mode, desc: Lang.STICKER_DESC,  deleteCommand: false}, (async (message, match) => {    
     await QueenAmdi.amdi_setup()
     if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text, {quoted: message.data});
     var downloading = await message.client.sendMessage(message.jid,Lang.DOWNLOADING,MessageType.text, {quoted: message.data});
@@ -117,7 +117,7 @@ Amdi.operate({pattern: 'sticker$', fromMe: LOL, desc: Lang.STICKER_DESC,  delete
 }));
 
 
-Amdi.operate({pattern: 'sticvid$', fromMe: LOL, desc: Lang.ANI_STICK,  deleteCommand: false}, (async (message, match) => {
+Amdi.operate({pattern: 'sticvid$', fromMe: Work_Mode, desc: Lang.ANI_STICK,  deleteCommand: false}, (async (message, match) => {
     await QueenAmdi.amdi_setup()
     const msgid = message.jid
         if (message.reply_message === false) return await message.client.sendMessage(msgid, Lang.ANI_REPLY, MessageType.text, {quoted: message.data})

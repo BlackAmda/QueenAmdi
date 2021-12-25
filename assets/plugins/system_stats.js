@@ -24,7 +24,7 @@ const {spawnSync} = require('child_process');
 const chalk = require('chalk');
 const axios = require('axios');
 const fs = require('fs');
-let LOL = Build.WORKTYPE == 'public' ? false : true
+let Work_Mode = Build.WORKTYPE == 'public' ? false : true
 
 const Language = require('../language');
 const Lang = Language.getString('system_stats');
@@ -42,7 +42,7 @@ if (Build.ALIVEMSG == 'default') MSG = '```Hey There! Bot Online now. 💃🏻�
 else MSG = Build.ALIVEMSG
 
 
-Amdi.operate({pattern: 'alive', fromMe: LOL, desc: Lang.ALIVE_DESC,  deleteCommand: false}, (async (message, match) => {
+Amdi.operate({pattern: 'alive', fromMe: Work_Mode, desc: Lang.ALIVE_DESC,  deleteCommand: false}, (async (message, match) => {
     await QueenAmdi.amdi_setup()
     var logo = await axios.get (Build.ALIVE_LOGO, {responseType: 'arraybuffer'})
     var PIC = Buffer.from(logo.data)
@@ -70,7 +70,7 @@ Amdi.operate({pattern: 'alive', fromMe: LOL, desc: Lang.ALIVE_DESC,  deleteComma
     await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage);
 }))
 
-Amdi.operate({pattern: 'qasysstats', fromMe: LOL, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+Amdi.operate({pattern: 'qasysstats', fromMe: Work_Mode, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
     await QueenAmdi.amdi_setup()
     const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
     await message.sendMessage(
@@ -78,7 +78,7 @@ Amdi.operate({pattern: 'qasysstats', fromMe: LOL, desc: Lang.SYSD_DESC, dontAddC
     );
 }));
 
-Amdi.operate({pattern: 'qaversion', fromMe: LOL, desc: Lang.BOT_V, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+Amdi.operate({pattern: 'qaversion', fromMe: Work_Mode, desc: Lang.BOT_V, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
     await QueenAmdi.amdi_setup()
     await message.client.sendMessage(message.jid, 
         `*🧬 Queen Amdi Version 🧬*\n\n` + 

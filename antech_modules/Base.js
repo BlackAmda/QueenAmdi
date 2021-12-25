@@ -17,7 +17,7 @@ you may not use this file except in compliance with the License.
 */
 
 'use strict';
-
+ 
 class Base {
     constructor(client) {
         Object.defineProperty(this, 'client', { value: client });

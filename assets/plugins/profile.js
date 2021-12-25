@@ -30,7 +30,7 @@ const heroku = new Heroku({
 });
 let baseURI = '/apps/' + Build.HEROKU.APP_NAME;
 
-Amdi.operate({pattern: 'kickme', fromMe: true, desc: Lang.KICKME_DESC, onlyGroup: true, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+Amdi.operate({pattern: 'left', fromMe: true, desc: Lang.KICKME_DESC, onlyGroup: true, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
     if (Build.KICKMEMSG == 'default') { 
         await message.client.sendMessage(message.jid,Lang.KICKME,MessageType.text);
         await message.client.groupLeave(message.jid);

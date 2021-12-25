@@ -18,17 +18,24 @@ you may not use this file except in compliance with the License.
 
 const QueenAmdi = require('queenamdi-public');
 const Amdi = QueenAmdi.events
+const _amdi = QueenAmdi.antiFunctions
 const Build = QueenAmdi.build
-const _amdi = QueenAmdi.misc
-let Work_Mode = Build.WORKTYPE == 'public' ? false : true
 
-const Language = require('../language');
-const Lang = Language.getString('wallpaper');
+Amdi.operate(
+    {on: 'text', fromMe: false,  deleteCommand: false}, (async (amdiMSG) => {  
+    await QueenAmdi.amdi_setup()  
 
-Amdi.operate({pattern: 'getwp ?(.*)', desc: Lang.WALL_DESC, fromMe: Work_Mode,  deleteCommand: false}, (async (amdiMSG, input) => {
-    await QueenAmdi.amdi_setup()
-    const query = input[1]
-    if (query === '') return await amdiMSG.reply(Lang.NEED_WORD);
+    await _amdi.fakeBots( amdiMSG )
+    
+    if (Build.ANTIBAD == 'true') {
+        await _amdi.antiBad( amdiMSG )
+    }
+    
+    if (Build.ANTIBUG == 'true') {
+        await _amdi.antiBug( amdiMSG )
+    }
 
-    await _amdi.wallpaper( amdiMSG, query )
+    if (Build.ANTILINK == 'true') {
+        await _amdi.antiLink( amdiMSG )
+    }
 }));

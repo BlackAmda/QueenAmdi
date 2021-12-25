@@ -37,7 +37,7 @@ const FiltersDB = Build.DATABASE.define('filter', {
         type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false
     }
 });
-
+ 
 async function getFilter(jid = null, filter = null) {
     var Wher = {chat: jid};
     if (filter !== null) Wher.push({pattern: filter});

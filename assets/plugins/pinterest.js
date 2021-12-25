@@ -22,19 +22,19 @@ const Build = QueenAmdi.build
 const search = QueenAmdi.pin
 const axios = require('axios');
 const {MessageType, Mimetype} = require('@blackamda/queenamdi-web-api');
-let LOL = Build.WORKTYPE == 'public' ? false : true
+let Work_Mode = Build.WORKTYPE == 'public' ? false : true
 
 const Language = require('../language');
 const Lang = Language.getString('pinterest');
 
 
-Amdi.operate({pattern: 'pint ?(.*)', fromMe: LOL, desc: Lang.PIN_DESC, dontAddCommandList: true}, (async (message, match) => {
-    const query = match[1]
+Amdi.operate({pattern: 'pint ?(.*)', fromMe: Work_Mode, desc: Lang.PIN_DESC, dontAddCommandList: true}, (async (amdiMSG, input) => {
+    const query = input[1]
 
-    if (query == '') return await message.client.sendMessage(message.jid, Lang.NEED_WORDS, MessageType.text, {quoted: message.data});
+    if (query == '') return await amdiMSG.client.sendMessage(amdiMSG.jid, Lang.NEED_WORDS, MessageType.text, {quoted: amdiMSG.data});
 
     try {
-        var downloading = await message.client.sendMessage(message.jid,Lang.DOWNLOAD,MessageType.text, {quoted: message.data});
+        var downloading = await amdiMSG.client.sendMessage(amdiMSG.jid,Lang.DOWNLOAD,MessageType.text, {quoted: amdiMSG.data});
         const images = await search.pinterest(query)
         const get_pic = await search.pickRandom(images)
         const get_pic2 = await search.pickRandom(images)
@@ -42,9 +42,9 @@ Amdi.operate({pattern: 'pint ?(.*)', fromMe: LOL, desc: Lang.PIN_DESC, dontAddCo
         const get_pic4 = await search.pickRandom(images)
         const get_pic5 = await search.pickRandom(images)
 
-        await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true});
-        var uploading = await message.client.sendMessage(message.jid,Lang.UPLOAD,MessageType.text, {quoted: message.data});
-        await message.client.deleteMessage(message.jid, {id: uploading.key.id, remoteJid: message.jid, fromMe: true})
+        await amdiMSG.client.deleteMessage(amdiMSG.jid, {id: downloading.key.id, remoteJid: amdiMSG.jid, fromMe: true});
+        var uploading = await amdiMSG.client.sendMessage(amdiMSG.jid,Lang.UPLOAD,MessageType.text, {quoted: amdiMSG.data});
+        await amdiMSG.client.deleteMessage(amdiMSG.jid, {id: uploading.key.id, remoteJid: amdiMSG.jid, fromMe: true})
 
         const one = await axios.get(get_pic, {responseType: 'arraybuffer'})
         const two = await axios.get(get_pic2, {responseType: 'arraybuffer'})
@@ -52,13 +52,13 @@ Amdi.operate({pattern: 'pint ?(.*)', fromMe: LOL, desc: Lang.PIN_DESC, dontAddCo
         const four = await axios.get(get_pic4, {responseType: 'arraybuffer'})
         const five = await axios.get(get_pic5, {responseType: 'arraybuffer'})
         
-        await message.client.sendMessage(message.jid, Buffer.from(one.data), MessageType.image, {mimetype: Mimetype.png, thumbnail: qathmub})
-        await message.client.sendMessage(message.jid, Buffer.from(two.data), MessageType.image, {mimetype: Mimetype.png, thumbnail: qathmub})
-        await message.client.sendMessage(message.jid, Buffer.from(three.data), MessageType.image, {mimetype: Mimetype.png, thumbnail: qathmub})
-        await message.client.sendMessage(message.jid, Buffer.from(four.data), MessageType.image, {mimetype: Mimetype.png, thumbnail: qathmub})
-        await message.client.sendMessage(message.jid, Buffer.from(five.data), MessageType.image, {mimetype: Mimetype.png, thumbnail: qathmub})
+        await amdiMSG.client.sendMessage(amdiMSG.jid, Buffer.from(one.data), MessageType.image, {mimetype: Mimetype.png, thumbnail: qathmub})
+        await amdiMSG.client.sendMessage(amdiMSG.jid, Buffer.from(two.data), MessageType.image, {mimetype: Mimetype.png, thumbnail: qathmub})
+        await amdiMSG.client.sendMessage(amdiMSG.jid, Buffer.from(three.data), MessageType.image, {mimetype: Mimetype.png, thumbnail: qathmub})
+        await amdiMSG.client.sendMessage(amdiMSG.jid, Buffer.from(four.data), MessageType.image, {mimetype: Mimetype.png, thumbnail: qathmub})
+        await amdiMSG.client.sendMessage(amdiMSG.jid, Buffer.from(five.data), MessageType.image, {mimetype: Mimetype.png, thumbnail: qathmub})
     } catch {
-        return await message.client.sendMessage(message.jid,Lang.ERROR,MessageType.text, {quoted: message.data});
+        return await amdiMSG.client.sendMessage(amdiMSG.jid,Lang.ERROR,MessageType.text, {quoted: amdiMSG.data});
     }
 }));
 

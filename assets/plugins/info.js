@@ -24,21 +24,21 @@ const { MessageType, Mimetype } = require('@blackamda/queenamdi-web-api');
 const fs = require('fs');
 const axios = require('axios');
 const got = require("got");
-let LOL = Build.WORKTYPE == 'public' ? false : true
+let Work_Mode = Build.WORKTYPE == 'public' ? false : true
 
 const Language = require('../language');
 const Lang = Language.getString('info');
 const LANG = Language.getString('information');
 
-async function checkUsAdmin(message, user = message.data.participant) {
-    var grup = await message.client.groupMetadata(message.jid);
+async function checkUsAdmin(amdiMSG, user = amdiMSG.data.participant) {
+    var grup = await amdiMSG.client.groupMetadata(amdiMSG.jid);
     var sonuc = grup['participants'].map((member) => {     
         if (member.jid.split("@")[0] == user.split("@")[0] && member.isAdmin) return true; else; return false;
     });
     return sonuc.includes(true);
 }
-async function checkImAdmin(message, user = message.client.user.jid) {
-    var grup = await message.client.groupMetadata(message.jid);
+async function checkImAdmin(amdiMSG, user = amdiMSG.client.user.jid) {
+    var grup = await amdiMSG.client.groupMetadata(amdiMSG.jid);
     var sonuc = grup['participants'].map((member) => {     
         if (member.jid.split("@")[0] == user.split("@")[0] && member.isAdmin) return true; else; return false;
     });
@@ -46,43 +46,43 @@ async function checkImAdmin(message, user = message.client.user.jid) {
 }
 
 
-Amdi.operate({ pattern: 'info', fromMe: LOL, desc: Lang.INFO_DESC, deleteCommand: false}, async (message, match) => { 
+Amdi.operate({ pattern: 'info', fromMe: Work_Mode, desc: Lang.INFO_DESC, deleteCommand: false}, async (amdiMSG) => { 
         
-    if (message.jid.includes('g.us')) {
+    if (amdiMSG.jid.includes('g.us')) {
 
-        var im = await checkImAdmin(message)
+        var im = await checkImAdmin(amdiMSG)
         if (!im) {
             var invite = Lang.GRP_COD + '\n' + Lang.NOADMIN
         } else {
-            const code = await message.client.groupInviteCode(message.jid)
+            const code = await amdiMSG.client.groupInviteCode(amdiMSG.jid)
             var invite = Lang.GRP_COD + `\n https://chat.whatsapp.com/${code}`
         }
 
-        var json = await message.client.groupMetadataMinimal(message.jid) 
+        var json = await amdiMSG.client.groupMetadataMinimal(amdiMSG.jid) 
 
-        var nwjson = await message.client.groupMetadata(message.jid) 
+        var nwjson = await amdiMSG.client.groupMetadata(amdiMSG.jid) 
 
         const msg = Lang.GRP_NAME + `\n ${nwjson.subject} \n\n` + Lang.GRP_JID + `\n ${json.id} \n\n` + Lang.GRP_OWN + `\n ${json.owner} \n\n` + invite +`\n\n` + Lang.GRP_DES + `\n ${nwjson.desc}`
 
-        var ppUrl = await message.client.getProfilePicture(message.jid) 
+        var ppUrl = await amdiMSG.client.getProfilePicture(amdiMSG.jid) 
 
         const resim = await axios.get(ppUrl, {responseType: 'arraybuffer'})
         const media = Buffer.from(resim.data)
 
-        await message.sendMessage(
+        await amdiMSG.sendMessage(
             media, 
             MessageType.image, 
             { caption: msg , thumbnail: media}
         );
     }
     else {
-        var status = await message.client.getStatus(message.jid) 
-        var usppUrl = await message.client.getProfilePicture(message.jid) 
-        var usexists = await message.client.isOnWhatsApp(message.jid)
+        var status = await amdiMSG.client.getStatus(amdiMSG.jid) 
+        var usppUrl = await amdiMSG.client.getProfilePicture(amdiMSG.jid) 
+        var usexists = await amdiMSG.client.isOnWhatsApp(amdiMSG.jid)
         const nwmsg = Lang.PRO_JID + `\n ${usexists.jid} \n\n` + Lang.PRO_DES + `\n ${status.status}`
         const resimnw = await axios.get(usppUrl, {responseType: 'arraybuffer'})
         const media2 = Buffer.from(resimnw.data)
-        await message.sendMessage(
+        await amdiMSG.sendMessage(
             media2, 
             MessageType.image, 
             { caption: nwmsg , thumbnail: media2}
@@ -90,32 +90,32 @@ Amdi.operate({ pattern: 'info', fromMe: LOL, desc: Lang.INFO_DESC, deleteCommand
     } 
 });
 
-Amdi.operate({ pattern: 'qawelinfo', fromMe: false, deleteCommand: false, dontAddCommandList: true}, async (message, match) => { 
+Amdi.operate({ pattern: 'qawelinfo', fromMe: false, deleteCommand: false, dontAddCommandList: true}, async (amdiMSG) => { 
 
-    var json = await message.client.groupMetadataMinimal(message.jid) 
+    var json = await amdiMSG.client.groupMetadataMinimal(amdiMSG.jid) 
 
-    var nwjson = await message.client.groupMetadata(message.jid) 
+    var nwjson = await amdiMSG.client.groupMetadata(amdiMSG.jid) 
 
     const msg = Lang.GRP_NAME + `\n ${nwjson.subject} \n\n` + Lang.GRP_JID + `\n ${json.id} \n\n` + Lang.GRP_OWN + `\n ${json.owner} \n\n` + Lang.GRP_DES + `\n ${nwjson.desc}`
 
-    var ppUrl = await message.client.getProfilePicture(message.jid) 
+    var ppUrl = await amdiMSG.client.getProfilePicture(amdiMSG.jid) 
 
     const resim = await axios.get(ppUrl, {responseType: 'arraybuffer'})
     const media = Buffer.from(resim.data)
 
-    await message.sendMessage(
+    await amdiMSG.sendMessage(
         media, 
         MessageType.image, 
         { caption: msg , thumbnail: media}
     );
 });
 
-Amdi.operate({pattern: 'covid ?(.*)', fromMe: LOL, desc: LANG.COVID_DESC,  deleteCommand: false}, async (message, match) => {
-    if (match[1] === '') return await message.reply(LANG.NEED_CON);
+Amdi.operate({pattern: 'covid ?(.*)', fromMe: Work_Mode, desc: LANG.COVID_DESC,  deleteCommand: false}, async (amdiMSG, match) => {
+    if (match[1] === '') return await amdiMSG.reply(LANG.NEED_CON);
         const url = `https://coronavirus-19-api.herokuapp.com/countries/${match[1]}`;
         const response = await got(url);
         const jsun = JSON.parse(response.body);
-        await message.client.sendMessage(message.jid, fs.readFileSync("./node_modules/queenamdi-public/media/gif/earth.mp4"), MessageType.video, {mimetype: Mimetype.gif, quoted: message.data, caption: LANG.COUNTRY + jsun.country + '\n\n' + LANG.CASES + jsun.cases + '\n' + LANG.TCASES + jsun.todayCases + '\n' + LANG.DEATHS + jsun.deaths + '\n' + LANG.TDEATHS + jsun.todayDeaths + '\n' + LANG.RECO + jsun.recovered + '\n' + LANG.CRIT + jsun.critical + '\n' + LANG.TEST + jsun.totalTests, thumbnail: qathmub });
+        await amdiMSG.client.sendMessage(amdiMSG.jid, fs.readFileSync("./node_modules/queenamdi-public/media/gif/earth.mp4"), MessageType.video, {mimetype: Mimetype.gif, quoted: amdiMSG.data, caption: LANG.COUNTRY + jsun.country + '\n\n' + LANG.CASES + jsun.cases + '\n' + LANG.TCASES + jsun.todayCases + '\n' + LANG.DEATHS + jsun.deaths + '\n' + LANG.TDEATHS + jsun.todayDeaths + '\n' + LANG.RECO + jsun.recovered + '\n' + LANG.CRIT + jsun.critical + '\n' + LANG.TEST + jsun.totalTests, thumbnail: qathmub });
 });
 
 //=================================
