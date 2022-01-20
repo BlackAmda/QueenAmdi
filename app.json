@@ -1,5 +1,5 @@
 {
-    "name": "Queen Amdi 3.6.0v",
+    "name": "Queen Amdi 3.6.2v",
     "description": "Queen Amdi is a chat bot for WhatsApp. 💃🏻❤️",
     "keywords": [
         "Queen Amdi",
@@ -31,7 +31,7 @@
         "ALIVE_LOGO": {
             "description": "Picture with alive message. Paste an image direct link or do '.setalive' command after deploying the bot.",
             "required": true,
-            "value": "https://i.ibb.co/0h6pq4j/6fba2dec0129.jpg"
+            "value": "https://i.ibb.co/cQrnsXq/Queen-Amdi-Alive.jpg"
         },
         "ALIVE_MESSAGE": {
             "description": "The message that appears when typing the '.alive' command. If you do not want to change it, keep 'default'.",
@@ -80,7 +80,7 @@
         "CAP": {
             "description": "Caption of media files.",
             "required": true,
-            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Qᵘᵉᵉⁿ ᴬᵐᵈᶦ₂₀₂₁"
+            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Qᵘᵉᵉⁿ ᴬᵐᵈᶦ₂₀₂₂"
         },
         "DEMOTE_MESSAGE": {
             "description": "The message that appears when typing the '.demote' command. If you do not want to change it, keep 'default'.",
