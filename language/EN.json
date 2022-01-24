@@ -112,7 +112,7 @@
             "UPLOADING_SONG":"\n```⬆️ Uploading your song...```\n",
             "DOWNLOADING_VIDEO": "\n```🔄 Downloading your video...```\n",
             "UPLOADING_VIDEO":"\n```⬆️ Uploading your video...```\n",
-            "NO_RESULT": "*🧰 Please try again later.*",
+            "NO_RESULT": "*🌐 Please enter a valid link!* \n\nExample : _.fb https://www.facebook.com/AmdaNiwasaOfficial/videos/837496850532776/_",
             "LIMIT": "*Maximum upload size exceeded!*\n\n_Contact bot owner to increase limit: "
         },
         "effects":{
