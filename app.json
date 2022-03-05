@@ -17,6 +17,7 @@
         "AMDI_SESSION": {
             "description": "Paste the session code you received after scanning the QR from https://replit.com/@BlackAmda/Queen-Amdi-QR-Code",
             "required": true
+            "value": "AMDI;;;eyJjbGllbnRJRCI6IkVNSTZ5RTJNRlFtQjNUL0NaQVdHTGc9PSIsInNlcnZlclRva2VuIjoiMUBqdTk1b3ZzcnF3QUhzTlpoMFBqazNSMjNlLzRBOFJMQjdjYjNUWCtmRkV4SmVmNEJ3N050dHFxYmMrNnZkT3B5RUpza0EyUnd0bnRiT2c9PSIsImNsaWVudFRva2VuIjoiYlJGSFRxczR3OUkyUjVXNVFTVyt0dWJjMmtOeVFVK0dyaHhZVE5CSW1iUT0iLCJlbmNLZXkiOiJDaEM4dFEzcHV5UFFTaSs1NEhlbHhkREVMQzFxYkorRmVuVm5sSmlDZ2FjPSIsIm1hY0tleSI6IlI5aGFKMmd1MUJ6akRQSmpuRW1DNGIrWUJ4NGUxRHVFbkZwZ29Ha3d0V2s9In0="
         },
         "ADD_MESSAGE": {
             "description": "Message that a member has been added to the group. If you do not want to change it, keep 'default'.",
@@ -56,7 +57,7 @@
         "ANTILINK": {
             "description": "Remove members when share unwanted links for groups. Type 'true' to enable and type 'false' to disable Anti-Link.",
             "required": true,
-            "value": "false"
+            "value": "true"
         },
         "BAN_MESSAGE": {
             "description": "The remove message that appears when type the '.ban' command. If you do not want to change it, keep 'default'.",
@@ -80,7 +81,7 @@
         "CAP": {
             "description": "Caption of media files.",
             "required": true,
-            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Qᵘᵉᵉⁿ ᴬᵐᵈᶦ₂₀₂₂"
+            "value": "_*sɪɴɢʟᴇ ʟɪғᴇ....ғᴜʟʟ ғᴜɴʏ....😙😁....ɪ'ᴍ sᴀᴅᴇᴇsʜᴀ🧑🏻‍💻*_"
         },
         "DEMOTE_MESSAGE": {
             "description": "The message that appears when typing the '.demote' command. If you do not want to change it, keep 'default'.",
@@ -104,6 +105,7 @@
         "IMGBB": {
             "description": "Paste your imgbb API to change ALIVE,Welcome,Bye pictures by a command. (Visit https://imgbb.com/ and signup there. And get an API key from https://api.imgbb.com/)",
             "required": true
+            "value": "a271ed7f52d02b50c66fc9d941e36a3a"
         },
         "KICKME_MESSAGE": {
             "description": "The message that appears when typing the '.kickme' command. If you do not want to change it, keep 'default'.",
@@ -123,7 +125,7 @@
         "MENU": {
             "description": "Set your command to get full command list.",
             "required": true,
-            "value": "panel"
+            "value": "sadee"
         },
         "MUTE_MESSAGE": {
             "description": "The message that appears when typing the '.mute' command. If you do not want to change it, keep 'default'.",
@@ -133,6 +135,7 @@
         "NAME": {
             "description": "Your name. This will appear in your menu and many commands.",
             "required": true
+            "value": "ᴍ.ʀ sͥᴀͣᴅͫᴇᴇsʜᴀ🧑🏻‍💻"
         },
         "NO_ERROR_LOG": {
             "description": "Stop all error messages in Log number. Type 'true' to enable and type 'false' to disable Error Log Blocker.",
@@ -171,7 +174,7 @@
         "WORK_TYPE": {
             "description": "The way the bot works. If you use public, everyone can use the bot. If you use private, only you can use your bot.",
             "required": true,
-            "value": "private"
+            "value": "public"
         },
         "HEROKU": {
             "description": "Heroku",
@@ -181,10 +184,12 @@
         "HEROKU_API_KEY": {
             "description": "https://dashboard.heroku.com/account Click this link. Scroll down for the API key. Then click the Reveal button. Copy the API key and paste the API Key empty box below.",
             "required": true
+            "value": "5ce9377c-025f-498c-b2a3-8f3abb216f19"
         },
         "HEROKU_APP_NAME": {
             "description": "Use the same App name as first.",
             "required": true
+            "value": "queenamdibo1"
         },
         "DEBUG": {
             "description": "If you do not know this. Give it up.",
@@ -194,6 +199,7 @@
         "REMOVE_BG_API_KEY": {
             "description": "Here you, go to the website remove.bg and sign up and get an API key. Leave the API key in this space.",
             "required": false
+            "value": "t7DgHo7zSNew74rCR88u1g9J"
         },
         "NO_ONLINE": {
             "description": "This is not necessarily the case.",
