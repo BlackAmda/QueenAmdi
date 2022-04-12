@@ -18,7 +18,7 @@ you may not use this file except in compliance with the License.
 
 const QueenAmdi = require('queenamdi-public');
 const Build = QueenAmdi.build
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require('@blackamda/sequelize');
 
 const FiltersDB = Build.DATABASE.define('filter', {
     chat: {
