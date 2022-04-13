@@ -8,18 +8,18 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/BlackAmda/QueenAmdi.git"
+      "url": "git+https://github.com/Shanu12/QueenAmdi.git"
     },
     "keywords": [
       "whatsapp"
     ],
-    "author": "Black Amda",
+    "author": "Shanu",
     "developer": "AN Tech",
     "license": "GPL-3.0-or-later",
     "bugs": {
-      "url": "https://github.com/BlackAmda/QueenAmdi/issues"
+      "url": "https://github.com/Shanu12/QueenAmdi/issues"
     },
-    "homepage": "https://github.com/BlackAmda/QueenAmdi#readme",
+    "homepage": "https://github.com/Shanu12/QueenAmdi#readme",
     "dependencies": {
       "@blackamda/queenamdi-web-api": "^1.0.2",
       "queenamdi-public": "^1.1.1",
