@@ -6,7 +6,7 @@
 
 >👨🏻‍💻 Current Status :
 Adding database and finalizing user bot base.
-■■■■■■□□□□ 60%
+■■■■■■■□□□ 70%
 
 >🔜 Next step : Adding basic plugins.
 
