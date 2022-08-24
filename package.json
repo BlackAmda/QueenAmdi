@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/BlackAmda/QueenAmdi/issues"
   },
-  "homepage": "https://github.com/BlackAmda/QueenAmdi#readme",
+  "homepage": "https://github.com/Chmushahid/QueenAmdi#readme",
   "dependencies": {
     "@adiwajshing/baileys": "^4.3.0",
     "@adiwajshing/keyed-db": "^0.2.4"
