@@ -1,14 +1,9 @@
-<h1>QUEEN AMDI💃🏻❤️ (Multi-Device version)</h1>
-<p align="center">
-<img src="https://i.ibb.co/r3wmpwr/LOGO.jpg" width="200" height="200"></p>
-
-## Queen Amdi 4.0v update coming soon...
+# Queen Amdi 4.0v update coming soon...💃🏻❤️ (Multi-Device version)
 
 >👨🏻‍💻 Current Status :
-Adding database and finalizing user bot base.
-■■■■■■□□□□ 60%
+Adding plugins and main functions. ■■■■■■■■□□ 80%
 
->🔜 Next step : Adding basic plugins.
+>🔜 Next step : FINALIZING BOT BASE AND MAIN FUNCTIONS.
 
 You can join Beta Testing WhatsApp Group by invite link :
 <a href="https://chat.whatsapp.com/LhWHB9gftfwIv29C4etUHH">Beta Testing Whatsapp Group</a>

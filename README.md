@@ -5,8 +5,7 @@
 ## Queen Amdi 4.0v update coming soon...
 
 >👨🏻‍💻 Current Status :
-Adding plugins and main functions.
-■■■■■■■■□□ 80%
+Adding plugins and main functions. ■■■■■■■■□□ 80%
 
 >🔜 Next step : FINALIZING BOT BASE AND MAIN FUNCTIONS.
 
