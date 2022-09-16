@@ -74,7 +74,7 @@ AMDI({ cmd: "kick", desc: Lang.kickDESC, example: Lang.kickEXA, type: "admin", r
         reason = !kickMSG.input ? Lang.kicked : kickMSG.input
     }
     try {
-        await sendText(`*@${taggedJid.split('@')[0]}, ${reason}*`, {reactEmoji: '👋🏻', mentionJIDS: taggedJid});
+        await sendText(`*@${taggedJid.split('@')[0]}, ${reason}*`, {reactEmoji: '👋🏻', mentionJIDS: [taggedJid]});
         return await amdiWA.web.groupParticipantsUpdate(amdiWA.clientJID, [taggedJid], "remove");
     } catch {
         return reply('Failed! ❌')
