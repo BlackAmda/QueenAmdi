@@ -17,10 +17,10 @@ const Lang = Language.getString('grpManager')
 
 
 AMDI({ cmd: "group", desc: Lang.grpDESC, type: "admin", react: "🕹️" }, (async (amdiWA) => {
-    let { prefix, sendListMsg, groupMetadata } = amdiWA.msgLayout;
+    let { prefix, sendListMsg, groupName } = amdiWA.msgLayout;
 
     var listInfo = {}
-    listInfo.title = Lang.grpSetTitle.format(groupMetadata.subject)
+    listInfo.title = Lang.grpSetTitle.format(groupName)
     listInfo.text = Lang.grpSetText
     listInfo.buttonTXT = 'default'  
 
@@ -38,7 +38,7 @@ AMDI({ cmd: "add", desc: Lang.addDESC, example: Lang.addEX, type: "admin", react
     if (isUSERExist) return await reply(Lang.alreadyIN.format(input), "❗");
     if (input == botNumberJid) return;
     const [result] = await amdiWA.web.onWhatsApp(input)
-    if (!result.exists) return await reply(Lang.noWhatsApp, "❗");
+    if (!result) return await reply(Lang.noWhatsApp, "❗");
     const addMSGSet = await getSettings('ADDMSG')
     let addMSG = !addMSGSet.input ? Lang.added : addMSGSet.input
     try {
@@ -50,16 +50,10 @@ AMDI({ cmd: "add", desc: Lang.addDESC, example: Lang.addEX, type: "admin", react
 
 
 AMDI({ cmd: "kick", desc: Lang.kickDESC, example: Lang.kickEXA, type: "admin", react: "🚫" }, (async (amdiWA) => {
-    let { allowedNumbs, botNumberJid, groupMetadata, input, inputObj, isReply, isUSERExists, reply, sendText } = amdiWA.msgLayout
+    let { allowedNumbs, botNumberJid, groupMetadata, input, inputObj, isReply, isUSERExists, reply, sendText, taggedJid } = amdiWA.msgLayout
 
     if (!isReply && !input) return reply(Lang.needUSER, "❓")
     
-    let taggedJid;
-    if (taggedJid = amdiWA.msg.message.extendedTextMessage.contextInfo.participant) {
-        taggedJid = amdiWA.msg.message.extendedTextMessage.contextInfo.participant;                
-    } else {
-        taggedJid = amdiWA.msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
-    }
     const isUSERExist = await isUSERExists(taggedJid);
     if (!isUSERExist) return reply(Lang.cantfinduser, "❓");
     if (taggedJid == groupMetadata.owner) return reply(Lang.ISOWNER, "❌");
@@ -74,7 +68,7 @@ AMDI({ cmd: "kick", desc: Lang.kickDESC, example: Lang.kickEXA, type: "admin", r
         reason = !kickMSG.input ? Lang.kicked : kickMSG.input
     }
     try {
-        await sendText(`*@${taggedJid.split('@')[0]}, ${reason}*`, {reactEmoji: '👋🏻', mentionJIDS: [taggedJid]});
+        await sendText(`@${taggedJid.split('@')[0]}, ${reason}`, {mentionJIDS: [taggedJid]});
         return await amdiWA.web.groupParticipantsUpdate(amdiWA.clientJID, [taggedJid], "remove");
     } catch {
         return reply('Failed! ❌')
@@ -83,8 +77,7 @@ AMDI({ cmd: "kick", desc: Lang.kickDESC, example: Lang.kickEXA, type: "admin", r
 
 
 AMDI({ cmd: "invite", desc: Lang.inviteDESC, type: "admin", react: "🫱🏻‍🫲🏻" }, (async (amdiWA) => {
-    let { isBotGroupAdmin, reply } = amdiWA.msgLayout;
-    if (!isBotGroupAdmin) return reply(Lang.notAdmin);
+    let { groupName, sendClipboard } = amdiWA.msgLayout;
     const invite_code = await amdiWA.web.groupInviteCode(amdiWA.clientJID);
-    return await reply(`\nhttps://chat.whatsapp.com/${invite_code}\n`);
+    return await sendClipboard({text: `*${groupName}*\n\nhttps://chat.whatsapp.com/${invite_code}\n`, clip: `https://chat.whatsapp.com/${invite_code}`});
 }));

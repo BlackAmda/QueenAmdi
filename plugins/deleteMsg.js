@@ -38,17 +38,10 @@ AMDI({ cmd: "del", desc: Lang.delDesc, type: "profile" }, (async (amdiWA) => {
 
 
 AMDI({ cmd: "delall", desc: Lang.delAllDesc, type: "admin" }, (async (amdiWA) => {
-    let { botNumberJid, input, isGroup, reply, isReply, allowedNumbs, react, sendText } = amdiWA.msgLayout;
+    let { botNumberJid, input, isGroup, reply, isReply, allowedNumbs, react, taggedJid } = amdiWA.msgLayout;
 
     if (!isGroup) return reply(Lang.notGRP, "❌");
     if (!amdiWA.msg.message.extendedTextMessage) return reply(Lang.giveUSER, "❌");
-
-    let taggedJid;
-    if (taggedJid = amdiWA.msg.message.extendedTextMessage.contextInfo.participant) {
-        taggedJid = amdiWA.msg.message.extendedTextMessage.contextInfo.participant;                
-    } else {
-        taggedJid = amdiWA.msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
-    }
 
     const setMODS = await getSettings('MODERATOR')
     const MOD = setMODS.input
@@ -58,23 +51,24 @@ AMDI({ cmd: "delall", desc: Lang.delAllDesc, type: "admin" }, (async (amdiWA) =>
 
     let num_split = taggedJid.split("@s.whatsapp.net")[0];
     let warnMsg = `*@${num_split} ,${Lang.banMsg}*`;
-    await amdiWA.web.sendMessage(amdiWA.clientJID, { sticker: {url: 'https://i.ibb.co/8m0sGwz/lolwennayanne.webp'} });
-    await sendText(warnMsg, {mentions: taggedJid, quoted: true, reactEmoji: "☠️"});
+    //await amdiWA.web.sendMessage(amdiWA.clientJID, { sticker: {url: 'https://i.ibb.co/8m0sGwz/lolwennayanne.webp'} });
+    const banmsg = await amdiWA.web.sendMessage(amdiWA.clientJID, {text: warnMsg, mentions: [taggedJid]}, { quoted: (amdiWA.fromMe === false ? amdiWA.msg : '') } );
+    react("☠️", banmsg)
     return await setDelAllJids(taggedJid, 'User: +' + taggedJid.split('@')[0], amdiWA.clientJID);
 }));
 
 
-AMDI({ cmd: "listdel", desc: Lang.listdelAllDesc, type: "admin" }, (async (amdiWA) => {
-    let { prefix, reply } = amdiWA.msgLayout;
+AMDI({ cmd: "listdel", desc: Lang.listdelAllDesc, type: "admin", react: "📓"  }, (async (amdiWA) => {
+    let { prefix, reply, sendListMsg } = amdiWA.msgLayout;
 
     var listInfo = {}
     listInfo.title = Lang.delListTitle
     listInfo.text = Lang.delListText
     listInfo.buttonTXT = 'default'
 
-    var delList = await getlistDelAllJids(amdiWA.clientJID)
+    const delList = await getlistDelAllJids(amdiWA.clientJID);
     const rows = await ban.delRows(prefix, delList)
-    if (rows == '') return reply('*No delete all messags JIDs for this group*')
-    const sections = [{ title: "Delete All Messages JIDs list", rows: rows }];
+    if (rows == '') return await reply('*No delete all messags JIDs for this group*', "🙂");
+    const sections = [{ title: "Delete All Messages JIDs list", rows: rows }]
     return await sendListMsg(listInfo, sections);
 }));

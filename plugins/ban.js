@@ -30,17 +30,11 @@ AMDI({ cmd: "ban", desc: Lang.bandesc, example: Lang.banEx, type: "profile", rea
 
 
 AMDI({ cmd: "unban", desc: Lang.unbandesc, example: Lang.unbanEx, type: "profile", react: "✔️" }, (async (amdiWA) => {
-    let { isGroup, reply, react } = amdiWA.msgLayout;
+    let { isGroup, reply, taggedJid } = amdiWA.msgLayout;
 
     if (isGroup) {
         if (!amdiWA.msg.message.extendedTextMessage) return reply(Lang.unbanEx)
         
-        let taggedJid;
-        if (amdiWA.msg.message.extendedTextMessage.contextInfo.participant) {
-            taggedJid = amdiWA.msg.message.extendedTextMessage.contextInfo.participant;
-        } else {
-            taggedJid = amdiWA.msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
-        }
         await reply(`✅ *Unbanned*`, "🔓");
         const unblockJIDfunc = async () => { await removeBanJids(taggedJid) };
         setTimeout(unblockJIDfunc ,5000);

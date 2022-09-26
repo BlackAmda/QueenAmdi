@@ -14,13 +14,13 @@ const { AMDI, info, Language } = require('../assets/scripts')
 const Lang = Language.getString('info');
 
 AMDI({ cmd: "jid", desc: Lang.jidDESC, type: "profile", react: "📃" }, (async (amdiWA) => {
-    let { reply } = amdiWA.msgLayout
-    return reply(amdiWA.clientJID);
+    let { sendClipboard } = amdiWA.msgLayout
+    return await sendClipboard({text: `\n${amdiWA.clientJID}\n`, clip: `${amdiWA.clientJID}`})
 }));
 
 
 AMDI({ cmd: "info", desc: Lang.infoDESC, type: "primary", react: "ℹ️" }, (async (amdiWA) => {
-    let { footerTXT, groupMetadata, isBotGroupAdmin, isGroup, isGroupAdmin, sendImage } = amdiWA.msgLayout
+    let { footerTXT, groupMetadata, groupName, groupDesc, isBotGroupAdmin, isGroup, isGroupAdmin, sendImage } = amdiWA.msgLayout
 
     if (isGroup) {
         if (isBotGroupAdmin && isGroupAdmin) {
@@ -37,13 +37,13 @@ AMDI({ cmd: "info", desc: Lang.infoDESC, type: "primary", react: "ℹ️" }, (as
         } catch {
             var owner = '_[Unable to fetch group owner]_'
         }
-        const msg = Lang.GRP_NAME + `\n ${groupMetadata.subject} \n\n` + 
+        const msg = Lang.GRP_NAME + `\n ${groupName} \n\n` + 
                     Lang.GRP_JID + `\n ${amdiWA.clientJID} \n\n` + 
                     Lang.GRP_OWN + `\n ${owner} \n\n` +
                     Lang.ADMIN_COUNT + ` ${countAdmin} \n\n` +
                     Lang.MEMBER_COUNT + ` ${count} \n\n` +
                     invite +`\n\n` + 
-                    Lang.GRP_DES + `\n ${groupMetadata.desc}\n\n` +
+                    Lang.GRP_DES + `\n ${groupDesc}\n\n` +
                     footerTXT
         return await sendImage({url: ppUrl}, {quoted: true, caption: msg});
     } else {

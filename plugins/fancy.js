@@ -30,10 +30,10 @@ AMDI({ cmd: "fancy", desc: Lang.FONT_DESC, type: "primary", react: "🌈" }, (as
 
 
 AMDI({ cmd: "textfancy", type: "primary", cmdHideInMenu: true }, (async (amdiWA) => {
-    let { input, reply } = amdiWA.msgLayout;
+    let { input, sendClipboard } = amdiWA.msgLayout;
 
     var text = input.split('////')[1]
     var type = input.split('////')[0] 
     var out = await FancyText(text)
-    return await reply(out[type], '🦄');
+    return await sendClipboard({text: `\n${out[type]}\n`, clip: out[type], reactEmoji: '🦄'});
 }));

@@ -100,38 +100,36 @@ AMDI({ cmd: "removebg", desc: Lang.REMOVEBG_DESC, type: "primary", react: "✂�
 
     if (!process.env.REMOVE_BG_API) return reply(Lang.NO_API_KEY, "🗝️");
 
-    if (isMedia && isTaggedImage) {
-        let downloadFilePath;
-        if (amdiWA.msg.message.imageMessage) {
-            downloadFilePath = amdiWA.msg.message.imageMessage;
-        } else {
-            downloadFilePath = reply_message.imageMessage;
-        }
-    
-        var load = await reply(Lang.RBGING);
-        const stream = await downloadContentFromMessage(downloadFilePath, 'image');
-        let buffer = Buffer.from([]);
-        for await (const chunk of stream) {
-            buffer = Buffer.concat([buffer, chunk])
-        }
-        const filename = getFileName('.png');
-        await writeFile(filename, buffer);
-    
-        var form = new FormData();
-        form.append('image_file', fs.createReadStream(filename));
-        form.append('size', 'auto');
-    
-        var rbg = await got.stream.post('https://api.remove.bg/v1.0/removebg', {
-            body: form,
-            headers: {
-                'X-Api-Key': process.env.REMOVE_BG_API
-            }
-        }); 
-        await pipeline(rbg, fs.createWriteStream('rbg.png'));
-        await sendDocument(fs.readFileSync('rbg.png'), { quoted: true, fileName: 'QueenAmdi.png', mimetype: 'image/png' })
-        react("✔️", amdiWA.msg)
-        return await deleteKEY(load.key);
+    if (!isMedia && !isTaggedImage) return reply(Lang.NEED_PHOTO, "❓");
+
+    let downloadFilePath;
+    if (amdiWA.msg.message.imageMessage) {
+        downloadFilePath = amdiWA.msg.message.imageMessage;
     } else {
-        return reply(Lang.NEED_PHOTO, "❓");
+        downloadFilePath = reply_message.imageMessage;
     }
+
+    var load = await reply(Lang.RBGING);
+    const stream = await downloadContentFromMessage(downloadFilePath, 'image');
+    let buffer = Buffer.from([]);
+    for await (const chunk of stream) {
+        buffer = Buffer.concat([buffer, chunk])
+    }
+    const filename = getFileName('.png');
+    await writeFile(filename, buffer);
+
+    var form = new FormData();
+    form.append('image_file', fs.createReadStream(filename));
+    form.append('size', 'auto');
+
+    var rbg = await got.stream.post('https://api.remove.bg/v1.0/removebg', {
+        body: form,
+        headers: {
+            'X-Api-Key': process.env.REMOVE_BG_API
+        }
+    }); 
+    await pipeline(rbg, fs.createWriteStream('rbg.png'));
+    await sendDocument(fs.readFileSync('rbg.png'), { quoted: true, fileName: 'QueenAmdi.png', mimetype: 'image/png' })
+    react("✔️", amdiWA.msg)
+    return await deleteKEY(load.key);
 }));

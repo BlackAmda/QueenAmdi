@@ -36,7 +36,7 @@ qrGenerate();
 _amdi.Base().catch(() => { _amdi.Base() });
 
 if (vars.isHEROKU == 'YES') {
-    setInterval(() => { _amdi.Heroku_Alive() }, 900000)
+    setInterval(() => { _amdi.Heroku_Alive() }, 1000 * 60 * 25)
 }
 
 const console_info = console.info
