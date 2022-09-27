@@ -1,121 +1,44 @@
-<h1>QUEEN AMDI💃🏻❤️ (Multi-Device version)</h1>
-<p align="center">
-<img src="https://i.ibb.co/r3wmpwr/LOGO.jpg" width="200" height="200"></p>
+# **QUEEN AMDI💃🏻❤️** - _A Javascript WhatsApp User Bot_
+*A WhatsApp based third party application that provide many services with a real-time automated conversational experience.*
 
-## Queen Amdi 4.0v update coming soon...
+![cover](assets/cover.jpg)
 
->👨🏻‍💻 Current Status :
-Adding plugins and main functions. ■■■■■■■■□□ 80%
+**Queen Amdi** is an user bot for WhatsApp that allowing you to get done so many tasks. This project mainly focusing on make user's work easy. This project coded with Javascript and Docker. And using **[Baileys](https://github.com/adiwajshing/Baileys)** as the WA Web API. Developer or Team members are not responsible for your usage mistakes and not using wisely. Also, you have no authorities do any modifications to this project. Enjoy!🎈
 
->🔜 Next step : FINALIZING BOT BASE AND MAIN FUNCTIONS.
+![repo views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FBlackAmda%2FQueenAmdi&count_bg=%2379C83D&title_bg=%23555555&icon=gitpod.svg&icon_color=%23E7E7E7&title=Views&edge_flat=false)
 
-You can join Beta Testing WhatsApp Group by invite link :
-<a href="https://chat.whatsapp.com/LhWHB9gftfwIv29C4etUHH">Beta Testing Whatsapp Group</a>
+![Docker Size](https://img.shields.io/docker/image-size/blackamda/queenamdi?style=flat&logo=docker&label=Docker+Size)
+![Docker Pulls](https://img.shields.io/docker/pulls/blackamda/queenamdi?style=flat&logo=docker&label=Docker+Pulls)
 
-----
-<p align="center">
-    Makes it easy and fun to use WhatsApp. It is also the first Sinhala user bot for WhatsApp.
-    <br>
-        <a href="https://chat.whatsapp.com/LhWHB9gftfwIv29C4etUHH">Whatsapp Group</a> |
-        <a href="https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ">Youtube Channel</a>
-    <br>
-</p>
+![forks](https://img.shields.io/github/forks/BlackAmda/QueenAmdi?label=Forks&style=social)
+![stars](https://img.shields.io/github/stars/BlackAmda/QueenAmdi?style=social)
 
----
-</br>
-<p align="center">
-  <a href="httsp://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/docker/pulls/blackamda/queenamdi?style=flat-square&label=Docker+Pulls">
-  </a>
-  <a href="https://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/docker/image-size/blackamda/queenamdi?style=flat-square&logo=github&label=Image Size">
-    
-  </a>
-</p>
+![size](https://img.shields.io/github/repo-size/BlackAmda/QueenAmdi?color=purple&label=Repo%20Size&style=plastic)
+![license](https://img.shields.io/github/license/BlackAmda/QueenAmdi?color=purple&label=License&style=plastic)
+![developer](https://img.shields.io/static/v1?label=Author&message=Black%20Amda&color=purple&style=plastic)
 
-<p align="center">
+### Queen Amdi 4.0v [Multi-Device] update coming soon...
 
-  <a href="https://github.com/BlackAmda/QueenAmdi">
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FBlackAmda%2FQueenAmdi&count_bg=%2379C83D&title_bg=%23555555&icon=gitpod.svg&icon_color=%23E7E7E7&title=Views&edge_flat=false" alt="Views"/></a>
-  
-  </a>
-  <a href="https://github.com/BlackAmda/QueenAmdi/fork">
-    <img src="https://img.shields.io/github/forks/BlackAmda/QueenAmdi?label=Forks&style=social">
-    
-  </a>
-  <a href="https://github.com/BlackAmda/QueenAmdi/stargazers">
-    <img src="https://img.shields.io/github/stars/BlackAmda/QueenAmdi?style=social">
-  </a>
-</p>
+#### 👨🏻‍💻 Current status of update :
+ADDING PLUGINS & MAIN FUNCTIONS. ■■■■■■■■□□ 80%
 
-<p align="center">
-  <a href="httsp://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/github/repo-size/BlackAmda/QueenAmdi?color=purple&label=Repo%20Size&style=plastic">
+#### 🔜 Next step :
+FINALIZING BOT BASE AND MAIN FUNCTIONS.
 
-  </a>
-  <a href="httsp://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/github/license/BlackAmda/QueenAmdi?color=purple&label=License&style=plastic">
+You can join our Beta Testing WhatsApp Group by this invite link : **[CLICK HERE](https://chat.whatsapp.com/LhWHB9gftfwIv29C4etUHH)**
 
-  </a>
-  <a href="httsp://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/github/languages/top/BlackAmda/QueenAmdi?color=purple&label=Javascript&style=plastic">
+## 🐝 Queen Amdi Team - A.N.Tech *[ Since 2016 ]*
 
-  </a>
-  <a href="httsp://github.com/BlackAmda/QueenAmdi">
-    <img src="https://img.shields.io/static/v1?label=Author&message=Black%20Amda&color=purple&style=plastic">
-
-  </a>
-  </p>
- <p align="center">
-  <a href="https://wa.me/94757405652">
-    <img src="https://img.shields.io/badge/Contact%20Me%20On%20Whatsapp-Queen%20Amdi%20Bot-purple&style=plastic">
-
-  </a>
-</p>
- 
-```
-Queen Amdi bot is an UserBot for WhatsApp That allowing you to get done so many tasks.
-The user is responsible for all possible consequences of misuse.
-This is not a Open-Source project. This is just a project that allow you to get deploy a bot.
-Additionally, it enables plug-in support for users.
-Install their own plugins to the original software and use as they please.
-Usage is entirely the responsibility of the user. The operating system is not responsible.
-HAVE A FUN!
-```
+| <a href="https://amdaniwasa.com"><img src="https://avatars.githubusercontent.com/u/83172207?v=4" width=80 height=80></a> | <a href="https://www.instagram.com/sinhalaya_official_/"><img src="https://avatars.githubusercontent.com/u/89065560?v=4" width=80 height=80></a> | <a href="https://www.instagram.com/saji_x.x_4/"><img src="https://avatars.githubusercontent.com/u/88334967?v=4" width=80 height=80></a> |
+|---|---|---|
+| **[Achintha Bandara](https://github.com/BlackAmda)**</br>Founder & Developer</br>*[Black Amda]* | **[Sasmitha Ashinsana](https://github.com/SinhalayaCreator)**</br>Co-Admin/Developer | **[Lil Luzi](https://github.com/Sajiya2002)**</br>User Supporter |
+| <a href="https://dinaaofficial.github.io/dina-official/"><img src="https://avatars.githubusercontent.com/u/85923514?v=4" width=80 height=80></a> | <a href="https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ"><img src="https://avatars.githubusercontent.com/u/89117663?v=4" width=80 height=80></a> |  **Kapaya**</br>Group Management | |
+| **[Mr.Dina](https://github.com/Dinaaofficial)**</br>Graphic Designer | **[JokaTamah](https://github.com/JokaTamah)**</br>Bug Tester | **Zeus**</br>Group Management |
 
 
-## Queen Amdi Team
-
-<table>
-										<tbody>
-											<tr>
-												<td><a href="httsp://github.com/BlackAmda/"><img src="https://i.ibb.co/r7vZVqw/1-Amda.jpg" width="200" height="200" alt="Black Amda"></a></td>
-												<td><a href="https://www.instagram.com/sinhalaya_official_/"><img src="https://i.ibb.co/tsFBnbx/2-Sasmitha.jpg" width="200" height="200" alt="sᴀsᴍɪᴛʜᴀ"></a></td>
-												<td><a href="https://www.instagram.com/saji_x.x_4/"><img src="https://i.ibb.co/6FZsnvQ/3-Sajiya.jpg" width="200" height="200" alt="ʟɪʟ ʟᴜᴢɪ"></a></td>
-											</tr>
-										</tbody>
-									</table>
-                  <table>
-										<tbody>
-											<tr>
-												<td><a href="https://dinaaofficial.github.io/dina-official/"><img src="https://i.ibb.co/rvYYcVD/4-Dina.jpg" width="200" height="200" alt="ᴍʀ.ᴅɪɴᴀ"></a></td>
-												<td><a href="https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ"><img src="https://i.ibb.co/HzfN8pD/5-Joka.jpg" width="200" height="200" alt="ᴊᴏᴋᴀ ᴛᴀᴍᴀ"></a></td>
-                        <td><a href="httsp://github.com/BlackAmda/"><img src="https://i.ibb.co/bj4LqJh/6-Kapaya.jpg" width="200" height="200" alt="ᴋᴀᴘᴀʏᴀ"></a></td>
-											</tr>
-									</table>
-                  <table>
-										<tbody>
-											<tr>
-												<td><a href="https://www.thinknfree.com/"><img src="https://i.ibb.co/2kHWJBD/7-Zeus.jpg" width="200" height="200" alt="ᴢᴇᴜs"></a></td>
-												<td><a href="httsp://github.com/BlackAmda/"><img src="https://i.ibb.co/x3MjnWn/8-Pancha.jpg" width="200" height="200" alt="ZEYREX"></a></td>
-												<td><a href="httsp://github.com/BlackAmda/"><img src="https://i.ibb.co/ySvhR4J/9-Saiko.jpg" width="200" height="200" alt="sɪɢᴇᴅᴇʀɪᴇɴ"></a></td>
-											</tr>
-										</tbody>
-									</table>
-
-### License
+## License
 This project is protected by the `GNU General Public License v3.0.`
 Do not edit copyright messages!
 
-### Disclaimer
+## Disclaimer
 `WhatsApp` name, its variations and logo are registered trademarks on Facebook. We have nothing to do with the registered trademark.
