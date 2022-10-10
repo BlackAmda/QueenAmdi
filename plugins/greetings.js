@@ -11,7 +11,6 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
 const { AMDI, amdiDB, Language } = require('../assets/scripts')
-const { downloadContentFromMessage } = require("@adiwajshing/baileys");
 let { img2url } = require('@blackamda/telegram-image-url')
 const { writeFile } = require('fs/promises');
 const { setWelcome, removeWelcome, getWelcome, setBye, removeBye, getBye } = amdiDB.greetingsDB
@@ -21,7 +20,7 @@ const getFileName = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext
 
 
 AMDI({ cmd: "setwelcome", desc: Lang.setwelDesc, example: Lang.setwelEx, type: "admin", react: "➕" }, (async (amdiWA) => {
-    let { isGroup, isReply, reply, reply_message } = amdiWA.msgLayout;
+    let { clearMedia, downloadMedia, isGroup, isReply, reply, reply_message } = amdiWA.msgLayout;
 
     if (!isGroup) return reply(Lang.notGrp)
 
@@ -30,14 +29,7 @@ AMDI({ cmd: "setwelcome", desc: Lang.setwelDesc, example: Lang.setwelEx, type: "
     if (reply_message.imageMessage) {
         if (!reply_message.imageMessage.caption) return reply(Lang.needCaption)
 
-        let downloadFilePath = reply_message.imageMessage;
-        const stream = await downloadContentFromMessage(downloadFilePath, 'image');
-        let buffer = Buffer.from([]);
-        for await (const chunk of stream) {
-            buffer = Buffer.concat([buffer, chunk])
-        }
-        const filename = getFileName('.png');
-        await writeFile(filename, buffer);
+        const filename = await downloadMedia();
         const imgURL = await img2url(filename)
 
         var note = ''
@@ -47,7 +39,8 @@ AMDI({ cmd: "setwelcome", desc: Lang.setwelDesc, example: Lang.setwelEx, type: "
             note = reply_message.imageMessage.caption.replace(/#/g, '\n')
         }
         await setWelcome(amdiWA.clientJID, note, imgURL)
-        return await reply(Lang.WelcomSetted, "✅");
+        await reply(Lang.WelcomSetted, "✅");
+        return clearMedia(filename);
     } else {
         const imgURL = 'https://i.ibb.co/XCfhtfH/301820a4f3c0.jpg'
         const note = reply_message.conversation
@@ -81,7 +74,7 @@ AMDI({ cmd: "delwelcome", desc: Lang.delwelDesc, type: "admin", react: "🚮" },
 
 
 AMDI({ cmd: "setbye", desc: Lang.setbyeDesc, example: Lang.setbyeEx, type: "admin", react: "➕" }, (async (amdiWA) => {
-    let { isGroup, isReply, reply, reply_message } = amdiWA.msgLayout;
+    let { clearMedia, downloadMedia, isGroup, isReply, reply, reply_message } = amdiWA.msgLayout;
 
     if (!isGroup) return reply(Lang.notGrp)
 
@@ -90,15 +83,7 @@ AMDI({ cmd: "setbye", desc: Lang.setbyeDesc, example: Lang.setbyeEx, type: "admi
     if (reply_message.imageMessage) {
         if (!reply_message.imageMessage.caption) return reply(Lang.needCaption_)
 
-        let downloadFilePath = reply_message.imageMessage;
-        const stream = await downloadContentFromMessage(downloadFilePath, 'image');
-        let buffer = Buffer.from([]);
-        for await (const chunk of stream) {
-            buffer = Buffer.concat([buffer, chunk])
-        }
-        const filename = getFileName('.png');
-        await writeFile(filename, buffer);
-
+        const filename = await downloadMedia();
         const imgURL = await img2url(filename)
         
         var note = ''
@@ -108,7 +93,8 @@ AMDI({ cmd: "setbye", desc: Lang.setbyeDesc, example: Lang.setbyeEx, type: "admi
             note = reply_message.imageMessage.caption.replace(/#/g, '\n')
         }
         await setBye(amdiWA.clientJID, note, imgURL)
-        return await reply(Lang.ByeSetted, "✅");
+        await reply(Lang.ByeSetted, "✅");
+        return clearMedia(filename);
     } else {
         const imgURL = 'https://i.ibb.co/pbjB2pS/93f527f9f2fb.jpg'
         const note = reply_message.conversation

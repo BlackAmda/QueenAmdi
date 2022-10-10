@@ -11,7 +11,6 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
 const { AMDI, currency, Language, Lyrics } = require('../assets/scripts')
-const { downloadContentFromMessage } = require("@adiwajshing/baileys");
 const axios = require("axios")
 let { img2url } = require('@blackamda/telegram-image-url')
 const { writeFile } = require('fs/promises');
@@ -52,27 +51,15 @@ AMDI({ cmd: "currency", desc: Lang.currencyDesc, example: Lang.currencyEx, type:
 
 
 AMDI({ cmd: "img2url", desc: Lang.img2urlDesc, type: "primary", react: "🔗" }, (async (amdiWA) => {
-    let { isMedia, isTaggedImage, reply, reply_message, react } = amdiWA.msgLayout;
+    let { clearMedia, downloadMedia, isMedia, isTaggedImage, reply, react } = amdiWA.msgLayout;
 
     if (isMedia && isTaggedImage) {
-        let downloadFilePath;
-        if (amdiWA.msg.message.imageMessage) {
-            downloadFilePath = amdiWA.msg.message.imageMessage;
-        } else {
-            downloadFilePath = reply_message.imageMessage;
-        }
-
         await react("⬇️", amdiWA.msg)
-        const stream = await downloadContentFromMessage(downloadFilePath, 'image');
-        let buffer = Buffer.from([]);
-        for await (const chunk of stream) {
-            buffer = Buffer.concat([buffer, chunk])
-        }
-        const filename = getFileName('.png');
-        await writeFile(filename, buffer);
+        const filename = await downloadMedia();
         const imgURL = await img2url(filename)
         await react("✔️", amdiWA.msg)
-        return await reply(`\n${imgURL}\n`);
+        await reply(`\n${imgURL}\n`);
+        return clearMedia(filename);
     } else {
         return await reply(Lang.needimage);
     }
@@ -96,27 +83,14 @@ AMDI({ cmd: "lyrics", desc: Lang.LY_DESC, type: "primary", react: "🎼" }, (asy
 
 
 AMDI({ cmd: "removebg", desc: Lang.REMOVEBG_DESC, type: "primary", react: "✂️" }, (async (amdiWA) => {
-    let { deleteKEY, isMedia, isTaggedImage, react, reply, reply_message, sendDocument } = amdiWA.msgLayout
+    let { clearMedia, deleteKEY, downloadMedia, isMedia, isTaggedImage, react, reply, reply_message, sendDocument } = amdiWA.msgLayout
 
     if (!process.env.REMOVE_BG_API) return reply(Lang.NO_API_KEY, "🗝️");
 
     if (!isMedia && !isTaggedImage) return reply(Lang.NEED_PHOTO, "❓");
 
-    let downloadFilePath;
-    if (amdiWA.msg.message.imageMessage) {
-        downloadFilePath = amdiWA.msg.message.imageMessage;
-    } else {
-        downloadFilePath = reply_message.imageMessage;
-    }
-
     var load = await reply(Lang.RBGING);
-    const stream = await downloadContentFromMessage(downloadFilePath, 'image');
-    let buffer = Buffer.from([]);
-    for await (const chunk of stream) {
-        buffer = Buffer.concat([buffer, chunk])
-    }
-    const filename = getFileName('.png');
-    await writeFile(filename, buffer);
+    const filename = await downloadMedia();
 
     var form = new FormData();
     form.append('image_file', fs.createReadStream(filename));
@@ -131,5 +105,6 @@ AMDI({ cmd: "removebg", desc: Lang.REMOVEBG_DESC, type: "primary", react: "✂�
     await pipeline(rbg, fs.createWriteStream('rbg.png'));
     await sendDocument(fs.readFileSync('rbg.png'), { quoted: true, fileName: 'QueenAmdi.png', mimetype: 'image/png' })
     react("✔️", amdiWA.msg)
-    return await deleteKEY(load.key);
+    await deleteKEY(load.key);
+    return clearMedia(filename);
 }));

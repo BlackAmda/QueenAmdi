@@ -10,114 +10,72 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { downloadContentFromMessage } = require("@adiwajshing/baileys");
 const { AMDI, amdiDB, Language, sticker } = require('../assets/scripts')
 const { getSettings } = amdiDB.settingsDB
+const axios = require('axios');
 require('dotenv').config();
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
-const { writeFile } = require('fs/promises');
-const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}` };
+const { stringify } = require('querystring');
 const Lang = Language.getString('stickers');
 
+
 AMDI({ cmd: "sticker", desc: Lang.stickerDesc, example: Lang.stickEx, type: "primary", react: "🖼️" }, (async (amdiWA) => {
-    const { reply, deleteKEY, reply_message, isMedia, isTaggedImage, isTaggedVideo, isTaggedSticker } = amdiWA.msgLayout;
+    const { clearMedia, reply, deleteKEY, downloadMedia, reply_message, isMedia, isTaggedDocument, isTaggedImage, isTaggedOneTimeImage, isTaggedOneTimeVideo, isTaggedVideo, isTaggedSticker } = amdiWA.msgLayout;
 
     var packName = await sticker.packNAME(amdiWA);
     var authorName = await sticker.authorNAME(amdiWA);
 
-    if ((isMedia && !amdiWA.msg.message.videoMessage || isTaggedImage)) {
-        let downloadFilePath;
-        if (amdiWA.msg.message.imageMessage) {
-            downloadFilePath = amdiWA.msg.message.imageMessage;
-        } else {
-            downloadFilePath = reply_message.imageMessage;
-        }
-        const stream = await downloadContentFromMessage(downloadFilePath, 'image');
-        let buffer = Buffer.from([]);
-        for await (const chunk of stream) {
-            buffer = Buffer.concat([buffer, chunk])
-        }
-        const media = getRandom('.png');
-        await writeFile(media, buffer);
-        var process = await reply(Lang.makingStic);
-        await sticker.makeSticker(amdiWA, media, packName, authorName);
-        return await deleteKEY(process.key);
-    } else if ((isMedia && amdiWA.msg.message.videoMessage.seconds < 11 || isTaggedVideo && reply_message.videoMessage.seconds < 11)) {
-        let downloadFilePath;
-        if (amdiWA.msg.message.videoMessage) {
-            downloadFilePath = amdiWA.msg.message.videoMessage;
-        } else {
-            downloadFilePath = reply_message.videoMessage;
-        }
-        const stream = await downloadContentFromMessage(downloadFilePath, 'video');
-        let buffer = Buffer.from([])
-        for await (const chunk of stream) {
-            buffer = Buffer.concat([buffer, chunk])
-        }
-        const media = getRandom('.mp4');
-        await writeFile(media, buffer);
-        var process = await reply(Lang.makingStic);
-        await sticker.animateSticker(amdiWA, media, packName, authorName);
-        return await deleteKEY(process.key);
-    } else if (isTaggedSticker) {
-        try {
-            let downloadFilePath;
-            downloadFilePath = reply_message.stickerMessage;
-            let isAnimated = downloadFilePath.isAnimated;
-            const stream = await downloadContentFromMessage(downloadFilePath, 'sticker');
-            let buffer = Buffer.from([])
-            for await (const chunk of stream) {
-                buffer = Buffer.concat([buffer, chunk])
-            }
-            const media = getRandom('.webp');
-            await writeFile(media, buffer);
-            var process = await reply(Lang.changPack);
-            await sticker.changeINFO(amdiWA, media, packName, authorName, isAnimated)
+    const media = await downloadMedia();
+    if (!media) return await reply(Lang.errStic);
+
+    try {
+        if ((isMedia && !amdiWA.msg.message.videoMessage) || isTaggedImage || isTaggedDocument || isTaggedOneTimeImage) {
+            var process = await reply(Lang.makingStic);
+            await sticker.makeSticker(amdiWA, media, packName, authorName);
             return await deleteKEY(process.key);
-        } catch (err) {
-            console.log(err);
+        } else if ((isTaggedOneTimeVideo) || (isMedia && amdiWA.msg.message.videoMessage.seconds < 11) || (isTaggedVideo && reply_message.videoMessage.seconds < 11)) {
+            var process = await reply(Lang.makingStic);
+            await sticker.animateSticker(amdiWA, media, packName, authorName);
+            return await deleteKEY(process.key);
         }
+        if (isTaggedSticker) {
+            var process = await reply(Lang.changPack);
+            await sticker.changeINFO(amdiWA, media.file, packName, authorName, media.isAnimated);
+            return await deleteKEY(process.key);
+        }
+        return clearMedia(media);
+    } catch (err) {
+        console.log(err);
     }
 }));
 
+
 AMDI({ cmd: "imagestic", desc: Lang.imgStic, type: "primary", react: "🔁" }, (async (amdiWA) => {
-    let { footerTXT, isMedia, isTaggedSticker, reply } = amdiWA.msgLayout;
+    let { downloadMedia, footerTXT, isTaggedSticker, reply, reply_message } = amdiWA.msgLayout;
+
+    if (!isTaggedSticker) return reply(Lang.giveSTICKER, "❓");
 
     const captionDB = await getSettings('CAPTION')
     let caption = captionDB.input == undefined ? footerTXT : captionDB.input
 
-    if ((isMedia && !amdiWA.msg.message.stickerMessage.isAnimated || isTaggedSticker)) {
-        let downloadFilePath;
-        if (amdiWA.msg.message.stickerMessage) {
-            downloadFilePath = amdiWA.msg.message.stickerMessage;
-        } else {
-            downloadFilePath = amdiWA.msg.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage;
-        }
-        const stream = await downloadContentFromMessage(downloadFilePath, 'image');
-        let buffer = Buffer.from([])
-        for await (const chunk of stream) {
-            buffer = Buffer.concat([buffer, chunk])
-        }
-        const media = getRandom('.jpeg');
-        await writeFile(media, buffer)
-        ffmpeg(`./${media}`)
+    if (!reply_message.stickerMessage.isAnimated && isTaggedSticker) {
+        const media = await downloadMedia();
+        ffmpeg(`./${media.file}`)
             .fromFormat("webp_pipe")
             .save("result.png")
             .on("error", (err) => {
-                return reply(Lang.nonAnim);
+                console.log(err);
+                return reply(`*Error:*\n${err.message}`);
             })
-            .on("end", () => {
-                (async () => {
-                    var process = await amdiWA.web.sendMessage(amdiWA.clientJID, { text: Lang.imgsticProc }, { quoted: (amdiWA.fromMe === false ? amdiWA.msg : '') });
-                    await amdiWA.web.sendMessage(amdiWA.clientJID, { image: fs.readFileSync("result.png"), caption: caption }, {  mimetype: 'image/png', quoted: (amdiWA.fromMe === false ? amdiWA.msg : '') });
-                    try {
-                        fs.unlinkSync(media)
-                        fs.unlinkSync("result.png");
-                    } catch { }
-                    await amdiWA.web.sendMessage(amdiWA.clientJID, { delete: process.key })
-                    //return await react("✅", amdiWA.msg)
-                })();
+            .on("end", async () => {
+                var process = await reply(Lang.imgsticProc);
+                await amdiWA.web.sendMessage(amdiWA.clientJID, { image: fs.readFileSync("result.png"), caption: caption }, {  mimetype: 'image/png', quoted: (amdiWA.fromMe === false ? amdiWA.msg : '') });
+                try {
+                    fs.unlinkSync(media)
+                    fs.unlinkSync("result.png");
+                } catch { }
+                return await amdiWA.web.sendMessage(amdiWA.clientJID, { delete: process.key });
             });
     } else {
         return await reply(Lang.nonAnim);

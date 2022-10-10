@@ -10,7 +10,6 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { downloadContentFromMessage } = require("@adiwajshing/baileys");
 const { AMDI, _default_list_sections, Language } = require('../assets/scripts')
 const { settingList, applyList } = _default_list_sections
 const Lang = Language.getString('settings');

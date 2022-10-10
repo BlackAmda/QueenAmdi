@@ -17,7 +17,7 @@ const yts = require('yt-search');
 const Lang = Language.getString('downloadYT');
 
 AMDI({ cmd: "song", desc: Lang.songDesc, example: Lang.songExa, type: "download", react: "🎵" }, (async (amdiWA) => {
-    let { input, isGroup, prefix, reply, sendButtonMsg, sendListMsg, sendTemplate } = amdiWA.msgLayout;
+    let { input, prefix, reply, sendButtonsMsg, sendListMsg } = amdiWA.msgLayout;
 
     if (!input) return reply(Lang.needYTLink, '❓')
     if (input.includes('playlist')) return reply(Lang.noPL)
@@ -74,26 +74,18 @@ AMDI({ cmd: "song", desc: Lang.songDesc, example: Lang.songExa, type: "download"
             var thumb = ytVidInfo.thumbnails[2].url
         }
 
-        if (isGroup) {
-            const templateButtons = [
-                {index: 1, urlButton: {displayText: 'Watch on YouTube', url: ytVidInfo.video_url}},
-                {index: 2, quickReplyButton: {displayText: '🎶 Audio File', id: `${prefix}ytdl audio ${ytVidInfo.video_url}`}},
-                {index: 3, quickReplyButton: {displayText: '📁 Document File', id: `${prefix}ytdl document ${ytVidInfo.video_url}`}}
-            ]
-            return await sendTemplate(templateButtons, ytDlTXT, tagMsg = true, thumb)
-        } else {
-            const buttons = [
-                {buttonId: `${prefix}ytdl audio ${ytVidInfo.video_url}`, buttonText: {displayText: '🎶 Audio File'}, type: 1},
-                {buttonId: `${prefix}ytdl document ${ytVidInfo.video_url}`, buttonText: {displayText: '📁 Document File'}, type: 1}
-            ]      
-            return await sendButtonMsg(buttons, `🔗 *Link :* ${ytVidInfo.video_url}\n\n` + ytDlTXT, tagMsg = true, thumb)
-        }    
+        const buttons = [
+            {type: "url", displayText: "Watch on YouTube", url: ytVidInfo.video_url},
+            {type: "click", displayText: "🎶 Audio File", buttonCMD: `${prefix}ytdl audio ${ytVidInfo.video_url}`},
+            {type: "click", displayText: "📁 Document File", buttonCMD: `${prefix}ytdl document ${ytVidInfo.video_url}`}
+        ]
+        return await sendButtonsMsg(buttons, {text: ytDlTXT, image: {url: thumb}, tagMsg: true, showURL: true});
     }
 }));
 
 
 AMDI({ cmd: "video", desc: Lang.videoDesc, example: Lang.videoExa, type: "download", react: "🎞️" }, (async (amdiWA) => {
-    let { input, isGroup, prefix, reply, sendButtonMsg, sendListMsg, sendTemplate } = amdiWA.msgLayout;
+    let { input, prefix, reply, sendButtonsMsg, sendListMsg } = amdiWA.msgLayout;
 
     if (!input) return reply(Lang.needYTLink, '❓')
     if (input.includes('playlist')) return reply(Lang.noPL)
@@ -150,22 +142,13 @@ AMDI({ cmd: "video", desc: Lang.videoDesc, example: Lang.videoExa, type: "downlo
             var thumb = ytVidInfo.thumbnails[2].url
         }
 
-        if (isGroup) {
-            const templateButtons = [
-                {index: 1, urlButton: {displayText: 'Watch on YouTube', url: ytVidInfo.video_url}},
-                {index: 2, quickReplyButton: {displayText: '360p Quality', id: `${prefix}ytdl 360 ${ytVidInfo.video_url}`}},
-                {index: 2, quickReplyButton: {displayText: '480p Quality', id: `${prefix}ytdl 480 ${ytVidInfo.video_url}`}},
-                {index: 3, quickReplyButton: {displayText: '720p Quality', id: `${prefix}ytdl 720 ${ytVidInfo.video_url}`}}
-            ]
-            return await sendTemplate(templateButtons, ytDlTXT, tagMsg = true, thumb)
-        } else {
-            const buttons = [
-                {buttonId: `${prefix}ytdl 360 ${ytVidInfo.video_url}`, buttonText: {displayText: '360p Quality'}, type: 1},
-                {buttonId: `${prefix}ytdl 480 ${ytVidInfo.video_url}`, buttonText: {displayText: '480p Quality'}, type: 1},
-                {buttonId: `${prefix}ytdl 720 ${ytVidInfo.video_url}`, buttonText: {displayText: '720p Quality'}, type: 1}
-            ]      
-            return await sendButtonMsg(buttons, `🔗 *Link :* ${ytVidInfo.video_url}\n\n` + ytDlTXT, tagMsg = true, thumb)
-        }    
+        const buttons = [
+            {type: "url", displayText: "Watch on YouTube", url: ytVidInfo.video_url},
+            {type: "click", displayText: "360p Quality", buttonCMD: `${prefix}ytdl 360 ${ytVidInfo.video_url}`},
+            {type: "click", displayText: "480p Quality", buttonCMD: `${prefix}ytdl 480 ${ytVidInfo.video_url}`},
+            {type: "click", displayText: "720p Quality", buttonCMD: `${prefix}ytdl 720 ${ytVidInfo.video_url}`}
+        ]
+        return await sendButtonsMsg(buttons, {text: ytDlTXT, image: {url: thumb}, tagMsg: true, showURL: true});
     }
 }));
 
