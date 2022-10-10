@@ -12,6 +12,7 @@ you may not use this file except in compliance with the License.*/
 
 exports.ban_jidDB = require('./ban_jidDB')
 exports.greetingsDB = require('./greetingsDB')
-exports.miscDB = require('./miscDB')
-exports.settingsDB = require('./settingsDB')
 exports.grpSetDB = require('./group_settingsDB')
+exports.miscDB = require('./miscDB')
+exports.rateDB = require('./ratingsDB')
+exports.settingsDB = require('./settingsDB')
