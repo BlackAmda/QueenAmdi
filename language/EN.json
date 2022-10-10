@@ -22,7 +22,11 @@
             "amdiAIChat": "```🤖 Queen Amdi AI chat enabled!💃🏻♥️```",
             "autorejectcall": "```📵 This user enabled auto call rejection!```",
             "autoINBOBLOCK": "⚠️ *This user enabled auto inbox blocker!*",
-            "antiFAKEmsg": "fake WhatsApp numbers are not allowed here!*",
+            "antiFAKEmsg": "*fake WhatsApp numbers are not allowed here!*",
+            "removeWEBmsg": "*Web WhatsApp users are not allowed here!*",
+            "removeBOTmsg": "*Other WhatsApp bots are not allowed here!*",
+            "votepollSENT": "*Vote Poll created✅*\n\n*You can vote now!💃🏻♥️*",
+            "yourOS": "\nWhat is your mobile phone operating system?\n",
             "connDONE": "```Queen Amdi bot has been successfully activated! ✅```\n\n_Please do not try commands here. This is your bot logs chat._\n\n*Thank you for using Queen Amdi 💌*"
         },
         "amdiMenu": {
@@ -57,8 +61,6 @@
             "banListTitle": "🔒 Ban JID list",
             "banListText": "Here is the list of banned JIDs.\n\nYou can unban them by selecting below.\n",
             "banmanager": "*This JID is in the banned JID list.*\n\n🤔 Do you want to unban this JID?",
-            "delListTitle": "🔒 Delete All Messages JID list",
-            "delListText": "Here is the list of delete all message JIDs.\n\nYou can remove them by selecting below.\n",
             "delmanager": "*This JID is in the delete all message JID list.*\n\n🤔 Do you want to remove this JID?"
         },
         "botCTRL": {
@@ -72,7 +74,11 @@
             "allDB": "All database cleared.",
             "resetDBtitle": "⚠️ Database reset options",
             "resetDBtxt": "Please choose an option to reset database.\n\n*Warning: This will erase your databases and may disconnect your bot!*\nMake sure to backup your database by _.backup_ command.",
-            "chooseDB": "*Please tell me a database name to restore,*\n  * .restore settings\n * .restore groupset\n  * .restore welcome\n  * .restore goodbye\n  * .restore ban\n  * .restore delall\n"
+            "chooseDB": "*Please tell me a database name to restore,*\n  * .restore settings\n * .restore groupset\n  * .restore welcome\n  * .restore goodbye\n  * .restore ban\n  * .restore delall\n  * .restore rates\n",
+            "rateDESC": "Give a rate for bot.",
+            "ratesTitle": "⭐ {} Ratings",
+            "rated": "*Thank you for giving us {} star/s!🙂*",
+            "alreadyRATED": "*You already rated {} star/s.🙂*"
         },
         "deleteMsg": {
             "delDesc": "Delete message for everyone. (Delete bot message everyone and if bot is admin, can delete message as Admin)",
@@ -85,7 +91,9 @@
             "noDelAllOwners": "*👑 Can't delete all Queen Amdi developer team messages!*",
             "noBanAllMod": "*Can't delete all Moderators!*",
             "banMsg":"you are banned from messaging in this group‼️",
-            "listdelAllDesc": "Get delete all messages JID list."
+            "listdelAllDesc": "Get delete all messages JID list.",
+            "delListTitle": "🔒 Delete All Messages JID list",
+            "delListText": "Here is the list of delete all message JIDs.\n\nYou can remove them by selecting below.\n"
         },
         "downloadSocialMedia": {
             "fbDesc": "Download facebook videos (HD or SD)",
@@ -164,7 +172,7 @@
             "ISOWNER": "*You can't kick group owner!*",
             "noBanMe": "*Can't kick bot number!*",
             "noBanOwners":"*👑 Can't kick Queen Amdi developer team!*",
-            "kicked": "kicked out of the group!",
+            "kicked": "*kicked out of the group!*",
             "addDESC": "Add a user to the group.",
             "addEX": ".add 947xxxxxxxx",
             "needADDUSER": "*Please give me a WhatsApp number!*",
@@ -172,7 +180,33 @@
             "noWhatsApp": "*This user is not in WhatsApp.*",
             "added": "added to the group!",
             "failADD": "*Couldn't add +{}. You can invite them privately to join this group.*",
-            "recentlyLEFT": "*You Couldn't add +{} because they left the group recently. Try again later.*"
+            "recentlyLEFT": "*You Couldn't add +{} because they left the group recently. Try again later.*",
+            "PromoEX": ".promote @user\n.promote[reply to a message]",
+            "ALREADY_PROMOTED": "```How can someone who is already an admin do admin?```",
+            "PROMOTED": "```, was promoted as an Admin!😊```",
+            "PROMOTE_DESC": "Promoting memebers into Admin.",
+            "DEMOTE_DESC": "Demoting Admin into member.",
+            "DemoEX": ".demote @user\n.demote[reply to a message]",
+            "ALREADY_NOT_ADMIN": "```How can someone who is not already an admin demote as an admin?```",
+            "DEMOTED": "```, was demoted as a member```",
+            "MUTE_DESC": "To mute group chat. Only admin can send message.",
+            "MUTED": "*🔇 The group chat was muted!*",
+            "UNMUTE_DESC": "Remove group chat mute. Anyone can send a message.",
+            "UNMUTED": "*🔊 Group chat unmuted!*",
+            "LOCKGRP_DESC": "Lock group info change option",
+            "LOCKED": "*🔒 Group info change option locked!*",
+            "UNLOCKGRP_DESC": "Unlock group info change option",
+            "UNLOCKED": "*🔓 Group info change option unlocked!*",
+            "revokeDESC": "Revoke the group invite link.",
+            "REVOKED": "🔁 *{} invite link revoked!*",
+            "SUBJECTDESC": "Change group name.",
+            "subEX": ".subject your_text",
+            "NEED_SUB": "Please give me a group name.",
+            "SUB": "*Group name changed.*",
+            "GRPDESCdesc": "Change group description.",
+            "grpDESCEX": ".grpdesc your_text",
+            "NEED_DESC": "Please give me a group description.",
+            "DESCGRP": "*Group description changed.*"
         },
         "info": {
             "jidDESC": "To get the JID address of the chat.",
@@ -186,7 +220,10 @@
             "ADMIN_COUNT": "*👑 Admin Count:*",
             "MEMBER_COUNT": "*👥 Member Count:*",
             "PRO_DES": "*🗨️ Description :*",
-            "NOADMIN": "*Need admin permission!*"
+            "NOADMIN": "*Need admin permission!*",
+            "wainfoDESC": "Get WhatsApp info of a profile.",
+            "giveUSER":"*Please give me a WhatsApp number!*",
+            "noWhatsApp":"*This user is not in WhatsApp.*"
         },
         "misc": {
             "img2urlDesc": "Convert image into url. (Telegram image URL)",
@@ -203,6 +240,14 @@
             "NEED_PHOTO": "*Please reply to a image!*",
             "NO_API_KEY": "*You haven't got API key!*\nYou can get API key by sigining up remove.bg site",
             "RBGING": "\n```🔄 Removing background...```\n"
+        },
+        "search": {
+            "YTSDESC": "Search videos in YouTube.",
+            "needTXT": "*Please give me a text to search!*",
+            "NOT_FOUND": "*Sorry! I can't find this in {}.*",
+            "YTS":"_📡 Based site : YouTube_",
+            "PSDESC": "Search apps in Playstore.",
+            "PSTORE": "_📡 Based site : Official Playstore_"
         },
         "settings": {
             "setDesc": "Change the main settings of bot.",
@@ -227,12 +272,16 @@
         "stickers": {
             "stickerDesc": "Make sticker from image or video. And change pack info.",
             "stickEx": "If want to change pack name and author -> .sticker pack [NAME] author [NAME]\nIf you want to crop -> add letter 'c' to command.\nIf you want to circle crop -> add 'cc' to command.",
-            "makingStic": "⌛ Changing media to sticker",
+            "makingStic": "⌛ Creating the sticker",
             "errStic": "*Please give me picture or video or another sticker!*",
             "changPack": "⌛ Changing sticker pack info",
             "imgStic": "Convert sticker to image.",
             "imgsticProc": "⌛ Converting sticker to image",
-            "nonAnim": "*You can't convert animated stickers to image!*"
+            "nonAnim": "*You can't convert animated stickers to image!*\n_[Use *.sticvid* command]_",
+            "VIDSTICDESC": "Convert animated sticker to video.",
+            "nonImage": "*You can't convert image stickers to video!*\n_[Use *.imagestic* command]_",
+            "vidsticProc": "⌛ Converting sticker to video",
+            "giveSTICKER": "*Please reply to a sticker!*"
         },
         "system_status": {
             "AliveDesc": "Check bot online or not.",
@@ -242,6 +291,15 @@
             "memUsage": "📟 *Memory usage:* ",
             "ping": "📍 *Ping:* ",
             "upTime": "⏱️ *Bot running time:* "
+        },
+        "tags": {
+            "tagallDESC": "Tag all members in the group.",
+            "tagallEX": ".tagall | .tagall text | .tagall [reply to a message]"
+        },
+        "votepolls": {
+            "voteDESC": "Create a vote poll.",
+            "noINPUT": "*Please enter correct vote arguments,*\n  .vote [text] option1/option2",
+            "voteEX": ".vote [text] option1/option2"
         }
     }
 }
