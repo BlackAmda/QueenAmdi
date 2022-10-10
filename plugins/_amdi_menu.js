@@ -21,7 +21,8 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, _default, _default_list_sections, Language } = require('../assets/scripts')
+const { AMDI, _default, _default_list_sections, Language } = require('../assets/scripts');
+const { getSettings } = require('../database/settingsDB');
 const { amdiVoice } = _default
 const { panelList } = _default_list_sections
 const Lang = Language.getString('amdiMenu');
@@ -38,12 +39,14 @@ AMDI({ cmd: "panel", desc: "Queen Amdi Main Menu", react: "📂", cmdHideInMenu:
     const pttStatus = true
     let mimeType = msgDevice == 'ios' ? 'audio/ogg; codecs=opus' : 'audio/mp4'
     await sendAudioMsg({ url: audioURL }, {mimetype: mimeType, ptt: pttStatus});
+    const PANEL_HEADER = await getSettings('PANEL_HEADER');
+    let text = !PANEL_HEADER.input || PANEL_HEADER.input == 'default' ? `\n*Hello!* ${amdiWA.msg.pushName}` + Lang.panelText : PANEL_HEADER.input.keywords();
 
     var listInfo = {}
     listInfo.title = Lang.panelTitle
-    listInfo.text = `\n*Hello!* ${amdiWA.msg.pushName}` + Lang.panelText
+    listInfo.text = text
     listInfo.buttonTXT = 'default'
 
-    const sections = await panelList(prefix);
+    const sections = panelList(prefix);
     return await sendListMsg(listInfo, sections);
 }));

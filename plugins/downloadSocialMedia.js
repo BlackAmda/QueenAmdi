@@ -24,32 +24,30 @@ AMDI({ cmd: "fb", desc: Lang.fbDesc, example: Lang.fbEXA, type: "download", reac
     let fbURL;
     await axios(input).then((response) => {
         fbURL = response.request._redirectable._currentUrl
-    }).then(() => {
-        (async () => {
-            const res = await Facebook.getVideo(`${fbURL}`);
-            if (res.data.hasError == false) {
-                var FB_DL_SET = await getSettings("FB_DL");
-                var FB_UP_SET = await getSettings("FB_UP");
-                const captionDB = await getSettings('CAPTION')
-                let caption = captionDB.input == undefined ? footerTXT : captionDB.input
-                let down_fb = FB_DL_SET.input == undefined ? Lang.fb_DL : FB_DL_SET.input
-                let up_fb = FB_UP_SET.input == undefined ? Lang.fb_UP : FB_UP_SET.input
-                const dl = await reply(down_fb)
-                if (res.data.body.videoHD) {
-                    await deleteKEY(dl.key);
-                    const up = await reply(up_fb)
-                    await sendVideo({ url: res.data.body.videoHD }, {caption: `Quality: *HD*\n${caption}`, quoted: true});
-                    return await deleteKEY(up.key);
-                } else {
-                    await deleteKEY(dl.key);
-                    const up = await reply(up_fb)
-                    await sendVideo({ url: res.data.body.video }, {caption: `Quality: *SD*\n${caption}`, quoted: true});
-                    return await deleteKEY(up.key);
-                }
-            } else if (res.data.hasError == true) {
-                return reply(res.data.errorMessage, "❌")
+    }).then(async () => {
+        const res = await Facebook.getVideo(`${fbURL}`);
+        if (res.data.hasError == false) {
+            var FB_DL_SET = await getSettings("FB_DL");
+            var FB_UP_SET = await getSettings("FB_UP");
+            const captionDB = await getSettings('CAPTION')
+            let caption = captionDB.input == undefined ? footerTXT : captionDB.input
+            let down_fb = FB_DL_SET.input == undefined ? Lang.fb_DL : FB_DL_SET.input
+            let up_fb = FB_UP_SET.input == undefined ? Lang.fb_UP : FB_UP_SET.input
+            const dl = await reply(down_fb)
+            if (res.data.body.videoHD) {
+                await deleteKEY(dl.key);
+                const up = await reply(up_fb)
+                await sendVideo({ url: res.data.body.videoHD }, {caption: `Quality: *HD*\n${caption}`, quoted: true});
+                return await deleteKEY(up.key);
+            } else {
+                await deleteKEY(dl.key);
+                const up = await reply(up_fb)
+                await sendVideo({ url: res.data.body.video }, {caption: `Quality: *SD*\n${caption}`, quoted: true});
+                return await deleteKEY(up.key);
             }
-        })();
+        } else if (res.data.hasError == true) {
+            return reply(res.data.errorMessage, "❌")
+        }
     });
 }));
 
