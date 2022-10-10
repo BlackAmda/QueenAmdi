@@ -29,8 +29,8 @@ AMDI({ cmd: "info", desc: Lang.infoDESC, type: "primary", react: "ℹ️" }, (as
         } else {
             var invite = Lang.GRP_COD + '\n' + Lang.NOADMIN
         }
-        const count = await info.getParticipantCount(groupMetadata);
-        const countAdmin = await info.getAdminCount(groupMetadata);
+        const count = info.getParticipantCount(groupMetadata);
+        const countAdmin = info.getAdminCount(groupMetadata);
         const ppUrl = await info.getProfilePic(amdiWA);
         try {
             var owner = '+' + groupMetadata.owner.split('@')[0]
@@ -59,4 +59,27 @@ AMDI({ cmd: "info", desc: Lang.infoDESC, type: "primary", react: "ℹ️" }, (as
         const nwmsg = Lang.PRO_JID + `\n ${amdiWA.clientJID} \n\n` + Lang.PRO_DES + `\n ${status}\n\n${statusAT}\n\n${footerTXT}`
         return await sendImage({url: pp}, {quoted: true, caption: nwmsg})
     }
+}));
+
+
+AMDI({ cmd: "wainfo", desc: Lang.wainfoDESC, type: "primary", react: "ℹ️" }, (async (amdiWA) => {
+    let { input, footerTXT, reply, sendImage } = amdiWA.msgLayout
+
+    if (!input) return await reply(Lang.giveUSER, "❓");
+    if (isNaN(input)) return await reply(Lang.giveUSER, "❓");
+    const JID = input + '@s.whatsapp.net'
+    const [result] = await amdiWA.web.onWhatsApp(input)
+    if (!result) return await reply(Lang.noWhatsApp, "❗");
+
+    try { 
+        var statusDATA = await amdiWA.web.fetchStatus(JID)
+        var status = statusDATA.status
+        var statusAT = '*Date and Time:* ' + statusDATA.setAt
+    } catch {
+        var status = '_[This user about is private or empty]_'
+        var statusAT = ''
+    }
+    const pp = await info.getWAProfilePic(amdiWA, JID);
+    const nwmsg = Lang.PRO_JID + `\n ${JID} \n\n` + Lang.PRO_DES + `\n ${status}\n\n${statusAT}\n\n${footerTXT}`
+    return await sendImage({url: pp}, {quoted: true, caption: nwmsg});
 }));

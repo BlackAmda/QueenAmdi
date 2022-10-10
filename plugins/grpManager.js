@@ -24,7 +24,7 @@ AMDI({ cmd: "group", desc: Lang.grpDESC, type: "admin", react: "🕹️" }, (asy
     listInfo.text = Lang.grpSetText
     listInfo.buttonTXT = 'default'  
 
-    const sections = await grpSettings(prefix, amdiWA.clientJID);
+    const sections = grpSettings(prefix, amdiWA.clientJID);
     return await sendListMsg(listInfo, sections);
 }));
 
@@ -76,8 +76,114 @@ AMDI({ cmd: "kick", desc: Lang.kickDESC, example: Lang.kickEXA, type: "admin", r
 }));
 
 
+AMDI({ cmd: "promote", desc: Lang.PROMOTE_DESC, example: Lang.PromoEX,type: "admin", react: "🔝" }, (async (amdiWA) => {
+    let { input, isReply, checkAdmin, reply, sendText, taggedJid } = amdiWA.msgLayout
+
+    if (!isReply && !input) return reply(Lang.needUSER, "❓")
+    
+    const isUserAdmin = await checkAdmin(taggedJid);
+    if (isUserAdmin) return reply(Lang.ALREADY_PROMOTED, "❓");
+
+    const promoteMSG = await getSettings('PROMMSG')
+    const PROMOTED = !promoteMSG.input ? Lang.PROMOTED : promoteMSG.input
+    try {
+        await sendText(`@${taggedJid.split('@')[0]}, ${PROMOTED}`, {mentionJIDS: [taggedJid]});
+        return await amdiWA.web.groupParticipantsUpdate(amdiWA.clientJID, [taggedJid], "promote");
+    } catch {
+        return reply('Failed! ❌')
+    }
+}));
+
+
+AMDI({ cmd: "demote", desc: Lang.DEMOTE_DESC, example: Lang.DemoEX, type: "admin", react: "🔙" }, (async (amdiWA) => {
+    let { groupMetadata, input, isReply, checkAdmin, reply, sendText, taggedJid } = amdiWA.msgLayout
+
+    if (!isReply && !input) return reply(Lang.needUSER, "❓")
+    
+    const isUserAdmin = await checkAdmin(taggedJid);
+    if (taggedJid == groupMetadata.owner) return;
+    if (!isUserAdmin) return reply(Lang.ALREADY_NOT_ADMIN, "❓");
+
+    const demoteMSG = await getSettings('DEMOMSG')
+    const DEMOTED = !demoteMSG.input ? Lang.DEMOTED : demoteMSG.input
+    try {
+        await sendText(`@${taggedJid.split('@')[0]}, ${DEMOTED}`, {mentionJIDS: [taggedJid]});
+        return await amdiWA.web.groupParticipantsUpdate(amdiWA.clientJID, [taggedJid], "demote");
+    } catch {
+        return reply('Failed! ❌')
+    }
+}));
+
+
+AMDI({ cmd: "mute", desc: Lang.MUTE_DESC, type: "admin", react: "🔇" }, (async (amdiWA) => {
+    let { reply } = amdiWA.msgLayout
+
+    await amdiWA.web.groupSettingUpdate(amdiWA.clientJID, 'announcement');
+    const muteMSG = await getSettings('muteMSG')
+    const MUTED = !muteMSG.input ? Lang.MUTED : muteMSG.input
+    return await reply(MUTED);
+}));
+
+
+AMDI({ cmd: "unmute", desc: Lang.UNMUTE_DESC, type: "admin", react: "🔊" }, (async (amdiWA) => {
+    let { reply } = amdiWA.msgLayout
+
+    await amdiWA.web.groupSettingUpdate(amdiWA.clientJID, 'not_announcement')
+    const unmuteMSG = await getSettings('unmuteMSG')
+    const UNMUTED = !unmuteMSG.input ? Lang.UNMUTED : unmuteMSG.input
+    return await reply(UNMUTED);
+}));
+
+
+AMDI({ cmd: "lock", desc: Lang.LOCKGRP_DESC, type: "admin", react: "🔒" }, (async (amdiWA) => {
+    let { reply } = amdiWA.msgLayout
+
+    await amdiWA.web.groupSettingUpdate(amdiWA.clientJID, 'locked');
+    const lockMSG = await getSettings('lockMSG')
+    const LOCKED = !lockMSG.input ? Lang.LOCKED : lockMSG.input
+    return await reply(LOCKED);
+}));
+
+
+AMDI({ cmd: "unlock", desc: Lang.UNLOCKGRP_DESC, type: "admin", react: "🔒" }, (async (amdiWA) => {
+    let { reply } = amdiWA.msgLayout
+
+    await amdiWA.web.groupSettingUpdate(amdiWA.clientJID, 'unlocked');
+    const unlockMSG = await getSettings('unlockMSG')
+    const UNLOCKED = !unlockMSG.input ? Lang.UNLOCKED : unlockMSG.input
+    return await reply(UNLOCKED);
+}));
+
+
 AMDI({ cmd: "invite", desc: Lang.inviteDESC, type: "admin", react: "🫱🏻‍🫲🏻" }, (async (amdiWA) => {
     let { groupName, sendClipboard } = amdiWA.msgLayout;
     const invite_code = await amdiWA.web.groupInviteCode(amdiWA.clientJID);
     return await sendClipboard({text: `*${groupName}*\n\nhttps://chat.whatsapp.com/${invite_code}\n`, clip: `https://chat.whatsapp.com/${invite_code}`});
+}));
+
+
+AMDI({ cmd: "revoke", desc: Lang.revokeDESC, type: "admin", react: "🔁" }, (async (amdiWA) => {
+    let { reply, groupName } = amdiWA.msgLayout;
+    await amdiWA.web.groupRevokeInvite(amdiWA.clientJID);
+    return await reply(Lang.REVOKED.format(groupName));
+}));
+
+
+AMDI({ cmd: "subject", desc: Lang.SUBJECTDESC, example: Lang.subEX, type: "admin", react: "✏️" }, (async (amdiWA) => {
+    let { groupName, input, reply } = amdiWA.msgLayout;
+
+    if (!input) return reply(`${Lang.NEED_SUB}\n\n${Lang.subEX}`);
+
+    await amdiWA.web.groupUpdateSubject(amdiWA.clientJID, input);
+    return await reply(`${Lang.SUB}\n\n${groupName}\n   > to >\n${input}`, "✔️");
+}));
+
+
+AMDI({ cmd: "grpdesc", desc: Lang.GRPDESCdesc, example: Lang.grpDESCEX, type: "admin", react: "✏️" }, (async (amdiWA) => {
+    let { input, reply } = amdiWA.msgLayout;
+
+    if (!input) return reply(`${Lang.NEED_DESC}\n\n${Lang.grpDESCEX}`);
+
+    await amdiWA.web.groupUpdateDescription(amdiWA.clientJID, input);
+    return await reply(Lang.DESCGRP, "✔️");
 }));
