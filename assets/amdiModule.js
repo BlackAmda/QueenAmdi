@@ -21,23 +21,24 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const _amdi = require('./startAmdi')
-const amdiWEB = require('../qr_code/amdiWEB');
-const qrDisplay = require('./qrDisplay')
-const vars = require('./amdiSettings');
+const amdiWA = require('./amdiCore');
 
-async function qrGenerate() {
-    await qrDisplay.qr_gen();
-    await amdiWEB.appObj();
+const startAmdi = async () => {
+    await amdiWA.ev.on("start.amdi");
+    
+    const WASocket = await amdiWA.ev.on("open.connection")
+    
+    amdiWA.ev.on("connection.update", WASocket);
+    amdiWA.ev.on("auth.update", WASocket);
+    amdiWA.ev.on("messages.upsert", WASocket);
+    
+    amdiWA.ev.on("group.updates", WASocket);
+    amdiWA.ev.on("call.manage", WASocket);
 }
 
-qrGenerate();
+startAmdi();
 
-_amdi.Base().catch(() => { _amdi.Base() });
-
-if (vars.isHEROKU == 'YES') {
-    setInterval(() => { _amdi.Heroku_Alive() }, 1000 * 60 * 25)
-}
+module.exports = { startAmdi: startAmdi }
 
 const console_info = console.info
 console.info = function() {
