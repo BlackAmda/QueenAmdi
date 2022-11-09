@@ -43,8 +43,8 @@ AMDI({ cmd: "song", desc: Lang.songDesc, example: Lang.songExa, type: "download"
         try {
             const sections = await songList(prefix, ytVidList);
             return await sendListMsg(listInfo, sections)
-        } catch {
-            await reply(Lang.noSearch)
+        } catch (e) {
+            return await reply(Lang.noSearch)
         }
     }
 
@@ -111,8 +111,8 @@ AMDI({ cmd: "video", desc: Lang.videoDesc, example: Lang.videoExa, type: "downlo
         try {
             const sections = await videoList(prefix, ytVidList);
             return await sendListMsg(listInfo, sections)
-        } catch {
-            await reply(Lang.noSearch)
+        } catch (e) {
+            return await reply(Lang.noSearch)
         }
     }
 
@@ -154,30 +154,25 @@ AMDI({ cmd: "video", desc: Lang.videoDesc, example: Lang.videoExa, type: "downlo
 
 
 AMDI({ cmd: "ytdl", cmdHideInMenu: true, type: "download" }, (async (amdiWA) => {
-    let { input } = amdiWA.msgLayout;
+    let { inputObj } = amdiWA.msgLayout;
 
-    if (input.includes('audio')) {
-        const ytURL = input.split('audio ')[1]
-        return await sendYTaudio(amdiWA, ytURL)
+    if (inputObj[0] === "audio") {
+        return await sendYTaudio(amdiWA, inputObj[1])
     }
 
-    if (input.includes('document')) {
-        const ytURL = input.split('document ')[1]
-        return await sendYTdocument(amdiWA, ytURL)
+    if (inputObj[0] === "document") {
+        return await sendYTdocument(amdiWA, inputObj[1])
     }
 
-    if (input.includes('720')) {
-        const ytURL = input.split('720 ')[1]
-        return await sendYT720(amdiWA, ytURL)
+    if (inputObj[0] === "720") {
+        return await sendYT720(amdiWA, inputObj[1])
     }
 
-    if (input.includes('480')) {
-        const ytURL = input.split('480 ')[1]
-        return await sendYT480(amdiWA, ytURL)
+    if (inputObj[0] === "480") {
+        return await sendYT480(amdiWA, inputObj[1])
     }
 
-    if (input.includes('360')) {
-        const ytURL = input.split('360 ')[1]
-        return await sendYT360(amdiWA, ytURL)
+    if (inputObj[0] === "360") {
+        return await sendYT360(amdiWA, inputObj[1])
     }
 }));

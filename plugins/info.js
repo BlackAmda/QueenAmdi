@@ -13,7 +13,7 @@ you may not use this file except in compliance with the License.*/
 const { AMDI, info, Language } = require('../assets/scripts')
 const Lang = Language.getString('info');
 
-AMDI({ cmd: "jid", desc: Lang.jidDESC, type: "profile", react: "📃" }, (async (amdiWA) => {
+AMDI({ cmd: "jid", desc: Lang.jidDESC, type: "primary", react: "📃" }, (async (amdiWA) => {
     let { sendClipboard } = amdiWA.msgLayout
     return await sendClipboard({text: `\n${amdiWA.clientJID}\n`, clip: `${amdiWA.clientJID}`})
 }));

@@ -20,7 +20,7 @@ const getFileName = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext
 
 
 AMDI({ cmd: "setwelcome", desc: Lang.setwelDesc, example: Lang.setwelEx, type: "admin", react: "➕" }, (async (amdiWA) => {
-    let { clearMedia, downloadMedia, isGroup, isReply, reply, reply_message } = amdiWA.msgLayout;
+    let { clearMedia, downloadMedia, isGroup, isReply, reply, reply_message, replied_text } = amdiWA.msgLayout;
 
     if (!isGroup) return reply(Lang.notGrp)
 
@@ -30,7 +30,7 @@ AMDI({ cmd: "setwelcome", desc: Lang.setwelDesc, example: Lang.setwelEx, type: "
         if (!reply_message.imageMessage.caption) return reply(Lang.needCaption)
 
         const filename = await downloadMedia();
-        const imgURL = await img2url(filename)
+        const imgURL = await img2url(filename.file)
 
         var note = ''
         if (!reply_message.imageMessage.caption.includes('#')) {
@@ -40,10 +40,10 @@ AMDI({ cmd: "setwelcome", desc: Lang.setwelDesc, example: Lang.setwelEx, type: "
         }
         await setWelcome(amdiWA.clientJID, note, imgURL)
         await reply(Lang.WelcomSetted, "✅");
-        return clearMedia(filename);
+        return clearMedia(filename.file);
     } else {
         const imgURL = 'https://i.ibb.co/XCfhtfH/301820a4f3c0.jpg'
-        const note = reply_message.conversation
+        const note = replied_text
         await setWelcome(amdiWA.clientJID, note, imgURL)
         return await reply(Lang.WelcomSetted, "✅");
     }
@@ -74,7 +74,7 @@ AMDI({ cmd: "delwelcome", desc: Lang.delwelDesc, type: "admin", react: "🚮" },
 
 
 AMDI({ cmd: "setbye", desc: Lang.setbyeDesc, example: Lang.setbyeEx, type: "admin", react: "➕" }, (async (amdiWA) => {
-    let { clearMedia, downloadMedia, isGroup, isReply, reply, reply_message } = amdiWA.msgLayout;
+    let { clearMedia, downloadMedia, isGroup, isReply, reply, reply_message, replied_text } = amdiWA.msgLayout;
 
     if (!isGroup) return reply(Lang.notGrp)
 
@@ -84,7 +84,7 @@ AMDI({ cmd: "setbye", desc: Lang.setbyeDesc, example: Lang.setbyeEx, type: "admi
         if (!reply_message.imageMessage.caption) return reply(Lang.needCaption_)
 
         const filename = await downloadMedia();
-        const imgURL = await img2url(filename)
+        const imgURL = await img2url(filename.file)
         
         var note = ''
         if (!reply_message.imageMessage.caption.includes('#')) {
@@ -94,10 +94,10 @@ AMDI({ cmd: "setbye", desc: Lang.setbyeDesc, example: Lang.setbyeEx, type: "admi
         }
         await setBye(amdiWA.clientJID, note, imgURL)
         await reply(Lang.ByeSetted, "✅");
-        return clearMedia(filename);
+        return clearMedia(filename.file);
     } else {
         const imgURL = 'https://i.ibb.co/pbjB2pS/93f527f9f2fb.jpg'
-        const note = reply_message.conversation
+        const note = replied_text
         await setBye(amdiWA.clientJID, note, imgURL)
         return await reply(Lang.ByeSetted, "✅");
     }

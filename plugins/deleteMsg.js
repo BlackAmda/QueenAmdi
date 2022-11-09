@@ -18,15 +18,15 @@ const Lang = Language.getString('deleteMsg');
 
 
 AMDI({ cmd: "del", desc: Lang.delDesc, type: "profile" }, (async (amdiWA) => {
-    let { botNumberJid, isGroup, isReply, reply, allowedNumbs, deleteKEY } = amdiWA.msgLayout;
+    let { botNumberJid, isGroup, isReply, reply, isTagMe, isTagOwner, deleteKEY } = amdiWA.msgLayout;
 
     if (!isReply) return reply(Lang.needReplymsg)
-    if (allowedNumbs.includes(amdiWA.msg.message.extendedTextMessage.contextInfo.participant.split('@')[0])) return reply(Lang.noBanOwners);
+    if (isTagOwner) return reply(Lang.noBanOwners);
 
     if (isGroup) {
         return await GRP_deleteMsg(amdiWA);
     } else if (!isGroup) {
-        if (!amdiWA.msg.message.extendedTextMessage.contextInfo.participant.includes(botNumberJid)) return;
+        if (!isTagMe) return;
         const options = {
             remoteJid: botNumberJid,
             fromMe: true,

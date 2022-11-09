@@ -27,54 +27,59 @@ const Lang = Language.getString('botCTRL');
 AMDI({ cmd: "backup", desc: Lang.backupDESC, type: "profile", react: "📤" }, (async (amdiWA) => {
     let { sendDocument } = amdiWA.msgLayout
     
-    const settingsDB = await getSettingsList();
-    const settingsFILE = `SettingsBackup_${amdiWA.msg.messageTimestamp}.amdi`
-    const contentset = JSON.stringify(settingsDB)
-    let bufferset = Buffer.from(contentset)
-    await writeFile(settingsFILE, bufferset);
-    await sendDocument(fs.readFileSync('./' + settingsFILE), { mimetype: _default.amdiMIMETYPE, fileName: settingsFILE, quoted: true });
+    try {    
+        const settingsDB = await getSettingsList();
+        const settingsFILE = `SettingsBackup_${amdiWA.msg.messageTimestamp}.amdi`
+        const contentset = JSON.stringify(settingsDB)
+        let bufferset = Buffer.from(contentset)
+        await writeFile(settingsFILE, bufferset);
+        await sendDocument(fs.readFileSync('./' + settingsFILE), { mimetype: _default.amdiMIMETYPE, fileName: settingsFILE, quoted: true });
 
-    const grpsettingsDB = await getGrpSettingsList();
-    const grpsettingsFILE = `GroupSettingsBackup_${amdiWA.msg.messageTimestamp}.amdi`
-    const grpcontentset = JSON.stringify(grpsettingsDB)
-    let buffergrpset = Buffer.from(grpcontentset)
-    await writeFile(grpsettingsFILE, buffergrpset);
-    await sendDocument(fs.readFileSync('./' + grpsettingsFILE), { mimetype: _default.amdiMIMETYPE, fileName: grpsettingsFILE, quoted: true });
+        const grpsettingsDB = await getGrpSettingsList();
+        const grpsettingsFILE = `GroupSettingsBackup_${amdiWA.msg.messageTimestamp}.amdi`
+        const grpcontentset = JSON.stringify(grpsettingsDB)
+        let buffergrpset = Buffer.from(grpcontentset)
+        await writeFile(grpsettingsFILE, buffergrpset);
+        await sendDocument(fs.readFileSync('./' + grpsettingsFILE), { mimetype: _default.amdiMIMETYPE, fileName: grpsettingsFILE, quoted: true });
 
-    const ratingsDB = await getStarRates();
-    const ratingsFILE = `RatesBackup_${amdiWA.msg.messageTimestamp}.amdi`
-    const ratingscontent = JSON.stringify(ratingsDB)
-    let bufferratings = Buffer.from(ratingscontent)
-    await writeFile(ratingsFILE, bufferratings);
-    await sendDocument(fs.readFileSync('./' + ratingsFILE), { mimetype: _default.amdiMIMETYPE, fileName: ratingsFILE, quoted: true });
+        const ratingsDB = await getStarRates();
+        const ratingsFILE = `RatesBackup_${amdiWA.msg.messageTimestamp}.amdi`
+        const ratingscontent = JSON.stringify(ratingsDB)
+        let bufferratings = Buffer.from(ratingscontent)
+        await writeFile(ratingsFILE, bufferratings);
+        await sendDocument(fs.readFileSync('./' + ratingsFILE), { mimetype: _default.amdiMIMETYPE, fileName: ratingsFILE, quoted: true });
 
-    const delallDB = await getAllDelJids();
-    const delallFILE = `DelAllJIDBackup_${amdiWA.msg.messageTimestamp}.amdi`
-    const contentdel = JSON.stringify(delallDB)
-    let bufferdel = Buffer.from(contentdel)
-    await writeFile(delallFILE, bufferdel);
-    await sendDocument(fs.readFileSync('./' + delallFILE), { mimetype: _default.amdiMIMETYPE, fileName: delallFILE, quoted: true });
+        const delallDB = await getAllDelJids();
+        const delallFILE = `DelAllJIDBackup_${amdiWA.msg.messageTimestamp}.amdi`
+        const contentdel = JSON.stringify(delallDB)
+        let bufferdel = Buffer.from(contentdel)
+        await writeFile(delallFILE, bufferdel);
+        await sendDocument(fs.readFileSync('./' + delallFILE), { mimetype: _default.amdiMIMETYPE, fileName: delallFILE, quoted: true });
 
-    const banDB = await getBanJidList();
-    const banFILE = `BanJIDBackup_${amdiWA.msg.messageTimestamp}.amdi`
-    const contentban = JSON.stringify(banDB)
-    let bufferban = Buffer.from(contentban)
-    await writeFile(banFILE, bufferban);
-    await sendDocument(fs.readFileSync('./' + banFILE), { mimetype: _default.amdiMIMETYPE, fileName: banFILE, quoted: true });
+        const banDB = await getBanJidList();
+        const banFILE = `BanJIDBackup_${amdiWA.msg.messageTimestamp}.amdi`
+        const contentban = JSON.stringify(banDB)
+        let bufferban = Buffer.from(contentban)
+        await writeFile(banFILE, bufferban);
+        await sendDocument(fs.readFileSync('./' + banFILE), { mimetype: _default.amdiMIMETYPE, fileName: banFILE, quoted: true });
 
-    const welcomeDB = await getAllWelcome();
-    const welcomeFILE = `WelcomeNoteBackup_${amdiWA.msg.messageTimestamp}.amdi`
-    const contentwelcome = JSON.stringify(welcomeDB)
-    let bufferwelcome = Buffer.from(contentwelcome)
-    await writeFile(welcomeFILE, bufferwelcome);
-    await sendDocument(fs.readFileSync('./' + welcomeFILE), { mimetype: _default.amdiMIMETYPE, fileName: welcomeFILE, quoted: true });
+        const welcomeDB = await getAllWelcome();
+        const welcomeFILE = `WelcomeNoteBackup_${amdiWA.msg.messageTimestamp}.amdi`
+        const contentwelcome = JSON.stringify(welcomeDB)
+        let bufferwelcome = Buffer.from(contentwelcome)
+        await writeFile(welcomeFILE, bufferwelcome);
+        await sendDocument(fs.readFileSync('./' + welcomeFILE), { mimetype: _default.amdiMIMETYPE, fileName: welcomeFILE, quoted: true });
 
-    const byeDB = await getAllBye();
-    const byeFILE = `ByeNoteBackup_${amdiWA.msg.messageTimestamp}.amdi`
-    const contentbye = JSON.stringify(byeDB)
-    let bufferbye = Buffer.from(contentbye)
-    await writeFile(byeFILE, bufferbye);
-    return await sendDocument(fs.readFileSync('./' + byeFILE), { mimetype: _default.amdiMIMETYPE, fileName: byeFILE, quoted: true });
+        const byeDB = await getAllBye();
+        const byeFILE = `ByeNoteBackup_${amdiWA.msg.messageTimestamp}.amdi`
+        const contentbye = JSON.stringify(byeDB)
+        let bufferbye = Buffer.from(contentbye)
+        await writeFile(byeFILE, bufferbye);
+        return await sendDocument(fs.readFileSync('./' + byeFILE), { mimetype: _default.amdiMIMETYPE, fileName: byeFILE, quoted: true });
+    } catch (e) {
+        console.log(e);
+        return await reply("Error".fetchError(e), "❌", 1);
+    }
 }));
 
 
@@ -86,71 +91,76 @@ AMDI({ cmd: "restore", desc: Lang.restoreDESC, type: "profile", react: "📥" },
 AMDI({ cmd: "reset", desc: Lang.resetDESC, type: "profile", react: "🚮" }, (async (amdiWA) => {
     let { input, prefix, reply, sendListMsg } = amdiWA.msgLayout
 
-    switch (input) { 
-        default:
-            var listInfo = {}
-            listInfo.title = Lang.resetDBtitle
-            listInfo.text = Lang.resetDBtxt
-            listInfo.buttonTXT = 'default'  
-            await sendListMsg(listInfo, resetLIST(prefix));
-        break;
+    try {
+        switch (input) { 
+            default:
+                var listInfo = {}
+                listInfo.title = Lang.resetDBtitle
+                listInfo.text = Lang.resetDBtxt
+                listInfo.buttonTXT = 'default'  
+                await sendListMsg(listInfo, resetLIST(prefix));
+            break;
 
-        case 'connectionDB': 
-            await reply(Lang.resetted.format(input), "✔️");
-            await reply('Bot disconnected!', "❌")
-            await resetconnectionDB();
-        break;
-        
-        case 'BanDB': 
-            await resetBanDB();
-            await reply(Lang.resetted.format(input), "✔️");
-        break;
-        
-        case 'DellAllDB': 
-            await resetDelAllDB();
-            await reply(Lang.resetted.format(input), "✔️");
-        break;
-        
-        case 'WelcomeDB': 
-            await resetWelcomeDB();
-            await reply(Lang.resetted.format(input), "✔️");
-        break;
-        
-        case 'ByeDB': 
-            await resetByeDB();
-            await reply(Lang.resetted.format(input), "✔️");
-        break;
-        
-        case 'SettingsDB': 
-            await resetSettingsDB();
-            await inputSettings('WORK_TYPE', 'private');
-            await inputSettings('PREFIX', '.');
-            await inputSettings('MODERATOR', 'no moderators added')
-            await reply(Lang.resetted.format(input), "✔️");
-        break;
-        
-        case 'GroupSettingsDB': 
-            await resetGrpSettingsDB();
-            await reply(Lang.resetted.format(input), "✔️");
-        break;
-        
-        case 'RatesDB': 
-            await resetRates();
-            await reply(Lang.resetted.format(input), "✔️");
-        break;
-        
-        case 'allDB':
-            await resetBanDB();
-            await resetDelAllDB();
-            await resetWelcomeDB();
-            await resetGrpSettingsDB();
-            await resetByeDB();
-            await resetSettingsDB();
-            await resetRates();
-            await reply(Lang.allDB, "✔️");
-            await resetconnectionDB();
-        break;
-    };
+            case 'connectionDB': 
+                await reply(Lang.resetted.format(input), "✔️");
+                await reply('Bot disconnected!', "❌")
+                await resetconnectionDB();
+            break;
+            
+            case 'BanDB': 
+                await resetBanDB();
+                await reply(Lang.resetted.format(input), "✔️");
+            break;
+            
+            case 'DellAllDB': 
+                await resetDelAllDB();
+                await reply(Lang.resetted.format(input), "✔️");
+            break;
+            
+            case 'WelcomeDB': 
+                await resetWelcomeDB();
+                await reply(Lang.resetted.format(input), "✔️");
+            break;
+            
+            case 'ByeDB': 
+                await resetByeDB();
+                await reply(Lang.resetted.format(input), "✔️");
+            break;
+            
+            case 'SettingsDB': 
+                await resetSettingsDB();
+                await inputSettings('WORK_TYPE', 'private');
+                await inputSettings('PREFIX', '.');
+                await inputSettings('MODERATOR', 'no moderators added')
+                await reply(Lang.resetted.format(input), "✔️");
+            break;
+            
+            case 'GroupSettingsDB': 
+                await resetGrpSettingsDB();
+                await reply(Lang.resetted.format(input), "✔️");
+            break;
+            
+            case 'RatesDB': 
+                await resetRates();
+                await reply(Lang.resetted.format(input), "✔️");
+            break;
+            
+            case 'allDB':
+                await resetBanDB();
+                await resetDelAllDB();
+                await resetWelcomeDB();
+                await resetGrpSettingsDB();
+                await resetByeDB();
+                await resetSettingsDB();
+                await resetRates();
+                await reply(Lang.allDB, "✔️");
+                await resetconnectionDB();
+            break;
+        };
+    } catch (e) {
+        console.log(e);
+        return await reply("Error".fetchError(e), "❌", 1);
+    }
 }));
 
 

@@ -32,7 +32,8 @@ AMDI({ cmd: "group", desc: Lang.grpDESC, type: "admin", react: "🕹️" }, (asy
 AMDI({ cmd: "add", desc: Lang.addDESC, example: Lang.addEX, type: "admin", react: "➕" }, (async (amdiWA) => {
     let { botNumberJid, input, isUSERExists, reply, sendText } = amdiWA.msgLayout
 
-    if (!input || isNaN(input)) return await reply(Lang.needADDUSER, "❓");
+    return await reply('This is command is not functioning correctly.\n\nWill fix this soon!');
+    /*if (!input || isNaN(input)) return await reply(Lang.needADDUSER, "❓");
     if (isNaN(input)) return await reply(Lang.needADDUSER, "❓");
     const isUSERExist = await isUSERExists(`${input}@s.whatsapp.net`);
     if (isUSERExist) return await reply(Lang.alreadyIN.format(input), "❗");
@@ -45,7 +46,7 @@ AMDI({ cmd: "add", desc: Lang.addDESC, example: Lang.addEX, type: "admin", react
         return await grpManage.addUSER(amdiWA, Lang, addMSG);
     } catch {
         return await reply(Lang.failADD.format(input));
-    }
+    }*/
 }));
 
 
@@ -70,8 +71,9 @@ AMDI({ cmd: "kick", desc: Lang.kickDESC, example: Lang.kickEXA, type: "admin", r
     try {
         await sendText(`@${taggedJid.split('@')[0]}, ${reason}`, {mentionJIDS: [taggedJid]});
         return await amdiWA.web.groupParticipantsUpdate(amdiWA.clientJID, [taggedJid], "remove");
-    } catch {
-        return reply('Failed! ❌')
+    } catch (e) {
+        console.log(e);
+        return await reply("Error".fetchError(e), "❌", 1);
     }
 }));
 
@@ -89,8 +91,9 @@ AMDI({ cmd: "promote", desc: Lang.PROMOTE_DESC, example: Lang.PromoEX,type: "adm
     try {
         await sendText(`@${taggedJid.split('@')[0]}, ${PROMOTED}`, {mentionJIDS: [taggedJid]});
         return await amdiWA.web.groupParticipantsUpdate(amdiWA.clientJID, [taggedJid], "promote");
-    } catch {
-        return reply('Failed! ❌')
+    } catch (e) {
+        console.log(e);
+        return await reply("Error".fetchError(e), "❌", 1);
     }
 }));
 
@@ -109,8 +112,9 @@ AMDI({ cmd: "demote", desc: Lang.DEMOTE_DESC, example: Lang.DemoEX, type: "admin
     try {
         await sendText(`@${taggedJid.split('@')[0]}, ${DEMOTED}`, {mentionJIDS: [taggedJid]});
         return await amdiWA.web.groupParticipantsUpdate(amdiWA.clientJID, [taggedJid], "demote");
-    } catch {
-        return reply('Failed! ❌')
+    } catch (e) {
+        console.log(e);
+        return await reply("Error".fetchError(e), "❌", 1);
     }
 }));
 

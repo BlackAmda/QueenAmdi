@@ -26,8 +26,7 @@ AMDI({ cmd: "yt", desc: Lang.YTSDESC, type: "primary", react: "🔎" }, (async (
     try {
         var ytsLIST = await yts(input);
     } catch {
-        await reply(Lang.NOT_FOUND.format("YouTube"), "☹️");
-        return await react("❌", amdiWA.msg);
+        return await reply(Lang.NOT_FOUND.format("YouTube"), "☹️", 1);
     }
     var ytgot = '';
     ytsLIST.all.map((video) => {

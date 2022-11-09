@@ -16,7 +16,7 @@ const Lang = Language.getString('settings');
 
 
 AMDI({ cmd: "apply", desc: Lang.setDesc, type: "profile", react: "👩🏻‍🎨" }, (async (amdiWA) => {
-    let { prefix, isReply, reply, reply_message, sendListMsg  } = amdiWA.msgLayout;
+    let { prefix, isReply, reply, replied_text, sendListMsg  } = amdiWA.msgLayout;
 
     if (!isReply) return reply(Lang.needReplymsg)
 
@@ -25,7 +25,7 @@ AMDI({ cmd: "apply", desc: Lang.setDesc, type: "profile", react: "👩🏻‍�
     listInfo.text = Lang.applyText
     listInfo.buttonTXT = 'default'  
 
-    const sections = await applyList(prefix, reply_message.conversation);
+    const sections = await applyList(prefix, replied_text);
     return await sendListMsg(listInfo, sections);
 }));
 
@@ -38,6 +38,6 @@ AMDI({ cmd: "settings", desc: Lang.setDesc, type: "profile", react: "⚙️" }, 
     listInfo.text = Lang.setListText
     listInfo.buttonTXT = 'default'  
 
-    const sections = await settingList(prefix);
+    const sections = settingList(prefix, amdiWA.clientJID);
     return await sendListMsg(listInfo, sections);
 }));
