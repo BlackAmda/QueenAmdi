@@ -68,3 +68,33 @@ AMDI({ cmd: "ig", desc: Lang.igDesc, example: Lang.igEXA, type: "download", reac
         return await reply("Error".fetchError(e), "❌", 1);
     }
 }));
+
+
+AMDI({ cmd: "tk", desc: Lang.TKDESC, example: Lang.tkEXA, type: "download", react: "🏳️‍🌈" }, (async (amdiWA) => {
+    let { input, prefix, reply, sendButtonsMsg } = amdiWA.msgLayout;
+
+    if (!input) return await reply(Lang.needlink, '❓');
+    if (!input.includes('tiktok.com/')) return await reply(Lang.needlink, '❓');
+
+    const tkData = await tiktok({url: input});
+    
+    const TKText = `*${tkData.video.signature}*\n\n🎵 Music: ${tkData.audio.name} • ${tkData.audio.author}\n\n👨🏻‍🎤 Author: ${tkData.owner.name}\n\n👤 Username: ${tkData.owner.uniqueID}`
+
+    const tiktokHead = [
+        {type: "click", displayText: "ℹ️ Tiktok Information", buttonCMD: `${prefix}tkinfo ${input}`},
+        {type: "url", displayText: 'Watch on Tiktok', url: input}
+    ]
+    await sendButtonsMsg(tiktokHead, {text: TKText, image: {url: tkData.video.thumb }, tagMsg: true, noTemplate: 1});
+
+    const vidButtons = [
+        {type: "click", displayText: '🔖 With Watermark', buttonCMD: `${prefix}tkdl mark ${input}`},
+        {type: "click", displayText: '📼 No-Watermark', buttonCMD: `${prefix}tkdl nomark ${input}`}
+    ]
+    await sendButtonsMsg(vidButtons, {text: '🎞️ Tiktok Video', noFooter: true})
+
+    const audButtons = [
+        {type: "click", displayText: "🎶 Audio File", buttonCMD: `${prefix}tkdl audio ${input}`},
+        {type: "click", displayText: "📁 Document File", buttonCMD: `${prefix}tkdl doc ${input}`}
+    ]
+    return await sendButtonsMsg(audButtons, {text: '🎶 Tiktok Audio', noFooter: true});
+}));

@@ -78,3 +78,58 @@ AMDI({ cmd: "imagestic", desc: Lang.imgStic, type: "primary", react: "🔁" }, (
         return await reply(Lang.nonAnim);
     }
 }));
+
+
+AMDI({ cmd: "sticvid", desc: Lang.VIDSTICDESC, type: "primary", react: "🔁" }, (async (amdiWA) => {
+    let { downloadMedia, footerTXT, isTaggedSticker, react, reply, reply_message } = amdiWA.msgLayout;
+
+    if (!isTaggedSticker) return reply(Lang.giveSTICKER, "❓");
+
+    const captionDB = await getSettings('CAPTION')
+    let caption = captionDB.input == undefined ? footerTXT : captionDB.input
+
+    if (reply_message.stickerMessage.isAnimated && isTaggedSticker) {
+        const media = await downloadMedia();
+        await react("🔄️");
+        await sticker.sticVID(amdiWA, media.file, caption)
+        return await react("✔️");
+    } else {
+        return await reply(Lang.nonImage);
+    }
+}));
+
+
+AMDI({ cmd: "stickerinfo", desc: Lang.STICINFODESC, type: "primary", react: "ℹ️" }, (async (amdiWA) => {
+    const { clearMedia, reply, downloadMedia, isTaggedSticker } = amdiWA.msgLayout;
+
+    if (isTaggedSticker) {
+        const media = await downloadMedia();
+        if (!media) return await reply(Lang.NOSTICKER);
+        await sticker.getSticInfo(amdiWA, media.file, Lang.STICINFO);
+        return clearMedia(media.file);
+    }
+}));
+
+
+AMDI({ cmd: "sticpack", desc: Lang.STICPACKDESC, type: "primary", react: "📁" }, (async (amdiWA) => {
+    const { clearMedia, react, reply, downloadMedia, isMedia, isTaggedDocument } = amdiWA.msgLayout;
+
+    var packName = await sticker.packNAME(amdiWA);
+    var authorName = await sticker.authorNAME(amdiWA);
+    const media = await downloadMedia();
+    
+    if ((isTaggedDocument && media.ext === "zip") || (isMedia && media.ext === "zip")) {
+        try {
+            await react("🔄️");
+            await sticker.bulkSticker(amdiWA, media.file, packName, authorName);
+            await reply(Lang.CHECKURDM)
+            await clearMedia(media.file);
+            return await react("✔️");
+        } catch (e) {
+            console.log(e);
+            return await reply("Error".fetchError(e), "❌", 1);
+        }
+    } else {
+        return await reply(Lang.STICZIP, "❓");
+    }
+}));

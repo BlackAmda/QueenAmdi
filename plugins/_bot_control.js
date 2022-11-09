@@ -23,6 +23,13 @@ const fs = require('fs');
 const { writeFile } = require('fs/promises');
 const Lang = Language.getString('botCTRL');
 
+AMDI({ cmd: "restart", desc: "Restart the bot", type: "profile", react: "🔃" }, (async (amdiWA) => {
+    let { reply, restart } = amdiWA.msgLayout
+
+    await reply('*Restarting...*');
+    await restart();
+}));
+
 
 AMDI({ cmd: "backup", desc: Lang.backupDESC, type: "profile", react: "📤" }, (async (amdiWA) => {
     let { sendDocument } = amdiWA.msgLayout
@@ -178,11 +185,9 @@ AMDI({ cmd: "rate", desc: Lang.rateDESC, type: "primary", react: "✨" }, (async
         return await sendListMsg(listInfo, rateList(prefix));
     }
 
-    const isRated = await checkJID(sender, input);
-    console.log(isRated)
-    if (isRated) return await reply(Lang.alreadyRATED.format(input));
-
     switch (input) { case 'one': case 'two': case 'three': case 'four': case 'five':
+            const isRated = await checkJID(sender, input);
+            if (isRated) return await reply(Lang.alreadyRATED.format(input));
             await addStarRates(sender, input);
             await reply(Lang.rated.format(input), "✔️");
             //await sendButtonMsg(yesorno(prefix, 'rate', 'thankyou'), Lang.rated.format(input), tagMsg = true);

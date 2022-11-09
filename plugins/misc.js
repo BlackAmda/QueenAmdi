@@ -106,7 +106,74 @@ AMDI({ cmd: "removebg", desc: Lang.REMOVEBG_DESC, type: "primary", react: "✂�
     }); 
     await pipeline(rbg, fs.createWriteStream('rbg.png'));
     await sendDocument(fs.readFileSync('rbg.png'), { quoted: true, fileName: 'QueenAmdi.png', mimetype: 'image/png' })
-    react("✔️", amdiWA.msg)
-    await deleteKEY(load.key);
-    return clearMedia(filename);
+    await react("✔️");
+    return clearMedia(filename.file);
+}));
+
+
+AMDI({ cmd: "news", desc: Lang.NEWSDESC, type: "primary", react: "📰" }, (async (amdiWA) => {
+    let { input, prefix, sendImage, sendListMsg, todayDATE } = amdiWA.msgLayout
+
+    if (input) {
+        const getnews = await news.getnews(input);
+        return await sendImage({url: getnews.thumb }, {quoted: true, caption: `*${getnews.title}*\n[${getnews.data}]\n\n${getnews.description}`, reactEmoji: "🗞️"})
+    }
+
+    var listInfo = {}
+    listInfo.title = Lang.NEWSLISTTITLE.format(todayDATE())
+    listInfo.text = Lang.NEWSTEXT
+    listInfo.buttonTXT = 'default'  
+
+    const newsSection = await news.newslist(prefix, Lang);
+    return await sendListMsg(listInfo, newsSection);
+}));
+
+
+AMDI({ cmd: "trt", desc: Lang.TRTDESC, example: '.trt from_code/to_code', type: "primary", react: "🔠" }, (async (amdiWA) => {
+    let { input, isReply, reply, replied_text } = amdiWA.msgLayout
+
+    if (!isReply) return await reply(Lang.NEED_WORD, "❓");
+
+    if (input && input.includes('/')) {
+        try {
+            const code = input.split('/');
+            const translated = await translatte(replied_text, {from: code[0], to: code[1]});
+            return await reply(translated.text);
+        } catch (e) {
+            console.log(e);
+            return await reply("Error".fetchError(e), "❌", 1);
+        }
+    } else {
+        return await reply(Lang.NEED_LANG.format(_default.langCodes), "❓");
+    }
+}));
+
+AMDI({ cmd: "tkinfo", desc: "Scarp tk info", react: "💃🏻", type: "primary" }, (async (amdiWA) => {
+    let { reply } = amdiWA.msgLayout
+
+    return await reply("Coming soon..\n\nඕම ඉන්ඩ ඒක හදලා නෑ තාම");
+}));
+
+
+AMDI({ cmd: "script", desc: "Queen Amdi deploy site info", react: "💃🏻", type: "primary" }, (async (amdiWA) => {
+    let { sendText } = amdiWA.msgLayout
+
+    const text = 
+    `*🌐 Queen Amdi v4 Official Website💃🏻♥️*
+
+    ✅ Deploy Website:
+    https://amdaniwasa.com
+
+    👥 Official beta test group: 
+    https://chat.whatsapp.com/Kk9FcrtGYzX1xzky4b1aCJ
+
+    🧰 Github:
+    https://github.com/BlackAmda/QueenAmdi
+
+    👨🏻‍💻 Developer:
+    https://github.com/BlackAmda
+
+    ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴀ.ɴ.ᴛᴇᴄʜ 🐝
+    `
+    return await sendText(text, {ExAdReply: "Default", quoted: "WhatsApp"})
 }));
