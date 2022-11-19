@@ -35,5 +35,5 @@
             }
         }
     ],
-    "stack": "container"
+    "stack": "heroku-22"
 }
