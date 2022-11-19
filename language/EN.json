@@ -279,7 +279,7 @@
         },
         "stickers": {
             "stickerDesc": "Make sticker from image or video. And change pack info.",
-            "stickEx": "If want to change pack name and author -> .sticker pack [NAME] author [NAME]\nIf you want to crop -> add letter 'c' to command.\nIf you want to circle crop -> add 'cc' to command.",
+            "stickEx": "If want to change pack name and author -> .sticker {p: PACK} {a: NAME}\nIf you want to crop -> add letter with curly brackets '{c}' to command.\nIf you want to circle crop -> add letter with curly brackets '{cc}' to command.",
             "errStic": "*Please give me picture or video or another sticker!*",
             "imgStic": "Convert sticker to image.",
             "nonAnim": "*You can't convert animated stickers to image!*\n_[Use *.sticvid* command]_",
@@ -289,6 +289,7 @@
             "STICINFODESC": "Get sticker information. (Pack name & Author)",
             "NOSTICKER": "*Please give me a sticker!*",
             "STICINFO": "*---Sticker Pack Info---*\n\n📝 *Pack name:* {}\n👤 *Author:* {}",
+            "STICPACKDESC": "Make sticker pack from a ZIPPED images and video set.",
             "STICZIP": "*Please give me a ZIP file with images/videos/gif!*",
             "CHECKURDM": "*Please check your inbox messages. Stickers have been sent to private chat🤗*"
         },
@@ -304,7 +305,11 @@
         "tags": {
             "tagallDESC": "Tag all members in the group.",
             "tagallEX": ".tagall | .tagall text | .tagall [reply to a message]",
-            "notAdmin": "```⛔ You are not an admin.```"
+            "notAdmin": "```⛔ You are not an admin.```",
+            "TAGGRPDESC": "Tag all members in a group without command in the group chat.",
+            "TAGGRPEX": ".taggrp jid_address - And reply to the text",
+            "GIVEMEJID": "*Please give a JID!*",
+            "GIVEMETEXT": "*Please reply to a text message!*"
         },
         "votepolls": {
             "voteDESC": "Create a vote poll.",
