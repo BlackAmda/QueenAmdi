@@ -1,8 +1,8 @@
 {
-    "name": "queen_amdi-multi_device",
+    "name": "QueenAmdiMultiDevice",
     "version": "4.0.0v",
     "description": "Queen Amdi [WA Multi-device] - A WhatsApp based third party application that provide many services with a real-time automated conversational experience.",
-    "main": "./assets/amdiModule.js",
+    "main": "./QueenAmdi/assets/amdiModule.js",
     "scripts": {
         "AMDI-PACKAGE-INSTALLATION": "npm install",
         "start": "node ./assets/amdiModule.js"
@@ -22,17 +22,15 @@
     },
     "homepage": "https://github.com/BlackAmda/QueenAmdi#readme",
     "dependencies": {
-        "@adiwajshing/baileys": "git+https://github.com/AN-Tech-Crew/BaileysForQueenAmdi.git#005ae6dabbf5692bbc83717bef85963c05fdc855",
+        "@adiwajshing/baileys": "git+https://github.com/AN-Tech-Crew/BaileysForQueenAmdi.git#bda64ed3e242ef193d02af940fd73f694b19808f",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@blackamda/telegram-image-url": "^1.0.0",
         "@hapi/boom": "^10.0.0",
         "axios": "^0.27.2",
         "crypto-js": "^4.1.1",
         "dotenv": "^16.0.0",
-        "download": "^7.1.0",
         "express": "^4.18.1",
         "fluent-ffmpeg": "^2.1.2",
-        "git-clone": "^0.1.0",
         "google-play-scraper": "^9.1.1",
         "got": "^11.8.2",
         "https": "1.0.0",
@@ -46,11 +44,10 @@
         "pg": "^8.7.3",
         "qrcode": "^1.5.0",
         "request": "^2.88.2",
-        "rimraf": "^3.0.0",
         "sharp": "^0.30.5",
         "simple-git": "^3.10.0",
         "translatte": "^3.0.1",
-        "queen-amdi-wa-sticker": "^1.0.1",
+        "wa-sticker-formatter": "^4.3.2",
         "yt-search": "^2.10.3",
         "ytdl-core": "^4.11.2"
     }
