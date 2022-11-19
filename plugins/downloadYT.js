@@ -16,7 +16,7 @@ const ytdl = require('ytdl-core');
 const yts = require('yt-search');
 const Lang = Language.getString('downloadYT');
 
-AMDI({ cmd: "song", desc: Lang.songDesc, example: Lang.songExa, type: "download", react: "🎵" }, (async (amdiWA) => {
+AMDI({ cmd: ["song", "yta", "mp3"], desc: Lang.songDesc, example: Lang.songExa, type: "download", react: "🎵" }, (async (amdiWA) => {
     let { input, prefix, reply, sendButtonsMsg, sendListMsg } = amdiWA.msgLayout;
 
     if (!input) return reply(Lang.needYTLink, '❓')
@@ -84,7 +84,7 @@ AMDI({ cmd: "song", desc: Lang.songDesc, example: Lang.songExa, type: "download"
 }));
 
 
-AMDI({ cmd: "video", desc: Lang.videoDesc, example: Lang.videoExa, type: "download", react: "🎞️" }, (async (amdiWA) => {
+AMDI({ cmd: ["video", "ytv", "mp4"], desc: Lang.videoDesc, example: Lang.videoExa, type: "download", react: "🎞️" }, (async (amdiWA) => {
     let { input, prefix, reply, sendButtonsMsg, sendListMsg } = amdiWA.msgLayout;
 
     if (!input) return reply(Lang.needYTLink, '❓')

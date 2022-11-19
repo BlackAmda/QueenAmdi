@@ -10,9 +10,10 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, currency, _default, Language, Lyrics, news } = require('../assets/scripts')
+const { AMDI, currency, CurrencyConverter, _default, Language, Lyrics, news } = require('../assets/scripts')
 const axios = require("axios")
 let { img2url } = require('@blackamda/telegram-image-url')
+let currencyConverter = new CurrencyConverter()
 const { writeFile } = require('fs/promises');
 const fs = require('fs');
 const got = require('got');
@@ -27,11 +28,11 @@ const getFileName = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext
 
 
 AMDI({ cmd: "currency", desc: Lang.currencyDesc, example: Lang.currencyEx, type: "primary", react: "💱" }, (async (amdiWA) => {
-    let { input, prefix , reply, sendListMsg } = amdiWA.msgLayout
+    let { input, inputObj, prefix , reply, sendListMsg } = amdiWA.msgLayout
 
     if (!input) return reply(Lang.giveValidAmount, "❓")
     const isValid = await currency.isValidCurrency(input);
-    if (!isValid) return reply(Lang.giveValidAmount, "❓")
+    if (!isValid && inputObj[0] !== 'convert') return reply(Lang.giveValidAmount, "❓")
 
     var arrayLength = currency.currenciesList.length;
     var currenciesList = ''
@@ -44,10 +45,18 @@ AMDI({ cmd: "currency", desc: Lang.currencyDesc, example: Lang.currencyEx, type:
     listInfo.text = Lang.currencyTXT + currenciesList
     listInfo.buttonTXT = 'Select currency code'  
 
-    const currencyINPUT = await currency.currencyDATA(input)
-    var rows = await currency.currencyMENU(prefix, currencyINPUT)
-    const sections = [{ title: "Currency Code List", rows: rows }]
-    return await sendListMsg(listInfo, sections);
+    if (inputObj[0] === 'convert') {
+        const amount = Number(inputObj[1])
+        const from = inputObj[2]
+        const to = inputObj[3]
+        const converted = await currencyConverter.from(from).to(to).amount(amount).convert()
+        return await reply('*' + to.toUpperCase() + ' ' + converted + '*', "✅")
+    } else {
+        const currencyINPUT = await currency.currencyDATA(input)
+        var rows = await currency.currencyMENU(prefix, currencyINPUT)
+        const sections = [{ title: "Currency Code List", rows: rows }]
+        return await sendListMsg(listInfo, sections);
+    }
 }));
 
 
@@ -107,6 +116,7 @@ AMDI({ cmd: "removebg", desc: Lang.REMOVEBG_DESC, type: "primary", react: "✂�
     await pipeline(rbg, fs.createWriteStream('rbg.png'));
     await sendDocument(fs.readFileSync('rbg.png'), { quoted: true, fileName: 'QueenAmdi.png', mimetype: 'image/png' })
     await react("✔️");
+    fs.unlinkSync('rbg.png');
     return clearMedia(filename.file);
 }));
 
@@ -129,7 +139,7 @@ AMDI({ cmd: "news", desc: Lang.NEWSDESC, type: "primary", react: "📰" }, (asyn
 }));
 
 
-AMDI({ cmd: "trt", desc: Lang.TRTDESC, example: '.trt from_code/to_code', type: "primary", react: "🔠" }, (async (amdiWA) => {
+AMDI({ cmd: ["trt", "translate"], desc: Lang.TRTDESC, example: '.trt from_code/to_code', type: "primary", react: "🔠" }, (async (amdiWA) => {
     let { input, isReply, reply, replied_text } = amdiWA.msgLayout
 
     if (!isReply) return await reply(Lang.NEED_WORD, "❓");

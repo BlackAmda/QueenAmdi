@@ -32,7 +32,7 @@ const Lang = Language.getString('amdiMenu');
  * @cmdTypes primary, download, logo, profile, admin
 */
 
-AMDI({ cmd: "panel", desc: "Queen Amdi Main Menu", react: "📂", cmdHideInMenu: true }, (async (amdiWA) => {
+AMDI({ cmd: ["panel", "list", "menu"], desc: "Queen Amdi Main Menu", type: "primary", react: "📂", cmdHideInMenu: true }, (async (amdiWA) => {
     let { prefix, sendAudioMsg, sendListMsg, msgDevice, sendername } = amdiWA.msgLayout;
    
     const audioURL = amdiVoice

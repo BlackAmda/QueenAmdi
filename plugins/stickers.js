@@ -20,7 +20,7 @@ const { stringify } = require('querystring');
 const Lang = Language.getString('stickers');
 
 
-AMDI({ cmd: "sticker", desc: Lang.stickerDesc, example: Lang.stickEx, type: "primary", react: "🖼️" }, (async (amdiWA) => {
+AMDI({ cmd: ["sticker", "s", "stic"], desc: Lang.stickerDesc, example: Lang.stickEx, type: "primary", react: "🖼️" }, (async (amdiWA) => {
     const { clearMedia, react, reply, downloadMedia, reply_message, isMedia, isTaggedDocument, isTaggedImage, isTaggedOneTimeImage, isTaggedOneTimeVideo, isTaggedVideo, isTaggedSticker } = amdiWA.msgLayout;
 
     var packName = await sticker.packNAME(amdiWA);
@@ -48,7 +48,7 @@ AMDI({ cmd: "sticker", desc: Lang.stickerDesc, example: Lang.stickEx, type: "pri
 }));
 
 
-AMDI({ cmd: "imagestic", desc: Lang.imgStic, type: "primary", react: "🔁" }, (async (amdiWA) => {
+AMDI({ cmd: ["imagestic", "stickerimage", "imagesticker", "stic2img"], desc: Lang.imgStic, type: "primary", react: "🔁" }, (async (amdiWA) => {
     let { downloadMedia, footerTXT, isTaggedSticker, react, reply, reply_message } = amdiWA.msgLayout;
 
     if (!isTaggedSticker) return reply(Lang.giveSTICKER, "❓");
@@ -59,6 +59,8 @@ AMDI({ cmd: "imagestic", desc: Lang.imgStic, type: "primary", react: "🔁" }, (
     if (!reply_message.stickerMessage.isAnimated && isTaggedSticker) {
         await react("🔄️");
         const media = await downloadMedia();
+        const isOwnerSticker = await sticker.isOwnerStic(media.file);
+        if (isOwnerSticker) return await reply("*You can't get owner's stickers! 😏*");
         ffmpeg(`./${media.file}`)
             .fromFormat("webp_pipe")
             .save("result.png")
@@ -80,7 +82,7 @@ AMDI({ cmd: "imagestic", desc: Lang.imgStic, type: "primary", react: "🔁" }, (
 }));
 
 
-AMDI({ cmd: "sticvid", desc: Lang.VIDSTICDESC, type: "primary", react: "🔁" }, (async (amdiWA) => {
+AMDI({ cmd: ["sticvid", "stickervideo", "s2v"], desc: Lang.VIDSTICDESC, type: "primary", react: "🔁" }, (async (amdiWA) => {
     let { downloadMedia, footerTXT, isTaggedSticker, react, reply, reply_message } = amdiWA.msgLayout;
 
     if (!isTaggedSticker) return reply(Lang.giveSTICKER, "❓");
@@ -90,6 +92,8 @@ AMDI({ cmd: "sticvid", desc: Lang.VIDSTICDESC, type: "primary", react: "🔁" },
 
     if (reply_message.stickerMessage.isAnimated && isTaggedSticker) {
         const media = await downloadMedia();
+        const isOwnerSticker = await sticker.isOwnerStic(media.file);
+        if (isOwnerSticker) return await reply("*You can't get owner's stickers! 😏*");
         await react("🔄️");
         await sticker.sticVID(amdiWA, media.file, caption)
         return await react("✔️");
@@ -99,7 +103,7 @@ AMDI({ cmd: "sticvid", desc: Lang.VIDSTICDESC, type: "primary", react: "🔁" },
 }));
 
 
-AMDI({ cmd: "stickerinfo", desc: Lang.STICINFODESC, type: "primary", react: "ℹ️" }, (async (amdiWA) => {
+AMDI({ cmd: ["stickerinfo", "sticinfo"], desc: Lang.STICINFODESC, type: "primary", react: "ℹ️" }, (async (amdiWA) => {
     const { clearMedia, reply, downloadMedia, isTaggedSticker } = amdiWA.msgLayout;
 
     if (isTaggedSticker) {
@@ -111,7 +115,7 @@ AMDI({ cmd: "stickerinfo", desc: Lang.STICINFODESC, type: "primary", react: "ℹ
 }));
 
 
-AMDI({ cmd: "sticpack", desc: Lang.STICPACKDESC, type: "primary", react: "📁" }, (async (amdiWA) => {
+AMDI({ cmd: ["sticpack", "bulksticker"], desc: Lang.STICPACKDESC, type: "primary", react: "📁" }, (async (amdiWA) => {
     const { clearMedia, react, reply, downloadMedia, isMedia, isTaggedDocument } = amdiWA.msgLayout;
 
     var packName = await sticker.packNAME(amdiWA);

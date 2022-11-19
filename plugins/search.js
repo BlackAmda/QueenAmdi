@@ -18,7 +18,7 @@ const Lang = Language.getString('search');
 const searchTITLE = '🔎 *Queen Amdi Search Engine*'
 
 
-AMDI({ cmd: "yt", desc: Lang.YTSDESC, type: "primary", react: "🔎" }, (async (amdiWA) => {
+AMDI({ cmd: ["yt", "yts", "ytsearch"], desc: Lang.YTSDESC, type: "primary", react: "🔎" }, (async (amdiWA) => {
     let { footerTXT, input, react, reply } = amdiWA.msgLayout;
 
     if (!input) return await reply(Lang.needTXT);
@@ -37,7 +37,7 @@ AMDI({ cmd: "yt", desc: Lang.YTSDESC, type: "primary", react: "🔎" }, (async (
 }));
 
 
-AMDI({ cmd: "ps", desc: Lang.PSDESC, type: "primary", react: "🔎" }, (async (amdiWA) => {
+AMDI({ cmd: ["ps", "playstore"], desc: Lang.PSDESC, type: "primary", react: "🔎" }, (async (amdiWA) => {
     let { footerTXT, input, react, reply } = amdiWA.msgLayout;
 
     if (!input) return await reply(Lang.needTXT);

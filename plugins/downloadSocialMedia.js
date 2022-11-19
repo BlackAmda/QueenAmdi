@@ -16,7 +16,7 @@ const { getSettings } = amdiDB.settingsDB
 const axios = require('axios');
 const Lang = Language.getString('downloadSocialMedia');
 
-AMDI({ cmd: "fb", desc: Lang.fbDesc, example: Lang.fbEXA, type: "download", react: "🎥" }, (async (amdiWA) => {
+AMDI({ cmd: ["fb", "facebook"], desc: Lang.fbDesc, example: Lang.fbEXA, type: "download", react: "🎥" }, (async (amdiWA) => {
     let { footerTXT, input, isLINK, react, reply, sendVideo } = amdiWA.msgLayout;
 
     if (!isLINK(input)) return reply(Lang.needlink, '❓');
@@ -46,7 +46,7 @@ AMDI({ cmd: "fb", desc: Lang.fbDesc, example: Lang.fbEXA, type: "download", reac
 }));
 
 
-AMDI({ cmd: "ig", desc: Lang.igDesc, example: Lang.igEXA, type: "download", react: "🌀" }, (async (amdiWA) => {
+AMDI({ cmd: ["ig", "insta", "instagram"], desc: Lang.igDesc, example: Lang.igEXA, type: "download", react: "🌀" }, (async (amdiWA) => {
     let { footerTXT, input, isLINK, react, reply, sendImage, sendVideo } = amdiWA.msgLayout;
 
     if (!isLINK(input)) return reply(Lang.needlink, '❓');
@@ -70,7 +70,7 @@ AMDI({ cmd: "ig", desc: Lang.igDesc, example: Lang.igEXA, type: "download", reac
 }));
 
 
-AMDI({ cmd: "tk", desc: Lang.TKDESC, example: Lang.tkEXA, type: "download", react: "🏳️‍🌈" }, (async (amdiWA) => {
+AMDI({ cmd: ["tk", "tiktok"], desc: Lang.TKDESC, example: Lang.tkEXA, type: "download", react: "🏳️‍🌈" }, (async (amdiWA) => {
     let { input, prefix, reply, sendButtonsMsg } = amdiWA.msgLayout;
 
     if (!input) return await reply(Lang.needlink, '❓');
@@ -90,11 +90,11 @@ AMDI({ cmd: "tk", desc: Lang.TKDESC, example: Lang.tkEXA, type: "download", reac
         {type: "click", displayText: '🔖 With Watermark', buttonCMD: `${prefix}tkdl mark ${input}`},
         {type: "click", displayText: '📼 No-Watermark', buttonCMD: `${prefix}tkdl nomark ${input}`}
     ]
-    await sendButtonsMsg(vidButtons, {text: '🎞️ Tiktok Video', noFooter: true})
+    await sendButtonsMsg(vidButtons, {text: '🎞️ Tiktok Video', noFooter: true, noTemplate: 1})
 
     const audButtons = [
         {type: "click", displayText: "🎶 Audio File", buttonCMD: `${prefix}tkdl audio ${input}`},
         {type: "click", displayText: "📁 Document File", buttonCMD: `${prefix}tkdl doc ${input}`}
     ]
-    return await sendButtonsMsg(audButtons, {text: '🎶 Tiktok Audio', noFooter: true});
+    return await sendButtonsMsg(audButtons, {text: '🎶 Tiktok Audio', noFooter: true, noTemplate: 1});
 }));

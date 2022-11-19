@@ -23,9 +23,9 @@ you may not use this file except in compliance with the License.*/
 
 const amdiWA = require('./amdiCore');
 
-const startAmdi = async () => {
-    await amdiWA.ev.on("start.amdi");
-    
+amdiWA.start().catch(() => {amdiWA.start()});
+
+const events = async () => {
     const WASocket = await amdiWA.ev.on("open.connection")
     
     amdiWA.ev.on("connection.update", WASocket);
@@ -35,10 +35,7 @@ const startAmdi = async () => {
     amdiWA.ev.on("group.updates", WASocket);
     amdiWA.ev.on("call.manage", WASocket);
 }
-
-startAmdi();
-
-module.exports = { startAmdi: startAmdi }
+events();
 
 const console_info = console.info
 console.info = function() {

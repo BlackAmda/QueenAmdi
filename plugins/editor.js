@@ -30,6 +30,7 @@ AMDI({ cmd: "getaudio", desc: Lang.GETAUDIODESC, type: "primary", react: "🎚�
             });
             await react("🔄️");
             await sendDocument(fs.readFileSync(mp3name), {quoted: true, mimetype: 'audio/mpeg', fileName: mp3name});
+            fs.unlinkSync(mp3name)
             await react("✔️");
         } catch (e) {
             console.log(e);
