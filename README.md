@@ -17,13 +17,13 @@
 ![license](https://img.shields.io/github/license/BlackAmda/QueenAmdi?color=purple&label=License&style=plastic)
 ![developer](https://img.shields.io/static/v1?label=Author&message=Black%20Amda&color=purple&style=plastic)
 
-### Queen Amdi 4.0v [Multi-Device] update coming soon...
+### Queen Amdi 4.0v [Multi-Device] update coming soon... [Release date 01st December 2022]
 
 #### 👨🏻‍💻 Current status of update :
-ADDING PLUGINS & MAIN FUNCTIONS. ■■■■■■■■□□ 80%
+Bot finalized and ready to use ■■■■■■■■■■ 100%
 
 #### 🔜 Next step :
-FINALIZING BOT BASE AND MAIN FUNCTIONS.
+Testing bot and release on 1st Decemeber 2022
 
 You can join our Beta Testing WhatsApp Group by this invite link : **[CLICK HERE](https://chat.whatsapp.com/LhWHB9gftfwIv29C4etUHH)**
 
