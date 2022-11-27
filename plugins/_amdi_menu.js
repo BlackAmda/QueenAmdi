@@ -21,8 +21,8 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, _default, _default_list_sections, Language } = require('../assets/scripts');
-const { getSettings } = require('../database/settingsDB');
+const { AMDI, amdiDB, _default, _default_list_sections, Language } = require('queen_amdi_md/dist/scripts');
+const { getSettings } = amdiDB.settingsDB
 const { amdiVoice } = _default
 const { panelList } = _default_list_sections
 const Lang = Language.getString('amdiMenu');

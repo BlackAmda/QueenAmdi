@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, Language } = require('../assets/scripts')
+const { AMDI, Language } = require('queen_amdi_md/dist/scripts')
 const Lang = Language.getString('votepolls');
 
 AMDI({ cmd: "vote", desc: Lang.voteDESC, example: Lang.voteEX, type: "admin", react: "📊" }, (async (amdiWA) => {

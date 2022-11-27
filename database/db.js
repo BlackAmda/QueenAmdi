@@ -10,9 +10,9 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-exports.ban_jidDB = require('./ban_jidDB')
-exports.greetingsDB = require('./greetingsDB')
-exports.grpSetDB = require('./group_settingsDB')
-exports.miscDB = require('./miscDB')
-exports.rateDB = require('./ratingsDB')
-exports.settingsDB = require('./settingsDB')
+exports.ban_jidDB = require('queen_amdi_md/database/ban_jidDB')
+exports.greetingsDB = require('queen_amdi_md/database/greetingsDB')
+exports.grpSetDB = require('queen_amdi_md/database/group_settingsDB')
+exports.miscDB = require('queen_amdi_md/database/miscDB')
+exports.rateDB = require('queen_amdi_md/database/ratingsDB')
+exports.settingsDB = require('queen_amdi_md/database/settingsDB')

@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, amdiDB, Language, sticker } = require('../assets/scripts')
+const { AMDI, amdiDB, Language, sticker } = require('queen_amdi_md/dist/scripts')
 const { getSettings } = amdiDB.settingsDB
 const axios = require('axios');
 require('dotenv').config();

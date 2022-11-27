@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, ffmpeg, Language } = require('../assets/scripts')
+const { AMDI, ffmpeg, Language } = require('queen_amdi_md/dist/scripts')
 const fs = require('fs');
 const extractAudio = ffmpeg;
 const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}` };

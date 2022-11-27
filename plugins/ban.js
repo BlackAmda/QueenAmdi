@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, amdiDB, ban, Language } = require('../assets/scripts')
+const { AMDI, amdiDB, ban, Language } = require('queen_amdi_md/dist/scripts')
 const { banRows, banUSER, banGROUP } = ban
 const { removeBanJids, getBanJidList } = amdiDB.ban_jidDB
 const Lang = Language.getString('ban');

@@ -1,5 +1,5 @@
 const { text } = require('express');
-const { AMDI, allParticipants, isGroup, Language } = require('../assets/scripts')
+const { AMDI, allParticipants, isGroup, Language } = require('queen_amdi_md/dist/scripts')
 const Lang = Language.getString('tags');
 
 AMDI({ cmd: "tagwa", desc: "Tag official whatsapp.", type: "primary", react: "💃🏻" }, (async (amdiWA) => {
@@ -14,9 +14,13 @@ AMDI({ cmd: "dialog", cmdHideInMenu: true, type: "primary" }, (async (amdiWA) =>
 
 AMDI({ cmd: "mobitel", cmdHideInMenu: true, type: "primary" }, (async (amdiWA) => {
     let { sendText } = amdiWA.msgLayout;
-    return await sendText(`Dialog Axiata : @94711755777`, {mentionJIDS: ['94711755777@s.whatsapp.net'], quoted: true, reactEmoji: "✅"});
+    return await sendText(`Mobitel : @94711755777`, {mentionJIDS: ['94711755777@s.whatsapp.net'], quoted: true, reactEmoji: "✅"});
 }));
 
+AMDI({ cmd: "hutch", cmdHideInMenu: true, type: "primary" }, (async (amdiWA) => {
+    let { sendText } = amdiWA.msgLayout;
+    return await sendText(`Hutch : @94788777111`, {mentionJIDS: ['94788777111@s.whatsapp.net'], quoted: true, reactEmoji: "✅"});
+}));
 
 AMDI({ cmd: "tagall", desc: Lang.tagallDESC, example: Lang.tagallEX, type: "primary", react: "🏷️" }, (async (amdiWA) => {
     let { allGroupMembers, allGroupParticipants, isAllowedNumb, footerTXT, groupAdmins, input, isReply, isGroupAdmin, replied_text, sendText } = amdiWA.msgLayout;

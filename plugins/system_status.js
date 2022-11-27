@@ -10,13 +10,12 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, amdiDB, customizeButtons, _default, runtime } = require('../assets/scripts')
+const { AMDI, amdiDB, customizeButtons, _default, Language, runtime } = require('queen_amdi_md/dist/scripts')
 const { aliveTXT0, alivePicURL0 } = _default
 const { getSettings } = amdiDB.settingsDB
 const { customAlive } = customizeButtons
 
 const Package = require('../package.json')
-const Language = require('../language/applyLANG');
 const Lang = Language.getString('system_status');
 
 

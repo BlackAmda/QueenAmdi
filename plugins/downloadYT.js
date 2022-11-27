@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, Language, youtubeDL } = require('../assets/scripts')
+const { AMDI, Language, youtubeDL } = require('queen_amdi_md/dist/scripts')
 const { songList, videoList, sendYTaudio, sendYTdocument, sendYT720, sendYT480, sendYT360, shortVID, shortAUD } = youtubeDL
 const ytdl = require('ytdl-core');
 const yts = require('yt-search');

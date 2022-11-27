@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, amdiDB, _default, _default_list_sections, Language, restore } = require('../assets/scripts')
+const { AMDI, amdiDB, _default, _default_list_sections, Language, restore } = require('queen_amdi_md/dist/scripts')
 const { addStarRates, checkJID, getStarRates, resetRates } = amdiDB.rateDB
 const { inputSettings, resetconnectionDB, getSettingsList, resetSettingsDB } = amdiDB.settingsDB
 const { getGrpSettingsList, resetGrpSettingsDB } = amdiDB.grpSetDB

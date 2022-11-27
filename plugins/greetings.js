@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, amdiDB, Language } = require('../assets/scripts')
+const { AMDI, amdiDB, Language } = require('queen_amdi_md/dist/scripts')
 let { img2url } = require('@blackamda/telegram-image-url')
 const { writeFile } = require('fs/promises');
 const { setWelcome, removeWelcome, getWelcome, setBye, removeBye, getBye } = amdiDB.greetingsDB

@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, Language } = require('../assets/scripts')
+const { AMDI, Language } = require('queen_amdi_md/dist/scripts')
 const gplay = require('google-play-scraper');
 const yts = require( 'yt-search' )
 const Lang = Language.getString('search');

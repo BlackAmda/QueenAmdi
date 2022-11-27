@@ -21,7 +21,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const amdiWA = require('./amdiCore');
+const amdiWA = require('queen_amdi_md/dist/amdiCore');
 
 amdiWA.start().catch(() => {amdiWA.start()});
 
