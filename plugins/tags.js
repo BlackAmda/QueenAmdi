@@ -1,4 +1,3 @@
-const { text } = require('express');
 const { AMDI, allParticipants, isGroup, Language } = require('queen_amdi_md/dist/scripts')
 const Lang = Language.getString('tags');
 
