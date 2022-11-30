@@ -52,8 +52,7 @@ AMDI({ cmd: "delall", desc: Lang.delAllDesc, type: "admin" }, (async (amdiWA) =>
     let num_split = taggedJid.split("@s.whatsapp.net")[0];
     let warnMsg = `*@${num_split} ,${Lang.banMsg}*`;
     //await amdiWA.web.sendMessage(amdiWA.clientJID, { sticker: {url: 'https://i.ibb.co/8m0sGwz/lolwennayanne.webp'} });
-    const banmsg = await amdiWA.web.sendMessage(amdiWA.clientJID, {text: warnMsg, mentions: [taggedJid]}, { quoted: (amdiWA.fromMe === false ? amdiWA.msg : '') } );
-    react("☠️", banmsg)
+    await sendText(warnMsg, {mentionJIDS: [taggedJid], quoted: true, reactEmoji: "☠️"});
     return await setDelAllJids(taggedJid, 'User: +' + taggedJid.split('@')[0], amdiWA.clientJID);
 }));
 

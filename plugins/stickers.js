@@ -12,11 +12,9 @@ you may not use this file except in compliance with the License.*/
 
 const { AMDI, amdiDB, Language, sticker } = require('queen_amdi_core/dist/scripts')
 const { getSettings } = amdiDB.settingsDB
-const axios = require('axios');
 require('dotenv').config();
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
-const { stringify } = require('querystring');
 const Lang = Language.getString('stickers');
 
 
@@ -69,7 +67,7 @@ AMDI({ cmd: ["imagestic", "stickerimage", "imagesticker", "stic2img"], desc: Lan
                 return reply(`*Error:*\n${err.message}`);
             })
             .on("end", async () => {
-                await amdiWA.web.sendMessage(amdiWA.clientJID, { image: fs.readFileSync("result.png"), caption: caption }, {  mimetype: 'image/png', quoted: (amdiWA.fromMe === false ? amdiWA.msg : '') });
+                await amdiWA.web.sendMessage(amdiWA.clientJID, { image: fs.readFileSync("result.png"), caption: caption }, {  mimetype: 'image/png', quoted: (amdiWA.fromMe === false ? amdiWA.msg : ''), ephemeralExpiration: amdiWA.ephDuration });
                 try {
                     fs.unlinkSync(media.file)
                     fs.unlinkSync("result.png");

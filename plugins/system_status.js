@@ -47,16 +47,15 @@ AMDI({ cmd: "ping", desc: Lang.PingDesc, type: "primary", react: "📍" }, (asyn
 
 
 AMDI({ cmd: "system", desc: "Bot Status", cmdHideInMenu: true }, (async (amdiWA) => {
-    let { react } = amdiWA.msgLayout;
+    let { reply, sendText } = amdiWA.msgLayout;
 
     let uptime = await runtime(process.uptime());
     var start = new Date().getTime();
-    var checkSTS = await amdiWA.web.sendMessage(amdiWA.clientJID, { text: '_Checking status..._' });
+    var checkSTS = await sendText('_Checking status..._', {});
     var end = new Date().getTime();
     const usage = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
-    const status = await amdiWA.web.sendMessage(amdiWA.clientJID, { text: '```⚕️Queen Amdi MD - Status⚕️```\n\n' + Lang.upTime + uptime + `\n` + Lang.ping + (end - start) +'\n'+ Lang.memUsage + usage}, { quoted: (amdiWA.fromMe === false ? amdiWA.msg : '') });
-    await amdiWA.web.sendMessage(amdiWA.clientJID, { delete: checkSTS.key })
-    return await react("💻", status)
+    await reply('```⚕️Queen Amdi MD - Status⚕️```\n\n' + Lang.upTime + uptime + `\n` + Lang.ping + (end - start) +'\n'+ Lang.memUsage + usage, "💻");
+    return await amdiWA.web.sendMessage(amdiWA.clientJID, { delete: checkSTS.key });
 }));
 
 

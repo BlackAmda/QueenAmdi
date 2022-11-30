@@ -37,8 +37,8 @@ AMDI({ cmd: ["panel", "list", "menu"], desc: "Queen Amdi Main Menu", type: "prim
    
     const audioURL = amdiVoice
     const pttStatus = true
-    //let mimeType = msgDevice == 'ios' ? 'audio/ogg; codecs=opus' : 'audio/mp4'
-    await sendAudioMsg({ url: audioURL }, {mimetype: "audio/ogg; codecs=opus", ptt: pttStatus});
+    let mimeType = msgDevice == 'ios' ? 'audio/mp4' : 'audio/ogg; codecs=opus'
+    await sendAudioMsg({ url: audioURL }, {mimetype: mimeType, ptt: pttStatus});
     const PANEL_HEADER = await getSettings('PANEL_HEADER');
     let text = !PANEL_HEADER.input || PANEL_HEADER.input == 'default' ? `\n*Hello!* ${sendername}` + Lang.panelText : PANEL_HEADER.input.keywords();
 
