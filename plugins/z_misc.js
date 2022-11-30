@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, currency, CurrencyConverter, _default, Language, Lyrics, news } = require('queen_amdi_md/dist/scripts')
+const { AMDI, currency, CurrencyConverter, _default, Language, Lyrics, news } = require('queen_amdi_core/dist/scripts')
 const axios = require("axios")
 let { img2url } = require('@blackamda/telegram-image-url')
 let currencyConverter = new CurrencyConverter()

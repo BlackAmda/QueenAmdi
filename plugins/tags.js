@@ -1,4 +1,4 @@
-const { AMDI, allParticipants, isGroup, Language } = require('queen_amdi_md/dist/scripts')
+const { AMDI, allParticipants, isGroup, Language } = require('queen_amdi_core/dist/scripts')
 const Lang = Language.getString('tags');
 
 AMDI({ cmd: "tagwa", desc: "Tag official whatsapp.", type: "primary", react: "💃🏻" }, (async (amdiWA) => {

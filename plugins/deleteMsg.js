@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, amdiDB, ban, deleteMsg, Language } = require('queen_amdi_md/dist/scripts')
+const { AMDI, amdiDB, ban, deleteMsg, Language } = require('queen_amdi_core/dist/scripts')
 const { getSettings } = amdiDB.settingsDB
 const { setDelAllJids, getlistDelAllJids } = amdiDB.ban_jidDB
 const { GRP_deleteMsg } = deleteMsg

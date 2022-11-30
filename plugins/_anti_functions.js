@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, amdiDB, antifunctions, Language  } = require('queen_amdi_md/dist/scripts')
+const { AMDI, amdiDB, antifunctions, Language  } = require('queen_amdi_core/dist/scripts')
 const { getSettings } = amdiDB.settingsDB
 const { getGrpSettings } = amdiDB.grpSetDB
 const Lang = Language.getString('anti_functions')

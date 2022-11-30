@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, amdiDB, customizeButtons, _default, Language, Package, runtime } = require('queen_amdi_md/dist/scripts')
+const { AMDI, amdiDB, customizeButtons, _default, Language, Package, runtime } = require('queen_amdi_core/dist/scripts')
 const { aliveTXT0, alivePicURL0 } = _default
 const { getSettings } = amdiDB.settingsDB
 const { customAlive } = customizeButtons
