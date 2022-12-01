@@ -26,7 +26,7 @@ const amdiWA = require('queen_amdi_core/dist/amdiCore');
 amdiWA.start().catch(() => {amdiWA.start()});
 
 const events = async () => {
-    const WASocket = await amdiWA.ev.on("open.connection")
+    const WASocket = await amdiWA.ev.on("open.connection");
     
     amdiWA.ev.on("connection.update", WASocket);
     amdiWA.ev.on("auth.update", WASocket);

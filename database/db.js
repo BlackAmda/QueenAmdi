@@ -4,7 +4,7 @@
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
 * @version 4.0.0
-* @file  db.js - All Queen Amdi Databases chart
+* @file  db.js - All Queen Amdi Databases chart.
 
 © 2022 Black Amda, ANTECH. All rights reserved.
 Licensed under the  GPL-3.0 License;

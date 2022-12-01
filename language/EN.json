@@ -78,7 +78,7 @@
             "resetDBtitle": "⚠️ Database reset options",
             "resetDBtxt": "Please choose an option to reset database.\n\n*Warning: This will erase your databases and may disconnect your bot!*\nMake sure to backup your database by _.backup_ command.",
             "chooseDB": "*Please tell me a database name to restore,*\n  * .restore settings\n * .restore groupset\n  * .restore welcome\n  * .restore goodbye\n  * .restore ban\n  * .restore delall\n  * .restore rates\n",
-            "rateDESC": "Give a rate for bot.",
+            "rateDESC": "Give a rate for the bot.",
             "ratesTitle": "⭐ {} Ratings",
             "rated": "*Thank you for giving us {} star/s!🙂*",
             "alreadyRATED": "*You already rated {} star/s.🙂*"
