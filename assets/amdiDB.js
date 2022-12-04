@@ -25,14 +25,17 @@ const dotenv = require("dotenv");
 dotenv.config();
 const { Pool } = require('pg');
 
-const proConfig = {
+let pool;
+if (process.env.DATABASE_URL !== "local") {
+    const proConfig = {
     connectionString: process.env.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false
     }
-}
+    }
 
-const pool = new Pool(proConfig);
+    pool = new Pool(proConfig);
+}
 
 module.exports = {
     query: (text, params) => pool.query(text, params)
