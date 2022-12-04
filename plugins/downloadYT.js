@@ -12,6 +12,7 @@ you may not use this file except in compliance with the License.*/
 
 const { AMDI, Language, youtubeDL } = require('queen_amdi_core/dist/scripts')
 const { songList, videoList, sendYTaudio, sendYTdocument, sendYT720, sendYT480, sendYT360, shortVID, shortAUD } = youtubeDL
+const svdl = require("@blackamda/song_video_dl")
 const ytdl = require('ytdl-core');
 const yts = require('yt-search');
 const Lang = Language.getString('downloadYT');
@@ -53,7 +54,7 @@ AMDI({ cmd: ["song", "yta", "mp3"], desc: Lang.songDesc, example: Lang.songExa, 
         const isYT = ytIdRegex.exec(input)
         if (!isYT) return reply(Lang.needYTLink, '❓')
 
-        let ytVidInfo = await yts( { videoId: isYT[1] } )
+        /*let ytVidInfo = await yts( { videoId: isYT[1] } )
 
         try {
             like = ytVidInfo.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -72,14 +73,17 @@ AMDI({ cmd: ["song", "yta", "mp3"], desc: Lang.songDesc, example: Lang.songExa, 
             var thumb = ytVidInfo.image
         } catch {
             var thumb = ytVidInfo.thumbnail
-        }
+        }*/
+
+        const result = await svdl.download(input, {type: 'audio'})
+        const ytDlTXT = `📄 ${Lang.Title} ${result.title}\n\n`
 
         const buttons = [
-            {type: "url", displayText: "Watch on YouTube", url: ytVidInfo.url},
-            {type: "click", displayText: "🎶 Audio File", buttonCMD: `${prefix}ytdl audio ${ytVidInfo.url}`},
-            {type: "click", displayText: "📁 Document File", buttonCMD: `${prefix}ytdl document ${ytVidInfo.url}`}
+            {type: "url", displayText: "Watch on YouTube", url: input},
+            {type: "click", displayText: "🎶 Audio File", buttonCMD: `${prefix}ytdl audio ${input}`},
+            {type: "click", displayText: "📁 Document File", buttonCMD: `${prefix}ytdl document ${input}`}
         ]
-        return await sendButtonsMsg(buttons, {text: ytDlTXT, image: {url: thumb}, tagMsg: true, showURL: true});
+        return await sendButtonsMsg(buttons, {text: ytDlTXT, image: {url: result.thumb}, tagMsg: true, showURL: true});
     }
 }));
 
@@ -121,7 +125,7 @@ AMDI({ cmd: ["video", "ytv", "mp4"], desc: Lang.videoDesc, example: Lang.videoEx
         const isYT = ytIdRegex.exec(input)
         if (!isYT) return reply(Lang.needYTLink, '❓')
         
-        let ytVidInfo = await yts( { videoId: isYT[1] } )
+        /*let ytVidInfo = await yts( { videoId: isYT[1] } )
 
         try {
             like = ytVidInfo.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -140,15 +144,17 @@ AMDI({ cmd: ["video", "ytv", "mp4"], desc: Lang.videoDesc, example: Lang.videoEx
             var thumb = ytVidInfo.image
         } catch {
             var thumb = ytVidInfo.thumbnail
-        }
+        }*/
+        const result = await svdl.download(input, {type: 'video'})
+        const ytDlTXT = `📄 ${Lang.Title} ${result.title}\n\n`
 
         const buttons = [
-            {type: "url", displayText: "Watch on YouTube", url: ytVidInfo.url},
-            {type: "click", displayText: "360p Quality", buttonCMD: `${prefix}ytdl 360 ${ytVidInfo.url}`},
-            {type: "click", displayText: "480p Quality", buttonCMD: `${prefix}ytdl 480 ${ytVidInfo.url}`},
-            {type: "click", displayText: "720p Quality", buttonCMD: `${prefix}ytdl 720 ${ytVidInfo.url}`}
+            {type: "url", displayText: "Watch on YouTube", url: input},
+            {type: "click", displayText: "360p Quality", buttonCMD: `${prefix}ytdl 360 ${input}`},
+            {type: "click", displayText: "480p Quality", buttonCMD: `${prefix}ytdl 480 ${input}`},
+            {type: "click", displayText: "720p Quality", buttonCMD: `${prefix}ytdl 720 ${input}`}
         ]
-        return await sendButtonsMsg(buttons, {text: ytDlTXT, image: {url: thumb}, tagMsg: true, showURL: true});
+        return await sendButtonsMsg(buttons, {text: ytDlTXT, image: {url: result.thumb}, tagMsg: true, showURL: true});
     }
 }));
 
