@@ -1,6 +1,6 @@
 {
     "name": "queen_amdi-multi_device",
-    "version": "4.0.0v",
+    "version": "4.0.1v",
     "description": "Queen Amdi [WA Multi-device] - A WhatsApp based third party application that provide many services with a real-time automated conversational experience.",
     "main": "./assets/amdiModule.js",
     "scripts": {
