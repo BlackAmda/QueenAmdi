@@ -30,6 +30,13 @@ AMDI({ cmd: "restart", desc: "Restart the bot", type: "profile", react: "🔃" }
     await restart();
 }));
 
+AMDI({ cmd: "stop", desc: "Stop the bot", type: "profile", react: "📴" }, (async (amdiWA) => {
+    let { reply, restart } = amdiWA.msgLayout
+
+    await reply('*Bot is shutting down...*\n\n_(You have to manually turn on the bot!)_');
+    process.exit(1);
+}));
+
 
 AMDI({ cmd: "backup", desc: Lang.backupDESC, type: "profile", react: "📤" }, (async (amdiWA) => {
     let { sendDocument } = amdiWA.msgLayout
@@ -173,6 +180,8 @@ AMDI({ cmd: "reset", desc: Lang.resetDESC, type: "profile", react: "🚮" }, (as
 
 AMDI({ cmd: "rate", desc: Lang.rateDESC, type: "primary", react: "✨" }, (async (amdiWA) => {
     let { input, prefix, reply, sender, sendButtonMsg, sendListMsg } = amdiWA.msgLayout
+
+    if (process.env.DATABASE_URL === 'local') return reply('Rating feature is not available for local databases! :(');
 
     if (!input) {
         const botname = await getMiscData('BOTNAME');

@@ -53,31 +53,31 @@ AMDI({ cmd: ["song", "yta", "mp3"], desc: Lang.songDesc, example: Lang.songExa, 
         const isYT = ytIdRegex.exec(input)
         if (!isYT) return reply(Lang.needYTLink, '❓')
 
-        let ytVidInfo = (await ytdl.getInfo(input)).videoDetails
+        let ytVidInfo = await yts( { videoId: isYT[1] } )
 
         try {
             like = ytVidInfo.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         } catch {
-            like = '_Like count hidden_'
+            like = '_Unable to get likes count_'
         }
 
         const ytDlTXT = `📄 ${Lang.Title} ${ytVidInfo.title}\n\n` +
-                        `👁️ ${Lang.Views} ${ytVidInfo.viewCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\n\n` +
+                        `👁️ ${Lang.Views} ${ytVidInfo.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\n\n` +
                         `👍🏻 ${Lang.Likes} ${like}\n\n` +
                         `🎛️ ${Lang.Channel} ${ytVidInfo.author.name}\n\n` +
-                        `ℹ️ ${Lang.Category} ${ytVidInfo.category}\n\n` +
+                        `ℹ️ ${Lang.Category} ${ytVidInfo.genre}\n\n` +
                         `📖 ${Lang.Description}\n${ytVidInfo.description}`
 
         try {
-            var thumb = ytVidInfo.thumbnails[4].url
+            var thumb = ytVidInfo.image
         } catch {
-            var thumb = ytVidInfo.thumbnails[2].url
+            var thumb = ytVidInfo.thumbnail
         }
 
         const buttons = [
-            {type: "url", displayText: "Watch on YouTube", url: ytVidInfo.video_url},
-            {type: "click", displayText: "🎶 Audio File", buttonCMD: `${prefix}ytdl audio ${ytVidInfo.video_url}`},
-            {type: "click", displayText: "📁 Document File", buttonCMD: `${prefix}ytdl document ${ytVidInfo.video_url}`}
+            {type: "url", displayText: "Watch on YouTube", url: ytVidInfo.url},
+            {type: "click", displayText: "🎶 Audio File", buttonCMD: `${prefix}ytdl audio ${ytVidInfo.url}`},
+            {type: "click", displayText: "📁 Document File", buttonCMD: `${prefix}ytdl document ${ytVidInfo.url}`}
         ]
         return await sendButtonsMsg(buttons, {text: ytDlTXT, image: {url: thumb}, tagMsg: true, showURL: true});
     }
@@ -121,32 +121,32 @@ AMDI({ cmd: ["video", "ytv", "mp4"], desc: Lang.videoDesc, example: Lang.videoEx
         const isYT = ytIdRegex.exec(input)
         if (!isYT) return reply(Lang.needYTLink, '❓')
         
-        let ytVidInfo = (await ytdl.getInfo(input)).videoDetails
+        let ytVidInfo = await yts( { videoId: isYT[1] } )
 
         try {
             like = ytVidInfo.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         } catch {
-            like = '_Like count hidden_'
+            like = '_Unable to get likes count_'
         }
 
         const ytDlTXT = `📄 ${Lang.Title} ${ytVidInfo.title}\n\n` +
-                        `👁️ ${Lang.Views} ${ytVidInfo.viewCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\n\n` +
+                        `👁️ ${Lang.Views} ${ytVidInfo.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\n\n` +
                         `👍🏻 ${Lang.Likes} ${like}\n\n` +
                         `🎛️ ${Lang.Channel} ${ytVidInfo.author.name}\n\n` +
-                        `ℹ️ ${Lang.Category} ${ytVidInfo.category}\n\n` +
+                        `ℹ️ ${Lang.Category} ${ytVidInfo.genre}\n\n` +
                         `📖 ${Lang.Description}\n${ytVidInfo.description}`
 
         try {
-            var thumb = ytVidInfo.thumbnails[4].url
+            var thumb = ytVidInfo.image
         } catch {
-            var thumb = ytVidInfo.thumbnails[2].url
+            var thumb = ytVidInfo.thumbnail
         }
 
         const buttons = [
-            {type: "url", displayText: "Watch on YouTube", url: ytVidInfo.video_url},
-            {type: "click", displayText: "360p Quality", buttonCMD: `${prefix}ytdl 360 ${ytVidInfo.video_url}`},
-            {type: "click", displayText: "480p Quality", buttonCMD: `${prefix}ytdl 480 ${ytVidInfo.video_url}`},
-            {type: "click", displayText: "720p Quality", buttonCMD: `${prefix}ytdl 720 ${ytVidInfo.video_url}`}
+            {type: "url", displayText: "Watch on YouTube", url: ytVidInfo.url},
+            {type: "click", displayText: "360p Quality", buttonCMD: `${prefix}ytdl 360 ${ytVidInfo.url}`},
+            {type: "click", displayText: "480p Quality", buttonCMD: `${prefix}ytdl 480 ${ytVidInfo.url}`},
+            {type: "click", displayText: "720p Quality", buttonCMD: `${prefix}ytdl 720 ${ytVidInfo.url}`}
         ]
         return await sendButtonsMsg(buttons, {text: ytDlTXT, image: {url: thumb}, tagMsg: true, showURL: true});
     }
