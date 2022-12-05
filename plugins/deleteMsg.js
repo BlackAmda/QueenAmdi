@@ -3,7 +3,7 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.1
+* @version 4.0.2
 * @file  deleteMsg.js - QueenAmdi bot/group/user message remover
 
 © 2022 Black Amda, ANTECH. All rights reserved.
@@ -38,7 +38,7 @@ AMDI({ cmd: "del", desc: Lang.delDesc, type: "profile" }, (async (amdiWA) => {
 
 
 AMDI({ cmd: "delall", desc: Lang.delAllDesc, type: "admin" }, (async (amdiWA) => {
-    let { botNumberJid, input, isGroup, reply, isReply, allowedNumbs, react, taggedJid } = amdiWA.msgLayout;
+    let { botNumberJid, input, isGroup, reply, isReply, allowedNumbs, sendText, taggedJid } = amdiWA.msgLayout;
 
     if (!isGroup) return reply(Lang.notGRP, "❌");
     if (!amdiWA.msg.message.extendedTextMessage) return reply(Lang.giveUSER, "❌");

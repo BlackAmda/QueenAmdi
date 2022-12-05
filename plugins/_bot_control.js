@@ -181,7 +181,7 @@ AMDI({ cmd: "reset", desc: Lang.resetDESC, type: "profile", react: "🚮" }, (as
 AMDI({ cmd: "rate", desc: Lang.rateDESC, type: "primary", react: "✨" }, (async (amdiWA) => {
     let { input, prefix, reply, sender, sendButtonMsg, sendListMsg } = amdiWA.msgLayout
 
-    if (process.env.DATABASE_URL === 'local') return reply('Rating feature is not available for local databases! :(');
+    if (process.env.DATABASE_URL === 'local' || process.env.DATABASE_URL === 'vps') return reply('Rating feature is not available for local databases! :(');
 
     if (!input) {
         const botname = await getMiscData('BOTNAME');
