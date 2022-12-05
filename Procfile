@@ -1,1 +1,1 @@
-web: node ./assets/amdiModule.js
+web: npm run start
