@@ -5,7 +5,8 @@
     "main": "./assets/amdiModule.js",
     "scripts": {
         "AMDI-PACKAGE-INSTALLATION": "npm install",
-        "start": "node ./assets/amdiModule.js"
+        "start": "node ./assets/amdiModule.js",
+        "run-forever": "npm install pm2 -g && pm2 start ./assets/amdiModule.js"
     },
     "repository": {
         "type": "git",
