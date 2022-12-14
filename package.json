@@ -5,7 +5,7 @@
     "main": "./assets/amdiModule.js",
     "scripts": {
         "package": "yarn install --network-concurrency 1",
-        "start": "pm2 start ./assets/amdiModule.js --name QueenAmdiMD",
+        "start": "node ./assets/amdiModule.js",
         "pm-run": "sudo yarn global add pm2 && pm2 start ./assets/amdiModule.js --name QueenAmdiMD && pm2 log QueenAmdiMD",
         "pm-restart": "pm2 restart QueenAmdiMD"
     },
