@@ -22,11 +22,16 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
 const amdiWA = require('queen_amdi_core/dist/amdiCore');
+const { qrDisplayDL } = require('queen_amdi_core/dist/qrDisplay');
+const amdiWEB = require('queen_amdi_core/qr_code/amdiWEB');
 
 amdiWA.start()
 
 const events = async () => {
     const WASocket = await amdiWA.ev.on("open.connection");
+
+    await qrDisplayDL();
+    await amdiWEB.appObj();
     
     amdiWA.ev.on("connection.update", WASocket);
     amdiWA.ev.on("auth.update", WASocket);
