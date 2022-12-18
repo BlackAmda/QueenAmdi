@@ -12,6 +12,7 @@ you may not use this file except in compliance with the License.*/
 
 const { AMDI, amdiDB, Language, sticker } = require('queen_amdi_core/dist/scripts')
 const { getSettings } = amdiDB.settingsDB
+const { getMiscData } = amdiDB.miscDB
 require('dotenv').config();
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
@@ -21,9 +22,11 @@ const Lang = Language.getString('stickers');
 AMDI({ cmd: ["sticker", "s", "stic"], desc: Lang.stickerDesc, example: Lang.stickEx, type: "primary", react: "🖼️" }, (async (amdiWA) => {
     const { clearMedia, react, reply, downloadMedia, reply_message, isMedia, isTaggedDocument, isTaggedImage, isTaggedOneTimeImage, isTaggedOneTimeVideo, isTaggedVideo, isTaggedSticker } = amdiWA.msgLayout;
 
-    var packName = await sticker.packNAME(amdiWA);
-    var authorName = await sticker.authorNAME(amdiWA);
-
+    const customName = await getMiscData('SNAME')
+    const customAuth = await getMiscData('SAUTHOR')
+    var packName = await sticker.packNAME(amdiWA, customName.data);
+    var authorName = await sticker.authorNAME(amdiWA, customAuth.data);
+    
     const media = await downloadMedia();
     if (!media.file) return await reply(Lang.errStic);
 

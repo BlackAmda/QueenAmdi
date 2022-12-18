@@ -31,7 +31,7 @@ AMDI({ cmd: "restart", desc: "Restart the bot", type: "profile", react: "🔃" }
 }));
 
 AMDI({ cmd: "stop", desc: "Stop the bot", type: "profile", react: "📴" }, (async (amdiWA) => {
-    let { reply, restart } = amdiWA.msgLayout
+    let { reply } = amdiWA.msgLayout
 
     await reply('*Bot is shutting down...*\n\n_(You have to manually turn on the bot!)_');
     process.exit(1);
@@ -202,4 +202,16 @@ AMDI({ cmd: "rate", desc: Lang.rateDESC, type: "primary", react: "✨" }, (async
             //await sendButtonMsg(yesorno(prefix, 'rate', 'thankyou'), Lang.rated.format(input), tagMsg = true);
         break;
     };
+}));
+
+
+AMDI({ cmd: "clear", desc: Lang.clearDESC, type: "profile", react: "🚮" }, (async (amdiWA) => {
+    let { reply, lastMessage } = amdiWA.msgLayout;
+    
+    const lastMsgData = await lastMessage(amdiWA.clientJID);
+    await amdiWA.web.chatModify({
+        delete: true,
+        lastMessages: [{ key: lastMsgData.key, messageTimestamp: lastMsgData.messageTimestamp }]
+    }, amdiWA.clientJID);
+    return reply("🚮 Chat Cleared!");
 }));

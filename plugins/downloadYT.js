@@ -55,30 +55,17 @@ AMDI({ cmd: ["song", "yta", "mp3"], desc: Lang.songDesc, example: Lang.songExa, 
         const isYT = ytIdRegex.exec(input)
         if (!isYT) return reply(Lang.needYTLink, '❓')
 
-        const ytdlInfo = {};
-        try {
-            let ytVidInfo = await yts( { videoId: isYT[1] } )
-            try { like = ytVidInfo.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") } catch { like = '_Unable to get likes count_' }
-            ytdlInfo.ytDlTXT = `📄 ${Lang.Title} ${ytVidInfo.title}\n\n` +
-                            `👁️ ${Lang.Views} ${ytVidInfo.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\n\n` +
-                            `👍🏻 ${Lang.Likes} ${like}\n\n` +
-                            `🎛️ ${Lang.Channel} ${ytVidInfo.author.name}\n\n` +
-                            `ℹ️ ${Lang.Category} ${ytVidInfo.genre}\n\n` +
-                            `📖 ${Lang.Description}\n${ytVidInfo.description}`
-            try { ytdlInfo.thumb = ytVidInfo.image } catch { ytdlInfo.thumb = ytVidInfo.thumbnail }
-        } catch (e) {
-            console.log(e)
-            const ytVidList = await findYT(input);
-            ytdlInfo.ytDlTXT = `📄 ${Lang.Title} ${ytVidList[0].title}\n\n`
-        }
+        const ytVidList = await findYT(input);
+        const ytDlTXT = `*🎶 Queen Amdi YT Downloader*\n\n📄 ${Lang.Title} ${ytVidList[0].title}`
 
         const buttons = [
             {type: "url", displayText: "Watch on YouTube", url: input},
             {type: "click", displayText: "🎶 Audio File", buttonCMD: `${prefix}ytdownload audio ${input}`},
-            {type: "click", displayText: "📁 Document File", buttonCMD: `${prefix}ytdownload document ${input}`}
+            {type: "click", displayText: "📁 Document File", buttonCMD: `${prefix}ytdownload document ${input}`},
+            {type: "click", displayText: "ℹ️ Video Info", buttonCMD: `${prefix}ytinfo ${input}`}
         ]
-        const image = ytdlInfo.thumb ? {url: ytdlInfo.thumb} : undefined;
-        return await sendButtonsMsg(buttons, {text: ytdlInfo.ytDlTXT, image: image, tagMsg: true, showURL: true});
+        
+        return await sendButtonsMsg(buttons, {text: ytDlTXT, tagMsg: true, showURL: true});
     }
 }));
 
@@ -121,22 +108,8 @@ AMDI({ cmd: ["video", "ytv", "mp4"], desc: Lang.videoDesc, example: Lang.videoEx
         const isYT = ytIdRegex.exec(input)
         if (!isYT) return reply(Lang.needYTLink, '❓')
         
-        const ytdlInfo = {};
-        try {
-            let ytVidInfo = await yts( { videoId: isYT[1] } )
-            try { like = ytVidInfo.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")  } catch { like = '_Unable to get likes count_' }
-            ytdlInfo.ytDlTXT = `📄 ${Lang.Title} ${ytVidInfo.title}\n\n` +
-                            `👁️ ${Lang.Views} ${ytVidInfo.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\n\n` +
-                            `👍🏻 ${Lang.Likes} ${like}\n\n` +
-                            `🎛️ ${Lang.Channel} ${ytVidInfo.author.name}\n\n` +
-                            `ℹ️ ${Lang.Category} ${ytVidInfo.genre}\n\n` +
-                            `📖 ${Lang.Description}\n${ytVidInfo.description}`
-
-            try { ytdlInfo.thumb = ytVidInfo.image } catch { ytdlInfo.thumb = ytVidInfo.thumbnail }
-        } catch {
-            const ytVidList = await findYT(input)
-            ytdlInfo.ytDlTXT = `📄 ${Lang.Title} ${ytVidList[0].title}\n\n`
-        }
+        const ytVidList = await findYT(input)
+        const ytDlTXT = `*🎞️ Queen Amdi YT Downloader*\n\n📄 ${Lang.Title} ${ytVidList[0].title}`
 
         const buttons = [
             {type: "url", displayText: "Watch on YouTube", url: input},
@@ -144,9 +117,46 @@ AMDI({ cmd: ["video", "ytv", "mp4"], desc: Lang.videoDesc, example: Lang.videoEx
             {type: "click", displayText: "480p Quality", buttonCMD: `${prefix}ytdownload 480 ${input}`},
             {type: "click", displayText: "720p Quality", buttonCMD: `${prefix}ytdownload 720 ${input}`}
         ]
-        const image = ytdlInfo.thumb ? {url: ytdlInfo.thumb} : undefined;
-        return await sendButtonsMsg(buttons, {text: ytdlInfo.ytDlTXT, image: image, tagMsg: true, showURL: true});
+        
+        return await sendButtonsMsg(buttons, {text: ytDlTXT, tagMsg: true, showURL: true});
     }
+}));
+
+
+AMDI({ cmd: "ytinfo", desc: Lang.YTINFO, type: "primary", react: "ℹ️" }, (async (amdiWA) => {
+    let { input, reply, sendImage } = amdiWA.msgLayout;
+
+    if (!input) return reply(Lang.needYTLink, '❓')
+    if (input.includes('playlist')) return reply(Lang.noPL)
+
+    const ytIdRegex = /(?:http(?:s|):\/\/|)(?:(?:www\.|)youtube(?:\-nocookie|)\.com\/(?:watch\?.*(?:|\&)v=|embed|shorts\/|v\/)|youtu\.be\/)([-_0-9A-Za-z]{11})/
+    const isYT = ytIdRegex.exec(input)
+    if (!isYT) return reply(Lang.needYTLink, '❓')
+
+    const findYT = async (name) => {
+        const search = await yts(`${name}`)
+        return search.all;
+    }
+
+    const ytdlInfo = {};
+    try {
+        let ytVidInfo = await yts( { videoId: isYT[1] } )
+        try { like = ytVidInfo.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") } catch { like = '_Unable to get likes count_' }
+        ytdlInfo.ytDlTXT = `📄 ${Lang.Title} ${ytVidInfo.title}\n\n` +
+                        `👁️ ${Lang.Views} ${ytVidInfo.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\n\n` +
+                        `👍🏻 ${Lang.Likes} ${like}\n\n` +
+                        `🎛️ ${Lang.Channel} ${ytVidInfo.author.name}\n\n` +
+                        `ℹ️ ${Lang.Category} ${ytVidInfo.genre}\n\n` +
+                        `📖 ${Lang.Description}\n${ytVidInfo.description}`
+        try { ytdlInfo.thumb = ytVidInfo.image } catch { ytdlInfo.thumb = ytVidInfo.thumbnail }
+    } catch (e) {
+        console.log(e)
+        const ytVidList = await findYT(input);
+        ytdlInfo.ytDlTXT = `📄 ${Lang.Title} ${ytVidList[0].title}\n\n`
+    }
+
+    const image = ytdlInfo.thumb ? {url: ytdlInfo.thumb} : undefined;
+    return await sendImage(image, { quoted: true, caption: ytdlInfo.ytDlTXT });
 }));
 
 

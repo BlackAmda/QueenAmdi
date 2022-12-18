@@ -10,7 +10,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, currency, CurrencyConverter, _default, Language, Lyrics, news } = require('queen_amdi_core/dist/scripts')
+const { AMDI, amdiDB, currency, CurrencyConverter, _default, Language, Lyrics, news } = require('queen_amdi_core/dist/scripts')
 const axios = require("axios")
 let { img2url } = require('@blackamda/telegram-image-url')
 let currencyConverter = new CurrencyConverter()
@@ -21,10 +21,9 @@ const FormData = require('form-data');
 const stream = require('stream');
 const translatte = require('translatte');
 const {promisify} = require('util');
+const { getSettings } = amdiDB.settingsDB;
 const pipeline = promisify(stream.pipeline);
 const Lang = Language.getString('misc');
-
-const getFileName = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}` };
 
 
 AMDI({ cmd: "currency", desc: Lang.currencyDesc, example: Lang.currencyEx, type: "primary", react: "💱" }, (async (amdiWA) => {
@@ -96,7 +95,8 @@ AMDI({ cmd: "lyrics", desc: Lang.LY_DESC, type: "primary", react: "🎼" }, (asy
 AMDI({ cmd: "removebg", desc: Lang.REMOVEBG_DESC, type: "primary", react: "✂️" }, (async (amdiWA) => {
     let { clearMedia, downloadMedia, isMedia, isTaggedImage, react, reply, sendDocument } = amdiWA.msgLayout
 
-    if (!process.env.REMOVE_BG_API) return reply(Lang.NO_API_KEY, "🗝️");
+    const RBG_API = await getSettings('RBG_API');
+    if (!RBG_API.input) return reply(Lang.NO_API_KEY, "🗝️");
 
     if (!isMedia && !isTaggedImage) return reply(Lang.NEED_PHOTO, "❓");
 
@@ -110,7 +110,7 @@ AMDI({ cmd: "removebg", desc: Lang.REMOVEBG_DESC, type: "primary", react: "✂�
     var rbg = await got.stream.post('https://api.remove.bg/v1.0/removebg', {
         body: form,
         headers: {
-            'X-Api-Key': process.env.REMOVE_BG_API
+            'X-Api-Key': RBG_API.input
         }
     }); 
     await pipeline(rbg, fs.createWriteStream('rbg.png'));
@@ -121,6 +121,8 @@ AMDI({ cmd: "removebg", desc: Lang.REMOVEBG_DESC, type: "primary", react: "✂�
 }));
 
 
+/**
+ * ! temporary removed from the bot
 AMDI({ cmd: "news", desc: Lang.NEWSDESC, type: "primary", react: "📰" }, (async (amdiWA) => {
     let { input, prefix, sendImage, sendListMsg, todayDATE } = amdiWA.msgLayout
 
@@ -136,7 +138,7 @@ AMDI({ cmd: "news", desc: Lang.NEWSDESC, type: "primary", react: "📰" }, (asyn
 
     const newsSection = await news.newslist(prefix, Lang);
     return await sendListMsg(listInfo, newsSection);
-}));
+}));*/
 
 
 AMDI({ cmd: ["trt", "translate"], desc: Lang.TRTDESC, example: '.trt from_code/to_code', type: "primary", react: "🔠" }, (async (amdiWA) => {
@@ -186,4 +188,14 @@ AMDI({ cmd: "script", desc: "Queen Amdi deploy site info", react: "💃🏻", ty
     ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴀ.ɴ.ᴛᴇᴄʜ 🐝
     `
     return await sendText(text, {ExAdReply: "Default", quoted: "WhatsApp"})
+}));
+
+
+AMDI({ cmd: "device", desc: Lang.DEVICEDESC, type: "profile", react: "📟"}, (async (amdiWA) => {
+    let { checkDevice, isReply, reply, sendText, taggedJid } = amdiWA.msgLayout;
+
+    if (!isReply) return reply(Lang.NEED_REPLY);
+
+    const msgDevice = checkDevice(amdiWA.msg);
+    return await sendText(`*@${taggedJid.split('@')[0]} is using :* ${msgDevice} Whatsapp`, {mentionJIDS: [taggedJid], quoted: true});
 }));
