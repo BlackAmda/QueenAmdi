@@ -14,7 +14,7 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.2
+* @version 4.0.3
 * @file  amdiSettings.js - QueenAmdi config var exports
 
 © 2022 Black Amda, ANTECH. All rights reserved.
@@ -25,7 +25,7 @@ const fs = require('fs');
 if (fs.existsSync('amdiSettings.env')) require('dotenv').config({ path: './assets/amdiSettings.env' });
 
 module.exports = {
-    VERSION: 'Queen Amdi 4.0.2v - Multi-Device',
+    VERSION: 'Queen Amdi 4.0.3v - Multi-Device',
     DATABASE_URL: process.env.DATABASE_URL ===  undefined ? 'local' : process.env.DATABASE_URL,
     LANGUAGE: process.env.LANGUAGE === undefined ? 'EN' : process.env.LANGUAGE,
     isHEROKU: process.env.HEROKU === undefined ? '' : process.env.HEROKU,

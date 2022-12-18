@@ -5,7 +5,7 @@
     "AUTHOR": "BlackAmda",
     "STRINGS": {
         "amdiModule": {
-            "version": "4.0.2v",
+            "version": "4.0.3v",
             "existWA": "🔄️ Checking existing WA connection data...",
             "genNEWses": "♻️ Generating new session...",
             "waConImport": "✅ WA connection data imported!",

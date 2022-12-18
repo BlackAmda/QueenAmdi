@@ -3,7 +3,7 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.2
+* @version 4.0.3
 * @file  system_status.js - QueenAmdi system status
 
 © 2022 Black Amda, ANTECH. All rights reserved.
