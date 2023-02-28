@@ -25,6 +25,12 @@
 
 **[» Join beta test group](https://chat.whatsapp.com/Kk9FcrtGYzX1xzky4b1aCJ)**
 
+### For heroku deployers: [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+**[» See heroku deploy instructions](https://amdaniwasa.com/#install)**
+
+**[» See other deploy methods](https://amdaniwasa.com/#install)**
+
 ## 🐝 Queen Amdi Team - A.N.Tech *[ Since 2016 ]*
 
 | <a href="https://amdaniwasa.com"><img src="https://avatars.githubusercontent.com/u/83172207?v=4" width=80 height=80></a> | <a href="https://www.instagram.com/sinhalaya_official_/"><img src="https://avatars.githubusercontent.com/u/89065560?v=4" width=80 height=80></a> | <a href="https://www.instagram.com/saji_x.x_4/"><img src="https://avatars.githubusercontent.com/u/88334967?v=4" width=80 height=80></a> |
