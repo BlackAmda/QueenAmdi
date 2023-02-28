@@ -3,7 +3,7 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.3
+* @version 4.0.5
 * @file  grpManager.js - QueenAmdi group managing basic options
 
 © 2022 Black Amda, ANTECH. All rights reserved.
@@ -11,6 +11,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
 const { AMDI, amdiDB, _default_list_sections, grpManage, Language } = require('queen_amdi_core/dist/scripts')
+const { getAntiLink, insertAntiLink } = amdiDB.antilinkDB
 const { getSettings } = amdiDB.settingsDB
 const { grpSettings } = _default_list_sections
 const Lang = Language.getString('grpManager')
@@ -22,7 +23,7 @@ AMDI({ cmd: "group", desc: Lang.grpDESC, type: "admin", react: "🕹️" }, (asy
     var listInfo = {}
     listInfo.title = Lang.grpSetTitle.format(groupName)
     listInfo.text = Lang.grpSetText
-    listInfo.buttonTXT = 'default'  
+    listInfo.buttonTXT = 'default'
 
     const sections = grpSettings(prefix, amdiWA.clientJID);
     return await sendListMsg(listInfo, sections);
@@ -54,7 +55,7 @@ AMDI({ cmd: "kick", desc: Lang.kickDESC, example: Lang.kickEXA, type: "admin", r
     let { allowedNumbs, botNumberJid, groupMetadata, input, inputObj, isReply, isUSERExists, reply, sendText, taggedJid } = amdiWA.msgLayout
 
     if (!isReply && !input) return reply(Lang.needUSER, "❓")
-    
+
     const isUSERExist = await isUSERExists(taggedJid);
     if (!isUSERExist) return reply(Lang.cantfinduser, "❓");
     if (taggedJid == groupMetadata.owner) return reply(Lang.ISOWNER, "❌");
@@ -69,7 +70,7 @@ AMDI({ cmd: "kick", desc: Lang.kickDESC, example: Lang.kickEXA, type: "admin", r
         reason = !kickMSG.input ? Lang.kicked : kickMSG.input
     }
     try {
-        await sendText(`@${taggedJid.split('@')[0]}, ${reason}`, {mentionJIDS: [taggedJid]});
+        await sendText(`@${taggedJid.split('@')[0]}, ${reason}`, { mentionJIDS: [taggedJid] });
         return await amdiWA.web.groupParticipantsUpdate(amdiWA.clientJID, [taggedJid], "remove");
     } catch (e) {
         console.log(e);
@@ -78,18 +79,18 @@ AMDI({ cmd: "kick", desc: Lang.kickDESC, example: Lang.kickEXA, type: "admin", r
 }));
 
 
-AMDI({ cmd: "promote", desc: Lang.PROMOTE_DESC, example: Lang.PromoEX,type: "admin", react: "🔝" }, (async (amdiWA) => {
+AMDI({ cmd: "promote", desc: Lang.PROMOTE_DESC, example: Lang.PromoEX, type: "admin", react: "🔝" }, (async (amdiWA) => {
     let { input, isReply, checkAdmin, reply, sendText, taggedJid } = amdiWA.msgLayout
 
     if (!isReply && !input) return reply(Lang.needUSER, "❓")
-    
+
     const isUserAdmin = await checkAdmin(taggedJid);
     if (isUserAdmin) return reply(Lang.ALREADY_PROMOTED, "❓");
 
     const promoteMSG = await getSettings('PROMMSG')
     const PROMOTED = !promoteMSG.input ? Lang.PROMOTED : promoteMSG.input
     try {
-        await sendText(`@${taggedJid.split('@')[0]}, ${PROMOTED}`, {mentionJIDS: [taggedJid]});
+        await sendText(`@${taggedJid.split('@')[0]}, ${PROMOTED}`, { mentionJIDS: [taggedJid] });
         return await amdiWA.web.groupParticipantsUpdate(amdiWA.clientJID, [taggedJid], "promote");
     } catch (e) {
         console.log(e);
@@ -102,7 +103,7 @@ AMDI({ cmd: "demote", desc: Lang.DEMOTE_DESC, example: Lang.DemoEX, type: "admin
     let { groupMetadata, input, isReply, checkAdmin, reply, sendText, taggedJid } = amdiWA.msgLayout
 
     if (!isReply && !input) return reply(Lang.needUSER, "❓")
-    
+
     const isUserAdmin = await checkAdmin(taggedJid);
     if (taggedJid == groupMetadata.owner) return;
     if (!isUserAdmin) return reply(Lang.ALREADY_NOT_ADMIN, "❓");
@@ -110,7 +111,7 @@ AMDI({ cmd: "demote", desc: Lang.DEMOTE_DESC, example: Lang.DemoEX, type: "admin
     const demoteMSG = await getSettings('DEMOMSG')
     const DEMOTED = !demoteMSG.input ? Lang.DEMOTED : demoteMSG.input
     try {
-        await sendText(`@${taggedJid.split('@')[0]}, ${DEMOTED}`, {mentionJIDS: [taggedJid]});
+        await sendText(`@${taggedJid.split('@')[0]}, ${DEMOTED}`, { mentionJIDS: [taggedJid] });
         return await amdiWA.web.groupParticipantsUpdate(amdiWA.clientJID, [taggedJid], "demote");
     } catch (e) {
         console.log(e);
@@ -162,7 +163,7 @@ AMDI({ cmd: "unlock", desc: Lang.UNLOCKGRP_DESC, type: "admin", react: "🔒" },
 AMDI({ cmd: "invite", desc: Lang.inviteDESC, type: "admin", react: "🫱🏻‍🫲🏻" }, (async (amdiWA) => {
     let { groupName, sendClipboard } = amdiWA.msgLayout;
     const invite_code = await amdiWA.web.groupInviteCode(amdiWA.clientJID);
-    return await sendClipboard({text: `*${groupName}*\n\nhttps://chat.whatsapp.com/${invite_code}\n`, clip: `https://chat.whatsapp.com/${invite_code}`});
+    return await sendClipboard({ text: `*${groupName}*\n\nhttps://chat.whatsapp.com/${invite_code}\n`, clip: `https://chat.whatsapp.com/${invite_code}` });
 }));
 
 
@@ -190,4 +191,74 @@ AMDI({ cmd: "grpdesc", desc: Lang.GRPDESCdesc, example: Lang.grpDESCEX, type: "a
 
     await amdiWA.web.groupUpdateDescription(amdiWA.clientJID, input);
     return await reply(Lang.DESCGRP, "✔️");
+}));
+
+
+AMDI({ cmd: "antilink", desc: Lang.ANTILINK_DESC, type: "admin", react: "⛔" }, (async (amdiWA) => {
+    let { footerTXT, input, prefix, reply, sendListMsg } = amdiWA.msgLayout;
+
+const helpTXT = `*📖 Anti-Links setup instructions*
+
+◆ *Configure Anti-Links:* ${prefix}antilink
+
+◆ ${Lang.ALLOWURLSET}
+    Example: .antilink url=facebook.com,youtube.com
+
+◆ ${Lang.NOTALLOWURLSET}
+    Example: .antilink url=!chat.whatsapp.com,!twiiter.com
+
+${footerTXT}`
+
+    const antilink = await getAntiLink(amdiWA.clientJID)
+    if (!input) {
+        var listInfo = {}
+        listInfo.title = Lang.ANTILINK_TITLE
+        listInfo.text = Lang.ANTILINK_TXT
+        listInfo.buttonTXT = 'default'
+
+        const sections = [
+            {
+                title: "Anti-Link switch",
+                rows: [
+                    { title: "🔛 Enable anti-links", rowId: `${prefix}antilink on` },
+                    { title: "📴 Disable anti-links", rowId: `${prefix}antilink off` }
+                ]
+            },
+            {
+                title: "Anti-Link setup",
+                rows: [
+                    { title: 'ℹ️ Anti-Link Settings', rowId: `${prefix}antilink check` },
+                    { title: "🚮 Delete links from the chat.", rowId: `${prefix}antilink action/delete` },
+                    { title: "🚫 Kick the user when share link in the chat.", rowId: `${prefix}antilink action/kick` },
+                    { title: "📖 Anti-Links setup instructions", rowId: `${prefix}antilink help` }
+                ]
+            }
+        ]
+
+        return await sendListMsg(listInfo, sections);
+    }
+    else if (input == 'on' || input == 'off') {
+        if ((input === 'off' && !antilink.enabled) || (input === 'on' && antilink.enabled)) return await reply(Lang.alreadySetted, "❌");
+        await insertAntiLink(amdiWA.clientJID, input === 'on');
+        return await reply('```Anti-Links' + ' ⮕ ' + (input == 'on' ? 'Enabled.' : 'Disabled.') + '```' + `\n\nUse *${prefix}antilink help* to get configure instructions`, "✅");
+    }
+    else if (input == 'check') {
+        return await reply(`*Anti-Links Status:* ${antilink.enabled ? 'Enabled' : 'Disabled.'}\n*${antilink.allowedUrls.includes("!") ? "Not Allowed URLs" : "Allowed URLs"} :* ${antilink.allowedUrls}\n*Action :* ${antilink.action}`);
+    }
+    else if (input == 'help') {
+        return await reply(helpTXT);
+    }
+    else if (input.startsWith('action/')) {
+        await insertAntiLink(amdiWA.clientJID, input);
+        const action = input.replace('action/', '');
+        if (!['delete', 'kick'].includes(action)) return;
+        return await reply('```' + 'Anti-Links action' + ' ⮕ ' + action + '```' + Lang.settingAdded, "✅");
+    }
+    else if (input.startsWith('url=')) {
+        const URLs = input.replace('url=', '');
+        await insertAntiLink(amdiWA.clientJID, URLs);
+        return await reply(`_URLs for Anti-Links checking added. ⮕ ${input}_`);
+    } else {
+        return await reply(helpTXT);
+    }
 }));

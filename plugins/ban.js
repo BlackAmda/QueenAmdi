@@ -3,7 +3,7 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.3
+* @version 4.0.5
 * @file  ban.js - QueenAmdi group/user ban manager
 
 © 2022 Black Amda, ANTECH. All rights reserved.
@@ -34,14 +34,11 @@ AMDI({ cmd: "unban", desc: Lang.unbandesc, example: Lang.unbanEx, type: "profile
 
     if (isGroup) {
         if (!amdiWA.msg.message.extendedTextMessage) return reply(Lang.unbanEx)
-        
-        await reply(`✅ *Unbanned*`, "🔓");
-        const unblockJIDfunc = async () => { await removeBanJids(taggedJid) };
-        setTimeout(unblockJIDfunc ,5000);
+        await removeBanJids(taggedJid)
+        return await reply(`✅ *Unbanned*`, "🔓");
     } else if (!isGroup) {
-        await reply(`✅ *Unbanned*`, "🔓");
-        const unblockJIDfunc = async () => { await removeBanJids(amdiWA.clientJID) };
-        setTimeout(unblockJIDfunc ,5000);
+        await removeBanJids(amdiWA.clientJID)
+        return await reply(`✅ *Unbanned*`, "🔓");
     } else {
         return reply(Lang.unbanEx)
     }

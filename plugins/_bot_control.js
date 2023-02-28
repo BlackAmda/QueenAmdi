@@ -12,23 +12,25 @@ you may not use this file except in compliance with the License.*/
 
 const { AMDI, amdiDB, _default, _default_list_sections, Language, restore } = require('queen_amdi_core/dist/scripts')
 const { addStarRates, checkJID, getStarRates, resetRates } = amdiDB.rateDB
-const { inputSettings, resetconnectionDB, getSettingsList, resetSettingsDB } = amdiDB.settingsDB
+const { getAntiLink, insertAntiLink, resetAntiLinkDB } = amdiDB.antilinkDB
+const { inputSettings, getSettingsList, resetSettingsDB } = amdiDB.settingsDB
 const { getGrpSettingsList, resetGrpSettingsDB } = amdiDB.grpSetDB
-const { getMiscData } = amdiDB.miscDB
+const { getMiscData, getMiscDataList } = amdiDB.miscDB
 const { getAllDelJids, getBanJidList, resetBanDB, resetDelAllDB } = amdiDB.ban_jidDB
 const { getAllWelcome, getAllBye, resetWelcomeDB, resetByeDB } = amdiDB.greetingsDB
-const { rateList, resetLIST, rateText } = _default_list_sections
+const { rateList, reactList, resetLIST, rateText } = _default_list_sections
 const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}` };
 const fs = require('fs');
 const { writeFile } = require('fs/promises');
 const Lang = Language.getString('botCTRL');
 
 AMDI({ cmd: "restart", desc: "Restart the bot", type: "profile", react: "🔃" }, (async (amdiWA) => {
-    let { reply, restart } = amdiWA.msgLayout
+    let { reply, restart_sys } = amdiWA.msgLayout
 
     await reply('*Restarting...*');
-    await restart();
+    await restart_sys();
 }));
+
 
 AMDI({ cmd: "stop", desc: "Stop the bot", type: "profile", react: "📴" }, (async (amdiWA) => {
     let { reply } = amdiWA.msgLayout
@@ -39,7 +41,7 @@ AMDI({ cmd: "stop", desc: "Stop the bot", type: "profile", react: "📴" }, (asy
 
 
 AMDI({ cmd: "backup", desc: Lang.backupDESC, type: "profile", react: "📤" }, (async (amdiWA) => {
-    let { sendDocument } = amdiWA.msgLayout
+    let { reply, sendDocument } = amdiWA.msgLayout
     
     try {    
         const settingsDB = await getSettingsList();
@@ -103,7 +105,7 @@ AMDI({ cmd: "restore", desc: Lang.restoreDESC, type: "profile", react: "📥" },
 
 
 AMDI({ cmd: "reset", desc: Lang.resetDESC, type: "profile", react: "🚮" }, (async (amdiWA) => {
-    let { input, prefix, reply, sendListMsg } = amdiWA.msgLayout
+    let { input, prefix, reply, sendListMsg, resetconnectionDB } = amdiWA.msgLayout
 
     try {
         switch (input) { 
@@ -158,8 +160,14 @@ AMDI({ cmd: "reset", desc: Lang.resetDESC, type: "profile", react: "🚮" }, (as
                 await resetRates();
                 await reply(Lang.resetted.format(input), "✔️");
             break;
+
+            case 'AntiLinkDB': 
+                await resetAntiLinkDB();
+                await reply(Lang.resetted.format(input), "✔️");
+            break;
             
             case 'allDB':
+                await resetAntiLinkDB();
                 await resetBanDB();
                 await resetDelAllDB();
                 await resetWelcomeDB();
@@ -181,15 +189,13 @@ AMDI({ cmd: "reset", desc: Lang.resetDESC, type: "profile", react: "🚮" }, (as
 AMDI({ cmd: "rate", desc: Lang.rateDESC, type: "primary", react: "✨" }, (async (amdiWA) => {
     let { input, prefix, reply, sender, sendButtonMsg, sendListMsg } = amdiWA.msgLayout
 
-    if (process.env.DATABASE_URL === 'local' || process.env.DATABASE_URL === 'vps') return reply('Rating feature is not available for local databases! :(');
-
     if (!input) {
         const botname = await getMiscData('BOTNAME');
         let BOTNAME = !botname.data ? 'Queen Amdi' : botname.data
 
         var listInfo = {}
         listInfo.title = Lang.ratesTitle.format(BOTNAME)
-        listInfo.buttonTXT = 'default' 
+        listInfo.buttonTXT = 'Select a rating' 
         listInfo.text = await rateText();
         return await sendListMsg(listInfo, rateList(prefix));
     }
@@ -197,21 +203,40 @@ AMDI({ cmd: "rate", desc: Lang.rateDESC, type: "primary", react: "✨" }, (async
     switch (input) { case 'one': case 'two': case 'three': case 'four': case 'five':
             const isRated = await checkJID(sender, input);
             if (isRated) return await reply(Lang.alreadyRATED.format(input));
+            console.log(sender)
             await addStarRates(sender, input);
-            await reply(Lang.rated.format(input), "✔️");
+            await reply(Lang.rated.format(input, input == 'five' ? '🤩' : '🙂'), "✔️");
             //await sendButtonMsg(yesorno(prefix, 'rate', 'thankyou'), Lang.rated.format(input), tagMsg = true);
         break;
     };
 }));
 
-
 AMDI({ cmd: "clear", desc: Lang.clearDESC, type: "profile", react: "🚮" }, (async (amdiWA) => {
-    let { reply, lastMessage } = amdiWA.msgLayout;
+    let { lastMessage, reply } = amdiWA.msgLayout;
     
-    const lastMsgData = await lastMessage(amdiWA.clientJID);
-    await amdiWA.web.chatModify({
-        delete: true,
-        lastMessages: [{ key: lastMsgData.key, messageTimestamp: lastMsgData.messageTimestamp }]
-    }, amdiWA.clientJID);
+    await amdiWA.web.chatModify({ delete: true, lastMessages: lastMessage}, amdiWA.clientJID);
     return reply("🚮 Chat Cleared!");
+}));
+
+AMDI({ cmd: "reacts", desc: Lang.RL_DESC, type: "profile", react: "💟" }, (async (amdiWA) => {
+    let { input, prefix, sendListMsg } = amdiWA.msgLayout
+
+    if (!input) {
+        const botname = await getMiscData('BOTNAME');
+        const miscData = await getMiscDataList();
+        let BOTNAME = !botname.data ? 'Queen Amdi' : botname.data
+
+        var listInfo = {}
+        listInfo.title = Lang.RL_Title.format(BOTNAME)
+        listInfo.buttonTXT = 'default' 
+        listInfo.text = Lang.RL_Text;
+        return await sendListMsg(listInfo, reactList(prefix, miscData));
+    }
+}));
+
+AMDI({ cmd: "clean", desc: "Reset process control limits", type: "profile", react: "♻️" }, (async (amdiWA) => {
+    let { clearProcess, reply } = amdiWA.msgLayout;
+    
+    clearProcess();
+    return reply("♻️ Reset process controller!");
 }));

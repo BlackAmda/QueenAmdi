@@ -14,7 +14,7 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.3
+* @version 4.0.5
 * @file  _amdi_menu.js - QueenAmdi bot main menu
 
 © 2022 Black Amda, ANTECH. All rights reserved.
@@ -32,9 +32,11 @@ const Lang = Language.getString('amdiMenu');
  * @cmdTypes primary, download, logo, profile, admin
 */
 
-AMDI({ cmd: ["panel", "list", "menu"], desc: "Queen Amdi Main Menu", type: "primary", react: "📂", cmdHideInMenu: true }, (async (amdiWA) => {
-    let { prefix, sendAudioMsg, sendListMsg, msgDevice, sendername } = amdiWA.msgLayout;
+AMDI({ cmd: ["panel", "list", "menu"], desc: "Queen Amdi Main Menu", type: "primary", react: "📂" }, (async (amdiWA) => {
+    let { input, prefix, sendAudioMsg, sendListMsg, msgDevice, sendername } = amdiWA.msgLayout;
    
+    if (input) return;
+
     const audioURL = amdiVoice
     const pttStatus = true
     let mimeType = msgDevice == 'ios' ? 'audio/mp4' : 'audio/ogg; codecs=opus'
@@ -45,7 +47,7 @@ AMDI({ cmd: ["panel", "list", "menu"], desc: "Queen Amdi Main Menu", type: "prim
     var listInfo = {}
     listInfo.title = Lang.panelTitle
     listInfo.text = text
-    listInfo.buttonTXT = 'default'
+    listInfo.buttonTXT = 'Select category'
 
     const sections = panelList(prefix);
     return await sendListMsg(listInfo, sections);

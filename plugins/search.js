@@ -3,20 +3,19 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.3
+* @version 4.0.5
 * @file  search.js - QueenAmdi search engine features
 
 © 2022 Black Amda, ANTECH. All rights reserved.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, Language } = require('queen_amdi_core/dist/scripts')
-const gplay = require('google-play-scraper');
+const { AMDI, apkDL_List, blackamda_API, Language, Packages } = require('queen_amdi_core/dist/scripts')
+const { axios } = Packages;
 const yts = require( 'yt-search' )
 const Lang = Language.getString('search');
 
 const searchTITLE = '🔎 *Queen Amdi Search Engine*'
-
 
 AMDI({ cmd: ["yt", "yts", "ytsearch"], desc: Lang.YTSDESC, type: "primary", react: "🔎" }, (async (amdiWA) => {
     let { footerTXT, input, react, reply } = amdiWA.msgLayout;
@@ -38,24 +37,44 @@ AMDI({ cmd: ["yt", "yts", "ytsearch"], desc: Lang.YTSDESC, type: "primary", reac
 
 
 AMDI({ cmd: ["ps", "playstore"], desc: Lang.PSDESC, type: "primary", react: "🔎" }, (async (amdiWA) => {
-    let { footerTXT, input, react, reply } = amdiWA.msgLayout;
+    let { footerTXT, input, isPlaystore, prefix, react, reply, sendImage, sendListMsg } = amdiWA.msgLayout;
 
     if (!input) return await reply(Lang.needTXT);
 
     try {
-        const play = await gplay.search({term: input, num: 10})
-        ini_txt = ""
-            for (var x of play) {
-                let price = x.free ? 'Free' : `${x.price} ${x.currency}`
-                ini_txt += `📚 *Name* : ${x.title}\n`
-                ini_txt += `👨🏻‍💻 *Developer* : ${x.developer}\n`
-                ini_txt += `💵 *Price* : ${price}\n`
-                ini_txt += `⭐ *Ratings* : ${x.scoreText}\n`
-                ini_txt += `⚙️ *Playstore Link* : ${x.url}\n`
-                ini_txt += `📁 *Package name* : ${x.appId}\n\n────────────────\n\n`
-            }
-        await reply(`${searchTITLE}\n${Lang.PSTORE}\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​\n${ini_txt}\n\n${footerTXT}`);
-        return await react("✔️", amdiWA.msg);
+        if (input && isPlaystore(input)) {
+            const psAPI = await blackamda_API("playstore", `package=${input}`, amdiWA.botNumberJid);
+            const response = await axios.get(psAPI);
+            const json = response.data
+
+            if (json.status.error) return await reply("Error".fetchError([{ message: json.status.message }]), "❌", 1);
+
+        const text = `
+    📚 *Name* : ${json.app_name}
+    🧰 *Version* : ${json.version}
+    👨🏻‍💻 *Developer* : ${json.developer}
+    📲 *Installs* : ${json.installs}
+    📁 *Package name* : ${json.package}
+`
+            await sendImage({url: json.icon}, {caption: `${searchTITLE}\n${Lang.PSTORE}\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​${text}\n\n${footerTXT}`, quoted: true});
+            return await react("✔️", amdiWA.msg);
+        } else if (input) {
+            const psAPI = await blackamda_API("search", `platform=playstore&name=${input}`, amdiWA.botNumberJid);
+            const response = await axios.get(psAPI);
+            const json = response.data
+            
+            if (json.status.error) return await reply("Error".fetchError({ message: json.status.message }), "❌", 1);
+    
+            var listInfo = {}
+            listInfo.title = searchTITLE
+            listInfo.text = `\n${Lang.PSTORE}\n`
+            listInfo.buttonTXT = 'Select app'
+    
+            const sections = apkDL_List(prefix, json.data, true);
+    
+            await sendListMsg(listInfo, sections)
+            return await react("✔️", amdiWA.msg);
+        } 
     } catch (e) {
         console.log(e);
         await reply(Lang.NOT_FOUND.format("Playstore"), "☹️");

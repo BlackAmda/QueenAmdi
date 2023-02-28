@@ -3,17 +3,18 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.3
+* @version 4.0.5
 * @file  stickers.js - QueenAmdi sticker maker
 
 © 2022 Black Amda, ANTECH. All rights reserved.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, amdiDB, Language, sticker } = require('queen_amdi_core/dist/scripts')
+const { AMDI, amdiDB, emoji2sticker, isEmoji, Language, sticker } = require('queen_amdi_core/dist/scripts')
 const { getSettings } = amdiDB.settingsDB
 const { getMiscData } = amdiDB.miscDB
 require('dotenv').config();
+const axios = require("axios");
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
 const Lang = Language.getString('stickers');
@@ -26,7 +27,7 @@ AMDI({ cmd: ["sticker", "s", "stic"], desc: Lang.stickerDesc, example: Lang.stic
     const customAuth = await getMiscData('SAUTHOR')
     var packName = await sticker.packNAME(amdiWA, customName.data);
     var authorName = await sticker.authorNAME(amdiWA, customAuth.data);
-    
+
     const media = await downloadMedia();
     if (!media.file) return await reply(Lang.errStic);
 
@@ -42,7 +43,7 @@ AMDI({ cmd: ["sticker", "s", "stic"], desc: Lang.stickerDesc, example: Lang.stic
             await sticker.changeINFO(amdiWA, media.file, packName, authorName, media.isAnimated);
         }
         return await react("✔️");
-    } catch (e) { 
+    } catch (e) {
         console.log(e);
         return await reply("Error".fetchError(e), "❌", 1);
     }
@@ -70,7 +71,7 @@ AMDI({ cmd: ["imagestic", "stickerimage", "imagesticker", "stic2img"], desc: Lan
                 return reply(`*Error:*\n${err.message}`);
             })
             .on("end", async () => {
-                await amdiWA.web.sendMessage(amdiWA.clientJID, { image: fs.readFileSync("result.png"), caption: caption }, {  mimetype: 'image/png', quoted: (amdiWA.fromMe === false ? amdiWA.msg : ''), ephemeralExpiration: amdiWA.ephDuration });
+                await amdiWA.web.sendMessage(amdiWA.clientJID, { image: fs.readFileSync("result.png"), caption: caption }, { mimetype: 'image/png', quoted: (amdiWA.fromMe === false ? amdiWA.msg : ''), ephemeralExpiration: amdiWA.ephDuration });
                 try {
                     fs.unlinkSync(media.file)
                     fs.unlinkSync("result.png");
@@ -122,7 +123,7 @@ AMDI({ cmd: ["sticpack", "bulksticker"], desc: Lang.STICPACKDESC, type: "primary
     var packName = await sticker.packNAME(amdiWA);
     var authorName = await sticker.authorNAME(amdiWA);
     const media = await downloadMedia();
-    
+
     if ((isTaggedDocument && media.ext === "zip") || (isMedia && media.ext === "zip")) {
         try {
             await react("🔄️");
@@ -136,5 +137,69 @@ AMDI({ cmd: ["sticpack", "bulksticker"], desc: Lang.STICPACKDESC, type: "primary
         }
     } else {
         return await reply(Lang.STICZIP, "❓");
+    }
+}));
+
+
+AMDI({ cmd: ["emoji", "emostic"], desc: Lang.EMO2STICDESC, type: "primary", react: "🔄️" }, (async (amdiWA) => {
+    const { prefix, reply, input, isLINK, sendListMsg } = amdiWA.msgLayout;
+
+    try {
+        if (!isLINK(input)) {
+            if (!input || !input.match(isEmoji())) return await reply(Lang.GIVE_EMOJI, "❓");
+            const emojiData = await emoji2sticker(prefix, input, "emostic");
+
+            var listInfo = {}
+            listInfo.title = emojiData.title
+            listInfo.text = emojiData.text
+            listInfo.buttonTXT = emojiData.buttonTXT
+
+            return await sendListMsg(listInfo, emojiData.section);
+        } else {
+            return await sticker.sendSticker(amdiWA, input);
+        }
+    } catch (e) {
+        console.log(e);
+        return await reply("Error".fetchError(e), "❌", 1);
+    }
+}));
+
+
+AMDI({ cmd: ["pemoji", "emoimg"], desc: Lang.EMO2PICDESC, type: "primary", react: "🖼️" }, (async (amdiWA) => {
+    const { footerTXT, prefix, reply, input, isLINK, sendListMsg, sendImage } = amdiWA.msgLayout;
+
+    try {
+        if (!isLINK(input)) {
+            if (!input || !input.match(isEmoji())) return await reply(Lang.GIVE_EMOJI, "❓");
+            const emojiData = await emoji2sticker(prefix, input, "emoimg");
+
+            var listInfo = {}
+            listInfo.title = emojiData.title
+            listInfo.text = emojiData.text
+            listInfo.buttonTXT = emojiData.buttonTXT
+
+            return await sendListMsg(listInfo, emojiData.section);
+        } else {
+            return await sendImage({ url: input }, { caption: footerTXT, quoted: true });
+        }
+    } catch (e) {
+        console.log(e);
+        return await reply("Error".fetchError(e), "❌", 1);
+    }
+}));
+
+
+AMDI({ cmd: ["emomix", "mixemoji"], desc: Lang.EMOMIXDESC, example: Lang.EMOMIX_EX, type: "primary", react: "🎨" }, (async (amdiWA) => {
+    const { reply, input } = amdiWA.msgLayout;
+
+    try {
+        if (!input || !input.includes("+")) return await reply(Lang.GIVE2EMOJI, "❓");
+        const emojis = input.split("+");
+        const response = await axios.get('https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=' + encodeURI(emojis[0]) + '_' + encodeURI(emojis[1]))
+        if (response.data.results.length === 0) return await reply("*Can't mix these 2 emojis!*");
+        return await sticker.sendSticker(amdiWA, response.data.results[0].url);
+    } catch (e) {
+        console.log(e);
+        return await reply("Error".fetchError(e), "❌", 1);
     }
 }));

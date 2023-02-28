@@ -3,19 +3,18 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.3
+* @version 4.0.5
 * @file  system_status.js - QueenAmdi system status
 
 © 2022 Black Amda, ANTECH. All rights reserved.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, amdiDB, customizeButtons, _default, Language, Package, runtime } = require('queen_amdi_core/dist/scripts')
+const { AMDI, amdiDB, customizeButtons, _default, Language, Package, system_stats } = require('queen_amdi_core/dist/scripts')
 const { aliveTXT0, alivePicURL0 } = _default
 const { getSettings } = amdiDB.settingsDB
 const { customAlive } = customizeButtons
 const Lang = Language.getString('system_status');
-
 
 AMDI({ cmd: ["alive", "hi", "online"], desc: Lang.AliveDesc, type: "primary", react: "💃🏻" }, (async (amdiWA) => {
     let { prefix, sendButtonsMsg } = amdiWA.msgLayout;
@@ -38,29 +37,23 @@ AMDI({ cmd: ["alive", "hi", "online"], desc: Lang.AliveDesc, type: "primary", re
 
 AMDI({ cmd: "ping", desc: Lang.PingDesc, type: "primary", react: "📍" }, (async (amdiWA) => {
     let { reply, sendText } = amdiWA.msgLayout
-    var start = new Date().getTime();
+    var start = new Date()
     var checkSTS = await sendText('_Pinging to amdiModule_', {});
-    var end = new Date().getTime();
+    var end = new Date()
     await reply(`📍 *Ping: ` + (end - start) + 'ms*');
     return await amdiWA.web.sendMessage(amdiWA.clientJID, { delete: checkSTS.key })
 }));
 
 
 AMDI({ cmd: "system", desc: "Bot Status", cmdHideInMenu: true }, (async (amdiWA) => {
-    let { reply, sendText } = amdiWA.msgLayout;
-
-    let uptime = await runtime(process.uptime());
-    var start = new Date().getTime();
-    var checkSTS = await sendText('_Checking status..._', {});
-    var end = new Date().getTime();
-    const usage = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
-    await reply('```⚕️Queen Amdi MD - Status⚕️```\n\n' + Lang.upTime + uptime + `\n` + Lang.ping + (end - start) +'\n'+ Lang.memUsage + usage, "💻");
-    return await amdiWA.web.sendMessage(amdiWA.clientJID, { delete: checkSTS.key });
+    let { reply } = amdiWA.msgLayout;
+    
+    return await reply(system_stats(), "💻");
 }));
 
 
 AMDI({ cmd: ["qaversion", "version"], desc: "Version check", cmdHideInMenu: true }, (async (amdiWA) => {
     let { reply } = amdiWA.msgLayout;
     const version = Package.version
-    return await reply(`*🧬 Queen Amdi Version 🧬*\n\n` + '```Installed version``` : ' + version +'\n' + '\n```Official Site``` : https://amdaniwasa.com');
+    return await reply(`*🧬 Queen Amdi Version 🧬*\n\n` + '```Installed version``` : ' + version +'\n' + '\n```Check github``` : https://github.com/BlackAmda/QueenAmdi/');
 }));

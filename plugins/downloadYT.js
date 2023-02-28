@@ -3,7 +3,7 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.3
+* @version 4.0.5
 * @file  downloadYT.js - QueenAmdi YouTube downloader
 
 © 2022 Black Amda, ANTECH. All rights reserved.
@@ -31,7 +31,7 @@ AMDI({ cmd: ["song", "yta", "mp3"], desc: Lang.songDesc, example: Lang.songExa, 
     }
 
     const findYT = async (name) => {
-        const search = await yts(`${name}`)
+        const search = await yts(name)
         return search.all;
     }
 
@@ -40,7 +40,7 @@ AMDI({ cmd: ["song", "yta", "mp3"], desc: Lang.songDesc, example: Lang.songExa, 
         var listInfo = {}
         listInfo.title = Lang.songListTitle
         listInfo.text = Lang.songListTXT
-        listInfo.buttonTXT = 'default'
+        listInfo.buttonTXT = 'Choose a song'
         
         try {
             const sections = await songList(prefix, ytVidList);
@@ -56,7 +56,8 @@ AMDI({ cmd: ["song", "yta", "mp3"], desc: Lang.songDesc, example: Lang.songExa, 
         if (!isYT) return reply(Lang.needYTLink, '❓')
 
         const ytVidList = await findYT(input);
-        const ytDlTXT = `*🎶 Queen Amdi YT Downloader*\n\n📄 ${Lang.Title} ${ytVidList[0].title}`
+        const title = ytVidList[0] ? ytVidList[0].title : ''
+        const ytDlTXT = `*🎶 Queen Amdi YT Downloader*\n\n📄 ${Lang.Title} ${title}`
 
         const buttons = [
             {type: "url", displayText: "Watch on YouTube", url: input},
@@ -93,7 +94,7 @@ AMDI({ cmd: ["video", "ytv", "mp4"], desc: Lang.videoDesc, example: Lang.videoEx
         var listInfo = {}
         listInfo.title = Lang.videoListTitle
         listInfo.text = Lang.videoListTXT
-        listInfo.buttonTXT = 'default'
+        listInfo.buttonTXT = 'Choose a video'
         
         try {
             const sections = await videoList(prefix, ytVidList);
@@ -109,7 +110,8 @@ AMDI({ cmd: ["video", "ytv", "mp4"], desc: Lang.videoDesc, example: Lang.videoEx
         if (!isYT) return reply(Lang.needYTLink, '❓')
         
         const ytVidList = await findYT(input)
-        const ytDlTXT = `*🎞️ Queen Amdi YT Downloader*\n\n📄 ${Lang.Title} ${ytVidList[0].title}`
+        const title = ytVidList[0] ? ytVidList[0].title : ''
+        const ytDlTXT = `*🎞️ Queen Amdi YT Downloader*\n\n📄 ${Lang.Title} ${title}`
 
         const buttons = [
             {type: "url", displayText: "Watch on YouTube", url: input},

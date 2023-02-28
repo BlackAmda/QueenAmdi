@@ -20,11 +20,24 @@
         "HEROKU_APP_NAME": {
             "description": "Use the same App name as first.",
             "required": true
+        },
+        "LANGUAGE": {
+            "description": "Bot language",
+            "required": true,
+            "value": "EN"
+        },
+        "TZ": {
+            "description": "Your timezone",
+            "required": true,
+            "value": "Asia/Colombo"
         }
     },
     "buildpacks": [
         {
             "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
         }
     ],
     "addons": [
