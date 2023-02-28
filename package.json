@@ -40,7 +40,7 @@
         "fluent-ffmpeg": "^2.1.2",
         "got": "^11.8.2",
         "https": "1.0.0",
-        "link-preview-js": "^2.1.19",
+        "link-preview-js": "^3.0.4",
         "moment": "2.29.4",
         "node-fetch": "2.6.9",
         "path": "0.12.7",
