@@ -1,6 +1,6 @@
 {
     "name": "queen_amdi-multi_device",
-    "version": "4.0.5",
+    "version": "4.0.6",
     "description": "Queen Amdi [WA Multi-device] - A WhatsApp based third party application that provide many services with a real-time automated conversational experience.",
     "main": "./assets/amdiModule.js",
     "scripts": {
@@ -29,7 +29,7 @@
     "dependencies": {
         "@adiwajshing/baileys": "git+https://github.com/AN-Tech-Crew/BaileysForQueenAmdi.git#3e8a609ad9779ee2ac1726bd63c9736f69231c48",
         "@adiwajshing/keyed-db": "^0.2.4",
-        "@blackamda/song_video_dl": "^1.0.0",
+        "@blackamda/song_video_dl": "^1.1.0",
         "@blackamda/telegram-image-url": "^1.0.0",
         "@hapi/boom": "^10.0.0",
         "axios": "^1.3.1",
@@ -47,7 +47,7 @@
         "pg": "^8.9.0",
         "qrcode": "^1.5.1",
         "qrcode-terminal": "^0.12.0",
-        "queen_amdi_core": "^1.3.0",
+        "queen_amdi_core": "^1.3.1",
         "queen-amdi-wa-sticker": "^1.0.1",
         "request": "^2.88.2",
         "sharp": "^0.30.5",
