@@ -14,7 +14,7 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.6
+* @version 4.0.7
 * @file  amdiSettings.js - QueenAmdi config var exports
 
 © 2022 Black Amda, ANTECH. All rights reserved.
@@ -27,7 +27,7 @@ if (fs.existsSync('amdiSettings.env')) require('dotenv').config({ path: './amdiS
 const DATABASE_URL = process.env.DATABASE_URL.includes("postgres") ? process.env.DATABASE_URL : "./queen_amdi.db"
 
 module.exports = {
-    VERSION: 'Queen Amdi 4.0.6v - Multi-Device',
+    VERSION: 'Queen Amdi 4.0.7v - Multi-Device',
     DATABASE_URL: DATABASE_URL,
     DATABASE:
         DATABASE_URL === './queen_amdi.db'

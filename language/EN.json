@@ -5,7 +5,7 @@
     "AUTHOR": "BlackAmda",
     "STRINGS": {
         "amdiModule": {
-            "version": "4.0.6v",
+            "version": "4.0.7v",
             "existWA": "🔄️ Checking existing WA connection data...",
             "genNEWses": "♻️ Generating new session...",
             "waConImport": "✅ WA connection data imported!",
@@ -28,6 +28,7 @@
             "votepollSENT": "*Vote Poll created✅*\n\n*You can vote now!💃🏻♥️*",
             "yourOS": "\nWhat is your mobile phone operating system?\n",
             "cmdLimits": "One of your command is under process.\nHold the line, please!😉",
+            "nonbtn_listmsg": "_🔢 Please reply the number you want to select._",
             "connDONE": "```Queen Amdi bot has been successfully activated! ✅```\n\n_Please do not try commands here. This is your bot logs chat._\n\n*Thank you for using Queen Amdi 💌*"
         },
         "amdiMenu": {
@@ -318,7 +319,8 @@
             "applyMODTitle": "🪪 Manage Moderators List",
             "applyMODText": "Please choose an action.\n* Add a new user to existing.\n* Remove existing and add a new.",
             "customSetHelp": "You can setup custom prefix character by using *.apply* command.\n\nSend the character you want and reply to that message *.apply* and select custom prefix option.",
-            "TOO_LONG_PREFIX": "*This prefix have too much characters!*\nLength of your given character: {}"
+            "TOO_LONG_PREFIX": "*This prefix have too much characters!*\nLength of your given character: {}",
+            "BTN_TOGGLE_DESC": "Turn on or off button messages."
         },
         "stickers": {
             "stickerDesc": "Make sticker from image or video. And change pack info.",
@@ -361,7 +363,9 @@
             "TAGGRPDESC": "Tag all members in a group without command in the group chat.",
             "TAGGRPEX": ".taggrp jid_address - And reply to the text",
             "GIVEMEJID": "*Please give a JID!*",
-            "GIVEMETEXT": "*Please reply to a text message!*"
+            "GIVEMETEXT": "*Please reply to a text message!*",
+            "tagadmDESC": "Tag all admins in the group.",
+            "tagadmEX": ".tagadmin | .tagadmin text | .tagadmin [reply to a message]"
         },
         "votepolls": {
             "voteDESC": "Create a vote poll.",

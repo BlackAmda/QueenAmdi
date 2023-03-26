@@ -3,7 +3,7 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.6
+* @version 4.0.7
 * @file  search.js - QueenAmdi search engine features
 
 © 2022 Black Amda, ANTECH. All rights reserved.
@@ -47,7 +47,7 @@ AMDI({ cmd: ["ps", "playstore"], desc: Lang.PSDESC, type: "primary", react: "�
             const response = await axios.get(psAPI);
             const json = response.data
 
-            if (json.status.error) return await reply("Error".fetchError([{ message: json.status.message }]), "❌", 1);
+            if (json.status.error) return await reply("Error".fetchError({ message: json.status.message }), "❌", 1);
 
         const text = `
     📚 *Name* : ${json.app_name}

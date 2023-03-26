@@ -3,14 +3,14 @@
 * @author BlackAmda <https://github.com/BlackAmda>
 * @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
 * @link <https://github.com/BlackAmda/QueenAmdi>
-* @version 4.0.6
+* @version 4.0.7
 * @file  settings.js - QueenAmdi bot settings
 
 © 2022 Black Amda, ANTECH. All rights reserved.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.*/
 
-const { AMDI, _default_list_sections, Language } = require('queen_amdi_core/dist/scripts')
+const { AMDI, amdiDB, _default_list_sections, Language } = require('queen_amdi_core/dist/scripts')
 const { settingList, applyList } = _default_list_sections
 const Lang = Language.getString('settings');
 
@@ -40,4 +40,14 @@ AMDI({ cmd: "settings", desc: Lang.setDesc, type: "profile", react: "⚙️" }, 
 
     const sections = settingList(prefix, amdiWA.clientJID);
     return await sendListMsg(listInfo, sections);
+}));
+
+
+AMDI({ cmd: "button", desc: Lang.BTN_TOGGLE_DESC, type: "profile", react: "🔘" }, (async (amdiWA) => {
+    let { input, reply } = amdiWA.msgLayout;
+
+    if (!input) return await reply('*Button On or off ?*', "❓");
+
+    await inputSettings("NON_BUTTONS", input === "on" ? "false" : "true");
+    return await reply('```' + "NON_BUTTONS" + ' ⮕ ' + input + '```' + Lang.settingAdded, "✅")
 }));
