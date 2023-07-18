@@ -1,1 +1,1 @@
-worker: node ./assets/amdiModule.js
+web: node ./assets/amdiModule.js
