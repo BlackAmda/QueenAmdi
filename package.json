@@ -47,7 +47,7 @@
         "pg": "^8.9.0",
         "qrcode": "^1.5.1",
         "qrcode-terminal": "^0.12.0",
-        "queen_amdi_core": "^1.4.1",
+        "queen_amdi_core": "^1.4.2",
         "queen-amdi-wa-sticker": "^1.0.1",
         "request": "^2.88.2",
         "sharp": "^0.30.5",
