@@ -1,10 +1,10 @@
 {
-    "name": "Queen Amdi & Manoj MD",
+    "name": "md- multi device bot",
     "description": "Most Popular Multi-Device WhatsApp Bots data profiles",
     "last_updated": "2022-07-13",
     "data": {
         "Queen_Amdi": {
-            "owner": "Black Amda",
+            "owner": "saksham garg",
             "number": ["94757405652"],
             "emoji": "💃🏻",
             "team": ["94719077818", "94757672873", "94759551299", "94774976567", "94766426385", "94716292396", "94762780788"],
@@ -13,7 +13,7 @@
             "banned_group": ""
         },
         "Manoj_Multi_Device": {
-            "owner": "Ravindu Manoj",
+            "owner": "saksham garg",
             "number": ["94785457519", "94785435462"],
             "emoji": "👨🏻‍💻",
             "main_groups": ["120363041461992265", "120363022663686217", "120363042646895364", "94785435462-1618586156", "94785435462-1621751150", "94785435462-1634926140", "94785435462-1625490851"],
