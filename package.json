@@ -1,7 +1,7 @@
 {
-    "name": "queen_amdi-multi_device",
+    "name": "DASA<3",
     "version": "4.0.8",
-    "description": "Queen Amdi [WA Multi-device] - A WhatsApp based third party application that provide many services with a real-time automated conversational experience.",
+    "description": "DASA<3 [WA Multi-device] - A WhatsApp based third party application that provide many services with a real-time automated conversational experience.",
     "main": "./assets/amdiModule.js",
     "scripts": {
         "package": "yarn install --network-concurrency 1",
